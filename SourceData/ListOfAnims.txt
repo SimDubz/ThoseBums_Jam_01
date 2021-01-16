@@ -1,0 +1,61 @@
+Intro+Cam
+Finisher on last enemy + Cam
+Room change?
+Animation level up
+
+Forward
+ForwardRight
+ForwardLeft
+Right
+BackwardRight
+Backward
+BackwardLeft
+Left
+Turn_left
+Turn_Right
+Idle
+IdleBreak
+Death
+Hit
+
+StopMoving
+
+
+Attacks
+
+Dash
+RainOfArrows
+Push (Jedi Style) Block
+Parry (à partir d'une pose de Push)
+RangeAttack_In
+RangeAttack_Hold_Cycle
+RangeAttack_Out
+
+
+
+Monstres 
+
+Walk_Forward
+	Run_Forward
+	Kamikaze_Forward
+Turn_Right
+Turn_Left
+Idle
+IdleBreak
+Taunt
+Hit
+Death
+Melee_Attack
+Ranged_attack
+
+Kamikaze_Explode
+SlowTank
+KnockedBack
+Spawn
+
+
+
+
+
+
+
