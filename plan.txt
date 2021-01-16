@@ -1,0 +1,37 @@
+Attacks:
+
+Hold Shoot
+Dash
+Push
+Rain of arrows in a zone
+
+Monstres:
+
+Melee
+Range
+Kamikaze
+Spawner
+Tank Slow
+Squishy fast
+Boss (alex sur le vivance)
+
+Progression:
+
+Diablo 2 style skill tree
+Mix of passive (attack speed, life, aura, buff, dots) and upgrades to your base attacks
+
+
+Level design:
+
+Procedural by using a pool of already designed rooms.
+X number of normal stages then boss
+
+Skills per dev:
+
+Vivance guy:
+
+Olive: 
+
+Poncho: 
+
+Sim:
