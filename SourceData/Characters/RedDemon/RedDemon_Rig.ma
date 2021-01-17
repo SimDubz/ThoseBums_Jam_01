@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: RedDemon_Rig.ma
-//Last modified: Sat, Jan 16, 2021 09:36:44 PM
+//Last modified: Sun, Jan 17, 2021 02:23:19 AM
 //Codeset: 1252
 requires maya "2019";
 requires -nodeType "HIKSolverNode" -nodeType "HIKCharacterNode" -nodeType "HIKControlSetNode"
@@ -9,6 +9,7 @@ requires -nodeType "HIKSolverNode" -nodeType "HIKCharacterNode" -nodeType "HIKCo
 		 -nodeType "HIKProperty2State" -nodeType "HIKPinning2State" -dataType "HIKCharacter"
 		 -dataType "HIKCharacterState" -dataType "HIKEffectorState" -dataType "HIKPropertySetState"
 		 "mayaHIK" "1.0_HIK_2016.5";
+requires "mtoa" "4.0.2.1";
 requires "mtoa" "4.0.2.1";
 currentUnit -l centimeter -a degree -t ntsc;
 fileInfo "application" "maya";
@@ -20,13 +21,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "957BD663-4C52-6823-F658-9FBDBB145D1F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 211.75854720549245 305.77552819359209 289.2509563107451 ;
+	setAttr ".t" -type "double3" 183.87845312875146 227.10923651510285 163.39963934563445 ;
 	setAttr ".r" -type "double3" -29.138352729644215 32.999999999999844 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E198C7B4-43E0-4DEE-9ED9-C8B1A2851846";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 467.81724078771003;
+	setAttr ".coi" 324.05976221284982;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -313,106 +314,118 @@ createNode joint -n "indexFinger_01_l" -p "Hand_L";
 	rename -uid "8AF2AB9E-4053-E942-2562-14965A2D6D9F";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".t" -type "double3" 12.075540542602539 4.2213864326477051 -9.8422107696533203 ;
-	setAttr ".r" -type "double3" -0.65463662147521973 44.499103546142578 14.675485610961914 ;
+	addAttr -s false -ci true -sn "ch" -ln "Character" -at "message";
+	setAttr -k off -cb on ".v";
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" 0.99127500000000002 -0.011625399999999999 0.131296 0
 		 0.0115248 0.99993200000000004 0.00152625 0 -0.13130500000000001 2.22438e-07 0.99134199999999995 0
 		 126.623383 140.19714400000001 2.164266 1;
+	setAttr ".ds" 2;
+	setAttr ".sd" 1;
+	setAttr ".typ" 19;
 	setAttr ".radi" 3;
 	setAttr ".fbxID" 5;
 createNode joint -n "indexFinger_02_l" -p "indexFinger_01_l";
 	rename -uid "1C3E64E2-4BF0-C5F5-65C7-0EAA6C17C35C";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".t" -type "double3" 6.1473898887633993 -1.7053025658242404e-13 -1.0302869668521453e-13 ;
-	setAttr ".r" -type "double3" -0.33854910731315613 1.190822958946228 -15.205482482910156 ;
+	addAttr -s false -ci true -sn "ch" -ln "Character" -at "message";
+	setAttr -k off -cb on ".v";
 	setAttr ".ssc" no;
-	setAttr -av ".is" -type "double3" 1 1 1 ;
-	setAttr -av ".is";
 	setAttr ".bps" -type "matrix" 0.95607200000000003 -0.27342300000000003 0.105669 0
 		 0.27176800000000001 0.96189400000000003 0.030036799999999999 0 -0.109856 2.3844500000000004e-07 0.99394800000000005 0
 		 132.71713800000001 140.12567799999999 2.971393 1;
+	setAttr ".ds" 2;
+	setAttr ".sd" 1;
+	setAttr ".typ" 19;
 	setAttr ".radi" 3;
 	setAttr ".fbxID" 5;
 createNode joint -n "indexFinger_03_l" -p "indexFinger_02_l";
 	rename -uid "284B0DEF-4DAD-40E3-186A-789AD816A9E6";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".t" -type "double3" 5.7940163612365581 -6.8212102632969618e-13 4.2632564145606011e-14 ;
-	setAttr ".r" -type "double3" -1.2564358711242676 2.7815396785736084 -8.4527044296264648 ;
+	addAttr -s false -ci true -sn "ch" -ln "Character" -at "message";
+	setAttr -k off -cb on ".v";
 	setAttr ".ssc" no;
-	setAttr -av ".is" -type "double3" 1 1 1 ;
-	setAttr -av ".is";
 	setAttr ".bps" -type "matrix" 0.91000300000000001 -0.41136 0.0517542 0 0.41069600000000001 0.91147299999999998 0.023356999999999999 0
 		 -0.056780700000000003 2.9371999999999996e-07 0.99838700000000002 0 138.25663499999999 138.541459 3.5836440000000001 1;
+	setAttr ".ds" 2;
+	setAttr ".sd" 1;
+	setAttr ".typ" 19;
 	setAttr ".radi" 3;
 	setAttr ".fbxID" 5;
 createNode joint -n "indexFinger_04_l" -p "indexFinger_03_l";
 	rename -uid "F3B4F36E-40E7-7E2C-A8EA-71A76D0217BD";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".t" -type "double3" 5.9118146896362873 8.5265128291212022e-14 -8.8817841970012523e-16 ;
-	setAttr ".r" -type "double3" 5.3447074321866246e-08 3.255049467086792 24.290252685546875 ;
+	addAttr -s false -ci true -sn "ch" -ln "Character" -at "message";
+	setAttr -k off -cb on ".v";
 	setAttr ".ssc" no;
-	setAttr -av ".is" -type "double3" 1 1 1 ;
-	setAttr -av ".is";
 	setAttr ".bps" -type "matrix" 1 -2.8371900000000003e-07 -7.3253599999999994e-08 0
 		 2.8371900000000003e-07 1 -2.7712599999999999e-07 0 7.3253599999999994e-08 2.7712599999999999e-07 1 0
 		 143.636402 136.109578 3.889605 1;
+	setAttr ".ds" 2;
+	setAttr ".sd" 1;
+	setAttr ".typ" 19;
 	setAttr ".radi" 3;
 	setAttr ".fbxID" 5;
 createNode joint -n "finger_01_l" -p "Hand_L";
 	rename -uid "E8D50E07-4C83-C79A-9F6E-F489D821EA44";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".t" -type "double3" 5.1985344886779785 1.2058426141738892 -14.852415084838867 ;
-	setAttr ".r" -type "double3" -13.316227912902832 56.055145263671875 -0.31471657752990723 ;
+	addAttr -s false -ci true -sn "ch" -ln "Character" -at "message";
+	setAttr -k off -cb on ".v";
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" 0.98437699999999995 -0.15320300000000001 -0.086778999999999995 0
 		 0.152611 0.98819500000000005 -0.0134541 0 0.087815799999999999 4.49224e-07 0.99613700000000005 0
 		 126.001643 139.14327 -6.7795389999999998 1;
+	setAttr ".ds" 2;
+	setAttr ".sd" 1;
+	setAttr ".typ" 20;
 	setAttr ".radi" 3;
 	setAttr ".fbxID" 5;
 createNode joint -n "finger_02_l" -p "finger_01_l";
 	rename -uid "E0603E0F-4665-A367-3D9A-94B6BF9E67B6";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".t" -type "double3" 6.4151196479797221 1.9895196601282805e-13 -9.0594198809412774e-14 ;
-	setAttr ".r" -type "double3" 0.47220146656036377 -2.2041292190551758 -3.282508373260498 ;
+	addAttr -s false -ci true -sn "ch" -ln "Character" -at "message";
+	setAttr -k off -cb on ".v";
 	setAttr ".ssc" no;
-	setAttr -av ".is" -type "double3" 1 1 1 ;
-	setAttr -av ".is";
 	setAttr ".bps" -type "matrix" 0.97667999999999999 -0.20938000000000001 -0.047491499999999999 0
 		 0.20913300000000001 0.97783399999999998 -0.010169600000000001 0 0.048568199999999999 4.3318199999999997e-07 0.99882000000000004 0
 		 132.31654 138.16045299999999 -7.3362369999999997 1;
+	setAttr ".ds" 2;
+	setAttr ".sd" 1;
+	setAttr ".typ" 20;
 	setAttr ".radi" 3;
 	setAttr ".fbxID" 5;
 createNode joint -n "finger_03_l" -p "finger_02_l";
 	rename -uid "FBE651A3-4A82-6E0A-23B4-BAA2660621E0";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".t" -type "double3" 5.3300614356994771 -8.8107299234252423e-13 1.865174681370263e-14 ;
-	setAttr ".r" -type "double3" -3.7113747596740723 7.6060843467712411 -14.022045135498047 ;
+	addAttr -s false -ci true -sn "ch" -ln "Character" -at "message";
+	setAttr -k off -cb on ".v";
 	setAttr ".ssc" no;
-	setAttr -av ".is" -type "double3" 1 1 1 ;
-	setAttr -av ".is";
 	setAttr ".bps" -type "matrix" 0.88258599999999998 -0.43619400000000003 -0.17543400000000001 0
 		 0.42782399999999998 0.89985300000000001 -0.085040199999999996 0 0.19495899999999999 4.5347099999999997e-07 0.98081099999999999 0
 		 137.52230599999999 137.044444 -7.5893689999999996 1;
+	setAttr ".ds" 2;
+	setAttr ".sd" 1;
+	setAttr ".typ" 20;
 	setAttr ".radi" 3;
 	setAttr ".fbxID" 5;
 createNode joint -n "finger_04_l" -p "finger_03_l";
 	rename -uid "8E6531B1-4F05-0BF7-11EC-E19742DC9692";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".t" -type "double3" 4.7222237586975098 3.4106051316484809e-13 -4.9737991503207013e-14 ;
-	setAttr ".r" -type "double3" 0 -11.242292404174805 25.861261367797852 ;
+	addAttr -s false -ci true -sn "ch" -ln "Character" -at "message";
+	setAttr -k off -cb on ".v";
 	setAttr ".ssc" no;
-	setAttr -av ".is" -type "double3" 1 1 1 ;
-	setAttr -av ".is";
 	setAttr ".bps" -type "matrix" 1 -3.0052500000000003e-07 -4.8246999999999995e-07 0
 		 3.0052500000000003e-07 1 -5.22079e-07 0 4.8246999999999995e-07 5.22079e-07 1 0 141.69007400000001 134.98463899999999 -8.4178080000000008 1;
+	setAttr ".ds" 2;
+	setAttr ".sd" 1;
+	setAttr ".typ" 20;
 	setAttr ".radi" 3;
 	setAttr ".fbxID" 5;
 createNode joint -n "clavicle_r" -p "spine_03";
@@ -39711,16 +39724,16 @@ createNode mesh -n "SK_BR_Character_RedDemon_01ShapeOrig" -p "|SK_BR_Character_R
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "Character1_Ctrl_Reference";
-	rename -uid "490302DF-46C9-2F9A-4B11-50B55742079E";
+	rename -uid "06D5AFC4-411E-7B67-CC54-EC868F89099A";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".r" -type "double3" -1.5258789084244271e-05 0 0 ;
 	setAttr -l on ".ra";
 createNode locator -n "Character1_Ctrl_ReferenceShape" -p "Character1_Ctrl_Reference";
-	rename -uid "822FDE2B-4A75-0F7C-F1FB-0185183BC72B";
+	rename -uid "E53E5470-49F6-3707-98C9-BDB9A0853F74";
 	setAttr -k off ".v";
 createNode hikIKEffector -n "Character1_Ctrl_HipsEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "50507CE1-461D-ED6C-B044-8F9699F2E76D";
+	rename -uid "183798C3-40DB-4D0C-153F-56BA2E4AF0BB";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -39735,7 +39748,7 @@ createNode hikIKEffector -n "Character1_Ctrl_HipsEffector" -p "Character1_Ctrl_R
 	setAttr -l on ".ra";
 	setAttr ".rt" 1;
 	setAttr ".rr" 1;
-	setAttr ".radi" 16.617094186636113;
+	setAttr ".radi" 16.61709418663612;
 	setAttr -l on ".jo" -type "double3" 90 0 90 ;
 	setAttr -l on ".jo";
 	setAttr ".lk" 2;
@@ -39743,7 +39756,7 @@ createNode hikIKEffector -n "Character1_Ctrl_HipsEffector" -p "Character1_Ctrl_R
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_LeftAnkleEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "15A942B1-4F7E-092B-011A-E6ACF300F936";
+	rename -uid "0A14D718-4790-5F2D-3C7B-CBBC9893AACB";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -39761,7 +39774,7 @@ createNode hikIKEffector -n "Character1_Ctrl_LeftAnkleEffector" -p "Character1_C
 	setAttr ".ei" 1;
 	setAttr ".rt" 1;
 	setAttr ".rr" 1;
-	setAttr ".radi" 8.8624502328725931;
+	setAttr ".radi" 8.8624502328725967;
 	setAttr -l on ".jo" -type "double3" -180 -89.999999999999986 0 ;
 	setAttr -l on ".jo";
 	setAttr ".lk" 1;
@@ -39769,7 +39782,7 @@ createNode hikIKEffector -n "Character1_Ctrl_LeftAnkleEffector" -p "Character1_C
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_RightAnkleEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "265BFAA9-466E-50B2-B2A4-B7949BF49C69";
+	rename -uid "12B49409-4C00-A0E7-D0AF-479F65ADE689";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -39787,7 +39800,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightAnkleEffector" -p "Character1_
 	setAttr ".ei" 2;
 	setAttr ".rt" 1;
 	setAttr ".rr" 1;
-	setAttr ".radi" 8.8624502328725931;
+	setAttr ".radi" 8.8624502328725967;
 	setAttr -l on ".jo" -type "double3" -90.000032870778668 -62.690797489947748 -89.999963006001863 ;
 	setAttr -l on ".jo";
 	setAttr ".lk" 1;
@@ -39795,7 +39808,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightAnkleEffector" -p "Character1_
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_LeftWristEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "4B3E77F7-45C0-8955-872A-FAAD6AC74EE1";
+	rename -uid "F3130199-4845-DA01-6D91-1BBC3852484E";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -39809,7 +39822,7 @@ createNode hikIKEffector -n "Character1_Ctrl_LeftWristEffector" -p "Character1_C
 	setAttr -l on ".ra" -type "double3" -89.999999999999986 0 0 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 3;
-	setAttr ".radi" 5.5390313955453703;
+	setAttr ".radi" 5.5390313955453729;
 	setAttr -l on ".jo" -type "double3" 89.999999999999986 0 0 ;
 	setAttr -l on ".jo";
 	setAttr ".rof" -type "double3" 0 0 90 ;
@@ -39818,7 +39831,7 @@ createNode hikIKEffector -n "Character1_Ctrl_LeftWristEffector" -p "Character1_C
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_RightWristEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "19572206-4589-052A-8B6E-D09C79EC7A88";
+	rename -uid "7CA80884-4ECC-F9E8-708B-50A679FC63EA";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -39832,7 +39845,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightWristEffector" -p "Character1_
 	setAttr -l on ".ra" -type "double3" 90.000000000000014 0 180 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 4;
-	setAttr ".radi" 5.5390313955453703;
+	setAttr ".radi" 5.5390313955453729;
 	setAttr -l on ".jo" -type "double3" 90.000000000000014 0 180 ;
 	setAttr -l on ".jo";
 	setAttr ".rof" -type "double3" 0 0 90 ;
@@ -39841,7 +39854,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightWristEffector" -p "Character1_
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_LeftKneeEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "025F41E1-4831-7C03-C4EB-B2952BE0AA49";
+	rename -uid "152F9392-4DF7-9B9F-B418-5FB351AB9193";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -39856,16 +39869,16 @@ createNode hikIKEffector -n "Character1_Ctrl_LeftKneeEffector" -p "Character1_Ct
 	setAttr -l on ".ra" -type "double3" 85.823656041205865 -85.026811827155143 0 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 5;
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 	setAttr -l on ".jo" -type "double3" -89.637316868024243 4.1605938393134858 -85.013637683416022 ;
 	setAttr -l on ".jo";
-	setAttr ".tof" -type "double3" 0 0 11.078062791090741 ;
+	setAttr ".tof" -type "double3" 0 0 11.078062791090746 ;
 	setAttr ".lk" 6;
 	setAttr -cb on ".pull";
 	setAttr -cb on ".stiffness" 0.5;
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_RightKneeEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "612A8065-45AF-5D13-7D4F-65B8EE7D2211";
+	rename -uid "08501CB2-484F-444F-D1A0-5380EF0C2A68";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -39880,16 +39893,16 @@ createNode hikIKEffector -n "Character1_Ctrl_RightKneeEffector" -p "Character1_C
 	setAttr -l on ".ra" -type "double3" 85.82366176613813 265.02686177163548 0 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 6;
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 	setAttr -l on ".jo" -type "double3" -90.362678999975643 4.16058845219285 -94.986312204938784 ;
 	setAttr -l on ".jo";
-	setAttr ".tof" -type "double3" 0 0 11.078062791090741 ;
+	setAttr ".tof" -type "double3" 0 0 11.078062791090746 ;
 	setAttr ".lk" 6;
 	setAttr -cb on ".pull";
 	setAttr -cb on ".stiffness" 0.5;
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_LeftElbowEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "676604AB-41C5-EBA3-99A0-E4821200DBC0";
+	rename -uid "B5FB4DE5-47CE-79DF-7268-279B32AF680D";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -39905,16 +39918,16 @@ createNode hikIKEffector -n "Character1_Ctrl_LeftElbowEffector" -p "Character1_C
 		-4.9320234656635948 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 7;
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 	setAttr -l on ".jo" -type "double3" 90.000000000000028 -4.9320234656635957 -7.9809369224711737e-16 ;
 	setAttr -l on ".jo";
-	setAttr ".tof" -type "double3" 0 0 -11.078062791090741 ;
+	setAttr ".tof" -type "double3" 0 0 -11.078062791090746 ;
 	setAttr ".lk" 6;
 	setAttr -cb on ".pull";
 	setAttr -cb on ".stiffness" 0.5;
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_RightElbowEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "5D075B17-4AD6-F150-6736-089015600BBF";
+	rename -uid "F53FEEA1-49EC-4445-02AE-CBAA9ED90B9C";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -39929,16 +39942,16 @@ createNode hikIKEffector -n "Character1_Ctrl_RightElbowEffector" -p "Character1_
 	setAttr -l on ".ra" -type "double3" 90 -3.9756933518293969e-16 -4.9320813568880721 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 8;
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 	setAttr -l on ".jo" -type "double3" -90 4.9320813568880721 3.9904688091669691e-16 ;
 	setAttr -l on ".jo";
-	setAttr ".tof" -type "double3" 0 0 -11.078062791090741 ;
+	setAttr ".tof" -type "double3" 0 0 -11.078062791090746 ;
 	setAttr ".lk" 6;
 	setAttr -cb on ".pull";
 	setAttr -cb on ".stiffness" 0.5;
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_ChestOriginEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "F6AB0043-4971-40AE-A034-09A068D68591";
+	rename -uid "AFF4A85E-4960-F86C-8A05-26BAED1C46AB";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -39953,7 +39966,7 @@ createNode hikIKEffector -n "Character1_Ctrl_ChestOriginEffector" -p "Character1
 	setAttr -l on ".ra" -type "double3" -92.848501568603339 -89.999994285022865 0 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 9;
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 	setAttr -l on ".jo" -type "double3" 89.999999715641408 -2.8485015686033144 90.000005722047135 ;
 	setAttr -l on ".jo";
 	setAttr ".lk" 1;
@@ -39961,7 +39974,7 @@ createNode hikIKEffector -n "Character1_Ctrl_ChestOriginEffector" -p "Character1
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_ChestEndEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "F5B96B18-479B-3793-8A64-5FB8A815171C";
+	rename -uid "42D80D0B-416B-8035-2DF6-8686EFB08E4F";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -39976,7 +39989,7 @@ createNode hikIKEffector -n "Character1_Ctrl_ChestEndEffector" -p "Character1_Ct
 	setAttr -l on ".ra" -type "double3" -100.26634075794234 -89.999993761261123 0 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 10;
-	setAttr ".radi" 16.617094186636113;
+	setAttr ".radi" 16.61709418663612;
 	setAttr -l on ".jo" -type "double3" 89.999998870014693 -10.266340757942272 90.000006340246813 ;
 	setAttr -l on ".jo";
 	setAttr ".lk" 1;
@@ -39984,7 +39997,7 @@ createNode hikIKEffector -n "Character1_Ctrl_ChestEndEffector" -p "Character1_Ct
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_RightFootEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "BF3BE7F8-4919-88A1-5F2D-448516B36EBC";
+	rename -uid "ED6B5EE7-4B51-762A-AF9E-FAA32617C0E8";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -39999,7 +40012,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightFootEffector" -p "Character1_C
 	setAttr -l on ".ra" -type "double3" -180 -89.999999999999986 0 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 12;
-	setAttr ".radi" 6.6468376746544449;
+	setAttr ".radi" 6.6468376746544475;
 	setAttr -l on ".jo" -type "double3" -180 -89.999999999999986 0 ;
 	setAttr -l on ".jo";
 	setAttr ".rof" -type "double3" 90 0 0 ;
@@ -40008,7 +40021,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightFootEffector" -p "Character1_C
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_LeftShoulderEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "1CEA4887-4FEA-082B-BE3D-61A6DD7B0B87";
+	rename -uid "2D16F507-4E0E-8761-0E10-0087F63C5206";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -40023,7 +40036,7 @@ createNode hikIKEffector -n "Character1_Ctrl_LeftShoulderEffector" -p "Character
 	setAttr -l on ".ra" -type "double3" 90 1.987846675914698e-16 -1.8356131210476789 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 13;
-	setAttr ".radi" 8.8624502328725931;
+	setAttr ".radi" 8.8624502328725967;
 	setAttr -l on ".jo" -type "double3" -90.000000000000014 1.8356131210476792 -1.9888672762377436e-16 ;
 	setAttr -l on ".jo";
 	setAttr ".rof" -type "double3" 0 0 90 ;
@@ -40032,7 +40045,7 @@ createNode hikIKEffector -n "Character1_Ctrl_LeftShoulderEffector" -p "Character
 	setAttr -cb on ".stiffness" 0.5;
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_RightShoulderEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "3829BBFD-4676-C4D3-5DF5-80A9EB55AA5B";
+	rename -uid "F1FF89C8-438D-CAEE-577F-989A04A76CEB";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -40046,7 +40059,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightShoulderEffector" -p "Characte
 	setAttr -l on ".ra" -type "double3" -90 0 -1.8356158261480986 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 14;
-	setAttr ".radi" 8.8624502328725931;
+	setAttr ".radi" 8.8624502328725967;
 	setAttr -l on ".jo" -type "double3" 90 -1.8356158261480986 0 ;
 	setAttr -l on ".jo";
 	setAttr ".rof" -type "double3" 0 0 90 ;
@@ -40055,7 +40068,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightShoulderEffector" -p "Characte
 	setAttr -cb on ".stiffness" 0.5;
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_HeadEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "75CEC1CA-4412-EC18-FC7B-E199ADB33EF2";
+	rename -uid "553BEA5B-4B1A-BB1F-31DA-3EAEB426C3A2";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -40069,7 +40082,7 @@ createNode hikIKEffector -n "Character1_Ctrl_HeadEffector" -p "Character1_Ctrl_R
 	setAttr -l on ".ra" -type "double3" -90 -90 0 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 15;
-	setAttr ".radi" 11.078062791090741;
+	setAttr ".radi" 11.078062791090746;
 	setAttr -l on ".jo" -type "double3" 90 0 90 ;
 	setAttr -l on ".jo";
 	setAttr ".lk" 1;
@@ -40077,7 +40090,7 @@ createNode hikIKEffector -n "Character1_Ctrl_HeadEffector" -p "Character1_Ctrl_R
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_LeftHipEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "96D0451D-4605-78D3-EEAC-BC90D5B199A2";
+	rename -uid "718A589F-4F19-2FC9-E611-9D9647D44F31";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -40092,7 +40105,7 @@ createNode hikIKEffector -n "Character1_Ctrl_LeftHipEffector" -p "Character1_Ctr
 	setAttr -l on ".ra" -type "double3" 85.823675937827403 -85.026794439697284 1.4675555470826699e-13 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 16;
-	setAttr ".radi" 8.8624502328725931;
+	setAttr ".radi" 8.8624502328725967;
 	setAttr -l on ".jo" -type "double3" -89.637317337179525 4.1605739079304076 -85.013620376166259 ;
 	setAttr -l on ".jo";
 	setAttr ".lk" 1;
@@ -40100,7 +40113,7 @@ createNode hikIKEffector -n "Character1_Ctrl_LeftHipEffector" -p "Character1_Ctr
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_RightHipEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "2ABE952E-483B-9ED8-6669-A6A895B172E4";
+	rename -uid "4C0DE6CB-4231-F403-BFFF-128EEE456CAD";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -40115,7 +40128,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightHipEffector" -p "Character1_Ct
 	setAttr -l on ".ra" -type "double3" 85.823671536782129 265.02685568572406 1.0177774980683254e-13 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 17;
-	setAttr ".radi" 8.8624502328725931;
+	setAttr ".radi" 8.8624502328725967;
 	setAttr -l on ".jo" -type "double3" -90.362678591192108 4.1605786800026596 -94.986318245031853 ;
 	setAttr -l on ".jo";
 	setAttr ".lk" 1;
@@ -40123,7 +40136,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightHipEffector" -p "Character1_Ct
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_LeftHandThumbEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "A007456A-446E-DDA4-B818-78B192A86685";
+	rename -uid "C93A41A2-416F-8A57-B60F-1AAED49F7484";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -40138,15 +40151,61 @@ createNode hikIKEffector -n "Character1_Ctrl_LeftHandThumbEffector" -p "Characte
 	setAttr -l on ".ra" -type "double3" 77.925055123123315 -32.792829922081559 -158.446814348386 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 20;
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 	setAttr -l on ".jo" -type "double3" 79.52485181652662 14.706071548609405 143.93357741972858 ;
 	setAttr -l on ".jo";
 	setAttr ".lk" 6;
 	setAttr -cb on ".pull";
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
+createNode hikIKEffector -n "Character1_Ctrl_LeftHandIndexEffector" -p "Character1_Ctrl_Reference";
+	rename -uid "71E97D4A-45D0-27EB-E043-B1869A07186C";
+	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
+	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
+	setAttr -k off -cb on ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 4;
+	setAttr ".t" -type "double3" 143.63639831542969 136.10957336425781 3.8896057605743408 ;
+	setAttr ".r" -type "double3" 0 -8.4483483726374669e-16 0 ;
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr -l on ".ra" -type "double3" -178.77710142169451 -2.7030561413619996 155.64611896870369 ;
+	setAttr -l on ".ra";
+	setAttr ".ei" 21;
+	setAttr ".radi" 2.2156125582181492;
+	setAttr -l on ".jo" -type "double3" -180 2.9666283462918557 155.67497189836362 ;
+	setAttr -l on ".jo";
+	setAttr ".lk" 6;
+	setAttr -cb on ".pull";
+	setAttr -cb on ".stiffness";
+instanceable -a 0;
+createNode hikIKEffector -n "Character1_Ctrl_LeftHandMiddleEffector" -p "Character1_Ctrl_Reference";
+	rename -uid "DBF72ED8-4031-A131-14E4-CE8B5AAFD1B0";
+	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
+	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
+	setAttr -k off -cb on ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 4;
+	setAttr ".t" -type "double3" 141.69007873535156 134.98463439941406 -8.4178066253662109 ;
+	setAttr ".r" -type "double3" 1.3914926731402885e-14 -1.5902773407317584e-15 0 ;
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr -l on ".ra" -type "double3" 175.48567384361175 9.048723433816324 153.34288659500402 ;
+	setAttr -l on ".ra";
+	setAttr ".ei" 22;
+	setAttr ".radi" 2.2156125582181492;
+	setAttr -l on ".jo" -type "double3" 180 -10.103897899916042 153.70028692982171 ;
+	setAttr -l on ".jo";
+	setAttr ".lk" 6;
+	setAttr -cb on ".pull";
+	setAttr -cb on ".stiffness";
+instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_RightHandThumbEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "82CD4718-43EB-ADF4-328F-AAB1B97696EB";
+	rename -uid "063E4241-4362-2B95-EED5-849EC21B931C";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -40161,7 +40220,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightHandThumbEffector" -p "Charact
 	setAttr -l on ".ra" -type "double3" 77.92275210516047 32.797075810127531 -21.554780527959061 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 26;
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 	setAttr -l on ".jo" -type "double3" -79.5233918058331 14.705565913892515 36.07122562573948 ;
 	setAttr -l on ".jo";
 	setAttr ".lk" 6;
@@ -40169,7 +40228,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightHandThumbEffector" -p "Charact
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_RightHandIndexEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "4922D839-411E-42E9-924B-41A731AE4CEB";
+	rename -uid "CE090692-431C-5327-3DB4-D98A7239251A";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -40184,7 +40243,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightHandIndexEffector" -p "Charact
 	setAttr -l on ".ra" -type "double3" 1.2228934698272296 -2.7036445492306478 -24.349109875693809 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 27;
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 	setAttr -l on ".jo" -type "double3" 0 2.9671623012580848 24.320250783490909 ;
 	setAttr -l on ".jo";
 	setAttr ".lk" 6;
@@ -40192,7 +40251,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightHandIndexEffector" -p "Charact
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikIKEffector -n "Character1_Ctrl_RightHandMiddleEffector" -p "Character1_Ctrl_Reference";
-	rename -uid "5D5D7AEB-4960-8B4D-739D-7BBADCF64A09";
+	rename -uid "3F086650-41FB-3D7C-5070-989601B778AC";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
@@ -40207,7 +40266,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightHandMiddleEffector" -p "Charac
 	setAttr -l on ".ra" -type "double3" -4.5128470979851381 9.0498626405099198 -26.646687398286268 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 28;
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 	setAttr -l on ".jo" -type "double3" -8.0766545174693109e-16 -10.10426086221738 26.289359113187576 ;
 	setAttr -l on ".jo";
 	setAttr ".lk" 6;
@@ -40215,7 +40274,7 @@ createNode hikIKEffector -n "Character1_Ctrl_RightHandMiddleEffector" -p "Charac
 	setAttr -cb on ".stiffness";
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_Hips" -p "Character1_Ctrl_Reference";
-	rename -uid "79C34D4A-4292-E99D-2EED-C48266694B36";
+	rename -uid "1A79B58A-461B-DFCA-E4E6-B08A0BF56417";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40229,10 +40288,10 @@ createNode hikFKJoint -n "Character1_Ctrl_Hips" -p "Character1_Ctrl_Reference";
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 90 0 90 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_LeftUpLeg" -p "Character1_Ctrl_Hips";
-	rename -uid "32E2D872-45DB-3152-6232-B4913CB3AEC3";
+	rename -uid "A526E63D-4C53-84CA-DEBB-20A7AE6A9E63";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40252,10 +40311,10 @@ createNode hikFKJoint -n "Character1_Ctrl_LeftUpLeg" -p "Character1_Ctrl_Hips";
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -89.637317337179525 4.1605739079304076 -85.013620376166259 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_LeftLeg" -p "Character1_Ctrl_LeftUpLeg";
-	rename -uid "1232F456-47DA-5BF4-9F4F-17BEB27746A8";
+	rename -uid "04D710F6-4406-71B6-E235-4CAC991738AC";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40275,10 +40334,10 @@ createNode hikFKJoint -n "Character1_Ctrl_LeftLeg" -p "Character1_Ctrl_LeftUpLeg
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -89.637316868024243 4.1605938393134858 -85.013637683416022 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_LeftFoot" -p "Character1_Ctrl_LeftLeg";
-	rename -uid "1D074296-4704-42EF-CF64-DD8C94474CE7";
+	rename -uid "0A5FE85B-40E9-B3F3-98ED-B3A01DF5510F";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40298,10 +40357,10 @@ createNode hikFKJoint -n "Character1_Ctrl_LeftFoot" -p "Character1_Ctrl_LeftLeg"
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -180 -89.999999999999986 0 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightUpLeg" -p "Character1_Ctrl_Hips";
-	rename -uid "2E9749B1-4D62-07A6-35CA-2B8A8E52A7A1";
+	rename -uid "ACD2EF68-4B2D-3B0F-1CA1-50B7C929C32A";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40321,10 +40380,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightUpLeg" -p "Character1_Ctrl_Hips";
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -90.362678591192108 4.1605786800026596 -94.986318245031853 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightLeg" -p "Character1_Ctrl_RightUpLeg";
-	rename -uid "11D8282F-4EBE-4AC5-0D20-1D90ABD9D7A1";
+	rename -uid "29BAE7E5-4B9C-D3B1-737F-20A5EA7A98AD";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40344,10 +40403,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightLeg" -p "Character1_Ctrl_RightUpL
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -90.362678999975643 4.16058845219285 -94.986312204938784 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightFoot" -p "Character1_Ctrl_RightLeg";
-	rename -uid "1A05F330-48F2-1A83-E6F9-C1868D3893C8";
+	rename -uid "08B13BAF-4CDB-141B-EFC7-4EA26AE6FA9A";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40367,10 +40426,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightFoot" -p "Character1_Ctrl_RightLe
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -90.000032870778668 -62.690797489947748 -89.999963006001863 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightToeBase" -p "Character1_Ctrl_RightFoot";
-	rename -uid "78DF068A-4B53-6FC3-057F-ED908957C599";
+	rename -uid "E9A00845-45FD-6B75-73F9-17B712DC136D";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40393,7 +40452,7 @@ createNode hikFKJoint -n "Character1_Ctrl_RightToeBase" -p "Character1_Ctrl_Righ
 	setAttr ".lk" 0;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_Spine" -p "Character1_Ctrl_Hips";
-	rename -uid "142BF3D7-4D65-5953-139B-0FB87F0FEEC1";
+	rename -uid "00A3E974-49B6-F19F-6FE9-DABF39D6F1A0";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40413,10 +40472,10 @@ createNode hikFKJoint -n "Character1_Ctrl_Spine" -p "Character1_Ctrl_Hips";
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 89.999999715641408 -2.8485015686033144 90.000005722047135 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_Spine1" -p "Character1_Ctrl_Spine";
-	rename -uid "1D3501D6-4726-0E3A-B969-AC8B1ADD6EDE";
+	rename -uid "276B4F52-4AAC-E439-E40A-EAB6261A9C8D";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40436,10 +40495,10 @@ createNode hikFKJoint -n "Character1_Ctrl_Spine1" -p "Character1_Ctrl_Spine";
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 90.000000616124453 8.3998604860163084 90.000004217701488 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_Spine2" -p "Character1_Ctrl_Spine1";
-	rename -uid "92FE1E34-4C07-D097-92AB-3FBC1F7A5528";
+	rename -uid "01BF04B8-480E-8116-3779-7F92A0E49BF5";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40459,10 +40518,10 @@ createNode hikFKJoint -n "Character1_Ctrl_Spine2" -p "Character1_Ctrl_Spine1";
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 89.999998870014693 -10.266340757942272 90.000006340246813 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_LeftShoulder" -p "Character1_Ctrl_Spine2";
-	rename -uid "A9956984-48B8-0EBB-89D0-D3AF476D6C9F";
+	rename -uid "07FC2D4F-4912-1932-C634-6D9DF979C18C";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40482,10 +40541,10 @@ createNode hikFKJoint -n "Character1_Ctrl_LeftShoulder" -p "Character1_Ctrl_Spin
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -5.0153297256610326e-17 7.7417356985830912 -6.360042030194581 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_LeftArm" -p "Character1_Ctrl_LeftShoulder";
-	rename -uid "5FD95AEB-4412-FDE0-D9DE-EEA1ED3D22AF";
+	rename -uid "9B04E427-4727-2B73-65E1-209C4C799D3D";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40505,10 +40564,10 @@ createNode hikFKJoint -n "Character1_Ctrl_LeftArm" -p "Character1_Ctrl_LeftShoul
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -90.000000000000014 1.8356131210476792 -1.9888672762377436e-16 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_LeftForeArm" -p "Character1_Ctrl_LeftArm";
-	rename -uid "3EC7C78E-4273-61B0-77EC-7F97F7E54C06";
+	rename -uid "60166534-4A53-A6E4-0C51-96841C10CE1E";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40529,10 +40588,10 @@ createNode hikFKJoint -n "Character1_Ctrl_LeftForeArm" -p "Character1_Ctrl_LeftA
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 90.000000000000028 -4.9320234656635957 -7.9809369224711737e-16 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_LeftHand" -p "Character1_Ctrl_LeftForeArm";
-	rename -uid "9BAFD761-404B-17C8-4853-6595FB22F0A2";
+	rename -uid "76C9F1FE-496E-DB0F-72B7-0984A34E12CE";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40551,10 +40610,10 @@ createNode hikFKJoint -n "Character1_Ctrl_LeftHand" -p "Character1_Ctrl_LeftFore
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 89.999999999999986 0 0 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_LeftHandThumb1" -p "Character1_Ctrl_LeftHand";
-	rename -uid "FE635D72-41A8-3975-3CE5-51A878A6BBE1";
+	rename -uid "BDE26D7F-40FF-A236-A821-7C88019A3B62";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40574,10 +40633,10 @@ createNode hikFKJoint -n "Character1_Ctrl_LeftHandThumb1" -p "Character1_Ctrl_Le
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -81.186780032916801 -31.182899385446664 -16.670097179437739 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_LeftHandThumb2" -p "Character1_Ctrl_LeftHandThumb1";
-	rename -uid "BA38550A-42D1-1AA0-AABE-FDA2EFB7544B";
+	rename -uid "13F3777C-4054-C4CB-1785-F2A2221C416F";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40597,10 +40656,10 @@ createNode hikFKJoint -n "Character1_Ctrl_LeftHandThumb2" -p "Character1_Ctrl_Le
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -79.52485181652662 -14.706071548609408 -36.066422580271421 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_LeftHandThumb3" -p "Character1_Ctrl_LeftHandThumb2";
-	rename -uid "8804E357-4C70-69DB-6400-34964029E49F";
+	rename -uid "06BF742B-448E-F0E4-6F34-8BA1D2681CF1";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40620,10 +40679,193 @@ createNode hikFKJoint -n "Character1_Ctrl_LeftHandThumb3" -p "Character1_Ctrl_Le
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 79.52485181652662 14.706071548609405 143.93357741972858 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
+instanceable -a 0;
+createNode hikFKJoint -n "Character1_Ctrl_LeftHandIndex1" -p "Character1_Ctrl_LeftHand";
+	rename -uid "44AFE259-4A95-19C7-F5CD-9E85FB62A54D";
+	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
+	setAttr -k off -cb on ".v";
+	setAttr ".uoc" 1;
+	setAttr ".oc" 1;
+	setAttr ".ovc" 25;
+	setAttr -l on ".t" -type "double3" 15.611984252929702 0.816436767578125 4.0133750438690186 ;
+	setAttr -l on ".t";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr ".r" -type "double3" 0 3.1805546814635164e-15 1.4908850069360238e-15 ;
+	setAttr -l on ".s";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr -l on ".ra" -type "double3" -179.9110036677626 -7.5439662340642926 -0.67784540241508229 ;
+	setAttr -l on ".ra";
+	setAttr -l on ".jo" -type "double3" 180 -7.5444881248004796 -0.67197797998028863 ;
+	setAttr -l on ".jo";
+	setAttr ".radi" 2.2156125582181492;
+instanceable -a 0;
+createNode hikFKJoint -n "Character1_Ctrl_LeftHandIndex2" -p "Character1_Ctrl_LeftHandIndex1";
+	rename -uid "5538E877-4E00-9C0C-BB39-0387B5ABFAA0";
+	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
+	setAttr -k off -cb on ".v";
+	setAttr ".uoc" 1;
+	setAttr ".oc" 1;
+	setAttr ".ovc" 25;
+	setAttr -l on ".t" -type "double3" 6.0937500000000142 -0.07147216796875 0.80712699890136719 ;
+	setAttr -l on ".t";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr ".r" -type "double3" 1.0933156717530838e-15 1.5902773407317584e-15 -1.2722218725854067e-14 ;
+	setAttr -l on ".s";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr -l on ".ra" -type "double3" -178.32637494519898 -5.831102604903089 -16.044958792726185 ;
+	setAttr -l on ".ra";
+	setAttr -l on ".jo" -type "double3" 180 -6.065731664817605 -15.959715129745238 ;
+	setAttr -l on ".jo";
+	setAttr ".radi" 2.2156125582181492;
+instanceable -a 0;
+createNode hikFKJoint -n "Character1_Ctrl_LeftHandIndex3" -p "Character1_Ctrl_LeftHandIndex2";
+	rename -uid "F85BE55A-4A76-7CD9-8676-3ABDB9FBF364";
+	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
+	setAttr -k off -cb on ".v";
+	setAttr ".uoc" 1;
+	setAttr ".oc" 1;
+	setAttr ".ovc" 25;
+	setAttr -l on ".t" -type "double3" 5.5395050048827841 -1.5842132568359375 0.61225056648254395 ;
+	setAttr -l on ".t";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr ".r" -type "double3" -1.987846675914698e-16 2.3854160110976376e-15 -4.1380371544220251e-33 ;
+	setAttr -l on ".s";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr -l on ".ra" -type "double3" -178.77710142169451 -2.703056141362 -24.353881031296318 ;
+	setAttr -l on ".ra";
+	setAttr -l on ".jo" -type "double3" 180 -2.9666283462918561 -24.325028101636381 ;
+	setAttr -l on ".jo";
+	setAttr ".radi" 2.2156125582181492;
+instanceable -a 0;
+createNode hikFKJoint -n "Character1_Ctrl_LeftHandIndex4" -p "Character1_Ctrl_LeftHandIndex3";
+	rename -uid "8CA3FD5C-422A-EC5B-36BE-01ADF94BC625";
+	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
+	setAttr -k off -cb on ".v";
+	setAttr ".uoc" 1;
+	setAttr ".oc" 1;
+	setAttr ".ovc" 25;
+	setAttr -l on ".t" -type "double3" 5.3797607421875 -2.431884765625 0.30596160888671875 ;
+	setAttr -l on ".t";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr ".r" -type "double3" 0 -8.4483483726374669e-16 0 ;
+	setAttr -l on ".s";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr -l on ".ra" -type "double3" -178.77710142169451 -2.7030561413619996 155.64611896870369 ;
+	setAttr -l on ".ra";
+	setAttr -l on ".jo" -type "double3" -180 2.9666283462918557 155.67497189836362 ;
+	setAttr -l on ".jo";
+	setAttr ".radi" 2.2156125582181492;
+instanceable -a 0;
+createNode hikFKJoint -n "Character1_Ctrl_LeftHandMiddle1" -p "Character1_Ctrl_LeftHand";
+	rename -uid "3FDFCBC7-4573-2F62-45CF-8B9EAE95411F";
+	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
+	setAttr -k off -cb on ".v";
+	setAttr ".uoc" 1;
+	setAttr ".oc" 1;
+	setAttr ".ovc" 25;
+	setAttr -l on ".t" -type "double3" 14.990249633789077 -0.2374420166015625 -4.9304296970367432 ;
+	setAttr -l on ".t";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr ".r" -type "double3" 0 -1.5902773407317584e-15 3.1805546814635168e-15 ;
+	setAttr -l on ".s";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr -l on ".ra" -type "double3" 179.23252717264745 4.9189678862700639 -8.8792225734358592 ;
+	setAttr -l on ".ra";
+	setAttr -l on ".jo" -type "double3" 180 4.9783342342862866 -8.8462572216602382 ;
+	setAttr -l on ".jo";
+	setAttr ".radi" 2.2156125582181492;
+instanceable -a 0;
+createNode hikFKJoint -n "Character1_Ctrl_LeftHandMiddle2" -p "Character1_Ctrl_LeftHandMiddle1";
+	rename -uid "A1027622-4D82-05F1-FC12-A7BBB7CABEDC";
+	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
+	setAttr -k off -cb on ".v";
+	setAttr ".uoc" 1;
+	setAttr ".oc" 1;
+	setAttr ".ovc" 25;
+	setAttr -l on ".t" -type "double3" 6.3148956298828409 -0.982818603515625 -0.55669784545898526 ;
+	setAttr -l on ".t";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr ".r" -type "double3" -9.9392333795734874e-17 -1.987846675914698e-15 -1.5902773407317584e-15 ;
+	setAttr -l on ".s";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr -l on ".ra" -type "double3" 179.4290002885547 2.6615678756625707 -12.11303386930261 ;
+	setAttr -l on ".ra";
+	setAttr -l on ".jo" -type "double3" -180 2.7220855371721093 -12.099769014337571 ;
+	setAttr -l on ".jo";
+	setAttr ".radi" 2.2156125582181492;
+instanceable -a 0;
+createNode hikFKJoint -n "Character1_Ctrl_LeftHandMiddle3" -p "Character1_Ctrl_LeftHandMiddle2";
+	rename -uid "A77AAEB1-4953-6D85-C29C-66AC6C7BBE05";
+	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
+	setAttr -k off -cb on ".v";
+	setAttr ".uoc" 1;
+	setAttr ".oc" 1;
+	setAttr ".ovc" 25;
+	setAttr -l on ".t" -type "double3" 5.2057647705078125 -1.115997314453125 -0.25313234329223544 ;
+	setAttr -l on ".t";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -l on ".s";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr -l on ".ra" -type "double3" 175.48567384361175 9.0487234338163276 -26.657113404995986 ;
+	setAttr -l on ".ra";
+	setAttr -l on ".jo" -type "double3" 180 10.103897899916046 -26.299713070178285 ;
+	setAttr -l on ".jo";
+	setAttr ".radi" 2.2156125582181492;
+instanceable -a 0;
+createNode hikFKJoint -n "Character1_Ctrl_LeftHandMiddle4" -p "Character1_Ctrl_LeftHandMiddle3";
+	rename -uid "1AAC9708-4E28-4455-A69F-E3AE72A5C88F";
+	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
+	setAttr -k off -cb on ".v";
+	setAttr ".uoc" 1;
+	setAttr ".oc" 1;
+	setAttr ".ovc" 25;
+	setAttr -l on ".t" -type "double3" 4.1677703857421875 -2.059814453125 -0.82843828201293945 ;
+	setAttr -l on ".t";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr ".r" -type "double3" 1.3914926731402885e-14 -1.5902773407317584e-15 0 ;
+	setAttr -l on ".s";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr -l on ".ra" -type "double3" 175.48567384361175 9.048723433816324 153.34288659500402 ;
+	setAttr -l on ".ra";
+	setAttr -l on ".jo" -type "double3" 180 -10.103897899916042 153.70028692982171 ;
+	setAttr -l on ".jo";
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightShoulder" -p "Character1_Ctrl_Spine2";
-	rename -uid "9A3701E3-47CD-074D-BC32-BFA04473E800";
+	rename -uid "8D189A60-4188-B54A-4227-6EBC4A158F3F";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40643,10 +40885,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightShoulder" -p "Character1_Ctrl_Spi
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 0 -7.7417032805115475 6.360139369824898 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightArm" -p "Character1_Ctrl_RightShoulder";
-	rename -uid "E8A0CD56-4B6C-E2A0-C78F-829560376448";
+	rename -uid "56999CE2-4E74-19A7-1695-1EBFD17E5B12";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40665,10 +40907,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightArm" -p "Character1_Ctrl_RightSho
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 90 -1.8356158261480986 0 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightForeArm" -p "Character1_Ctrl_RightArm";
-	rename -uid "6797F12C-4C2E-3477-B3AB-BC9FBEE84242";
+	rename -uid "C0FE68F1-4C67-3232-22CA-F39737602E27";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40688,10 +40930,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightForeArm" -p "Character1_Ctrl_Righ
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -90 4.9320813568880721 3.9904688091669691e-16 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightHand" -p "Character1_Ctrl_RightForeArm";
-	rename -uid "CC523E68-42CA-6A0B-AB3D-82A9E7A65D81";
+	rename -uid "8DC1A63D-4F03-BDAD-B4C7-77B488D0A273";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40710,10 +40952,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightHand" -p "Character1_Ctrl_RightFo
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 90.000000000000014 0 180 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightHandThumb1" -p "Character1_Ctrl_RightHand";
-	rename -uid "E29EABAF-4880-07F7-9DEF-F485B9E171BC";
+	rename -uid "81EFB17A-4B71-E861-20A3-15A32BF741BD";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40733,10 +40975,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightHandThumb1" -p "Character1_Ctrl_R
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 81.188045117261012 -31.180691556891269 -163.33119656841063 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightHandThumb2" -p "Character1_Ctrl_RightHandThumb1";
-	rename -uid "910BF244-487A-55C1-7BA9-F6BC6A1E7397";
+	rename -uid "34DF3024-4F8F-386D-F7DF-7C95A824C327";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40756,10 +40998,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightHandThumb2" -p "Character1_Ctrl_R
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 79.5233918058331 -14.705565913892512 -143.92877437426054 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightHandThumb3" -p "Character1_Ctrl_RightHandThumb2";
-	rename -uid "796C5E37-4101-27B2-226B-85A65A13870A";
+	rename -uid "AB96C88B-46CB-806E-EA86-4893675E0292";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40779,10 +41021,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightHandThumb3" -p "Character1_Ctrl_R
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -79.5233918058331 14.705565913892515 36.07122562573948 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightHandIndex1" -p "Character1_Ctrl_RightHand";
-	rename -uid "7CAF8B8B-426B-9308-ADC3-93829F9B88A7";
+	rename -uid "A44B7217-43CA-0589-D3BA-4690F85AA512";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40802,10 +41044,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightHandIndex1" -p "Character1_Ctrl_R
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 6.2662624879496853e-18 -7.5442046669091578 -179.3326399710505 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightHandIndex2" -p "Character1_Ctrl_RightHandIndex1";
-	rename -uid "FB3F8DF4-44AF-28D5-1E8D-19A667845424";
+	rename -uid "CD4F4321-4D33-5B95-B8E4-E88CE8C2A0C0";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40824,10 +41066,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightHandIndex2" -p "Character1_Ctrl_R
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 9.9951799266387916e-17 -6.0650131808461856 -164.03403438674289 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightHandIndex3" -p "Character1_Ctrl_RightHandIndex2";
-	rename -uid "E1511620-4FD2-7664-4A6A-DE910EB0C316";
+	rename -uid "411662C4-44FD-4D6A-D25F-6F809CA61A8D";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40847,10 +41089,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightHandIndex3" -p "Character1_Ctrl_R
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 0 -2.9671623012580852 -155.67974921650909 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightHandIndex4" -p "Character1_Ctrl_RightHandIndex3";
-	rename -uid "C8AC3DA2-463F-FE30-346A-5D9F68E9419B";
+	rename -uid "E81F4B94-4EFF-532C-8A53-7B8A964B9C0F";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40870,10 +41112,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightHandIndex4" -p "Character1_Ctrl_R
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 0 2.9671623012580848 24.320250783490909 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightHandMiddle1" -p "Character1_Ctrl_RightHand";
-	rename -uid "197B4547-40A2-D91D-4149-41957432E313";
+	rename -uid "3C39DC83-4F55-D800-3496-DF82157A3048";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40892,10 +41134,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightHandMiddle1" -p "Character1_Ctrl_
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -4.9884346467929059e-17 4.9782687941056087 -171.15226802263055 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightHandMiddle2" -p "Character1_Ctrl_RightHandMiddle1";
-	rename -uid "7F4DFFBE-427C-2E06-55BD-AE84117E6663";
+	rename -uid "19A22028-4FB4-426F-13E1-4FB50154FD91";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40915,10 +41157,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightHandMiddle2" -p "Character1_Ctrl_
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 0 2.7224510643706661 -167.89850969759812 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightHandMiddle3" -p "Character1_Ctrl_RightHandMiddle2";
-	rename -uid "F0189216-4F31-734E-8BD3-06BF85F5686F";
+	rename -uid "B0D5A121-4CFC-CE7D-3106-BCA5EB1A781C";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40938,10 +41180,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightHandMiddle3" -p "Character1_Ctrl_
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 8.0766545174693109e-16 10.104260862217377 -153.71064088681243 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_RightHandMiddle4" -p "Character1_Ctrl_RightHandMiddle3";
-	rename -uid "11C56F49-4C01-A4CB-381C-24AFFE8D84BB";
+	rename -uid "5045E795-4496-6797-ADDC-DD8FBF6A9207";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40961,10 +41203,10 @@ createNode hikFKJoint -n "Character1_Ctrl_RightHandMiddle4" -p "Character1_Ctrl_
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -8.0766545174693109e-16 -10.10426086221738 26.289359113187576 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 2.2156125582181483;
+	setAttr ".radi" 2.2156125582181492;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_Neck" -p "Character1_Ctrl_Spine2";
-	rename -uid "9BEFDEAD-4CAB-3728-A0FD-45AB7285EB28";
+	rename -uid "A5C3E766-4261-D7A7-2408-2495B3FF33CF";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -40984,10 +41226,10 @@ createNode hikFKJoint -n "Character1_Ctrl_Neck" -p "Character1_Ctrl_Spine2";
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 89.999995989784068 -27.962945120456137 90.000008552382639 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode hikFKJoint -n "Character1_Ctrl_Head" -p "Character1_Ctrl_Neck";
-	rename -uid "528AE522-4D47-BF81-ABB2-B58D7B783162";
+	rename -uid "966D2766-4CDB-41D7-45C1-A9A5AF862101";
 	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
@@ -41006,22 +41248,22 @@ createNode hikFKJoint -n "Character1_Ctrl_Head" -p "Character1_Ctrl_Neck";
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 90 0 90 ;
 	setAttr -l on ".jo";
-	setAttr ".radi" 4.4312251164362966;
+	setAttr ".radi" 4.4312251164362984;
 instanceable -a 0;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "D284326F-467C-4DA8-D5B6-CCA4D195D3CF";
+	rename -uid "2D0832AA-490A-834C-E9CF-888B62B137A5";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "9FFD40A2-4627-24EB-D369-A9AC64893395";
+	rename -uid "95AAD78A-4876-F36B-89EF-1F90BC52B417";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "116536AE-40F6-E2C0-C13A-82B930CD99F5";
+	rename -uid "9525A647-440B-76A2-B6D3-07A19AB62841";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "DBC5CE02-43F1-009C-CD8A-568F7774E03C";
+	rename -uid "B12FA0D9-41EC-1DD9-A488-C3B1AC1BACF1";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "C8E2A861-4E40-0A3A-E25B-D2A73888C66F";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "B8E02F05-48E9-5947-71BC-ECAD961806D5";
+	rename -uid "29EFB757-4156-0ED8-8330-9E8CFF2D7700";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "33CE3E37-4093-C84A-BAD0-5983BE770E7F";
 	setAttr ".g" yes;
@@ -57128,12 +57370,12 @@ createNode groupParts -n "groupParts3";
 createNode dagPose -n "bindPose1";
 	rename -uid "A58EDC57-40E1-FFCB-38C4-02A01F8A3E87";
 	setAttr -s 50 ".wm";
-	setAttr ".wm[0]" -type "matrix" 1 0 -0 0 -0 0 -1 0 0 1 0 0 0 0 0 1;
+	setAttr ".wm[0]" -type "matrix" 1 0 0 0 0 0 -1 0 0 1 0 0 0 0 0 1;
 	setAttr -s 57 ".xm";
 	setAttr ".xm[0]" -type "matrix" "xform" 1 1 1 -1.5707963267948966 0 0 0 0 0
 		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
 	setAttr ".xm[1]" -type "matrix" "xform" 1 0.99999994039535545 0.99999994039535545 1.5707960604787874
-		 -0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 no;
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 no;
 	setAttr ".xm[2]" -type "matrix" "xform" 1.000000006516619 0.99999999348338142 0.99999999999999989 1.454021001896769e-15
 		 5.3173935520362658e-17 -0.33699432569911936 0 0 87.627609252929673 1.4091870303035298e-14 0
 		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1.0000000596046481 1.0000000596046481 no;
@@ -57325,7 +57567,7 @@ createNode dagPose -n "bindPose1";
 		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0.99999996127977275 1.0000000387202261
 		 0.99999999999999978 no;
 	setAttr ".xm[50]" -type "matrix" "xform" 1 0.99999999999999978 0.99999999999999978 -1.5707961936368424
-		 -0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1.0000000596046481
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1.0000000596046481
 		 1.0000000596046481 no;
 	setAttr ".xm[51]" -type "matrix" "xform" 1.0000000596046481 0.99999999999999989 0.99999994039535534 2.0394635715181757e-32
 		 -1.5707963267948963 0 0 18.888734817504883 5.4910717010498011 8.1094484329223633 0
@@ -57334,16 +57576,16 @@ createNode dagPose -n "bindPose1";
 		 1.5707963267948963 0 0 -18.888700485229492 5.4910697937011683 8.1094503402709961 0
 		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1.0000000000000002 1.0000000000000002 no;
 	setAttr ".xm[53]" -type "matrix" "xform" 1 0.99999999999999978 0.99999999999999978 -1.5707961936368424
-		 -0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1.0000000596046481
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1.0000000596046481
 		 1.0000000596046481 no;
 	setAttr ".xm[54]" -type "matrix" "xform" 1 0.99999999999999978 0.99999999999999978 1.5707961936368429
-		 -0 0 0 -111.01100158691406 1.8490399122237693 139.38099670410156 0 0 0 0 0 0 0
+		 0 0 0 -111.01100158691406 1.8490399122237693 139.38099670410156 0 0 0 0 0 0 0
 		 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1.0000000000000002 1.0000000000000002 no;
 	setAttr ".xm[55]" -type "matrix" "xform" 1 1.0000000000000002 1.0000000000000002 3.1415926535897927
-		 -0 0 0 222.02239990234375 -0.00027813890483230352 1.2442916383914593e-06 0 0
+		 0 0 0 222.02239990234375 -0.00027813890483230352 1.2442916383914593e-06 0 0
 		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1.0000000000000002 1.0000000000000002 no;
 	setAttr ".xm[56]" -type "matrix" "xform" 1 1.0000000000000002 1.0000000000000002 -1.7225140254377279e-16
-		 -0 0 0 0 0 -2.2204460492503131e-16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+		 0 0 0 0 0 -2.2204460492503131e-16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
 		 1.0000000000000002 1.0000000000000002 no;
 	setAttr -s 51 ".m";
 	setAttr -s 53 ".p";
@@ -57365,9 +57607,9 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".ReferenceMaxRLimitz" 45;
 	setAttr ".HipsTy" 87.627601623535156;
 	setAttr ".HipsTz" -2.3336642698268409e-05;
-	setAttr ".HipsRz" -19.308348164878616;
-	setAttr ".HipsSx" 0.9999999934833792;
-	setAttr ".HipsSy" 0.99999994691194116;
+	setAttr ".HipsRz" -19.308346553376253;
+	setAttr ".HipsSx" 0.9999999934833802;
+	setAttr ".HipsSy" 0.99999994691194005;
 	setAttr ".HipsSz" 0.99999994039531992;
 	setAttr ".HipsMinRLimitx" -45;
 	setAttr ".HipsMinRLimity" -45;
@@ -57375,103 +57617,103 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".HipsMaxRLimitx" 45;
 	setAttr ".HipsMaxRLimity" 45;
 	setAttr ".HipsMaxRLimitz" 45;
-	setAttr ".LeftUpLegTx" 12.327665328979485;
+	setAttr ".LeftUpLegTx" 12.32766532897949;
 	setAttr ".LeftUpLegTy" 83.308502197265611;
-	setAttr ".LeftUpLegTz" -2.2186395653989156e-05;
-	setAttr ".LeftUpLegRx" -39.74516912804372;
-	setAttr ".LeftUpLegRy" 4.1605742686194587;
-	setAttr ".LeftUpLegRz" -85.013611690281039;
-	setAttr ".LeftUpLegSx" 0.9999999408432938;
-	setAttr ".LeftUpLegSy" 0.99999997500023641;
-	setAttr ".LeftUpLegSz" 0.99999996494717913;
+	setAttr ".LeftUpLegTz" -2.2186395653989159e-05;
+	setAttr ".LeftUpLegRx" -39.745169543729922;
+	setAttr ".LeftUpLegRy" 4.1605769670788337;
+	setAttr ".LeftUpLegRz" -85.013611778980973;
+	setAttr ".LeftUpLegSx" 0.99999994084329358;
+	setAttr ".LeftUpLegSy" 0.99999997500023552;
+	setAttr ".LeftUpLegSz" 0.99999996494718157;
 	setAttr ".LeftUpLegMinRLimitx" -45;
 	setAttr ".LeftUpLegMinRLimity" -45;
 	setAttr ".LeftUpLegMinRLimitz" -45;
 	setAttr ".LeftUpLegMaxRLimitx" 45;
 	setAttr ".LeftUpLegMaxRLimity" 45;
 	setAttr ".LeftUpLegMaxRLimitz" 45;
-	setAttr ".LeftLegTx" 15.60819149017334;
-	setAttr ".LeftLegTy" 45.70897293090821;
-	setAttr ".LeftLegTz" -2.7455387115478502;
-	setAttr ".LeftLegRx" -39.74516912804372;
-	setAttr ".LeftLegRy" 4.1605742686194587;
-	setAttr ".LeftLegRz" -85.013611690281039;
-	setAttr ".LeftLegSx" 0.9999999408432938;
-	setAttr ".LeftLegSy" 0.99999997500023641;
-	setAttr ".LeftLegSz" 0.99999996494717913;
+	setAttr ".LeftLegTx" 15.608191490173338;
+	setAttr ".LeftLegTy" 45.708972930908203;
+	setAttr ".LeftLegTz" -2.7455387115478511;
+	setAttr ".LeftLegRx" -39.745169543729922;
+	setAttr ".LeftLegRy" 4.1605769670788337;
+	setAttr ".LeftLegRz" -85.013611778980973;
+	setAttr ".LeftLegSx" 0.99999994084329358;
+	setAttr ".LeftLegSy" 0.99999997500023552;
+	setAttr ".LeftLegSz" 0.99999996494718157;
 	setAttr ".LeftLegMinRLimitx" -45;
 	setAttr ".LeftLegMinRLimity" -45;
 	setAttr ".LeftLegMinRLimitz" -45;
 	setAttr ".LeftLegMaxRLimitx" 45;
 	setAttr ".LeftLegMaxRLimity" 45;
 	setAttr ".LeftLegMaxRLimitz" 45;
-	setAttr ".LeftFootTx" 18.888706207275391;
-	setAttr ".LeftFootTy" 8.1094436645507741;
-	setAttr ".LeftFootTz" -5.4910683631896973;
+	setAttr ".LeftFootTx" 18.888706207275398;
+	setAttr ".LeftFootTy" 8.1094436645507884;
+	setAttr ".LeftFootTz" -5.4910683631897008;
 	setAttr ".LeftFootRx" 90;
 	setAttr ".LeftFootRy" -62.690794351779708;
 	setAttr ".LeftFootRz" -90;
-	setAttr ".LeftFootSx" 0.99999994039535467;
-	setAttr ".LeftFootSy" 0.99999994039535545;
-	setAttr ".LeftFootSz" 0.99999999999999956;
+	setAttr ".LeftFootSx" 0.99999994039535445;
+	setAttr ".LeftFootSy" 0.99999994039535522;
+	setAttr ".LeftFootSz" 0.99999999999999933;
 	setAttr ".LeftFootMinRLimitx" -45;
 	setAttr ".LeftFootMinRLimity" -45;
 	setAttr ".LeftFootMinRLimitz" -45;
 	setAttr ".LeftFootMaxRLimitx" 45;
 	setAttr ".LeftFootMaxRLimity" 45;
 	setAttr ".LeftFootMaxRLimitz" 45;
-	setAttr ".RightUpLegTx" -12.327699661254885;
+	setAttr ".RightUpLegTx" -12.327699661254892;
 	setAttr ".RightUpLegTy" 83.30849456787108;
-	setAttr ".RightUpLegTz" -2.2186393834999752e-05;
-	setAttr ".RightUpLegRx" 140.25481425607833;
-	setAttr ".RightUpLegRy" -4.1605745666015457;
-	setAttr ".RightUpLegRz" 85.013619494162882;
+	setAttr ".RightUpLegTz" -2.2186393834999756e-05;
+	setAttr ".RightUpLegRx" 140.25481354620413;
+	setAttr ".RightUpLegRy" -4.1605731103882251;
+	setAttr ".RightUpLegRz" 85.013619196542166;
 	setAttr ".RightUpLegSx" 0.99999994084329225;
-	setAttr ".RightUpLegSy" 0.99999997500022086;
-	setAttr ".RightUpLegSz" 0.99999996494719867;
+	setAttr ".RightUpLegSy" 0.99999997500021998;
+	setAttr ".RightUpLegSz" 0.99999996494719834;
 	setAttr ".RightUpLegMinRLimitx" -45;
 	setAttr ".RightUpLegMinRLimity" -45;
 	setAttr ".RightUpLegMinRLimitz" -45;
 	setAttr ".RightUpLegMaxRLimitx" 45;
 	setAttr ".RightUpLegMaxRLimity" 45;
 	setAttr ".RightUpLegMaxRLimitz" 45;
-	setAttr ".RightLegTx" -15.608182907104496;
-	setAttr ".RightLegTy" 45.708992004394545;
-	setAttr ".RightLegTz" -2.7455396652221715;
-	setAttr ".RightLegRx" 140.25481425607833;
-	setAttr ".RightLegRy" -4.1605745666015457;
-	setAttr ".RightLegRz" 85.013619494162882;
+	setAttr ".RightLegTx" -15.608182907104492;
+	setAttr ".RightLegTy" 45.708992004394538;
+	setAttr ".RightLegTz" -2.7455396652221662;
+	setAttr ".RightLegRx" 140.25481354620413;
+	setAttr ".RightLegRy" -4.1605731103882251;
+	setAttr ".RightLegRz" 85.013619196542166;
 	setAttr ".RightLegSx" 0.99999994084329225;
-	setAttr ".RightLegSy" 0.99999997500022086;
-	setAttr ".RightLegSz" 0.99999996494719867;
+	setAttr ".RightLegSy" 0.99999997500021998;
+	setAttr ".RightLegSz" 0.99999996494719834;
 	setAttr ".RightLegMinRLimitx" -45;
 	setAttr ".RightLegMinRLimity" -45;
 	setAttr ".RightLegMinRLimitz" -45;
 	setAttr ".RightLegMaxRLimitx" 45;
 	setAttr ".RightLegMaxRLimity" 45;
 	setAttr ".RightLegMaxRLimitz" 45;
-	setAttr ".RightFootTx" -18.888666152954098;
+	setAttr ".RightFootTx" -18.888666152954102;
 	setAttr ".RightFootTy" 8.1094436645507884;
-	setAttr ".RightFootTz" -5.4910669326782209;
+	setAttr ".RightFootTz" -5.4910669326782235;
 	setAttr ".RightFootRx" -90;
-	setAttr ".RightFootRy" 62.690794351779708;
+	setAttr ".RightFootRy" 62.690794351779722;
 	setAttr ".RightFootRz" 90;
-	setAttr ".RightFootSx" 0.99999994039535367;
-	setAttr ".RightFootSy" 0.99999994039535489;
-	setAttr ".RightFootSz" 0.999999999999998;
+	setAttr ".RightFootSx" 0.99999994039535334;
+	setAttr ".RightFootSy" 0.99999994039535478;
+	setAttr ".RightFootSz" 0.99999999999999767;
 	setAttr ".RightFootMinRLimitx" -45;
 	setAttr ".RightFootMinRLimity" -45;
 	setAttr ".RightFootMinRLimitz" -45;
 	setAttr ".RightFootMaxRLimitx" 45;
 	setAttr ".RightFootMaxRLimity" 45;
 	setAttr ".RightFootMaxRLimitz" 45;
-	setAttr ".SpineTx" -1.6928133783622457e-07;
-	setAttr ".SpineTy" 97.904205322265611;
+	setAttr ".SpineTx" -1.6928133117488642e-07;
+	setAttr ".SpineTy" 97.904205322265625;
 	setAttr ".SpineTz" -1.5529041290283201;
 	setAttr ".SpineRx" -90;
-	setAttr ".SpineRy" -2.8485014309244496;
+	setAttr ".SpineRy" -2.8485014309244461;
 	setAttr ".SpineRz" 90;
-	setAttr ".SpineSx" 0.99999994039535545;
+	setAttr ".SpineSx" 0.99999994039535534;
 	setAttr ".SpineSy" 0.99999994039535534;
 	setAttr ".SpineMinRLimitx" -45;
 	setAttr ".SpineMinRLimity" -45;
@@ -57480,40 +57722,40 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".SpineMaxRLimity" 45;
 	setAttr ".SpineMaxRLimitz" 45;
 	setAttr ".LeftArmTx" 32.605010986328125;
-	setAttr ".LeftArmTy" 139.3807067871094;
+	setAttr ".LeftArmTy" 139.38070678710935;
 	setAttr ".LeftArmTz" -3.2115797996521001;
-	setAttr ".LeftArmRy" 1.8356132140041781;
-	setAttr ".LeftArmSx" 0.99999999993884248;
-	setAttr ".LeftArmSy" 0.99999994039528761;
-	setAttr ".LeftArmSz" 0.9999999404564448;
+	setAttr ".LeftArmRy" 1.8356132140041777;
+	setAttr ".LeftArmSx" 0.99999999993884237;
+	setAttr ".LeftArmSy" 0.99999994039528706;
+	setAttr ".LeftArmSz" 0.99999994045644447;
 	setAttr ".LeftArmMinRLimitx" -45;
 	setAttr ".LeftArmMinRLimity" -45;
 	setAttr ".LeftArmMinRLimitz" -45;
 	setAttr ".LeftArmMaxRLimitx" 45;
 	setAttr ".LeftArmMaxRLimity" 45;
 	setAttr ".LeftArmMaxRLimitz" 45;
-	setAttr ".LeftForeArmTx" 78.264923095703153;
-	setAttr ".LeftForeArmTy" 139.3807067871094;
-	setAttr ".LeftForeArmTz" -4.6749095916748056;
-	setAttr ".LeftForeArmRy" -4.9320242217165307;
-	setAttr ".LeftForeArmSx" 0.99999999955943153;
-	setAttr ".LeftForeArmSy" 0.99999994039528761;
-	setAttr ".LeftForeArmSz" 0.99999994083585575;
+	setAttr ".LeftForeArmTx" 78.264923095703125;
+	setAttr ".LeftForeArmTy" 139.38070678710943;
+	setAttr ".LeftForeArmTz" -4.6749095916748047;
+	setAttr ".LeftForeArmRy" -4.9320246470227742;
+	setAttr ".LeftForeArmSx" 0.99999999955943131;
+	setAttr ".LeftForeArmSy" 0.99999994039528706;
+	setAttr ".LeftForeArmSz" 0.99999994083585553;
 	setAttr ".LeftForeArmMinRLimitx" -45;
 	setAttr ".LeftForeArmMinRLimity" -45;
 	setAttr ".LeftForeArmMinRLimitz" -45;
 	setAttr ".LeftForeArmMaxRLimitx" 45;
 	setAttr ".LeftForeArmMaxRLimity" 45;
 	setAttr ".LeftForeArmMaxRLimitz" 45;
-	setAttr ".LeftHandTx" 111.01139831542969;
-	setAttr ".LeftHandTy" 139.38070678710938;
-	setAttr ".LeftHandTz" -1.8491084575653081;
-	setAttr ".LeftHandRx" 19.034354058283395;
-	setAttr ".LeftHandRy" -49.415126636950944;
-	setAttr ".LeftHandRz" -24.431242196993928;
-	setAttr ".LeftHandSx" 0.99999996130724222;
-	setAttr ".LeftHandSy" 0.99999994202761378;
-	setAttr ".LeftHandSz" 0.99999997745582314;
+	setAttr ".LeftHandTx" 111.01139831542967;
+	setAttr ".LeftHandTy" 139.38070678710935;
+	setAttr ".LeftHandTz" -1.8491084575653076;
+	setAttr ".LeftHandRx" 19.03435477380491;
+	setAttr ".LeftHandRy" -49.415128858721836;
+	setAttr ".LeftHandRz" -24.431242196993921;
+	setAttr ".LeftHandSx" 0.99999996130724012;
+	setAttr ".LeftHandSy" 0.999999942027613;
+	setAttr ".LeftHandSz" 0.99999997745582492;
 	setAttr ".LeftHandMinRLimitx" -45;
 	setAttr ".LeftHandMinRLimity" -45;
 	setAttr ".LeftHandMinRLimitz" -45;
@@ -57521,41 +57763,41 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".LeftHandMaxRLimity" 45;
 	setAttr ".LeftHandMaxRLimitz" 45;
 	setAttr ".RightArmTx" -32.605003356933594;
-	setAttr ".RightArmTy" 139.38098144531253;
-	setAttr ".RightArmTz" -3.2115790843963623;
+	setAttr ".RightArmTy" 139.3809814453125;
+	setAttr ".RightArmTz" -3.2115790843963627;
 	setAttr ".RightArmRx" 180;
-	setAttr ".RightArmRy" -1.8356106539977988;
+	setAttr ".RightArmRy" -1.8356106539977997;
 	setAttr ".RightArmSx" 0.99999999993884292;
-	setAttr ".RightArmSy" 0.9999999403949501;
-	setAttr ".RightArmSz" 0.99999994045610729;
+	setAttr ".RightArmSy" 0.99999994039495033;
+	setAttr ".RightArmSz" 0.99999994045610763;
 	setAttr ".RightArmMinRLimitx" -45;
 	setAttr ".RightArmMinRLimity" -45;
 	setAttr ".RightArmMinRLimitz" -45;
 	setAttr ".RightArmMaxRLimitx" 45;
 	setAttr ".RightArmMaxRLimity" 45;
 	setAttr ".RightArmMaxRLimitz" 45;
-	setAttr ".RightForeArmTx" -78.264900207519531;
+	setAttr ".RightForeArmTx" -78.264900207519545;
 	setAttr ".RightForeArmTy" 139.38098144531253;
-	setAttr ".RightForeArmTz" -4.6749105453491211;
+	setAttr ".RightForeArmTz" -4.6749105453491229;
 	setAttr ".RightForeArmRx" 180;
-	setAttr ".RightForeArmRy" 4.9320267735494836;
+	setAttr ".RightForeArmRy" 4.9320271988557298;
 	setAttr ".RightForeArmSx" 0.99999999955942664;
-	setAttr ".RightForeArmSy" 0.9999999403949501;
-	setAttr ".RightForeArmSz" 0.99999994083552357;
+	setAttr ".RightForeArmSy" 0.99999994039495033;
+	setAttr ".RightForeArmSz" 0.9999999408355239;
 	setAttr ".RightForeArmMinRLimitx" -45;
 	setAttr ".RightForeArmMinRLimity" -45;
 	setAttr ".RightForeArmMinRLimitz" -45;
 	setAttr ".RightForeArmMaxRLimitx" 45;
 	setAttr ".RightForeArmMaxRLimity" 45;
 	setAttr ".RightForeArmMaxRLimitz" 45;
-	setAttr ".RightHandTx" -111.01100158691409;
-	setAttr ".RightHandTy" 139.3809814453125;
-	setAttr ".RightHandTz" -1.8491083383560176;
-	setAttr ".RightHandRx" -160.9656918763595;
-	setAttr ".RightHandRy" 49.415142559801303;
-	setAttr ".RightHandRz" 24.431203743882175;
-	setAttr ".RightHandSx" 0.99999996130724178;
-	setAttr ".RightHandSy" 0.99999994202761244;
+	setAttr ".RightHandTx" -111.01100158691406;
+	setAttr ".RightHandTy" 139.38098144531253;
+	setAttr ".RightHandTz" -1.8491083383560145;
+	setAttr ".RightHandRx" -160.96569187635947;
+	setAttr ".RightHandRy" 49.415142559801296;
+	setAttr ".RightHandRz" 24.431203743882172;
+	setAttr ".RightHandSx" 0.99999996130724189;
+	setAttr ".RightHandSy" 0.99999994202761222;
 	setAttr ".RightHandSz" 0.999999977455856;
 	setAttr ".RightHandMinRLimitx" -45;
 	setAttr ".RightHandMinRLimity" -45;
@@ -57563,14 +57805,14 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".RightHandMaxRLimitx" 45;
 	setAttr ".RightHandMaxRLimity" 45;
 	setAttr ".RightHandMaxRLimitz" 45;
-	setAttr ".HeadTx" -6.4570235736027834e-06;
-	setAttr ".HeadTy" 159.63500976562497;
-	setAttr ".HeadTz" 4.2174363136291353;
+	setAttr ".HeadTx" -6.4570235736027826e-06;
+	setAttr ".HeadTy" 159.635009765625;
+	setAttr ".HeadTz" 4.2174363136291442;
 	setAttr ".HeadRx" -90;
-	setAttr ".HeadRy" -64.198701390992625;
+	setAttr ".HeadRy" -64.198700006357356;
 	setAttr ".HeadRz" 90;
-	setAttr ".HeadSx" 0.99999994039535545;
-	setAttr ".HeadSy" 0.99999994039535545;
+	setAttr ".HeadSx" 0.99999994039535522;
+	setAttr ".HeadSy" 0.99999994039535534;
 	setAttr ".HeadMinRLimitx" -45;
 	setAttr ".HeadMinRLimity" -45;
 	setAttr ".HeadMinRLimitz" -45;
@@ -57578,13 +57820,13 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".HeadMaxRLimity" 45;
 	setAttr ".HeadMaxRLimitz" 45;
 	setAttr ".RightToeBaseTx" -18.888662338256836;
-	setAttr ".RightToeBaseTy" 2.2012946605682382;
-	setAttr ".RightToeBaseTz" 5.9512524604797346;
+	setAttr ".RightToeBaseTy" 2.2012946605682355;
+	setAttr ".RightToeBaseTz" 5.9512524604797372;
 	setAttr ".RightToeBaseRx" -180;
 	setAttr ".RightToeBaseRy" 90;
-	setAttr ".RightToeBaseSx" 0.99999994039535478;
-	setAttr ".RightToeBaseSy" 0.99999994039535378;
-	setAttr ".RightToeBaseSz" 0.999999999999998;
+	setAttr ".RightToeBaseSx" 0.99999994039535456;
+	setAttr ".RightToeBaseSy" 0.99999994039535367;
+	setAttr ".RightToeBaseSz" 0.99999999999999767;
 	setAttr ".RightToeBaseMinRLimitx" -45;
 	setAttr ".RightToeBaseMinRLimity" -45;
 	setAttr ".RightToeBaseMinRLimitz" -45;
@@ -57592,14 +57834,14 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".RightToeBaseMaxRLimity" 45;
 	setAttr ".RightToeBaseMaxRLimitz" 45;
 	setAttr ".LeftShoulderTx" 16.716339111328129;
-	setAttr ".LeftShoulderTy" 141.15168762207028;
-	setAttr ".LeftShoulderTz" -1.0381842851638945;
-	setAttr ".LeftShoulderRx" -0.8602399724062838;
-	setAttr ".LeftShoulderRy" 7.7417345920087586;
-	setAttr ".LeftShoulderRz" -6.3600317335613763;
-	setAttr ".LeftShoulderSx" 0.99999999820024854;
-	setAttr ".LeftShoulderSy" 0.99999994110031509;
-	setAttr ".LeftShoulderSz" 0.99999994149007987;
+	setAttr ".LeftShoulderTy" 141.15168762207031;
+	setAttr ".LeftShoulderTz" -1.0381842851638821;
+	setAttr ".LeftShoulderRx" -0.86023999681778596;
+	setAttr ".LeftShoulderRy" 7.7417345920087568;
+	setAttr ".LeftShoulderRz" -6.3600317335613843;
+	setAttr ".LeftShoulderSx" 0.99999999820024843;
+	setAttr ".LeftShoulderSy" 0.99999994110031476;
+	setAttr ".LeftShoulderSz" 0.99999994149007954;
 	setAttr ".LeftShoulderMinRLimitx" -45;
 	setAttr ".LeftShoulderMinRLimity" -45;
 	setAttr ".LeftShoulderMinRLimitz" -45;
@@ -57608,13 +57850,13 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".LeftShoulderMaxRLimitz" 45;
 	setAttr ".RightShoulderTx" -16.716302871704098;
 	setAttr ".RightShoulderTy" 141.15199279785153;
-	setAttr ".RightShoulderTz" -1.0381884574890252;
-	setAttr ".RightShoulderRx" 179.13973012031602;
-	setAttr ".RightShoulderRy" -7.7417286636959481;
-	setAttr ".RightShoulderRz" 6.3600321617234421;
-	setAttr ".RightShoulderSx" 0.9999999982002501;
-	setAttr ".RightShoulderSy" 0.99999994110031443;
-	setAttr ".RightShoulderSz" 0.99999994148974547;
+	setAttr ".RightShoulderTz" -1.0381884574890154;
+	setAttr ".RightShoulderRx" 179.13973008634218;
+	setAttr ".RightShoulderRy" -7.7417286573258046;
+	setAttr ".RightShoulderRz" 6.360032589885531;
+	setAttr ".RightShoulderSx" 0.99999999820025021;
+	setAttr ".RightShoulderSy" 0.9999999411003142;
+	setAttr ".RightShoulderSz" 0.9999999414897458;
 	setAttr ".RightShoulderMinRLimitx" -45;
 	setAttr ".RightShoulderMinRLimity" -45;
 	setAttr ".RightShoulderMinRLimitz" -45;
@@ -57622,12 +57864,12 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".RightShoulderMaxRLimity" 45;
 	setAttr ".RightShoulderMaxRLimitz" 45;
 	setAttr ".NeckTx" -5.2644732022599783e-06;
-	setAttr ".NeckTy" 151.64564514160153;
-	setAttr ".NeckTz" -0.023958751931790978;
+	setAttr ".NeckTy" 151.64564514160156;
+	setAttr ".NeckTz" -0.023958751931792754;
 	setAttr ".NeckRx" -90;
 	setAttr ".NeckRy" -51.619828411667747;
 	setAttr ".NeckRz" 90;
-	setAttr ".NeckSx" 0.99999994039535534;
+	setAttr ".NeckSx" 0.99999994039535522;
 	setAttr ".NeckSy" 0.99999994039535534;
 	setAttr ".NeckMinRLimitx" -45;
 	setAttr ".NeckMinRLimity" -45;
@@ -57637,7 +57879,7 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".NeckMaxRLimitz" 45;
 	setAttr ".Spine1Tx" -1.9797723780357046e-06;
 	setAttr ".Spine1Ty" 116.03294372558594;
-	setAttr ".Spine1Tz" -0.65087735652923573;
+	setAttr ".Spine1Tz" -0.65087735652923584;
 	setAttr ".Spine1Rx" 90;
 	setAttr ".Spine1Ry" 8.3998597513579512;
 	setAttr ".Spine1Rz" 90;
@@ -57649,29 +57891,29 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".Spine1MaxRLimitx" 45;
 	setAttr ".Spine1MaxRLimity" 45;
 	setAttr ".Spine1MaxRLimitz" 45;
-	setAttr ".Spine2Tx" -3.2835775982675841e-06;
+	setAttr ".Spine2Tx" -3.2835775982675833e-06;
 	setAttr ".Spine2Ty" 133.74461364746091;
 	setAttr ".Spine2Tz" -3.266265153884885;
 	setAttr ".Spine2Rx" -90;
-	setAttr ".Spine2Ry" -15.619974058396537;
+	setAttr ".Spine2Ry" -15.619969849892138;
 	setAttr ".Spine2Rz" 90;
-	setAttr ".Spine2Sx" 0.99999994039535534;
-	setAttr ".Spine2Sy" 0.99999994039535534;
+	setAttr ".Spine2Sx" 0.99999994039535511;
+	setAttr ".Spine2Sy" 0.99999994039535522;
 	setAttr ".Spine2MinRLimitx" -45;
 	setAttr ".Spine2MinRLimity" -45;
 	setAttr ".Spine2MinRLimitz" -45;
 	setAttr ".Spine2MaxRLimitx" 45;
 	setAttr ".Spine2MaxRLimity" 45;
 	setAttr ".Spine2MaxRLimitz" 45;
-	setAttr ".LeftHandThumb1Tx" 116.28826904296874;
+	setAttr ".LeftHandThumb1Tx" 116.28826904296872;
 	setAttr ".LeftHandThumb1Ty" 136.98353576660156;
-	setAttr ".LeftHandThumb1Tz" 4.9166274070739888;
-	setAttr ".LeftHandThumb1Rx" 8.8132148866041398;
-	setAttr ".LeftHandThumb1Ry" -31.182883965743045;
-	setAttr ".LeftHandThumb1Rz" -16.670077512924582;
-	setAttr ".LeftHandThumb1Sx" 0.99999998043086913;
-	setAttr ".LeftHandThumb1Sy" 0.99999994296115535;
-	setAttr ".LeftHandThumb1Sz" 0.99999995739867586;
+	setAttr ".LeftHandThumb1Tz" 4.9166274070739862;
+	setAttr ".LeftHandThumb1Rx" 8.8132150736052584;
+	setAttr ".LeftHandThumb1Ry" -31.182884092552378;
+	setAttr ".LeftHandThumb1Rz" -16.670076556906512;
+	setAttr ".LeftHandThumb1Sx" 0.99999998043086935;
+	setAttr ".LeftHandThumb1Sy" 0.99999994296115446;
+	setAttr ".LeftHandThumb1Sz" 0.9999999573986742;
 	setAttr ".LeftHandThumb1MinRLimitx" -45;
 	setAttr ".LeftHandThumb1MinRLimity" -45;
 	setAttr ".LeftHandThumb1MinRLimitz" -45;
@@ -57679,56 +57921,170 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".LeftHandThumb1MaxRLimity" 45;
 	setAttr ".LeftHandThumb1MaxRLimitz" 45;
 	setAttr ".LeftHandThumb2Tx" 124.23951721191408;
-	setAttr ".LeftHandThumb2Ty" 134.60256958007815;
-	setAttr ".LeftHandThumb2Tz" 9.9399499893188477;
-	setAttr ".LeftHandThumb2Rx" 10.475153228924604;
-	setAttr ".LeftHandThumb2Ry" -14.706072853655346;
+	setAttr ".LeftHandThumb2Ty" 134.60256958007813;
+	setAttr ".LeftHandThumb2Tz" 9.9399499893188512;
+	setAttr ".LeftHandThumb2Rx" 10.475154899344739;
+	setAttr ".LeftHandThumb2Ry" -14.706071202045903;
 	setAttr ".LeftHandThumb2Rz" -36.066459079034964;
-	setAttr ".LeftHandThumb2Sx" 0.99999997683144415;
-	setAttr ".LeftHandThumb2Sy" 0.99999995787944751;
-	setAttr ".LeftHandThumb2Sz" 0.99999994607980836;
+	setAttr ".LeftHandThumb2Sx" 0.99999997683144448;
+	setAttr ".LeftHandThumb2Sy" 0.99999995787944695;
+	setAttr ".LeftHandThumb2Sz" 0.99999994607981324;
 	setAttr ".LeftHandThumb2MinRLimitx" -45;
 	setAttr ".LeftHandThumb2MinRLimity" -45;
 	setAttr ".LeftHandThumb2MinRLimitz" -45;
 	setAttr ".LeftHandThumb2MaxRLimitx" 45;
 	setAttr ".LeftHandThumb2MaxRLimity" 45;
 	setAttr ".LeftHandThumb2MaxRLimitz" 45;
-	setAttr ".LeftHandThumb3Tx" 131.45384216308591;
+	setAttr ".LeftHandThumb3Tx" 131.45384216308594;
 	setAttr ".LeftHandThumb3Ty" 129.3482666015625;
 	setAttr ".LeftHandThumb3Tz" 12.282369613647452;
-	setAttr ".LeftHandThumb3Sx" 0.99999999999999978;
-	setAttr ".LeftHandThumb3Sy" 0.99999994039534279;
-	setAttr ".LeftHandThumb3Sz" 0.99999994039534257;
+	setAttr ".LeftHandThumb3Sx" 0.99999999999999989;
+	setAttr ".LeftHandThumb3Sy" 0.99999994039534834;
+	setAttr ".LeftHandThumb3Sz" 0.99999994039534823;
 	setAttr ".LeftHandThumb3MinRLimitx" -45;
 	setAttr ".LeftHandThumb3MinRLimity" -45;
 	setAttr ".LeftHandThumb3MinRLimitz" -45;
 	setAttr ".LeftHandThumb3MaxRLimitx" 45;
 	setAttr ".LeftHandThumb3MaxRLimity" 45;
 	setAttr ".LeftHandThumb3MaxRLimitz" 45;
-	setAttr ".RightHandThumb1Tx" -116.28800964355469;
-	setAttr ".RightHandThumb1Ty" 136.98399353027344;
-	setAttr ".RightHandThumb1Tz" 4.9166307449340891;
-	setAttr ".RightHandThumb1Rx" -171.18682595071803;
-	setAttr ".RightHandThumb1Ry" 31.182898822686159;
-	setAttr ".RightHandThumb1Rz" 16.670053612470088;
-	setAttr ".RightHandThumb1Sx" 0.99999998043086702;
-	setAttr ".RightHandThumb1Sy" 0.99999994296115402;
-	setAttr ".RightHandThumb1Sz" 0.99999995739861747;
+	setAttr ".LeftHandIndex1Tx" 126.62338559016032;
+	setAttr ".LeftHandIndex1Ty" 140.19714309198073;
+	setAttr ".LeftHandIndex1Tz" 2.1642665234461678;
+	setAttr ".LeftHandIndex1Rx" 0.088209562557074503;
+	setAttr ".LeftHandIndex1Ry" -7.5444830730579779;
+	setAttr ".LeftHandIndex1Rz" -0.67192028646021718;
+	setAttr ".LeftHandIndex1Sx" 0.99999999896444269;
+	setAttr ".LeftHandIndex1Sy" 0.99999994040327189;
+	setAttr ".LeftHandIndex1Sz" 0.999999941422962;
+	setAttr ".LeftHandIndex1MinRLimitx" -45;
+	setAttr ".LeftHandIndex1MinRLimity" -45;
+	setAttr ".LeftHandIndex1MinRLimitz" -45;
+	setAttr ".LeftHandIndex1MaxRLimitx" 45;
+	setAttr ".LeftHandIndex1MaxRLimity" 45;
+	setAttr ".LeftHandIndex1MaxRLimitz" 45;
+	setAttr ".LeftHandIndex2Tx" 132.71713984846565;
+	setAttr ".LeftHandIndex2Ty" 140.12567701096756;
+	setAttr ".LeftHandIndex2Tz" 2.9713935300893133;
+	setAttr ".LeftHandIndex2Rx" 1.7309346161103407;
+	setAttr ".LeftHandIndex2Ry" -6.0657391769165372;
+	setAttr ".LeftHandIndex2Rz" -15.959785037697841;
+	setAttr ".LeftHandIndex2Sx" 0.99999999487839486;
+	setAttr ".LeftHandIndex2Sy" 0.99999994479763665;
+	setAttr ".LeftHandIndex2Sz" 0.99999994111464108;
+	setAttr ".LeftHandIndex2MinRLimitx" -45;
+	setAttr ".LeftHandIndex2MinRLimity" -45;
+	setAttr ".LeftHandIndex2MinRLimitz" -45;
+	setAttr ".LeftHandIndex2MaxRLimitx" 45;
+	setAttr ".LeftHandIndex2MaxRLimity" 45;
+	setAttr ".LeftHandIndex2MaxRLimitz" 45;
+	setAttr ".LeftHandIndex3Tx" 138.25663683289849;
+	setAttr ".LeftHandIndex3Ty" 138.54145873619149;
+	setAttr ".LeftHandIndex3Tz" 3.5836441876887344;
+	setAttr ".LeftHandIndex3Rx" 1.3401757113100907;
+	setAttr ".LeftHandIndex3Ry" -2.9666259868092411;
+	setAttr ".LeftHandIndex3Rz" -24.324971928098655;
+	setAttr ".LeftHandIndex3Sx" 0.99999998975424897;
+	setAttr ".LeftHandIndex3Sy" 0.99999995044893797;
+	setAttr ".LeftHandIndex3Sz" 0.99999994058746933;
+	setAttr ".LeftHandIndex3MinRLimitx" -45;
+	setAttr ".LeftHandIndex3MinRLimity" -45;
+	setAttr ".LeftHandIndex3MinRLimitz" -45;
+	setAttr ".LeftHandIndex3MaxRLimitx" 45;
+	setAttr ".LeftHandIndex3MaxRLimity" 45;
+	setAttr ".LeftHandIndex3MaxRLimitz" 45;
+	setAttr ".LeftHandIndex4Tx" 143.63640386106712;
+	setAttr ".LeftHandIndex4Ty" 136.10957748120902;
+	setAttr ".LeftHandIndex4Tz" 3.8896057746978383;
+	setAttr ".LeftHandIndex4Sx" 0.99999999999995881;
+	setAttr ".LeftHandIndex4Sy" 0.99999994039526552;
+	setAttr ".LeftHandIndex4Sz" 0.99999994039530526;
+	setAttr ".LeftHandIndex4MinRLimitx" -45;
+	setAttr ".LeftHandIndex4MinRLimity" -45;
+	setAttr ".LeftHandIndex4MinRLimitz" -45;
+	setAttr ".LeftHandIndex4MaxRLimitx" 45;
+	setAttr ".LeftHandIndex4MaxRLimity" 45;
+	setAttr ".LeftHandIndex4MaxRLimitz" 45;
+	setAttr ".LeftHandMiddle1Tx" 126.00164625909474;
+	setAttr ".LeftHandMiddle1Ty" 139.14326905484614;
+	setAttr ".LeftHandMiddle1Tz" -6.7795382662765187;
+	setAttr ".LeftHandMiddle1Rx" -0.77380774953255715;
+	setAttr ".LeftHandMiddle1Ry" 4.9783312957507118;
+	setAttr ".LeftHandMiddle1Rz" -8.8462422768887627;
+	setAttr ".LeftHandMiddle1Sx" 0.99999999815214713;
+	setAttr ".LeftHandMiddle1Sy" 0.99999994178356033;
+	setAttr ".LeftHandMiddle1Sz" 0.99999994085488497;
+	setAttr ".LeftHandMiddle1MinRLimitx" -45;
+	setAttr ".LeftHandMiddle1MinRLimity" -45;
+	setAttr ".LeftHandMiddle1MinRLimitz" -45;
+	setAttr ".LeftHandMiddle1MaxRLimitx" 45;
+	setAttr ".LeftHandMiddle1MaxRLimity" 45;
+	setAttr ".LeftHandMiddle1MaxRLimitz" 45;
+	setAttr ".LeftHandMiddle2Tx" 132.31654280504685;
+	setAttr ".LeftHandMiddle2Ty" 138.16045199580486;
+	setAttr ".LeftHandMiddle2Tz" -7.3362358396347842;
+	setAttr ".LeftHandMiddle2Rx" -0.58334664039901651;
+	setAttr ".LeftHandMiddle2Ry" 2.7220845492083985;
+	setAttr ".LeftHandMiddle2Rz" -12.099887005275567;
+	setAttr ".LeftHandMiddle2Sx" 0.99999999725249544;
+	setAttr ".LeftHandMiddle2Sy" 0.99999994300226036;
+	setAttr ".LeftHandMiddle2Sz" 0.99999994053584418;
+	setAttr ".LeftHandMiddle2MinRLimitx" -45;
+	setAttr ".LeftHandMiddle2MinRLimity" -45;
+	setAttr ".LeftHandMiddle2MinRLimitz" -45;
+	setAttr ".LeftHandMiddle2MaxRLimitx" 45;
+	setAttr ".LeftHandMiddle2MaxRLimity" 45;
+	setAttr ".LeftHandMiddle2MaxRLimitz" 45;
+	setAttr ".LeftHandMiddle3Tx" 137.52230912206571;
+	setAttr ".LeftHandMiddle3Ty" 137.04444313673318;
+	setAttr ".LeftHandMiddle3Tz" -7.5893682778673019;
+	setAttr ".LeftHandMiddle3Rx" -4.9553800490920743;
+	setAttr ".LeftHandMiddle3Ry" 10.103915283765286;
+	setAttr ".LeftHandMiddle3Rz" -26.299619604310717;
+	setAttr ".LeftHandMiddle3Sx" 0.99999998682486047;
+	setAttr ".LeftHandMiddle3Sy" 0.99999995130498553;
+	setAttr ".LeftHandMiddle3Sz" 0.99999994266074499;
+	setAttr ".LeftHandMiddle3MinRLimitx" -45;
+	setAttr ".LeftHandMiddle3MinRLimity" -45;
+	setAttr ".LeftHandMiddle3MinRLimitz" -45;
+	setAttr ".LeftHandMiddle3MaxRLimitx" 45;
+	setAttr ".LeftHandMiddle3MaxRLimity" 45;
+	setAttr ".LeftHandMiddle3MaxRLimitz" 45;
+	setAttr ".LeftHandMiddle4Tx" 141.6900771368058;
+	setAttr ".LeftHandMiddle4Ty" 134.98463831490258;
+	setAttr ".LeftHandMiddle4Tz" -8.4178068760052938;
+	setAttr ".LeftHandMiddle4Sx" 0.99999999999985834;
+	setAttr ".LeftHandMiddle4Sy" 0.99999994039515383;
+	setAttr ".LeftHandMiddle4Sz" 0.99999994039510343;
+	setAttr ".LeftHandMiddle4MinRLimitx" -45;
+	setAttr ".LeftHandMiddle4MinRLimity" -45;
+	setAttr ".LeftHandMiddle4MinRLimitz" -45;
+	setAttr ".LeftHandMiddle4MaxRLimitx" 45;
+	setAttr ".LeftHandMiddle4MaxRLimity" 45;
+	setAttr ".LeftHandMiddle4MaxRLimitz" 45;
+	setAttr ".RightHandThumb1Tx" -116.2880096435547;
+	setAttr ".RightHandThumb1Ty" 136.98399353027347;
+	setAttr ".RightHandThumb1Tz" 4.9166307449340714;
+	setAttr ".RightHandThumb1Rx" -171.18682588550422;
+	setAttr ".RightHandThumb1Ry" 31.182896027817719;
+	setAttr ".RightHandThumb1Rz" 16.670052656451784;
+	setAttr ".RightHandThumb1Sx" 0.99999998043086991;
+	setAttr ".RightHandThumb1Sy" 0.99999994296115347;
+	setAttr ".RightHandThumb1Sz" 0.99999995739862313;
 	setAttr ".RightHandThumb1MinRLimitx" -45;
 	setAttr ".RightHandThumb1MinRLimity" -45;
 	setAttr ".RightHandThumb1MinRLimitz" -45;
 	setAttr ".RightHandThumb1MaxRLimitx" 45;
 	setAttr ".RightHandThumb1MaxRLimity" 45;
 	setAttr ".RightHandThumb1MaxRLimitz" 45;
-	setAttr ".RightHandThumb2Tx" -124.24001312255861;
+	setAttr ".RightHandThumb2Tx" -124.24001312255858;
 	setAttr ".RightHandThumb2Ty" 134.60299682617185;
-	setAttr ".RightHandThumb2Tz" 9.9399595260620153;
-	setAttr ".RightHandThumb2Rx" -169.52487644719292;
-	setAttr ".RightHandThumb2Ry" 14.706097066963819;
-	setAttr ".RightHandThumb2Rz" 36.066449741533233;
-	setAttr ".RightHandThumb2Sx" 0.99999997683144481;
-	setAttr ".RightHandThumb2Sy" 0.99999995787944551;
-	setAttr ".RightHandThumb2Sz" 0.99999994607953013;
+	setAttr ".RightHandThumb2Tz" 9.9399595260620099;
+	setAttr ".RightHandThumb2Rx" -169.52487542907758;
+	setAttr ".RightHandThumb2Ry" 14.706099228972043;
+	setAttr ".RightHandThumb2Rz" 36.06644688749725;
+	setAttr ".RightHandThumb2Sx" 0.99999997683144692;
+	setAttr ".RightHandThumb2Sy" 0.99999995787944185;
+	setAttr ".RightHandThumb2Sz" 0.99999994607953835;
 	setAttr ".RightHandThumb2MinRLimitx" -45;
 	setAttr ".RightHandThumb2MinRLimity" -45;
 	setAttr ".RightHandThumb2MinRLimitz" -45;
@@ -57737,40 +58093,40 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".RightHandThumb2MaxRLimitz" 45;
 	setAttr ".RightHandThumb3Tx" -131.45401000976563;
 	setAttr ".RightHandThumb3Ty" 129.34800720214844;
-	setAttr ".RightHandThumb3Tz" 12.282331466674808;
+	setAttr ".RightHandThumb3Tz" 12.282331466674798;
 	setAttr ".RightHandThumb3Rx" 180;
-	setAttr ".RightHandThumb3Sy" 0.99999994039503348;
-	setAttr ".RightHandThumb3Sz" 0.99999994039503326;
+	setAttr ".RightHandThumb3Sy" 0.99999994039504059;
+	setAttr ".RightHandThumb3Sz" 0.99999994039504081;
 	setAttr ".RightHandThumb3MinRLimitx" -45;
 	setAttr ".RightHandThumb3MinRLimity" -45;
 	setAttr ".RightHandThumb3MinRLimitz" -45;
 	setAttr ".RightHandThumb3MaxRLimitx" 45;
 	setAttr ".RightHandThumb3MaxRLimity" 45;
 	setAttr ".RightHandThumb3MaxRLimitz" 45;
-	setAttr ".RightHandIndex1Tx" -126.62300872802734;
-	setAttr ".RightHandIndex1Ty" 140.19699096679685;
-	setAttr ".RightHandIndex1Tz" 2.164264917373671;
-	setAttr ".RightHandIndex1Rx" -179.91182388817413;
-	setAttr ".RightHandIndex1Ry" 7.5444826800763831;
-	setAttr ".RightHandIndex1Rz" 0.67191293243580064;
-	setAttr ".RightHandIndex1Sx" 0.99999999896444358;
-	setAttr ".RightHandIndex1Sy" 0.99999994040327222;
-	setAttr ".RightHandIndex1Sz" 0.99999994142265503;
+	setAttr ".RightHandIndex1Tx" -126.62300872802733;
+	setAttr ".RightHandIndex1Ty" 140.19699096679688;
+	setAttr ".RightHandIndex1Tz" 2.1642649173736599;
+	setAttr ".RightHandIndex1Rx" -179.91182382491348;
+	setAttr ".RightHandIndex1Ry" 7.5444826800763618;
+	setAttr ".RightHandIndex1Rz" 0.67191293243579486;
+	setAttr ".RightHandIndex1Sx" 0.99999999896444369;
+	setAttr ".RightHandIndex1Sy" 0.99999994040327189;
+	setAttr ".RightHandIndex1Sz" 0.99999994142265614;
 	setAttr ".RightHandIndex1MinRLimitx" -45;
 	setAttr ".RightHandIndex1MinRLimity" -45;
 	setAttr ".RightHandIndex1MinRLimitz" -45;
 	setAttr ".RightHandIndex1MaxRLimitx" 45;
 	setAttr ".RightHandIndex1MaxRLimity" 45;
 	setAttr ".RightHandIndex1MaxRLimitz" 45;
-	setAttr ".RightHandIndex2Tx" -132.7170104980469;
+	setAttr ".RightHandIndex2Tx" -132.71701049804685;
 	setAttr ".RightHandIndex2Ty" 140.1260070800781;
-	setAttr ".RightHandIndex2Tz" 2.9713938236236577;
-	setAttr ".RightHandIndex2Rx" -178.26909739778435;
-	setAttr ".RightHandIndex2Ry" 6.0657467555763684;
-	setAttr ".RightHandIndex2Rz" 15.959779266869276;
-	setAttr ".RightHandIndex2Sx" 0.99999999487839686;
-	setAttr ".RightHandIndex2Sy" 0.99999994479763576;
-	setAttr ".RightHandIndex2Sz" 0.99999994111432866;
+	setAttr ".RightHandIndex2Tz" 2.971393823623655;
+	setAttr ".RightHandIndex2Rx" -178.26909697416923;
+	setAttr ".RightHandIndex2Ry" 6.0657463310795769;
+	setAttr ".RightHandIndex2Rz" 15.959779266869273;
+	setAttr ".RightHandIndex2Sx" 0.99999999487839719;
+	setAttr ".RightHandIndex2Sy" 0.99999994479763532;
+	setAttr ".RightHandIndex2Sz" 0.99999994111433643;
 	setAttr ".RightHandIndex2MinRLimitx" -45;
 	setAttr ".RightHandIndex2MinRLimity" -45;
 	setAttr ".RightHandIndex2MinRLimitz" -45;
@@ -57778,27 +58134,27 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".RightHandIndex2MaxRLimity" 45;
 	setAttr ".RightHandIndex2MaxRLimitz" 45;
 	setAttr ".RightHandIndex3Tx" -138.25700378417969;
-	setAttr ".RightHandIndex3Ty" 138.54100036621094;
-	setAttr ".RightHandIndex3Tz" 3.5836443901062043;
-	setAttr ".RightHandIndex3Rx" -178.65985507858306;
-	setAttr ".RightHandIndex3Ry" 2.9666383593841541;
-	setAttr ".RightHandIndex3Rz" 24.324964509498013;
-	setAttr ".RightHandIndex3Sx" 0.99999998975425397;
-	setAttr ".RightHandIndex3Sy" 0.99999995044893375;
-	setAttr ".RightHandIndex3Sz" 0.99999994058711794;
+	setAttr ".RightHandIndex3Ty" 138.54100036621091;
+	setAttr ".RightHandIndex3Tz" 3.5836443901062056;
+	setAttr ".RightHandIndex3Rx" -178.65985495598159;
+	setAttr ".RightHandIndex3Ry" 2.9666381826287478;
+	setAttr ".RightHandIndex3Rz" 24.324962951452328;
+	setAttr ".RightHandIndex3Sx" 0.99999998975425541;
+	setAttr ".RightHandIndex3Sy" 0.9999999504489322;
+	setAttr ".RightHandIndex3Sz" 0.99999994058712238;
 	setAttr ".RightHandIndex3MinRLimitx" -45;
 	setAttr ".RightHandIndex3MinRLimity" -45;
 	setAttr ".RightHandIndex3MinRLimitz" -45;
 	setAttr ".RightHandIndex3MaxRLimitx" 45;
 	setAttr ".RightHandIndex3MaxRLimity" 45;
 	setAttr ".RightHandIndex3MaxRLimitz" 45;
-	setAttr ".RightHandIndex4Tx" -143.63600158691409;
-	setAttr ".RightHandIndex4Ty" 136.11000061035156;
+	setAttr ".RightHandIndex4Tx" -143.63600158691406;
+	setAttr ".RightHandIndex4Ty" 136.11000061035159;
 	setAttr ".RightHandIndex4Tz" 3.8896062374114999;
 	setAttr ".RightHandIndex4Rx" 180;
 	setAttr ".RightHandIndex4Sx" 1.0000000000000002;
-	setAttr ".RightHandIndex4Sy" 0.99999994039494833;
-	setAttr ".RightHandIndex4Sz" 0.99999994039494833;
+	setAttr ".RightHandIndex4Sy" 0.99999994039495232;
+	setAttr ".RightHandIndex4Sz" 0.99999994039495277;
 	setAttr ".RightHandIndex4MinRLimitx" -45;
 	setAttr ".RightHandIndex4MinRLimity" -45;
 	setAttr ".RightHandIndex4MinRLimitz" -45;
@@ -57806,14 +58162,14 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".RightHandIndex4MaxRLimity" 45;
 	setAttr ".RightHandIndex4MaxRLimitz" 45;
 	setAttr ".RightHandMiddle1Tx" -126.00199890136719;
-	setAttr ".RightHandMiddle1Ty" 139.14299011230469;
-	setAttr ".RightHandMiddle1Tz" -6.7795333862304457;
-	setAttr ".RightHandMiddle1Rx" 179.22616133675714;
-	setAttr ".RightHandMiddle1Ry" -4.9783271801006856;
-	setAttr ".RightHandMiddle1Rz" 8.8462421048997921;
+	setAttr ".RightHandMiddle1Ty" 139.14299011230472;
+	setAttr ".RightHandMiddle1Tz" -6.7795333862304732;
+	setAttr ".RightHandMiddle1Rx" 179.2261636179303;
+	setAttr ".RightHandMiddle1Ry" -4.9783271801006821;
+	setAttr ".RightHandMiddle1Rz" 8.8462421048997957;
 	setAttr ".RightHandMiddle1Sx" 0.99999999815214824;
-	setAttr ".RightHandMiddle1Sy" 0.99999994178355989;
-	setAttr ".RightHandMiddle1Sz" 0.99999994085500321;
+	setAttr ".RightHandMiddle1Sy" 0.99999994178355955;
+	setAttr ".RightHandMiddle1Sz" 0.99999994085451294;
 	setAttr ".RightHandMiddle1MinRLimitx" -45;
 	setAttr ".RightHandMiddle1MinRLimity" -45;
 	setAttr ".RightHandMiddle1MinRLimitz" -45;
@@ -57822,28 +58178,28 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".RightHandMiddle1MaxRLimitz" 45;
 	setAttr ".RightHandMiddle2Tx" -132.31700134277344;
 	setAttr ".RightHandMiddle2Ty" 138.15998840332028;
-	setAttr ".RightHandMiddle2Tz" -7.3362355232238778;
-	setAttr ".RightHandMiddle2Rx" 179.41662077095876;
-	setAttr ".RightHandMiddle2Ry" -2.7220782205845517;
-	setAttr ".RightHandMiddle2Rz" 12.099883537968148;
-	setAttr ".RightHandMiddle2Sx" 0.999999997252498;
-	setAttr ".RightHandMiddle2Sy" 0.99999994300225892;
-	setAttr ".RightHandMiddle2Sz" 0.99999994053595476;
+	setAttr ".RightHandMiddle2Tz" -7.3362355232238787;
+	setAttr ".RightHandMiddle2Rx" 179.41662087371895;
+	setAttr ".RightHandMiddle2Ry" -2.7220778111781518;
+	setAttr ".RightHandMiddle2Rz" 12.099881866470882;
+	setAttr ".RightHandMiddle2Sx" 0.99999999725249866;
+	setAttr ".RightHandMiddle2Sy" 0.99999994300225781;
+	setAttr ".RightHandMiddle2Sz" 0.99999994053595453;
 	setAttr ".RightHandMiddle2MinRLimitx" -45;
 	setAttr ".RightHandMiddle2MinRLimity" -45;
 	setAttr ".RightHandMiddle2MinRLimitz" -45;
 	setAttr ".RightHandMiddle2MaxRLimitx" 45;
 	setAttr ".RightHandMiddle2MaxRLimity" 45;
 	setAttr ".RightHandMiddle2MaxRLimitz" 45;
-	setAttr ".RightHandMiddle3Tx" -137.52200317382813;
+	setAttr ".RightHandMiddle3Tx" -137.52200317382815;
 	setAttr ".RightHandMiddle3Ty" 137.04399108886719;
-	setAttr ".RightHandMiddle3Tz" -7.5893664360046369;
-	setAttr ".RightHandMiddle3Rx" 175.0445893189372;
-	setAttr ".RightHandMiddle3Ry" -10.103901649118718;
-	setAttr ".RightHandMiddle3Rz" 26.299619739299647;
-	setAttr ".RightHandMiddle3Sx" 0.99999998682486479;
-	setAttr ".RightHandMiddle3Sy" 0.99999995130498198;
-	setAttr ".RightHandMiddle3Sz" 0.99999994266086534;
+	setAttr ".RightHandMiddle3Tz" -7.5893664360046396;
+	setAttr ".RightHandMiddle3Rx" 175.04458945479431;
+	setAttr ".RightHandMiddle3Ry" -10.103901781843987;
+	setAttr ".RightHandMiddle3Rz" 26.299618184386894;
+	setAttr ".RightHandMiddle3Sx" 0.99999998682486591;
+	setAttr ".RightHandMiddle3Sy" 0.99999995130498043;
+	setAttr ".RightHandMiddle3Sz" 0.99999994266086523;
 	setAttr ".RightHandMiddle3MinRLimitx" -45;
 	setAttr ".RightHandMiddle3MinRLimity" -45;
 	setAttr ".RightHandMiddle3MinRLimitz" -45;
@@ -57851,11 +58207,11 @@ createNode HIKCharacterNode -n "Character1";
 	setAttr ".RightHandMiddle3MaxRLimity" 45;
 	setAttr ".RightHandMiddle3MaxRLimitz" 45;
 	setAttr ".RightHandMiddle4Tx" -141.69000244140625;
-	setAttr ".RightHandMiddle4Ty" 134.98500061035153;
-	setAttr ".RightHandMiddle4Tz" -8.4178066253662092;
-	setAttr ".RightHandMiddle4Rx" 179.99993734134836;
-	setAttr ".RightHandMiddle4Sx" 1.0000000000000007;
-	setAttr ".RightHandMiddle4Sy" 0.99999994039535545;
+	setAttr ".RightHandMiddle4Ty" 134.98500061035156;
+	setAttr ".RightHandMiddle4Tz" -8.4178066253662145;
+	setAttr ".RightHandMiddle4Rx" 179.99993721572272;
+	setAttr ".RightHandMiddle4Sx" 1.0000000000000002;
+	setAttr ".RightHandMiddle4Sy" 0.99999994039535511;
 	setAttr ".RightHandMiddle4Sz" 0.99999994039535545;
 	setAttr ".RightHandMiddle4MinRLimitx" -45;
 	setAttr ".RightHandMiddle4MinRLimity" -45;
@@ -57868,42 +58224,42 @@ createNode HIKProperty2State -n "HIKproperties1";
 	setAttr ".OutputPropertySetState" -type "HIKPropertySetState" ;
 	setAttr ".lkr" 0.60000002384185791;
 	setAttr ".rkr" 0.60000002384185791;
-	setAttr ".FootBottomToAnkle" 8.1094436645507741;
-	setAttr ".FootBackToAnkle" 6.3070161822464224;
-	setAttr ".FootMiddleToAnkle" 12.614032364492845;
-	setAttr ".FootFrontToMiddle" 6.3070161822464224;
-	setAttr ".FootInToAnkle" 6.3070161822464224;
-	setAttr ".FootOutToAnkle" 6.3070161822464224;
-	setAttr ".HandBottomToWrist" 3.0273677674782831;
+	setAttr ".FootBottomToAnkle" 8.1094436645507884;
+	setAttr ".FootBackToAnkle" 6.3070161822464206;
+	setAttr ".FootMiddleToAnkle" 12.614032364492841;
+	setAttr ".FootFrontToMiddle" 6.3070161822464206;
+	setAttr ".FootInToAnkle" 6.3070161822464206;
+	setAttr ".FootOutToAnkle" 6.3070161822464206;
+	setAttr ".HandBottomToWrist" 3.0273677674782817;
 	setAttr ".HandBackToWrist" 0.01;
-	setAttr ".HandMiddleToWrist" 8.3252613605652783;
-	setAttr ".HandFrontToMiddle" 8.3252613605652783;
-	setAttr ".HandInToWrist" 8.3252613605652783;
-	setAttr ".HandOutToWrist" 8.3252613605652783;
-	setAttr ".LeftHandThumbTip" 0.94605242733696349;
-	setAttr ".LeftHandIndexTip" 0.94605242733696349;
-	setAttr ".LeftHandMiddleTip" 0.94605242733696349;
-	setAttr ".LeftHandRingTip" 0.94605242733696349;
-	setAttr ".LeftHandPinkyTip" 0.94605242733696349;
-	setAttr ".LeftHandExtraFingerTip" 0.94605242733696349;
-	setAttr ".RightHandThumbTip" 0.94605242733696349;
-	setAttr ".RightHandIndexTip" 0.94605242733696349;
-	setAttr ".RightHandMiddleTip" 0.94605242733696349;
-	setAttr ".RightHandRingTip" 0.94605242733696349;
-	setAttr ".RightHandPinkyTip" 0.94605242733696349;
-	setAttr ".RightHandExtraFingerTip" 0.94605242733696349;
-	setAttr ".LeftFootThumbTip" 0.94605242733696349;
-	setAttr ".LeftFootIndexTip" 0.94605242733696349;
-	setAttr ".LeftFootMiddleTip" 0.94605242733696349;
-	setAttr ".LeftFootRingTip" 0.94605242733696349;
-	setAttr ".LeftFootPinkyTip" 0.94605242733696349;
-	setAttr ".LeftFootExtraFingerTip" 0.94605242733696349;
-	setAttr ".RightFootThumbTip" 0.94605242733696349;
-	setAttr ".RightFootIndexTip" 0.94605242733696349;
-	setAttr ".RightFootMiddleTip" 0.94605242733696349;
-	setAttr ".RightFootRingTip" 0.94605242733696349;
-	setAttr ".RightFootPinkyTip" 0.94605242733696349;
-	setAttr ".RightFootExtraFingerTip" 0.94605242733696349;
+	setAttr ".HandMiddleToWrist" 8.3252613605652748;
+	setAttr ".HandFrontToMiddle" 8.3252613605652748;
+	setAttr ".HandInToWrist" 8.3252613605652748;
+	setAttr ".HandOutToWrist" 8.3252613605652748;
+	setAttr ".LeftHandThumbTip" 0.94605242733696304;
+	setAttr ".LeftHandIndexTip" 0.94605242733696304;
+	setAttr ".LeftHandMiddleTip" 0.94605242733696304;
+	setAttr ".LeftHandRingTip" 0.94605242733696304;
+	setAttr ".LeftHandPinkyTip" 0.94605242733696304;
+	setAttr ".LeftHandExtraFingerTip" 0.94605242733696304;
+	setAttr ".RightHandThumbTip" 0.94605242733696304;
+	setAttr ".RightHandIndexTip" 0.94605242733696304;
+	setAttr ".RightHandMiddleTip" 0.94605242733696304;
+	setAttr ".RightHandRingTip" 0.94605242733696304;
+	setAttr ".RightHandPinkyTip" 0.94605242733696304;
+	setAttr ".RightHandExtraFingerTip" 0.94605242733696304;
+	setAttr ".LeftFootThumbTip" 0.94605242733696304;
+	setAttr ".LeftFootIndexTip" 0.94605242733696304;
+	setAttr ".LeftFootMiddleTip" 0.94605242733696304;
+	setAttr ".LeftFootRingTip" 0.94605242733696304;
+	setAttr ".LeftFootPinkyTip" 0.94605242733696304;
+	setAttr ".LeftFootExtraFingerTip" 0.94605242733696304;
+	setAttr ".RightFootThumbTip" 0.94605242733696304;
+	setAttr ".RightFootIndexTip" 0.94605242733696304;
+	setAttr ".RightFootMiddleTip" 0.94605242733696304;
+	setAttr ".RightFootRingTip" 0.94605242733696304;
+	setAttr ".RightFootPinkyTip" 0.94605242733696304;
+	setAttr ".RightFootExtraFingerTip" 0.94605242733696304;
 	setAttr ".LeftUpLegRollEx" 1;
 	setAttr ".LeftLegRollEx" 1;
 	setAttr ".RightUpLegRollEx" 1;
@@ -57968,32 +58324,32 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
 		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
 		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1263\n            -height 706\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1242\n            -height 706\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 1\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
 		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
 		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n"
 		+ "            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n"
 		+ "            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n"
-		+ "                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n"
-		+ "                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -autoFitTime 0\n                -snapTime \"integer\" \n"
-		+ "                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1.25\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n"
-		+ "                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n"
-		+ "                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n"
-		+ "                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
-		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n"
-		+ "                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1263\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1263\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -isSet 0\n                -isSetMember 0\n                -displayMode \"DAG\" \n"
+		+ "                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                -selectionOrder \"display\" \n                -expandAttribute 1\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n"
+		+ "                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1.25\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -clipTime \"on\" \n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n"
+		+ "                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n"
+		+ "                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n"
+		+ "                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n"
+		+ "                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n"
+		+ "                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n"
+		+ "                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n"
+		+ "\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1242\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1242\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -58009,193 +58365,239 @@ createNode HIKState2SK -n "HIKState2SK1";
 	setAttr ".ihi" 0;
 	setAttr ".HipsTy" 87.627614475951844;
 	setAttr ".HipsTz" -2.3336646454324087e-05;
-	setAttr ".HipsRz" -19.308347619070883;
-	setAttr ".LeftUpLegTx" 13.062387015439429;
-	setAttr ".LeftUpLegTy" 3.5323720908309042e-06;
-	setAttr ".LeftUpLegTz" 1.1502484018569459e-06;
-	setAttr ".LeftUpLegRx" -39.745160022827548;
-	setAttr ".LeftUpLegRy" 4.1613638975363489;
-	setAttr ".LeftUpLegRz" -65.70521269369722;
-	setAttr ".LeftLegTx" 37.842098620861165;
-	setAttr ".LeftLegTy" -0.00036409904318190911;
-	setAttr ".LeftLegTz" 0.00037576989245913239;
-	setAttr ".LeftLegRy" -0.00058637507713242684;
-	setAttr ".LeftLegRz" -0.00054343955027553602;
-	setAttr ".LeftFootTx" 37.842102393253121;
-	setAttr ".LeftFootTy" -5.7937985360467792e-06;
-	setAttr ".LeftFootTz" -2.9117122418043095e-05;
-	setAttr ".LeftFootRx" 151.26860797581773;
-	setAttr ".LeftFootRy" -42.952889439614609;
-	setAttr ".LeftFootRz" -57.673509408313357;
-	setAttr ".RightUpLegTx" -10.20617990536466;
-	setAttr ".RightUpLegTy" -8.1523468191397228;
-	setAttr ".RightUpLegTz" 1.150250008005181e-06;
-	setAttr ".RightUpLegRx" 140.25481018383823;
-	setAttr ".RightUpLegRy" -4.1450020034720847;
-	setAttr ".RightUpLegRz" 104.32205529245823;
+	setAttr ".HipsRz" -19.308346007568424;
+	setAttr ".LeftUpLegTx" 13.062387015439517;
+	setAttr ".LeftUpLegTy" 3.1649790912524622e-06;
+	setAttr ".LeftUpLegTz" 1.1502484018569493e-06;
+	setAttr ".LeftUpLegRx" -39.745160022835996;
+	setAttr ".LeftUpLegRy" 4.1613656059670658;
+	setAttr ".LeftUpLegRz" -65.705215157990224;
+	setAttr ".LeftLegTx" 37.842098620846194;
+	setAttr ".LeftLegTy" -0.00036438855804021841;
+	setAttr ".LeftLegTz" 0.00037699666154988876;
+	setAttr ".LeftLegRy" -0.00058768454321220449;
+	setAttr ".LeftLegRz" -0.00054452843349186877;
+	setAttr ".LeftFootTx" 37.842102393253477;
+	setAttr ".LeftFootTy" -5.3641395396653024e-06;
+	setAttr ".LeftFootTz" -2.8755215340403595e-05;
+	setAttr ".LeftFootRx" 151.26860856325732;
+	setAttr ".LeftFootRy" -42.952889784894104;
+	setAttr ".LeftFootRz" -57.673509158056824;
+	setAttr ".RightUpLegTx" -10.20618013465776;
+	setAttr ".RightUpLegTy" -8.1523465320804576;
+	setAttr ".RightUpLegTz" 1.1502500080051844e-06;
+	setAttr ".RightUpLegRx" 140.25481018366486;
+	setAttr ".RightUpLegRy" -4.1450020034720856;
+	setAttr ".RightUpLegRz" 104.32205368095576;
 	setAttr ".RightLegTx" -37.842071543074617;
-	setAttr ".RightLegTy" 7.5883368811702212e-05;
-	setAttr ".RightLegTz" -1.5074888879418324e-05;
-	setAttr ".RightLegRx" 0.0010852318095283503;
-	setAttr ".RightLegRy" 0.023907850590551321;
-	setAttr ".RightLegRz" 0.020106305876604717;
-	setAttr ".RightFootTx" -37.842114348459454;
-	setAttr ".RightFootTy" 2.1030690781742578e-05;
-	setAttr ".RightFootTz" 3.1061473479532253e-05;
-	setAttr ".RightFootRx" 151.28169723937378;
-	setAttr ".RightFootRy" -42.960207170808012;
-	setAttr ".RightFootRz" -57.692503913606366;
-	setAttr ".SpineTx" -3.397978984233621;
-	setAttr ".SpineTy" 9.6985743020780717;
+	setAttr ".RightLegTy" 7.5883368815254926e-05;
+	setAttr ".RightLegTz" -1.5074888873201076e-05;
+	setAttr ".RightLegRx" 0.0010852312836947253;
+	setAttr ".RightLegRy" 0.023904349269891878;
+	setAttr ".RightLegRz" 0.020107819105021046;
+	setAttr ".RightFootTx" -37.842114348456946;
+	setAttr ".RightFootTy" 2.203017566060339e-05;
+	setAttr ".RightFootTz" 3.337396998492892e-05;
+	setAttr ".RightFootRx" 151.28169319668109;
+	setAttr ".RightFootRy" -42.9602052983726;
+	setAttr ".RightFootRz" -57.692502671845197;
+	setAttr ".SpineTx" -3.3979787114513051;
+	setAttr ".SpineTy" 9.6985743976496934;
 	setAttr ".SpineTz" -1.5528811567260359;
 	setAttr ".SpineRx" -90;
 	setAttr ".SpineRy" -2.8485030462129806;
-	setAttr ".SpineRz" 109.3083476190709;
-	setAttr ".LeftArmTx" 16.134122675685241;
+	setAttr ".SpineRz" 109.30834600756843;
+	setAttr ".LeftArmTx" 16.134122675685234;
 	setAttr ".LeftArmTy" -2.3882742254954792e-06;
-	setAttr ".LeftArmTz" -4.7677349224173327e-07;
-	setAttr ".LeftArmRy" -5.9535197461564744;
-	setAttr ".LeftArmRz" 6.3017864282423224;
-	setAttr ".LeftForeArmTx" 45.683354818485284;
-	setAttr ".LeftForeArmTy" 3.0330433816061486e-05;
+	setAttr ".LeftArmTz" -4.7677348780084117e-07;
+	setAttr ".LeftArmRy" -5.9535197461564771;
+	setAttr ".LeftArmRz" 6.3017864282423837;
+	setAttr ".LeftForeArmTx" 45.683354818485263;
+	setAttr ".LeftForeArmTy" 3.0330433730796358e-05;
 	setAttr ".LeftForeArmTz" -3.2005887879549277e-05;
-	setAttr ".LeftForeArmRy" -6.7676143164186957;
-	setAttr ".LeftHandTx" 32.868172959028158;
-	setAttr ".LeftHandTy" 1.9033660265677099e-05;
-	setAttr ".LeftHandTz" -9.9553917927153179e-06;
-	setAttr ".LeftHandRx" 16.157573387321587;
-	setAttr ".LeftHandRy" -44.886677022722317;
-	setAttr ".LeftHandRz" -22.320251341848085;
-	setAttr ".RightArmTx" -16.134153558120747;
-	setAttr ".RightArmTy" 2.941693620073238e-05;
-	setAttr ".RightArmTz" -6.4576312168718175e-06;
-	setAttr ".RightArmRx" 5.8483489113106234e-05;
-	setAttr ".RightArmRy" -5.9535226785070625;
-	setAttr ".RightArmRz" 6.3017808238906152;
-	setAttr ".RightForeArmTx" -45.683339628615506;
-	setAttr ".RightForeArmTy" -3.3014835764788586e-05;
-	setAttr ".RightForeArmTz" 3.8823536791632307e-05;
-	setAttr ".RightForeArmRy" -6.7675951599209103;
-	setAttr ".RightHandTx" -32.867800584870039;
-	setAttr ".RightHandTy" -2.2823663357485202e-05;
-	setAttr ".RightHandTz" -3.0942616611184803e-05;
-	setAttr ".RightHandRx" 16.157504166556954;
-	setAttr ".RightHandRy" -44.886716773867526;
-	setAttr ".RightHandRz" -22.320188356008163;
-	setAttr ".HeadTx" 8.2852744974615291;
+	setAttr ".LeftForeArmRy" -6.7676147417249481;
+	setAttr ".LeftHandTx" 32.868172959028087;
+	setAttr ".LeftHandTy" 1.9033660294098809e-05;
+	setAttr ".LeftHandTz" -1.0199372059815914e-05;
+	setAttr ".LeftHandRx" 16.157573296616082;
+	setAttr ".LeftHandRy" -44.886676629281936;
+	setAttr ".LeftHandRz" -22.320251180961669;
+	setAttr ".RightArmTx" -16.134153558120961;
+	setAttr ".RightArmTy" 2.9297453750132263e-05;
+	setAttr ".RightArmTz" -6.4576313485442682e-06;
+	setAttr ".RightArmRx" 5.8465996959377395e-05;
+	setAttr ".RightArmRy" -5.9535226765862586;
+	setAttr ".RightArmRz" 6.3017812500121915;
+	setAttr ".RightForeArmTx" -45.683339628615485;
+	setAttr ".RightForeArmTy" -3.3014835821632005e-05;
+	setAttr ".RightForeArmTz" 3.8823536790744129e-05;
+	setAttr ".RightForeArmRy" -6.7675955852271814;
+	setAttr ".RightHandTx" -32.867800584870267;
+	setAttr ".RightHandTy" -2.282366344275033e-05;
+	setAttr ".RightHandTz" -3.0698639100990022e-05;
+	setAttr ".RightHandRx" 16.157503938578284;
+	setAttr ".RightHandRy" -44.886716380426904;
+	setAttr ".RightHandRz" -22.320188195121837;
+	setAttr ".HeadTx" 8.2852744974615433;
 	setAttr ".HeadTy" 3.6295455240715455;
-	setAttr ".HeadTz" 1.1925503678962636e-06;
-	setAttr ".HeadRz" -12.578878062241543;
-	setAttr ".RightToeBaseTx" -12.877613514156828;
-	setAttr ".RightToeBaseTy" -1.8966359762728757e-06;
+	setAttr ".HeadTz" 1.1925503721461761e-06;
+	setAttr ".HeadRz" -12.578878062241547;
+	setAttr ".RightToeBaseTx" -12.877613514156817;
+	setAttr ".RightToeBaseTy" -1.8966359887073736e-06;
 	setAttr ".RightToeBaseTz" -3.814697265625e-06;
-	setAttr ".RightToeBaseRz" 27.309207203096896;
-	setAttr ".LeftShoulderTx" 7.7334446127643304;
-	setAttr ".LeftShoulderTy" -0.15139929233693294;
-	setAttr ".LeftShoulderTz" -16.716342394905727;
-	setAttr ".LeftShoulderRx" -141.25480295545708;
+	setAttr ".RightToeBaseRz" 27.309207203096939;
+	setAttr ".LeftShoulderTx" 7.733444612764302;
+	setAttr ".LeftShoulderTy" -0.15139929233694005;
+	setAttr ".LeftShoulderTz" -16.71634239490572;
+	setAttr ".LeftShoulderRx" -141.25480295545714;
 	setAttr ".LeftShoulderRy" 79.993112530606425;
-	setAttr ".LeftShoulderRz" 144.79463415594878;
-	setAttr ".RightShoulderTx" 7.7337373625469041;
-	setAttr ".RightShoulderTy" -0.15131298908881519;
+	setAttr ".LeftShoulderRz" 144.79463415594867;
+	setAttr ".RightShoulderTx" 7.7337373625468757;
+	setAttr ".RightShoulderTy" -0.1513129890888365;
 	setAttr ".RightShoulderTz" 16.7162995881265;
-	setAttr ".RightShoulderRx" -141.25480761063798;
-	setAttr ".RightShoulderRy" 79.993116562069034;
-	setAttr ".RightShoulderRz" -35.205340309275805;
-	setAttr ".NeckTx" 18.112933482787454;
-	setAttr ".NeckTy" 1.6973884174690426;
-	setAttr ".NeckTz" 1.9808955983089712e-06;
-	setAttr ".NeckRz" -35.999849769743179;
-	setAttr ".Spine1Tx" 18.151166328013701;
-	setAttr ".Spine1Ty" 3.9663541251400147e-07;
-	setAttr ".Spine1Tz" 1.8104910489282852e-06;
+	setAttr ".RightShoulderRx" -141.25480571763939;
+	setAttr ".RightShoulderRy" 79.993116296512454;
+	setAttr ".RightShoulderRz" -35.205338404807819;
+	setAttr ".NeckTx" 18.112933482787426;
+	setAttr ".NeckTy" 1.6973884174690212;
+	setAttr ".NeckTz" 1.9808956066951992e-06;
+	setAttr ".NeckRz" -35.999849769743186;
+	setAttr ".Spine1Tx" 18.151166328013716;
+	setAttr ".Spine1Ty" 3.9663541073764463e-07;
+	setAttr ".Spine1Tz" 1.8104910365609177e-06;
 	setAttr ".Spine1Rx" 180;
-	setAttr ".Spine1Rz" 11.24836135890839;
-	setAttr ".Spine2Tx" 17.903738088490044;
+	setAttr ".Spine1Rz" 11.248361358908383;
+	setAttr ".Spine2Tx" 17.903738088490059;
 	setAttr ".Spine2Ty" 6.0415352720610827e-07;
-	setAttr ".Spine2Tz" -1.3038052156124955e-06;
+	setAttr ".Spine2Tz" -1.3038052228532648e-06;
 	setAttr ".Spine2Rx" 180;
-	setAttr ".Spine2Rz" 24.019831909976915;
-	setAttr ".LeftHandThumb1Tx" 8.9088150017122842;
-	setAttr ".LeftHandThumb1Ty" -7.882466235287211e-06;
-	setAttr ".LeftHandThumb1Tz" -9.3326575267838052e-07;
-	setAttr ".LeftHandThumb1Rx" -5.0395157064285003;
-	setAttr ".LeftHandThumb1Ry" 19.136254496999751;
-	setAttr ".LeftHandThumb1Rz" 0.55305587314570903;
-	setAttr ".LeftHandThumb2Tx" 9.7018104323526018;
-	setAttr ".LeftHandThumb2Ty" -3.6899072028973023e-06;
-	setAttr ".LeftHandThumb2Tz" 2.930912678777986e-06;
-	setAttr ".LeftHandThumb2Rx" -8.2558140488525495;
-	setAttr ".LeftHandThumb2Ry" 11.710941108393987;
-	setAttr ".LeftHandThumb2Rz" -21.352787694911573;
-	setAttr ".LeftHandThumb3Tx" 9.2271949620871716;
-	setAttr ".LeftHandThumb3Ty" 5.039704063847239e-06;
-	setAttr ".LeftHandThumb3Tz" -9.0380085282504297e-07;
-	setAttr ".LeftHandThumb3Ry" 17.988104847709593;
-	setAttr ".LeftHandThumb3Rz" 34.710991722832148;
-	setAttr ".RightHandThumb1Tx" -8.9088496099088204;
+	setAttr ".Spine2Rz" 24.019831909976908;
+	setAttr ".LeftHandThumb1Tx" 8.9088150017123162;
+	setAttr ".LeftHandThumb1Ty" -7.8824662637089205e-06;
+	setAttr ".LeftHandThumb1Tz" -9.3326573846752581e-07;
+	setAttr ".LeftHandThumb1Rx" -5.0395151573804329;
+	setAttr ".LeftHandThumb1Ry" 19.136254571029042;
+	setAttr ".LeftHandThumb1Rz" 0.55305669820297498;
+	setAttr ".LeftHandThumb2Tx" 9.7018104323525165;
+	setAttr ".LeftHandThumb2Ty" -3.8300542826164019e-06;
+	setAttr ".LeftHandThumb2Tz" 2.9309126716725586e-06;
+	setAttr ".LeftHandThumb2Rx" -8.2558128766950887;
+	setAttr ".LeftHandThumb2Ry" 11.710942523876657;
+	setAttr ".LeftHandThumb2Rz" -21.352789143042312;
+	setAttr ".LeftHandThumb3Tx" 9.2271949620871538;
+	setAttr ".LeftHandThumb3Ty" 5.0880621529358905e-06;
+	setAttr ".LeftHandThumb3Tz" -6.422505229863873e-07;
+	setAttr ".LeftHandThumb3Ry" 17.98810446385562;
+	setAttr ".LeftHandThumb3Rz" 34.710991276985467;
+	setAttr ".LeftHandIndex1Tx" 12.075539343066442;
+	setAttr ".LeftHandIndex1Ty" 4.2213857171471432;
+	setAttr ".LeftHandIndex1Tz" -9.842207721792434;
+	setAttr ".LeftHandIndex1Rx" -0.65463513922457472;
+	setAttr ".LeftHandIndex1Ry" 44.499101315015238;
+	setAttr ".LeftHandIndex1Rz" 14.67548688103934;
+	setAttr ".LeftHandIndex2Tx" 6.1473857373583627;
+	setAttr ".LeftHandIndex2Ty" -6.3510092047636135e-06;
+	setAttr ".LeftHandIndex2Tz" 5.9482587033699019e-07;
+	setAttr ".LeftHandIndex2Rx" -0.33854882472085057;
+	setAttr ".LeftHandIndex2Ry" 1.1908232414790358;
+	setAttr ".LeftHandIndex2Rz" -15.205480680660299;
+	setAttr ".LeftHandIndex3Tx" 5.7940226729088664;
+	setAttr ".LeftHandIndex3Ty" 6.6576683366292855e-06;
+	setAttr ".LeftHandIndex3Tz" -1.0590830274992413e-06;
+	setAttr ".LeftHandIndex3Rx" -1.2564355691340059;
+	setAttr ".LeftHandIndex3Ry" 2.7815393988965025;
+	setAttr ".LeftHandIndex3Rz" -8.4527042697458334;
+	setAttr ".LeftHandIndex4Tx" 5.9118104516627881;
+	setAttr ".LeftHandIndex4Ty" -6.0606325575918163e-06;
+	setAttr ".LeftHandIndex4Tz" 5.161011937815374e-07;
+	setAttr ".LeftHandIndex4Ry" 3.2550474090669139;
+	setAttr ".LeftHandIndex4Rz" 24.290266959912682;
+	setAttr ".LeftHandMiddle1Tx" 5.198536788618906;
+	setAttr ".LeftHandMiddle1Ty" 1.2058404160738974;
+	setAttr ".LeftHandMiddle1Tz" -14.85241627466489;
+	setAttr ".LeftHandMiddle1Rx" -13.316223309452559;
+	setAttr ".LeftHandMiddle1Ry" 56.055142612942085;
+	setAttr ".LeftHandMiddle1Rz" -0.31471420354834073;
+	setAttr ".LeftHandMiddle2Tx" 6.4151189650738161;
+	setAttr ".LeftHandMiddle2Ty" -1.4954012215184775e-06;
+	setAttr ".LeftHandMiddle2Tz" -1.4707968176708164e-07;
+	setAttr ".LeftHandMiddle2Rx" 0.47219934542351721;
+	setAttr ".LeftHandMiddle2Ry" -2.2041295095832467;
+	setAttr ".LeftHandMiddle2Rz" -3.2825062945662098;
+	setAttr ".LeftHandMiddle3Tx" 5.3300575035300426;
+	setAttr ".LeftHandMiddle3Ty" 1.0867295998195914e-05;
+	setAttr ".LeftHandMiddle3Tz" -2.9900425790874152e-07;
+	setAttr ".LeftHandMiddle3Rx" -3.7113747430827826;
+	setAttr ".LeftHandMiddle3Ry" 7.6060834881181121;
+	setAttr ".LeftHandMiddle3Rz" -14.022044687855466;
+	setAttr ".LeftHandMiddle4Tx" 4.7222299133097678;
+	setAttr ".LeftHandMiddle4Ty" -7.6537161248779739e-06;
+	setAttr ".LeftHandMiddle4Tz" 6.0450273764445228e-07;
+	setAttr ".LeftHandMiddle4Ry" -11.242316468719347;
+	setAttr ".LeftHandMiddle4Rz" 25.861276685209585;
+	setAttr ".RightHandThumb1Tx" -8.9088496099088417;
 	setAttr ".RightHandThumb1Ty" -0.00018730649188114512;
-	setAttr ".RightHandThumb1Tz" 0.00010856632442823866;
-	setAttr ".RightHandThumb1Rx" -5.0395198379505928;
-	setAttr ".RightHandThumb1Ry" 19.136254843374232;
-	setAttr ".RightHandThumb1Rz" 0.55305598956816882;
-	setAttr ".RightHandThumb2Tx" -9.7024399091060332;
-	setAttr ".RightHandThumb2Ty" -0.00012043448936083223;
-	setAttr ".RightHandThumb2Tz" 0.00039742229939321305;
-	setAttr ".RightHandThumb2Rx" -8.2558135439404161;
-	setAttr ".RightHandThumb2Ry" 11.71093922641662;
-	setAttr ".RightHandThumb2Rz" -21.352790771826946;
-	setAttr ".RightHandThumb3Tx" -9.2273173602038305;
-	setAttr ".RightHandThumb3Ty" 0.00074720831659647047;
-	setAttr ".RightHandThumb3Tz" -5.122359140585786e-05;
-	setAttr ".RightHandThumb3Ry" 17.988109855060319;
-	setAttr ".RightHandThumb3Rz" 34.710992165532886;
-	setAttr ".RightHandIndex1Tx" -12.075667047294431;
-	setAttr ".RightHandIndex1Ty" -4.2209740369088138;
-	setAttr ".RightHandIndex1Tz" 9.8422276987821107;
-	setAttr ".RightHandIndex1Rx" -0.65463642941910016;
+	setAttr ".RightHandThumb1Tz" 0.00010856632444244951;
+	setAttr ".RightHandThumb1Rx" -5.0395180167492004;
+	setAttr ".RightHandThumb1Ry" 19.13625491607808;
+	setAttr ".RightHandThumb1Rz" 0.55305686225597062;
+	setAttr ".RightHandThumb2Tx" -9.7024399091077811;
+	setAttr ".RightHandThumb2Ty" -0.00012029432252802508;
+	setAttr ".RightHandThumb2Tz" 0.0003974223027043422;
+	setAttr ".RightHandThumb2Rx" -8.2558149066365818;
+	setAttr ".RightHandThumb2Ry" 11.710944046446411;
+	setAttr ".RightHandThumb2Rz" -21.352779390522933;
+	setAttr ".RightHandThumb3Tx" -9.2273173600322629;
+	setAttr ".RightHandThumb3Ty" 0.00074928429847886946;
+	setAttr ".RightHandThumb3Tz" -5.1797682175447335e-05;
+	setAttr ".RightHandThumb3Ry" 17.988105534664257;
+	setAttr ".RightHandThumb3Rz" 34.710979267365389;
+	setAttr ".RightHandIndex1Tx" -12.075667047294452;
+	setAttr ".RightHandIndex1Ty" -4.2209740369088422;
+	setAttr ".RightHandIndex1Tz" 9.8422276987821249;
+	setAttr ".RightHandIndex1Rx" -0.65463637766039573;
 	setAttr ".RightHandIndex1Ry" 44.499106179853648;
-	setAttr ".RightHandIndex1Rz" 14.675484429718139;
-	setAttr ".RightHandIndex2Tx" -6.1476298847219937;
-	setAttr ".RightHandIndex2Ty" -0.00048402319893625645;
-	setAttr ".RightHandIndex2Tz" 3.0572413471929849e-05;
-	setAttr ".RightHandIndex2Rx" -0.33854870442264512;
-	setAttr ".RightHandIndex2Ry" 1.1908238023248012;
-	setAttr ".RightHandIndex2Rz" -15.205483005160742;
-	setAttr ".RightHandIndex3Tx" -5.7947064544158735;
-	setAttr ".RightHandIndex3Ty" 0.00062429224917082138;
-	setAttr ".RightHandIndex3Tz" 5.5510626586041667e-05;
-	setAttr ".RightHandIndex3Rx" -1.2564359467815054;
-	setAttr ".RightHandIndex3Ry" 2.7815395512324659;
-	setAttr ".RightHandIndex3Rz" -8.4526986871640641;
-	setAttr ".RightHandIndex4Tx" -5.910752129949671;
-	setAttr ".RightHandIndex4Ty" -0.00048643840275985895;
-	setAttr ".RightHandIndex4Tz" -4.2778136124077548e-05;
-	setAttr ".RightHandIndex4Ry" 3.2550462294362887;
-	setAttr ".RightHandIndex4Rz" 24.290260770774054;
-	setAttr ".RightHandMiddle1Tx" -5.1991293756697274;
-	setAttr ".RightHandMiddle1Ty" -1.2054374263314003;
-	setAttr ".RightHandMiddle1Tz" 14.853003397818554;
-	setAttr ".RightHandMiddle1Rx" -13.316225320783746;
-	setAttr ".RightHandMiddle1Ry" 56.055148149703797;
-	setAttr ".RightHandMiddle1Rz" -0.31471790667074911;
+	setAttr ".RightHandIndex1Rz" 14.675484429718177;
+	setAttr ".RightHandIndex2Tx" -6.1476298847219226;
+	setAttr ".RightHandIndex2Ty" -0.00048402319887941303;
+	setAttr ".RightHandIndex2Tz" 3.0572413916019059e-05;
+	setAttr ".RightHandIndex2Rx" -0.33854833108366333;
+	setAttr ".RightHandIndex2Ry" 1.1908242129694018;
+	setAttr ".RightHandIndex2Rz" -15.20548302153116;
+	setAttr ".RightHandIndex3Tx" -5.7947064544164277;
+	setAttr ".RightHandIndex3Ty" 0.00062429095282823255;
+	setAttr ".RightHandIndex3Tz" 5.5467709346501692e-05;
+	setAttr ".RightHandIndex3Rx" -1.256436025479118;
+	setAttr ".RightHandIndex3Ry" 2.781539316333546;
+	setAttr ".RightHandIndex3Rz" -8.452697143492987;
+	setAttr ".RightHandIndex4Tx" -5.910752129962674;
+	setAttr ".RightHandIndex4Ty" -0.00048627835738557224;
+	setAttr ".RightHandIndex4Tz" -4.2800117940444693e-05;
+	setAttr ".RightHandIndex4Ry" 3.2550461188076096;
+	setAttr ".RightHandIndex4Rz" 24.290259203854955;
+	setAttr ".RightHandMiddle1Tx" -5.1991293756697488;
+	setAttr ".RightHandMiddle1Ty" -1.2054374263314287;
+	setAttr ".RightHandMiddle1Tz" 14.853003397818583;
+	setAttr ".RightHandMiddle1Rx" -13.316222721276144;
+	setAttr ".RightHandMiddle1Ry" 56.055147734576288;
+	setAttr ".RightHandMiddle1Rz" -0.3147177412792731;
 	setAttr ".RightHandMiddle2Tx" -6.415252532656595;
-	setAttr ".RightHandMiddle2Ty" 0.00016616955653603327;
-	setAttr ".RightHandMiddle2Tz" -4.5289610621779275e-06;
-	setAttr ".RightHandMiddle2Rx" 0.47219842038848853;
-	setAttr ".RightHandMiddle2Ry" -2.2041302331879318;
-	setAttr ".RightHandMiddle2Rz" -3.2825043695344114;
-	setAttr ".RightHandMiddle3Tx" -5.3293122875944903;
-	setAttr ".RightHandMiddle3Ty" 0.00014907421694942968;
-	setAttr ".RightHandMiddle3Tz" 3.6515284063121101e-05;
-	setAttr ".RightHandMiddle3Rx" -3.71137530102984;
-	setAttr ".RightHandMiddle3Ry" 7.6060848419427964;
-	setAttr ".RightHandMiddle3Rz" -14.022046483305765;
-	setAttr ".RightHandMiddle4Tx" -4.722072759436756;
-	setAttr ".RightHandMiddle4Ty" -0.00083206123704826496;
-	setAttr ".RightHandMiddle4Tz" -4.278982591898739e-05;
-	setAttr ".RightHandMiddle4Ry" -11.242318546059515;
-	setAttr ".RightHandMiddle4Rz" 25.861272735024833;
+	setAttr ".RightHandMiddle2Ty" 0.00016616891323906202;
+	setAttr ".RightHandMiddle2Tz" -4.4813554991307569e-06;
+	setAttr ".RightHandMiddle2Rx" 0.47219589535762801;
+	setAttr ".RightHandMiddle2Ry" -2.2041303897327236;
+	setAttr ".RightHandMiddle2Rz" -3.2825026052230628;
+	setAttr ".RightHandMiddle3Tx" -5.3293122875899144;
+	setAttr ".RightHandMiddle3Ty" 0.00014922911847747855;
+	setAttr ".RightHandMiddle3Tz" 3.6554943811717422e-05;
+	setAttr ".RightHandMiddle3Rx" -3.7113753683571287;
+	setAttr ".RightHandMiddle3Ry" 7.6060861897515579;
+	setAttr ".RightHandMiddle3Rz" -14.022046600146346;
+	setAttr ".RightHandMiddle4Tx" -4.7220727594595147;
+	setAttr ".RightHandMiddle4Ty" -0.00083192861791303585;
+	setAttr ".RightHandMiddle4Tz" -4.2858842050463863e-05;
+	setAttr ".RightHandMiddle4Ry" -11.242319363884093;
+	setAttr ".RightHandMiddle4Rz" 25.861271172116311;
 createNode keyingGroup -n "Character1_FullBodyKG";
 	rename -uid "3001554A-45AA-A246-52E9-AC9724E63986";
 	setAttr ".ihi" 0;
@@ -58255,78 +58657,11 @@ createNode keyingGroup -n "Character1_LeftFootBPKG";
 createNode keyingGroup -n "Character1_RightFootBPKG";
 	rename -uid "7AB63815-45EB-FC37-4566-E2AACB061CBA";
 	setAttr ".cat" -type "string" "BodyPart";
-createNode HIKControlSetNode -n "Character1_ControlRig";
-	rename -uid "981CB5E8-4C94-1701-92F0-23882BD51E11";
-	setAttr ".ihi" 0;
 createNode keyingGroup -n "Character1_FullBodyKG1";
 	rename -uid "553F65E5-44FD-53FD-16B5-73914410DECB";
 	setAttr ".ihi" 0;
-	setAttr -s 11 ".dnsm";
-	setAttr -s 56 ".act";
+	setAttr -s 2 ".dnsm";
 	setAttr ".cat" -type "string" "FullBody";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Character1_HipsBPKG1";
-	rename -uid "95F352A3-4E3D-BE9C-8FF5-FBB57541A978";
-	setAttr ".ihi" 0;
-	setAttr -s 12 ".dnsm";
-	setAttr -s 2 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Character1_ChestBPKG1";
-	rename -uid "D719F00A-439D-0F35-8DD5-93AC06CD8D9C";
-	setAttr ".ihi" 0;
-	setAttr -s 21 ".dnsm";
-	setAttr -s 5 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Character1_LeftArmBPKG1";
-	rename -uid "346BD910-46F5-3C01-FF0D-DA8CF400BCC9";
-	setAttr ".ihi" 0;
-	setAttr -s 30 ".dnsm";
-	setAttr -s 7 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Character1_RightArmBPKG1";
-	rename -uid "CC029857-47F7-4710-01D7-68B8577E47E6";
-	setAttr ".ihi" 0;
-	setAttr -s 30 ".dnsm";
-	setAttr -s 7 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Character1_LeftLegBPKG1";
-	rename -uid "8D45E97F-484E-07CF-40EA-B49F1DE36AA0";
-	setAttr ".ihi" 0;
-	setAttr -s 27 ".dnsm";
-	setAttr -s 6 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Character1_RightLegBPKG1";
-	rename -uid "16E87EB8-401A-552B-34F0-1A8C6171031E";
-	setAttr ".ihi" 0;
-	setAttr -s 36 ".dnsm";
-	setAttr -s 8 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Character1_HeadBPKG1";
-	rename -uid "A5054C3C-48A8-7DE8-73E6-C0A60B6F3089";
-	setAttr ".ihi" 0;
-	setAttr -s 12 ".dnsm";
-	setAttr -s 3 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Character1_LeftHandBPKG1";
-	rename -uid "3295E94B-4B15-FAEA-9BC9-028EAB6F365D";
-	setAttr ".ihi" 0;
-	setAttr -s 15 ".dnsm";
-	setAttr -s 4 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Character1_RightHandBPKG1";
-	rename -uid "0629E099-4551-FE33-F50D-409814F0ECF9";
-	setAttr ".ihi" 0;
-	setAttr -s 51 ".dnsm";
-	setAttr -s 14 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
 	setAttr ".mr" yes;
 createNode keyingGroup -n "Character1_LeftFootBPKG1";
 	rename -uid "D32FD0DD-4B34-E677-407A-E594D5A05D53";
@@ -58338,20 +58673,103 @@ createNode keyingGroup -n "Character1_RightFootBPKG1";
 	setAttr ".ihi" 0;
 	setAttr ".cat" -type "string" "BodyPart";
 	setAttr ".mr" yes;
+createNode HIKControlSetNode -n "Character1_ControlRig";
+	rename -uid "4E2DFA02-447A-A38A-C5CC-6985ACB476E5";
+	setAttr ".ihi" 0;
+createNode keyingGroup -n "Character1_FullBodyKG2";
+	rename -uid "DC3DA5D9-4949-0595-48E0-88AE0EA98CBB";
+	setAttr ".ihi" 0;
+	setAttr -s 11 ".dnsm";
+	setAttr -s 66 ".act";
+	setAttr ".cat" -type "string" "FullBody";
+	setAttr ".mr" yes;
+createNode keyingGroup -n "Character1_HipsBPKG1";
+	rename -uid "DEAE529A-40E7-6CBD-C05A-0EA4FF6FE573";
+	setAttr ".ihi" 0;
+	setAttr -s 12 ".dnsm";
+	setAttr -s 2 ".act";
+	setAttr ".cat" -type "string" "BodyPart";
+	setAttr ".mr" yes;
+createNode keyingGroup -n "Character1_ChestBPKG1";
+	rename -uid "E02F44BF-446D-47F6-457E-5C8DE7BE69F4";
+	setAttr ".ihi" 0;
+	setAttr -s 21 ".dnsm";
+	setAttr -s 5 ".act";
+	setAttr ".cat" -type "string" "BodyPart";
+	setAttr ".mr" yes;
+createNode keyingGroup -n "Character1_LeftArmBPKG1";
+	rename -uid "EF201961-4A71-CF16-95E9-68A73991BD4D";
+	setAttr ".ihi" 0;
+	setAttr -s 30 ".dnsm";
+	setAttr -s 7 ".act";
+	setAttr ".cat" -type "string" "BodyPart";
+	setAttr ".mr" yes;
+createNode keyingGroup -n "Character1_RightArmBPKG1";
+	rename -uid "09A7A0DD-42E2-24A0-3F1A-FEA59FE3F049";
+	setAttr ".ihi" 0;
+	setAttr -s 30 ".dnsm";
+	setAttr -s 7 ".act";
+	setAttr ".cat" -type "string" "BodyPart";
+	setAttr ".mr" yes;
+createNode keyingGroup -n "Character1_LeftLegBPKG1";
+	rename -uid "2A951B26-4AA1-EA0E-9092-D39DA4A26EA1";
+	setAttr ".ihi" 0;
+	setAttr -s 27 ".dnsm";
+	setAttr -s 6 ".act";
+	setAttr ".cat" -type "string" "BodyPart";
+	setAttr ".mr" yes;
+createNode keyingGroup -n "Character1_RightLegBPKG1";
+	rename -uid "E08FD8AA-4A3D-0432-5C70-60A7FBC7E294";
+	setAttr ".ihi" 0;
+	setAttr -s 36 ".dnsm";
+	setAttr -s 8 ".act";
+	setAttr ".cat" -type "string" "BodyPart";
+	setAttr ".mr" yes;
+createNode keyingGroup -n "Character1_HeadBPKG1";
+	rename -uid "6237726B-4BAB-165B-5BFF-98B8D0143B64";
+	setAttr ".ihi" 0;
+	setAttr -s 12 ".dnsm";
+	setAttr -s 3 ".act";
+	setAttr ".cat" -type "string" "BodyPart";
+	setAttr ".mr" yes;
+createNode keyingGroup -n "Character1_LeftHandBPKG1";
+	rename -uid "1755DFD8-4FF1-B1CB-9712-9FBDAD03D042";
+	setAttr ".ihi" 0;
+	setAttr -s 51 ".dnsm";
+	setAttr -s 14 ".act";
+	setAttr ".cat" -type "string" "BodyPart";
+	setAttr ".mr" yes;
+createNode keyingGroup -n "Character1_RightHandBPKG1";
+	rename -uid "39C8EF82-4C69-D77A-8206-829510FCC23D";
+	setAttr ".ihi" 0;
+	setAttr -s 51 ".dnsm";
+	setAttr -s 14 ".act";
+	setAttr ".cat" -type "string" "BodyPart";
+	setAttr ".mr" yes;
+createNode keyingGroup -n "Character1_LeftFootBPKG2";
+	rename -uid "307FA133-430F-9C7E-955C-5EAFF06663B8";
+	setAttr ".ihi" 0;
+	setAttr ".cat" -type "string" "BodyPart";
+	setAttr ".mr" yes;
+createNode keyingGroup -n "Character1_RightFootBPKG2";
+	rename -uid "E0CE19F8-4617-6026-6694-66B3F24D8DB6";
+	setAttr ".ihi" 0;
+	setAttr ".cat" -type "string" "BodyPart";
+	setAttr ".mr" yes;
 createNode HIKFK2State -n "HIKFK2State1";
-	rename -uid "C42A97FE-4FCA-328B-1BB3-5BBEAE1D677F";
+	rename -uid "5979052E-4E06-614A-02D2-289C4D226025";
 	setAttr ".ihi" 0;
 	setAttr ".OutputCharacterState" -type "HIKCharacterState" ;
 createNode HIKEffector2State -n "HIKEffector2State1";
-	rename -uid "6D7F1EA6-4A64-6B47-3290-D7ABB522EFA9";
+	rename -uid "45B8F951-40FC-6A1D-AF05-B59541E3C53A";
 	setAttr ".ihi" 0;
 	setAttr ".EFF" -type "HIKEffectorState" ;
 createNode HIKPinning2State -n "HIKPinning2State1";
-	rename -uid "CDCF6143-4AFF-F125-DCDA-4A9A1B100082";
+	rename -uid "4A1F284E-4483-BAF3-29E4-C68BB30F85AA";
 	setAttr ".ihi" 0;
 	setAttr ".OutputEffectorState" -type "HIKEffectorState" ;
 createNode HIKState2FK -n "HIKState2FK1";
-	rename -uid "36B7B1C2-4133-9C2F-D6E9-F782DB43C5D5";
+	rename -uid "D3E55DC0-4332-482B-D774-4AB6BD11E5AA";
 	setAttr ".ihi" 0;
 	setAttr ".ReferenceGX" -type "matrix" 1 0 -0 0 -0 1 -2.6631610694494157e-07 0 0 2.6631610694494157e-07 1 0
 		 0 0 0 1;
@@ -58426,6 +58844,30 @@ createNode HIKState2FK -n "HIKState2FK1";
 	setAttr ".LeftHandThumb3GX" -type "matrix" 1 1.040830776863634e-16 -1.1133979423394821e-16 0
 		 -1.0408310415614301e-16 1 -2.6099189653905341e-07 0 1.1133976776416861e-16 2.6099189653905341e-07 1 0
 		 131.45384216308594 129.34828186035156 12.28233528137207 1;
+	setAttr ".LeftHandIndex1GX" -type "matrix" 1 -2.0816891815597274e-17 3.8826063302182124e-16 0
+		 2.081699438599323e-17 1 -2.6099189653905341e-07 0 -3.8826063302182124e-16 2.6099189653905341e-07 1 0
+		 126.62338256835938 140.19715881347656 2.1642293930053711 1;
+	setAttr ".LeftHandIndex2GX" -type "matrix" 1 -1.3183922240225375e-16 3.4662732253793707e-16 0
+		 1.3183930181159256e-16 1 -2.6099189653905341e-07 0 -3.4662726959837787e-16 2.6099189653905341e-07 1 0
+		 132.71713256835938 140.12568664550781 2.9713563919067383 1;
+	setAttr ".LeftHandIndex3GX" -type "matrix" 1 -2.08169067048483e-17 3.049939326447141e-16 0
+		 2.0816986114187105e-17 1 -2.6099189653905341e-07 0 -3.049939326447141e-16 2.6099189653905341e-07 1 0
+		 138.25663757324219 138.54147338867188 3.5836071968078613 1;
+	setAttr ".LeftHandIndex4GX" -type "matrix" 1 3.4694231291519727e-17 2.6075848400730552e-16 0
+		 -3.4694165117070722e-17 1 -2.6099189653905341e-07 0 -2.6075848400730552e-16 2.6099189653905341e-07 1 0
+		 143.63639831542969 136.10958862304688 3.8895695209503174 1;
+	setAttr ".LeftHandMiddle1GX" -type "matrix" 1 -6.9391048349634294e-18 3.8826063302182124e-16 0
+		 6.9392057509981609e-18 1 -2.6099189653905341e-07 0 -3.8826063302182124e-16 2.6099189653905341e-07 1 0
+		 126.00164794921875 139.14328002929688 -6.7795753479003906 1;
+	setAttr ".LeftHandMiddle2GX" -type "matrix" 1 -3.4694674660328055e-17 4.1601620863745015e-16 0
+		 3.4694780539446462e-17 1 -2.6099189653905341e-07 0 -4.1601620863745015e-16 2.6099189653905341e-07 1 0
+		 132.31654357910156 138.16046142578125 -7.3362727165222168 1;
+	setAttr ".LeftHandMiddle3GX" -type "matrix" 1 2.0816484842735898e-17 4.4377178425307907e-16 0
+		 -2.081636903745014e-17 1 -2.6099189653905341e-07 0 -4.4377178425307907e-16 2.6099189653905341e-07 1 0
+		 137.52230834960938 137.04446411132813 -7.5894050598144531 1;
+	setAttr ".LeftHandMiddle4GX" -type "matrix" 1 1.8734995011703795e-16 5.4438574585973388e-16 0
+		 -1.8734981776813995e-16 1 -2.6099189653905341e-07 0 -5.4438574585973388e-16 2.6099189653905341e-07 1 0
+		 141.69007873535156 134.98464965820313 -8.4178428649902344 1;
 	setAttr ".RightHandThumb1GX" -type "matrix" 1 -3.445094490022257e-16 5.8705323063265634e-16 0
 		 3.4450960782090331e-16 1 -2.6099189653905341e-07 0 -5.8705312475353794e-16 2.6099189653905341e-07 1 0
 		 -116.28800964355469 136.9840087890625 4.9165935516357422 1;
@@ -58460,17 +58902,17 @@ createNode HIKState2FK -n "HIKState2FK1";
 		 4.2293810894285309e-16 1 -2.6099189653905341e-07 0 -3.0429314522975918e-16 2.6099189653905341e-07 1 0
 		 -141.69000244140625 134.98501586914063 -8.4178428649902344 1;
 createNode HIKState2FK -n "HIKState2FK2";
-	rename -uid "E57254A3-4513-333F-00A3-61ACD83B0213";
+	rename -uid "E7A1F419-401F-D95A-28F1-7D8C244DFCAF";
 	setAttr ".ihi" 0;
 createNode HIKEffectorFromCharacter -n "HIKEffectorFromCharacter1";
-	rename -uid "40ACDE7E-4102-95CE-65B9-C4B5F8032F50";
+	rename -uid "A7981DF5-4794-CA9B-A983-038CA35B82BE";
 	setAttr ".ihi" 0;
 	setAttr ".OutputEffectorState" -type "HIKEffectorState" ;
 createNode HIKEffectorFromCharacter -n "HIKEffectorFromCharacter2";
-	rename -uid "AF9F427F-4C04-E9E8-2302-7CA4C580A025";
+	rename -uid "6E377441-4FE1-0CB9-26C3-208B44CBAEAF";
 	setAttr ".ihi" 0;
 createNode HIKState2Effector -n "HIKState2Effector1";
-	rename -uid "0267FD4A-4F7C-F849-A7A9-8E8F2F49F660";
+	rename -uid "75AD39EC-45B6-FCE6-48A4-3DB322884B2D";
 	setAttr ".ihi" 0;
 	setAttr ".HipsEffectorGXM[0]" -type "matrix" 1 0 0 0 0 1 -2.6631610694494157e-07 0
 		 0 2.6631610694494157e-07 1 0 -1.71661376953125e-05 83.308502197265625 -4.4372791307978332e-05 1;
@@ -58525,6 +58967,12 @@ createNode HIKState2Effector -n "HIKState2Effector1";
 	setAttr ".LeftHandThumbEffectorGXM[0]" -type "matrix" 1 1.040830776863634e-16 -1.1133979423394821e-16 0
 		 -1.0408310415614301e-16 1 -2.6099189653905341e-07 0 1.1133976776416861e-16 2.6099189653905341e-07 1 0
 		 131.45384216308594 129.34828186035156 12.28233528137207 1;
+	setAttr ".LeftHandIndexEffectorGXM[0]" -type "matrix" 1 -2.08169067048483e-17 3.049939326447141e-16 0
+		 2.0816986114187105e-17 1 -2.6099189653905341e-07 0 -3.049939326447141e-16 2.6099189653905341e-07 1 0
+		 143.63639831542969 136.10958862304688 3.8895695209503174 1;
+	setAttr ".LeftHandMiddleEffectorGXM[0]" -type "matrix" 1 2.0816484842735898e-17 4.4377178425307907e-16 0
+		 -2.081636903745014e-17 1 -2.6099189653905341e-07 0 -4.4377178425307907e-16 2.6099189653905341e-07 1 0
+		 141.69007873535156 134.98464965820313 -8.4178428649902344 1;
 	setAttr ".RightHandThumbEffectorGXM[0]" -type "matrix" 1 -1.7797587619444402e-16 1.1144091673296057e-15 0
 		 1.7797616736201963e-16 1 -2.6099189653905341e-07 0 -1.1144091673296057e-15 2.6099189653905341e-07 1 0
 		 -131.45401000976563 129.3480224609375 12.282296180725098 1;
@@ -58535,7 +58983,7 @@ createNode HIKState2Effector -n "HIKState2Effector1";
 		 3.1408421082530845e-16 1 -2.6099189653905341e-07 0 -3.6500851982850663e-16 2.6099189653905341e-07 1 0
 		 -141.69000244140625 134.98501586914063 -8.4178428649902344 1;
 createNode HIKState2Effector -n "HIKState2Effector2";
-	rename -uid "5AD7B0FA-4FB5-2971-027E-BBBD5D6F4AEF";
+	rename -uid "CCD3FEF1-4305-7F72-54C1-4D8E993B636C";
 	setAttr ".ihi" 0;
 select -ne :time1;
 	setAttr ".o" 0;
@@ -58702,13 +59150,85 @@ connectAttr "HIKState2SK1.LeftHandThumb3Sx" "thumb_03_l.sx";
 connectAttr "HIKState2SK1.LeftHandThumb3Sy" "thumb_03_l.sy";
 connectAttr "HIKState2SK1.LeftHandThumb3Sz" "thumb_03_l.sz";
 connectAttr "Hand_L.s" "indexFinger_01_l.is";
+connectAttr "HIKState2SK1.LeftHandIndex1Sx" "indexFinger_01_l.sx";
+connectAttr "HIKState2SK1.LeftHandIndex1Sy" "indexFinger_01_l.sy";
+connectAttr "HIKState2SK1.LeftHandIndex1Sz" "indexFinger_01_l.sz";
+connectAttr "HIKState2SK1.LeftHandIndex1Tx" "indexFinger_01_l.tx";
+connectAttr "HIKState2SK1.LeftHandIndex1Ty" "indexFinger_01_l.ty";
+connectAttr "HIKState2SK1.LeftHandIndex1Tz" "indexFinger_01_l.tz";
+connectAttr "HIKState2SK1.LeftHandIndex1Rx" "indexFinger_01_l.rx";
+connectAttr "HIKState2SK1.LeftHandIndex1Ry" "indexFinger_01_l.ry";
+connectAttr "HIKState2SK1.LeftHandIndex1Rz" "indexFinger_01_l.rz";
 connectAttr "indexFinger_01_l.s" "indexFinger_02_l.is";
+connectAttr "HIKState2SK1.LeftHandIndex2Sx" "indexFinger_02_l.sx";
+connectAttr "HIKState2SK1.LeftHandIndex2Sy" "indexFinger_02_l.sy";
+connectAttr "HIKState2SK1.LeftHandIndex2Sz" "indexFinger_02_l.sz";
+connectAttr "HIKState2SK1.LeftHandIndex2Tx" "indexFinger_02_l.tx";
+connectAttr "HIKState2SK1.LeftHandIndex2Ty" "indexFinger_02_l.ty";
+connectAttr "HIKState2SK1.LeftHandIndex2Tz" "indexFinger_02_l.tz";
+connectAttr "HIKState2SK1.LeftHandIndex2Rx" "indexFinger_02_l.rx";
+connectAttr "HIKState2SK1.LeftHandIndex2Ry" "indexFinger_02_l.ry";
+connectAttr "HIKState2SK1.LeftHandIndex2Rz" "indexFinger_02_l.rz";
 connectAttr "indexFinger_02_l.s" "indexFinger_03_l.is";
+connectAttr "HIKState2SK1.LeftHandIndex3Sx" "indexFinger_03_l.sx";
+connectAttr "HIKState2SK1.LeftHandIndex3Sy" "indexFinger_03_l.sy";
+connectAttr "HIKState2SK1.LeftHandIndex3Sz" "indexFinger_03_l.sz";
+connectAttr "HIKState2SK1.LeftHandIndex3Tx" "indexFinger_03_l.tx";
+connectAttr "HIKState2SK1.LeftHandIndex3Ty" "indexFinger_03_l.ty";
+connectAttr "HIKState2SK1.LeftHandIndex3Tz" "indexFinger_03_l.tz";
+connectAttr "HIKState2SK1.LeftHandIndex3Rx" "indexFinger_03_l.rx";
+connectAttr "HIKState2SK1.LeftHandIndex3Ry" "indexFinger_03_l.ry";
+connectAttr "HIKState2SK1.LeftHandIndex3Rz" "indexFinger_03_l.rz";
 connectAttr "indexFinger_03_l.s" "indexFinger_04_l.is";
+connectAttr "HIKState2SK1.LeftHandIndex4Tx" "indexFinger_04_l.tx";
+connectAttr "HIKState2SK1.LeftHandIndex4Ty" "indexFinger_04_l.ty";
+connectAttr "HIKState2SK1.LeftHandIndex4Tz" "indexFinger_04_l.tz";
+connectAttr "HIKState2SK1.LeftHandIndex4Rx" "indexFinger_04_l.rx";
+connectAttr "HIKState2SK1.LeftHandIndex4Ry" "indexFinger_04_l.ry";
+connectAttr "HIKState2SK1.LeftHandIndex4Rz" "indexFinger_04_l.rz";
+connectAttr "HIKState2SK1.LeftHandIndex4Sx" "indexFinger_04_l.sx";
+connectAttr "HIKState2SK1.LeftHandIndex4Sy" "indexFinger_04_l.sy";
+connectAttr "HIKState2SK1.LeftHandIndex4Sz" "indexFinger_04_l.sz";
 connectAttr "Hand_L.s" "finger_01_l.is";
+connectAttr "HIKState2SK1.LeftHandMiddle1Sx" "finger_01_l.sx";
+connectAttr "HIKState2SK1.LeftHandMiddle1Sy" "finger_01_l.sy";
+connectAttr "HIKState2SK1.LeftHandMiddle1Sz" "finger_01_l.sz";
+connectAttr "HIKState2SK1.LeftHandMiddle1Tx" "finger_01_l.tx";
+connectAttr "HIKState2SK1.LeftHandMiddle1Ty" "finger_01_l.ty";
+connectAttr "HIKState2SK1.LeftHandMiddle1Tz" "finger_01_l.tz";
+connectAttr "HIKState2SK1.LeftHandMiddle1Rx" "finger_01_l.rx";
+connectAttr "HIKState2SK1.LeftHandMiddle1Ry" "finger_01_l.ry";
+connectAttr "HIKState2SK1.LeftHandMiddle1Rz" "finger_01_l.rz";
 connectAttr "finger_01_l.s" "finger_02_l.is";
+connectAttr "HIKState2SK1.LeftHandMiddle2Sx" "finger_02_l.sx";
+connectAttr "HIKState2SK1.LeftHandMiddle2Sy" "finger_02_l.sy";
+connectAttr "HIKState2SK1.LeftHandMiddle2Sz" "finger_02_l.sz";
+connectAttr "HIKState2SK1.LeftHandMiddle2Tx" "finger_02_l.tx";
+connectAttr "HIKState2SK1.LeftHandMiddle2Ty" "finger_02_l.ty";
+connectAttr "HIKState2SK1.LeftHandMiddle2Tz" "finger_02_l.tz";
+connectAttr "HIKState2SK1.LeftHandMiddle2Rx" "finger_02_l.rx";
+connectAttr "HIKState2SK1.LeftHandMiddle2Ry" "finger_02_l.ry";
+connectAttr "HIKState2SK1.LeftHandMiddle2Rz" "finger_02_l.rz";
 connectAttr "finger_02_l.s" "finger_03_l.is";
+connectAttr "HIKState2SK1.LeftHandMiddle3Sx" "finger_03_l.sx";
+connectAttr "HIKState2SK1.LeftHandMiddle3Sy" "finger_03_l.sy";
+connectAttr "HIKState2SK1.LeftHandMiddle3Sz" "finger_03_l.sz";
+connectAttr "HIKState2SK1.LeftHandMiddle3Tx" "finger_03_l.tx";
+connectAttr "HIKState2SK1.LeftHandMiddle3Ty" "finger_03_l.ty";
+connectAttr "HIKState2SK1.LeftHandMiddle3Tz" "finger_03_l.tz";
+connectAttr "HIKState2SK1.LeftHandMiddle3Rx" "finger_03_l.rx";
+connectAttr "HIKState2SK1.LeftHandMiddle3Ry" "finger_03_l.ry";
+connectAttr "HIKState2SK1.LeftHandMiddle3Rz" "finger_03_l.rz";
 connectAttr "finger_03_l.s" "finger_04_l.is";
+connectAttr "HIKState2SK1.LeftHandMiddle4Tx" "finger_04_l.tx";
+connectAttr "HIKState2SK1.LeftHandMiddle4Ty" "finger_04_l.ty";
+connectAttr "HIKState2SK1.LeftHandMiddle4Tz" "finger_04_l.tz";
+connectAttr "HIKState2SK1.LeftHandMiddle4Rx" "finger_04_l.rx";
+connectAttr "HIKState2SK1.LeftHandMiddle4Ry" "finger_04_l.ry";
+connectAttr "HIKState2SK1.LeftHandMiddle4Rz" "finger_04_l.rz";
+connectAttr "HIKState2SK1.LeftHandMiddle4Sx" "finger_04_l.sx";
+connectAttr "HIKState2SK1.LeftHandMiddle4Sy" "finger_04_l.sy";
+connectAttr "HIKState2SK1.LeftHandMiddle4Sz" "finger_04_l.sz";
 connectAttr "spine_03.s" "clavicle_r.is";
 connectAttr "HIKState2SK1.RightShoulderSx" "clavicle_r.sx";
 connectAttr "HIKState2SK1.RightShoulderSy" "clavicle_r.sy";
@@ -59045,6 +59565,18 @@ connectAttr "HIKState2Effector1.LeftHandThumbEffectorGXM[0]" "Character1_Ctrl_Le
 		;
 connectAttr "HIKState2Effector2.LeftHandThumbEffectorGXM[0]" "Character1_Ctrl_LeftHandThumbEffector.atx"
 		;
+connectAttr "Character1_ControlRig.rao" "Character1_Ctrl_LeftHandIndexEffector.uagx"
+		;
+connectAttr "HIKState2Effector1.LeftHandIndexEffectorGXM[0]" "Character1_Ctrl_LeftHandIndexEffector.agx"
+		;
+connectAttr "HIKState2Effector2.LeftHandIndexEffectorGXM[0]" "Character1_Ctrl_LeftHandIndexEffector.atx"
+		;
+connectAttr "Character1_ControlRig.rao" "Character1_Ctrl_LeftHandMiddleEffector.uagx"
+		;
+connectAttr "HIKState2Effector1.LeftHandMiddleEffectorGXM[0]" "Character1_Ctrl_LeftHandMiddleEffector.agx"
+		;
+connectAttr "HIKState2Effector2.LeftHandMiddleEffectorGXM[0]" "Character1_Ctrl_LeftHandMiddleEffector.atx"
+		;
 connectAttr "Character1_ControlRig.rao" "Character1_Ctrl_RightHandThumbEffector.uagx"
 		;
 connectAttr "HIKState2Effector1.RightHandThumbEffectorGXM[0]" "Character1_Ctrl_RightHandThumbEffector.agx"
@@ -59141,6 +59673,60 @@ connectAttr "Character1_Ctrl_LeftHandThumb2.s" "Character1_Ctrl_LeftHandThumb3.i
 connectAttr "HIKState2FK1.LeftHandThumb3GX" "Character1_Ctrl_LeftHandThumb3.agx"
 		;
 connectAttr "HIKState2FK2.LeftHandThumb3GX" "Character1_Ctrl_LeftHandThumb3.atx"
+		;
+connectAttr "Character1_ControlRig.rao" "Character1_Ctrl_LeftHandIndex1.uagx";
+connectAttr "Character1_Ctrl_LeftHand.s" "Character1_Ctrl_LeftHandIndex1.is";
+connectAttr "HIKState2FK1.LeftHandIndex1GX" "Character1_Ctrl_LeftHandIndex1.agx"
+		;
+connectAttr "HIKState2FK2.LeftHandIndex1GX" "Character1_Ctrl_LeftHandIndex1.atx"
+		;
+connectAttr "Character1_ControlRig.rao" "Character1_Ctrl_LeftHandIndex2.uagx";
+connectAttr "Character1_Ctrl_LeftHandIndex1.s" "Character1_Ctrl_LeftHandIndex2.is"
+		;
+connectAttr "HIKState2FK1.LeftHandIndex2GX" "Character1_Ctrl_LeftHandIndex2.agx"
+		;
+connectAttr "HIKState2FK2.LeftHandIndex2GX" "Character1_Ctrl_LeftHandIndex2.atx"
+		;
+connectAttr "Character1_ControlRig.rao" "Character1_Ctrl_LeftHandIndex3.uagx";
+connectAttr "Character1_Ctrl_LeftHandIndex2.s" "Character1_Ctrl_LeftHandIndex3.is"
+		;
+connectAttr "HIKState2FK1.LeftHandIndex3GX" "Character1_Ctrl_LeftHandIndex3.agx"
+		;
+connectAttr "HIKState2FK2.LeftHandIndex3GX" "Character1_Ctrl_LeftHandIndex3.atx"
+		;
+connectAttr "Character1_ControlRig.rao" "Character1_Ctrl_LeftHandIndex4.uagx";
+connectAttr "Character1_Ctrl_LeftHandIndex3.s" "Character1_Ctrl_LeftHandIndex4.is"
+		;
+connectAttr "HIKState2FK1.LeftHandIndex4GX" "Character1_Ctrl_LeftHandIndex4.agx"
+		;
+connectAttr "HIKState2FK2.LeftHandIndex4GX" "Character1_Ctrl_LeftHandIndex4.atx"
+		;
+connectAttr "Character1_ControlRig.rao" "Character1_Ctrl_LeftHandMiddle1.uagx";
+connectAttr "Character1_Ctrl_LeftHand.s" "Character1_Ctrl_LeftHandMiddle1.is";
+connectAttr "HIKState2FK1.LeftHandMiddle1GX" "Character1_Ctrl_LeftHandMiddle1.agx"
+		;
+connectAttr "HIKState2FK2.LeftHandMiddle1GX" "Character1_Ctrl_LeftHandMiddle1.atx"
+		;
+connectAttr "Character1_ControlRig.rao" "Character1_Ctrl_LeftHandMiddle2.uagx";
+connectAttr "Character1_Ctrl_LeftHandMiddle1.s" "Character1_Ctrl_LeftHandMiddle2.is"
+		;
+connectAttr "HIKState2FK1.LeftHandMiddle2GX" "Character1_Ctrl_LeftHandMiddle2.agx"
+		;
+connectAttr "HIKState2FK2.LeftHandMiddle2GX" "Character1_Ctrl_LeftHandMiddle2.atx"
+		;
+connectAttr "Character1_ControlRig.rao" "Character1_Ctrl_LeftHandMiddle3.uagx";
+connectAttr "Character1_Ctrl_LeftHandMiddle2.s" "Character1_Ctrl_LeftHandMiddle3.is"
+		;
+connectAttr "HIKState2FK1.LeftHandMiddle3GX" "Character1_Ctrl_LeftHandMiddle3.agx"
+		;
+connectAttr "HIKState2FK2.LeftHandMiddle3GX" "Character1_Ctrl_LeftHandMiddle3.atx"
+		;
+connectAttr "Character1_ControlRig.rao" "Character1_Ctrl_LeftHandMiddle4.uagx";
+connectAttr "Character1_Ctrl_LeftHandMiddle3.s" "Character1_Ctrl_LeftHandMiddle4.is"
+		;
+connectAttr "HIKState2FK1.LeftHandMiddle4GX" "Character1_Ctrl_LeftHandMiddle4.agx"
+		;
+connectAttr "HIKState2FK2.LeftHandMiddle4GX" "Character1_Ctrl_LeftHandMiddle4.atx"
 		;
 connectAttr "Character1_ControlRig.rao" "Character1_Ctrl_RightShoulder.uagx";
 connectAttr "Character1_Ctrl_Spine2.s" "Character1_Ctrl_RightShoulder.is";
@@ -59625,6 +60211,14 @@ connectAttr "finger_01_r.ch" "Character1.RightHandMiddle1";
 connectAttr "finger_02_r.ch" "Character1.RightHandMiddle2";
 connectAttr "finger_03_r.ch" "Character1.RightHandMiddle3";
 connectAttr "finger_04_r.ch" "Character1.RightHandMiddle4";
+connectAttr "indexFinger_01_l.ch" "Character1.LeftHandIndex1";
+connectAttr "indexFinger_02_l.ch" "Character1.LeftHandIndex2";
+connectAttr "indexFinger_03_l.ch" "Character1.LeftHandIndex3";
+connectAttr "indexFinger_04_l.ch" "Character1.LeftHandIndex4";
+connectAttr "finger_01_l.ch" "Character1.LeftHandMiddle1";
+connectAttr "finger_02_l.ch" "Character1.LeftHandMiddle2";
+connectAttr "finger_03_l.ch" "Character1.LeftHandMiddle3";
+connectAttr "finger_04_l.ch" "Character1.LeftHandMiddle4";
 connectAttr "Character1_Ctrl_HipsEffector.pull" "HIKproperties1.CtrlResistHipsPosition"
 		;
 connectAttr "Character1_Ctrl_HipsEffector.stiffness" "HIKproperties1.CtrlResistHipsOrientation"
@@ -59892,6 +60486,54 @@ connectAttr "finger_04_r.ssc" "HIKState2SK1.RightHandMiddle4SC";
 connectAttr "finger_04_r.is" "HIKState2SK1.RightHandMiddle4IS";
 connectAttr "finger_04_r.ro" "HIKState2SK1.RightHandMiddle4ROrder";
 connectAttr "finger_04_r.ra" "HIKState2SK1.RightHandMiddle4PostR";
+connectAttr "indexFinger_01_l.pm" "HIKState2SK1.LeftHandIndex1PGX";
+connectAttr "indexFinger_01_l.jo" "HIKState2SK1.LeftHandIndex1PreR";
+connectAttr "indexFinger_01_l.ssc" "HIKState2SK1.LeftHandIndex1SC";
+connectAttr "indexFinger_01_l.is" "HIKState2SK1.LeftHandIndex1IS";
+connectAttr "indexFinger_01_l.ro" "HIKState2SK1.LeftHandIndex1ROrder";
+connectAttr "indexFinger_01_l.ra" "HIKState2SK1.LeftHandIndex1PostR";
+connectAttr "indexFinger_02_l.pm" "HIKState2SK1.LeftHandIndex2PGX";
+connectAttr "indexFinger_02_l.jo" "HIKState2SK1.LeftHandIndex2PreR";
+connectAttr "indexFinger_02_l.ssc" "HIKState2SK1.LeftHandIndex2SC";
+connectAttr "indexFinger_02_l.is" "HIKState2SK1.LeftHandIndex2IS";
+connectAttr "indexFinger_02_l.ro" "HIKState2SK1.LeftHandIndex2ROrder";
+connectAttr "indexFinger_02_l.ra" "HIKState2SK1.LeftHandIndex2PostR";
+connectAttr "indexFinger_03_l.pm" "HIKState2SK1.LeftHandIndex3PGX";
+connectAttr "indexFinger_03_l.jo" "HIKState2SK1.LeftHandIndex3PreR";
+connectAttr "indexFinger_03_l.ssc" "HIKState2SK1.LeftHandIndex3SC";
+connectAttr "indexFinger_03_l.is" "HIKState2SK1.LeftHandIndex3IS";
+connectAttr "indexFinger_03_l.ro" "HIKState2SK1.LeftHandIndex3ROrder";
+connectAttr "indexFinger_03_l.ra" "HIKState2SK1.LeftHandIndex3PostR";
+connectAttr "indexFinger_04_l.pm" "HIKState2SK1.LeftHandIndex4PGX";
+connectAttr "indexFinger_04_l.jo" "HIKState2SK1.LeftHandIndex4PreR";
+connectAttr "indexFinger_04_l.ssc" "HIKState2SK1.LeftHandIndex4SC";
+connectAttr "indexFinger_04_l.is" "HIKState2SK1.LeftHandIndex4IS";
+connectAttr "indexFinger_04_l.ro" "HIKState2SK1.LeftHandIndex4ROrder";
+connectAttr "indexFinger_04_l.ra" "HIKState2SK1.LeftHandIndex4PostR";
+connectAttr "finger_01_l.pm" "HIKState2SK1.LeftHandMiddle1PGX";
+connectAttr "finger_01_l.jo" "HIKState2SK1.LeftHandMiddle1PreR";
+connectAttr "finger_01_l.ssc" "HIKState2SK1.LeftHandMiddle1SC";
+connectAttr "finger_01_l.is" "HIKState2SK1.LeftHandMiddle1IS";
+connectAttr "finger_01_l.ro" "HIKState2SK1.LeftHandMiddle1ROrder";
+connectAttr "finger_01_l.ra" "HIKState2SK1.LeftHandMiddle1PostR";
+connectAttr "finger_02_l.pm" "HIKState2SK1.LeftHandMiddle2PGX";
+connectAttr "finger_02_l.jo" "HIKState2SK1.LeftHandMiddle2PreR";
+connectAttr "finger_02_l.ssc" "HIKState2SK1.LeftHandMiddle2SC";
+connectAttr "finger_02_l.is" "HIKState2SK1.LeftHandMiddle2IS";
+connectAttr "finger_02_l.ro" "HIKState2SK1.LeftHandMiddle2ROrder";
+connectAttr "finger_02_l.ra" "HIKState2SK1.LeftHandMiddle2PostR";
+connectAttr "finger_03_l.pm" "HIKState2SK1.LeftHandMiddle3PGX";
+connectAttr "finger_03_l.jo" "HIKState2SK1.LeftHandMiddle3PreR";
+connectAttr "finger_03_l.ssc" "HIKState2SK1.LeftHandMiddle3SC";
+connectAttr "finger_03_l.is" "HIKState2SK1.LeftHandMiddle3IS";
+connectAttr "finger_03_l.ro" "HIKState2SK1.LeftHandMiddle3ROrder";
+connectAttr "finger_03_l.ra" "HIKState2SK1.LeftHandMiddle3PostR";
+connectAttr "finger_04_l.pm" "HIKState2SK1.LeftHandMiddle4PGX";
+connectAttr "finger_04_l.jo" "HIKState2SK1.LeftHandMiddle4PreR";
+connectAttr "finger_04_l.ssc" "HIKState2SK1.LeftHandMiddle4SC";
+connectAttr "finger_04_l.is" "HIKState2SK1.LeftHandMiddle4IS";
+connectAttr "finger_04_l.ro" "HIKState2SK1.LeftHandMiddle4ROrder";
+connectAttr "finger_04_l.ra" "HIKState2SK1.LeftHandMiddle4PostR";
 connectAttr "Character1_HipsBPKG.msg" "Character1_FullBodyKG.dnsm" -na;
 connectAttr "Character1_ChestBPKG.msg" "Character1_FullBodyKG.dnsm" -na;
 connectAttr "Character1_LeftArmBPKG.msg" "Character1_FullBodyKG.dnsm" -na;
@@ -59902,6 +60544,8 @@ connectAttr "Character1_HeadBPKG.msg" "Character1_FullBodyKG.dnsm" -na;
 connectAttr "Character1_LeftHandBPKG.msg" "Character1_FullBodyKG.dnsm" -na;
 connectAttr "Character1_RightHandBPKG.msg" "Character1_FullBodyKG.dnsm" -na;
 connectAttr "Character1_LeftFootBPKG.msg" "Character1_FullBodyKG.dnsm" -na;
+connectAttr "Character1_LeftFootBPKG1.msg" "Character1_FullBodyKG1.dnsm" -na;
+connectAttr "Character1_RightFootBPKG1.msg" "Character1_FullBodyKG1.dnsm" -na;
 connectAttr "Character1.OutputCharacterDefinition" "Character1_ControlRig.HIC";
 connectAttr "Character1_Ctrl_Reference.ch" "Character1_ControlRig.Reference";
 connectAttr "Character1_Ctrl_Hips.ch" "Character1_ControlRig.Hips";
@@ -59935,6 +60579,22 @@ connectAttr "Character1_Ctrl_LeftHandThumb1.ch" "Character1_ControlRig.LeftHandT
 connectAttr "Character1_Ctrl_LeftHandThumb2.ch" "Character1_ControlRig.LeftHandThumb2"
 		;
 connectAttr "Character1_Ctrl_LeftHandThumb3.ch" "Character1_ControlRig.LeftHandThumb3"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndex1.ch" "Character1_ControlRig.LeftHandIndex1"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndex2.ch" "Character1_ControlRig.LeftHandIndex2"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndex3.ch" "Character1_ControlRig.LeftHandIndex3"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndex4.ch" "Character1_ControlRig.LeftHandIndex4"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddle1.ch" "Character1_ControlRig.LeftHandMiddle1"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddle2.ch" "Character1_ControlRig.LeftHandMiddle2"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddle3.ch" "Character1_ControlRig.LeftHandMiddle3"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddle4.ch" "Character1_ControlRig.LeftHandMiddle4"
 		;
 connectAttr "Character1_Ctrl_RightHandThumb1.ch" "Character1_ControlRig.RightHandThumb1"
 		;
@@ -59994,6 +60654,10 @@ connectAttr "Character1_Ctrl_RightHipEffector.ch" "Character1_ControlRig.RightHi
 		;
 connectAttr "Character1_Ctrl_LeftHandThumbEffector.ch" "Character1_ControlRig.LeftHandThumbEffector[0]"
 		;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.ch" "Character1_ControlRig.LeftHandIndexEffector[0]"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.ch" "Character1_ControlRig.LeftHandMiddleEffector[0]"
+		;
 connectAttr "Character1_Ctrl_RightHandThumbEffector.ch" "Character1_ControlRig.RightHandThumbEffector[0]"
 		;
 connectAttr "Character1_Ctrl_RightHandIndexEffector.ch" "Character1_ControlRig.RightHandIndexEffector[0]"
@@ -60001,106 +60665,126 @@ connectAttr "Character1_Ctrl_RightHandIndexEffector.ch" "Character1_ControlRig.R
 connectAttr "Character1_Ctrl_RightHandMiddleEffector.ch" "Character1_ControlRig.RightHandMiddleEffector[0]"
 		;
 connectAttr "HIKproperties1.ra" "Character1_ControlRig.ra";
-connectAttr "Character1_HipsBPKG1.msg" "Character1_FullBodyKG1.dnsm" -na;
-connectAttr "Character1_ChestBPKG1.msg" "Character1_FullBodyKG1.dnsm" -na;
-connectAttr "Character1_LeftArmBPKG1.msg" "Character1_FullBodyKG1.dnsm" -na;
-connectAttr "Character1_RightArmBPKG1.msg" "Character1_FullBodyKG1.dnsm" -na;
-connectAttr "Character1_LeftLegBPKG1.msg" "Character1_FullBodyKG1.dnsm" -na;
-connectAttr "Character1_RightLegBPKG1.msg" "Character1_FullBodyKG1.dnsm" -na;
-connectAttr "Character1_HeadBPKG1.msg" "Character1_FullBodyKG1.dnsm" -na;
-connectAttr "Character1_LeftHandBPKG1.msg" "Character1_FullBodyKG1.dnsm" -na;
-connectAttr "Character1_RightHandBPKG1.msg" "Character1_FullBodyKG1.dnsm" -na;
-connectAttr "Character1_LeftFootBPKG1.msg" "Character1_FullBodyKG1.dnsm" -na;
-connectAttr "Character1_RightFootBPKG1.msg" "Character1_FullBodyKG1.dnsm" -na;
-connectAttr "Character1_Ctrl_Hips.msg" "Character1_FullBodyKG1.act[0]";
-connectAttr "Character1_Ctrl_LeftUpLeg.msg" "Character1_FullBodyKG1.act[1]";
-connectAttr "Character1_Ctrl_LeftLeg.msg" "Character1_FullBodyKG1.act[2]";
-connectAttr "Character1_Ctrl_LeftFoot.msg" "Character1_FullBodyKG1.act[3]";
-connectAttr "Character1_Ctrl_RightUpLeg.msg" "Character1_FullBodyKG1.act[4]";
-connectAttr "Character1_Ctrl_RightLeg.msg" "Character1_FullBodyKG1.act[5]";
-connectAttr "Character1_Ctrl_RightFoot.msg" "Character1_FullBodyKG1.act[6]";
-connectAttr "Character1_Ctrl_Spine.msg" "Character1_FullBodyKG1.act[7]";
-connectAttr "Character1_Ctrl_LeftArm.msg" "Character1_FullBodyKG1.act[8]";
-connectAttr "Character1_Ctrl_LeftForeArm.msg" "Character1_FullBodyKG1.act[9]";
-connectAttr "Character1_Ctrl_LeftHand.msg" "Character1_FullBodyKG1.act[10]";
-connectAttr "Character1_Ctrl_RightArm.msg" "Character1_FullBodyKG1.act[11]";
-connectAttr "Character1_Ctrl_RightForeArm.msg" "Character1_FullBodyKG1.act[12]";
-connectAttr "Character1_Ctrl_RightHand.msg" "Character1_FullBodyKG1.act[13]";
-connectAttr "Character1_Ctrl_Head.msg" "Character1_FullBodyKG1.act[14]";
-connectAttr "Character1_Ctrl_RightToeBase.msg" "Character1_FullBodyKG1.act[15]";
-connectAttr "Character1_Ctrl_LeftShoulder.msg" "Character1_FullBodyKG1.act[16]";
-connectAttr "Character1_Ctrl_RightShoulder.msg" "Character1_FullBodyKG1.act[17]"
+connectAttr "Character1_HipsBPKG1.msg" "Character1_FullBodyKG2.dnsm" -na;
+connectAttr "Character1_ChestBPKG1.msg" "Character1_FullBodyKG2.dnsm" -na;
+connectAttr "Character1_LeftArmBPKG1.msg" "Character1_FullBodyKG2.dnsm" -na;
+connectAttr "Character1_RightArmBPKG1.msg" "Character1_FullBodyKG2.dnsm" -na;
+connectAttr "Character1_LeftLegBPKG1.msg" "Character1_FullBodyKG2.dnsm" -na;
+connectAttr "Character1_RightLegBPKG1.msg" "Character1_FullBodyKG2.dnsm" -na;
+connectAttr "Character1_HeadBPKG1.msg" "Character1_FullBodyKG2.dnsm" -na;
+connectAttr "Character1_LeftHandBPKG1.msg" "Character1_FullBodyKG2.dnsm" -na;
+connectAttr "Character1_RightHandBPKG1.msg" "Character1_FullBodyKG2.dnsm" -na;
+connectAttr "Character1_LeftFootBPKG2.msg" "Character1_FullBodyKG2.dnsm" -na;
+connectAttr "Character1_RightFootBPKG2.msg" "Character1_FullBodyKG2.dnsm" -na;
+connectAttr "Character1_Ctrl_Hips.msg" "Character1_FullBodyKG2.act[0]";
+connectAttr "Character1_Ctrl_LeftUpLeg.msg" "Character1_FullBodyKG2.act[1]";
+connectAttr "Character1_Ctrl_LeftLeg.msg" "Character1_FullBodyKG2.act[2]";
+connectAttr "Character1_Ctrl_LeftFoot.msg" "Character1_FullBodyKG2.act[3]";
+connectAttr "Character1_Ctrl_RightUpLeg.msg" "Character1_FullBodyKG2.act[4]";
+connectAttr "Character1_Ctrl_RightLeg.msg" "Character1_FullBodyKG2.act[5]";
+connectAttr "Character1_Ctrl_RightFoot.msg" "Character1_FullBodyKG2.act[6]";
+connectAttr "Character1_Ctrl_Spine.msg" "Character1_FullBodyKG2.act[7]";
+connectAttr "Character1_Ctrl_LeftArm.msg" "Character1_FullBodyKG2.act[8]";
+connectAttr "Character1_Ctrl_LeftForeArm.msg" "Character1_FullBodyKG2.act[9]";
+connectAttr "Character1_Ctrl_LeftHand.msg" "Character1_FullBodyKG2.act[10]";
+connectAttr "Character1_Ctrl_RightArm.msg" "Character1_FullBodyKG2.act[11]";
+connectAttr "Character1_Ctrl_RightForeArm.msg" "Character1_FullBodyKG2.act[12]";
+connectAttr "Character1_Ctrl_RightHand.msg" "Character1_FullBodyKG2.act[13]";
+connectAttr "Character1_Ctrl_Head.msg" "Character1_FullBodyKG2.act[14]";
+connectAttr "Character1_Ctrl_RightToeBase.msg" "Character1_FullBodyKG2.act[15]";
+connectAttr "Character1_Ctrl_LeftShoulder.msg" "Character1_FullBodyKG2.act[16]";
+connectAttr "Character1_Ctrl_RightShoulder.msg" "Character1_FullBodyKG2.act[17]"
 		;
-connectAttr "Character1_Ctrl_Neck.msg" "Character1_FullBodyKG1.act[18]";
-connectAttr "Character1_Ctrl_Spine1.msg" "Character1_FullBodyKG1.act[19]";
-connectAttr "Character1_Ctrl_Spine2.msg" "Character1_FullBodyKG1.act[20]";
-connectAttr "Character1_Ctrl_LeftHandThumb1.msg" "Character1_FullBodyKG1.act[21]"
+connectAttr "Character1_Ctrl_Neck.msg" "Character1_FullBodyKG2.act[18]";
+connectAttr "Character1_Ctrl_Spine1.msg" "Character1_FullBodyKG2.act[19]";
+connectAttr "Character1_Ctrl_Spine2.msg" "Character1_FullBodyKG2.act[20]";
+connectAttr "Character1_Ctrl_LeftHandThumb1.msg" "Character1_FullBodyKG2.act[21]"
 		;
-connectAttr "Character1_Ctrl_LeftHandThumb2.msg" "Character1_FullBodyKG1.act[22]"
+connectAttr "Character1_Ctrl_LeftHandThumb2.msg" "Character1_FullBodyKG2.act[22]"
 		;
-connectAttr "Character1_Ctrl_LeftHandThumb3.msg" "Character1_FullBodyKG1.act[23]"
+connectAttr "Character1_Ctrl_LeftHandThumb3.msg" "Character1_FullBodyKG2.act[23]"
 		;
-connectAttr "Character1_Ctrl_RightHandThumb1.msg" "Character1_FullBodyKG1.act[24]"
+connectAttr "Character1_Ctrl_LeftHandIndex1.msg" "Character1_FullBodyKG2.act[24]"
 		;
-connectAttr "Character1_Ctrl_RightHandThumb2.msg" "Character1_FullBodyKG1.act[25]"
+connectAttr "Character1_Ctrl_LeftHandIndex2.msg" "Character1_FullBodyKG2.act[25]"
 		;
-connectAttr "Character1_Ctrl_RightHandThumb3.msg" "Character1_FullBodyKG1.act[26]"
+connectAttr "Character1_Ctrl_LeftHandIndex3.msg" "Character1_FullBodyKG2.act[26]"
 		;
-connectAttr "Character1_Ctrl_RightHandIndex1.msg" "Character1_FullBodyKG1.act[27]"
+connectAttr "Character1_Ctrl_LeftHandIndex4.msg" "Character1_FullBodyKG2.act[27]"
 		;
-connectAttr "Character1_Ctrl_RightHandIndex2.msg" "Character1_FullBodyKG1.act[28]"
+connectAttr "Character1_Ctrl_LeftHandMiddle1.msg" "Character1_FullBodyKG2.act[28]"
 		;
-connectAttr "Character1_Ctrl_RightHandIndex3.msg" "Character1_FullBodyKG1.act[29]"
+connectAttr "Character1_Ctrl_LeftHandMiddle2.msg" "Character1_FullBodyKG2.act[29]"
 		;
-connectAttr "Character1_Ctrl_RightHandIndex4.msg" "Character1_FullBodyKG1.act[30]"
+connectAttr "Character1_Ctrl_LeftHandMiddle3.msg" "Character1_FullBodyKG2.act[30]"
 		;
-connectAttr "Character1_Ctrl_RightHandMiddle1.msg" "Character1_FullBodyKG1.act[31]"
+connectAttr "Character1_Ctrl_LeftHandMiddle4.msg" "Character1_FullBodyKG2.act[31]"
 		;
-connectAttr "Character1_Ctrl_RightHandMiddle2.msg" "Character1_FullBodyKG1.act[32]"
+connectAttr "Character1_Ctrl_RightHandThumb1.msg" "Character1_FullBodyKG2.act[32]"
 		;
-connectAttr "Character1_Ctrl_RightHandMiddle3.msg" "Character1_FullBodyKG1.act[33]"
+connectAttr "Character1_Ctrl_RightHandThumb2.msg" "Character1_FullBodyKG2.act[33]"
 		;
-connectAttr "Character1_Ctrl_RightHandMiddle4.msg" "Character1_FullBodyKG1.act[34]"
+connectAttr "Character1_Ctrl_RightHandThumb3.msg" "Character1_FullBodyKG2.act[34]"
 		;
-connectAttr "Character1_Ctrl_HipsEffector.msg" "Character1_FullBodyKG1.act[35]";
-connectAttr "Character1_Ctrl_LeftAnkleEffector.msg" "Character1_FullBodyKG1.act[36]"
+connectAttr "Character1_Ctrl_RightHandIndex1.msg" "Character1_FullBodyKG2.act[35]"
 		;
-connectAttr "Character1_Ctrl_RightAnkleEffector.msg" "Character1_FullBodyKG1.act[37]"
+connectAttr "Character1_Ctrl_RightHandIndex2.msg" "Character1_FullBodyKG2.act[36]"
 		;
-connectAttr "Character1_Ctrl_LeftWristEffector.msg" "Character1_FullBodyKG1.act[38]"
+connectAttr "Character1_Ctrl_RightHandIndex3.msg" "Character1_FullBodyKG2.act[37]"
 		;
-connectAttr "Character1_Ctrl_RightWristEffector.msg" "Character1_FullBodyKG1.act[39]"
+connectAttr "Character1_Ctrl_RightHandIndex4.msg" "Character1_FullBodyKG2.act[38]"
 		;
-connectAttr "Character1_Ctrl_LeftKneeEffector.msg" "Character1_FullBodyKG1.act[40]"
+connectAttr "Character1_Ctrl_RightHandMiddle1.msg" "Character1_FullBodyKG2.act[39]"
 		;
-connectAttr "Character1_Ctrl_RightKneeEffector.msg" "Character1_FullBodyKG1.act[41]"
+connectAttr "Character1_Ctrl_RightHandMiddle2.msg" "Character1_FullBodyKG2.act[40]"
 		;
-connectAttr "Character1_Ctrl_LeftElbowEffector.msg" "Character1_FullBodyKG1.act[42]"
+connectAttr "Character1_Ctrl_RightHandMiddle3.msg" "Character1_FullBodyKG2.act[41]"
 		;
-connectAttr "Character1_Ctrl_RightElbowEffector.msg" "Character1_FullBodyKG1.act[43]"
+connectAttr "Character1_Ctrl_RightHandMiddle4.msg" "Character1_FullBodyKG2.act[42]"
 		;
-connectAttr "Character1_Ctrl_ChestOriginEffector.msg" "Character1_FullBodyKG1.act[44]"
+connectAttr "Character1_Ctrl_HipsEffector.msg" "Character1_FullBodyKG2.act[43]";
+connectAttr "Character1_Ctrl_LeftAnkleEffector.msg" "Character1_FullBodyKG2.act[44]"
 		;
-connectAttr "Character1_Ctrl_ChestEndEffector.msg" "Character1_FullBodyKG1.act[45]"
+connectAttr "Character1_Ctrl_RightAnkleEffector.msg" "Character1_FullBodyKG2.act[45]"
 		;
-connectAttr "Character1_Ctrl_RightFootEffector.msg" "Character1_FullBodyKG1.act[46]"
+connectAttr "Character1_Ctrl_LeftWristEffector.msg" "Character1_FullBodyKG2.act[46]"
 		;
-connectAttr "Character1_Ctrl_LeftShoulderEffector.msg" "Character1_FullBodyKG1.act[47]"
+connectAttr "Character1_Ctrl_RightWristEffector.msg" "Character1_FullBodyKG2.act[47]"
 		;
-connectAttr "Character1_Ctrl_RightShoulderEffector.msg" "Character1_FullBodyKG1.act[48]"
+connectAttr "Character1_Ctrl_LeftKneeEffector.msg" "Character1_FullBodyKG2.act[48]"
 		;
-connectAttr "Character1_Ctrl_HeadEffector.msg" "Character1_FullBodyKG1.act[49]";
-connectAttr "Character1_Ctrl_LeftHipEffector.msg" "Character1_FullBodyKG1.act[50]"
+connectAttr "Character1_Ctrl_RightKneeEffector.msg" "Character1_FullBodyKG2.act[49]"
 		;
-connectAttr "Character1_Ctrl_RightHipEffector.msg" "Character1_FullBodyKG1.act[51]"
+connectAttr "Character1_Ctrl_LeftElbowEffector.msg" "Character1_FullBodyKG2.act[50]"
 		;
-connectAttr "Character1_Ctrl_LeftHandThumbEffector.msg" "Character1_FullBodyKG1.act[52]"
+connectAttr "Character1_Ctrl_RightElbowEffector.msg" "Character1_FullBodyKG2.act[51]"
 		;
-connectAttr "Character1_Ctrl_RightHandThumbEffector.msg" "Character1_FullBodyKG1.act[53]"
+connectAttr "Character1_Ctrl_ChestOriginEffector.msg" "Character1_FullBodyKG2.act[52]"
 		;
-connectAttr "Character1_Ctrl_RightHandIndexEffector.msg" "Character1_FullBodyKG1.act[54]"
+connectAttr "Character1_Ctrl_ChestEndEffector.msg" "Character1_FullBodyKG2.act[53]"
 		;
-connectAttr "Character1_Ctrl_RightHandMiddleEffector.msg" "Character1_FullBodyKG1.act[55]"
+connectAttr "Character1_Ctrl_RightFootEffector.msg" "Character1_FullBodyKG2.act[54]"
+		;
+connectAttr "Character1_Ctrl_LeftShoulderEffector.msg" "Character1_FullBodyKG2.act[55]"
+		;
+connectAttr "Character1_Ctrl_RightShoulderEffector.msg" "Character1_FullBodyKG2.act[56]"
+		;
+connectAttr "Character1_Ctrl_HeadEffector.msg" "Character1_FullBodyKG2.act[57]";
+connectAttr "Character1_Ctrl_LeftHipEffector.msg" "Character1_FullBodyKG2.act[58]"
+		;
+connectAttr "Character1_Ctrl_RightHipEffector.msg" "Character1_FullBodyKG2.act[59]"
+		;
+connectAttr "Character1_Ctrl_LeftHandThumbEffector.msg" "Character1_FullBodyKG2.act[60]"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.msg" "Character1_FullBodyKG2.act[61]"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.msg" "Character1_FullBodyKG2.act[62]"
+		;
+connectAttr "Character1_Ctrl_RightHandThumbEffector.msg" "Character1_FullBodyKG2.act[63]"
+		;
+connectAttr "Character1_Ctrl_RightHandIndexEffector.msg" "Character1_FullBodyKG2.act[64]"
+		;
+connectAttr "Character1_Ctrl_RightHandMiddleEffector.msg" "Character1_FullBodyKG2.act[65]"
 		;
 connectAttr "Character1_Ctrl_Hips.rz" "Character1_HipsBPKG1.dnsm" -na;
 connectAttr "Character1_Ctrl_Hips.ry" "Character1_HipsBPKG1.dnsm" -na;
@@ -60446,6 +61130,54 @@ connectAttr "Character1_Ctrl_LeftHandThumb3.ry" "Character1_LeftHandBPKG1.dnsm"
 		-na;
 connectAttr "Character1_Ctrl_LeftHandThumb3.rx" "Character1_LeftHandBPKG1.dnsm" 
 		-na;
+connectAttr "Character1_Ctrl_LeftHandIndex1.rz" "Character1_LeftHandBPKG1.dnsm" 
+		-na;
+connectAttr "Character1_Ctrl_LeftHandIndex1.ry" "Character1_LeftHandBPKG1.dnsm" 
+		-na;
+connectAttr "Character1_Ctrl_LeftHandIndex1.rx" "Character1_LeftHandBPKG1.dnsm" 
+		-na;
+connectAttr "Character1_Ctrl_LeftHandIndex2.rz" "Character1_LeftHandBPKG1.dnsm" 
+		-na;
+connectAttr "Character1_Ctrl_LeftHandIndex2.ry" "Character1_LeftHandBPKG1.dnsm" 
+		-na;
+connectAttr "Character1_Ctrl_LeftHandIndex2.rx" "Character1_LeftHandBPKG1.dnsm" 
+		-na;
+connectAttr "Character1_Ctrl_LeftHandIndex3.rz" "Character1_LeftHandBPKG1.dnsm" 
+		-na;
+connectAttr "Character1_Ctrl_LeftHandIndex3.ry" "Character1_LeftHandBPKG1.dnsm" 
+		-na;
+connectAttr "Character1_Ctrl_LeftHandIndex3.rx" "Character1_LeftHandBPKG1.dnsm" 
+		-na;
+connectAttr "Character1_Ctrl_LeftHandIndex4.rz" "Character1_LeftHandBPKG1.dnsm" 
+		-na;
+connectAttr "Character1_Ctrl_LeftHandIndex4.ry" "Character1_LeftHandBPKG1.dnsm" 
+		-na;
+connectAttr "Character1_Ctrl_LeftHandIndex4.rx" "Character1_LeftHandBPKG1.dnsm" 
+		-na;
+connectAttr "Character1_Ctrl_LeftHandMiddle1.rz" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddle1.ry" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddle1.rx" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddle2.rz" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddle2.ry" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddle2.rx" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddle3.rz" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddle3.ry" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddle3.rx" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddle4.rz" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddle4.ry" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddle4.rx" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
 connectAttr "Character1_Ctrl_LeftHandThumbEffector.rz" "Character1_LeftHandBPKG1.dnsm"
 		 -na;
 connectAttr "Character1_Ctrl_LeftHandThumbEffector.ry" "Character1_LeftHandBPKG1.dnsm"
@@ -60458,13 +61190,57 @@ connectAttr "Character1_Ctrl_LeftHandThumbEffector.ty" "Character1_LeftHandBPKG1
 		 -na;
 connectAttr "Character1_Ctrl_LeftHandThumbEffector.tx" "Character1_LeftHandBPKG1.dnsm"
 		 -na;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.rz" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.ry" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.rx" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.tz" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.ty" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.tx" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.rz" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.ry" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.rx" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.tz" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.ty" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.tx" "Character1_LeftHandBPKG1.dnsm"
+		 -na;
 connectAttr "Character1_Ctrl_LeftHandThumb1.msg" "Character1_LeftHandBPKG1.act[0]"
 		;
 connectAttr "Character1_Ctrl_LeftHandThumb2.msg" "Character1_LeftHandBPKG1.act[1]"
 		;
 connectAttr "Character1_Ctrl_LeftHandThumb3.msg" "Character1_LeftHandBPKG1.act[2]"
 		;
-connectAttr "Character1_Ctrl_LeftHandThumbEffector.msg" "Character1_LeftHandBPKG1.act[3]"
+connectAttr "Character1_Ctrl_LeftHandIndex1.msg" "Character1_LeftHandBPKG1.act[3]"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndex2.msg" "Character1_LeftHandBPKG1.act[4]"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndex3.msg" "Character1_LeftHandBPKG1.act[5]"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndex4.msg" "Character1_LeftHandBPKG1.act[6]"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddle1.msg" "Character1_LeftHandBPKG1.act[7]"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddle2.msg" "Character1_LeftHandBPKG1.act[8]"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddle3.msg" "Character1_LeftHandBPKG1.act[9]"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddle4.msg" "Character1_LeftHandBPKG1.act[10]"
+		;
+connectAttr "Character1_Ctrl_LeftHandThumbEffector.msg" "Character1_LeftHandBPKG1.act[11]"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.msg" "Character1_LeftHandBPKG1.act[12]"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.msg" "Character1_LeftHandBPKG1.act[13]"
 		;
 connectAttr "Character1_Ctrl_RightHandThumb1.rz" "Character1_RightHandBPKG1.dnsm"
 		 -na;
@@ -60623,6 +61399,18 @@ connectAttr "Character1_Ctrl_Spine2.wm" "HIKFK2State1.Spine2GX";
 connectAttr "Character1_Ctrl_LeftHandThumb1.wm" "HIKFK2State1.LeftHandThumb1GX";
 connectAttr "Character1_Ctrl_LeftHandThumb2.wm" "HIKFK2State1.LeftHandThumb2GX";
 connectAttr "Character1_Ctrl_LeftHandThumb3.wm" "HIKFK2State1.LeftHandThumb3GX";
+connectAttr "Character1_Ctrl_LeftHandIndex1.wm" "HIKFK2State1.LeftHandIndex1GX";
+connectAttr "Character1_Ctrl_LeftHandIndex2.wm" "HIKFK2State1.LeftHandIndex2GX";
+connectAttr "Character1_Ctrl_LeftHandIndex3.wm" "HIKFK2State1.LeftHandIndex3GX";
+connectAttr "Character1_Ctrl_LeftHandIndex4.wm" "HIKFK2State1.LeftHandIndex4GX";
+connectAttr "Character1_Ctrl_LeftHandMiddle1.wm" "HIKFK2State1.LeftHandMiddle1GX"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddle2.wm" "HIKFK2State1.LeftHandMiddle2GX"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddle3.wm" "HIKFK2State1.LeftHandMiddle3GX"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddle4.wm" "HIKFK2State1.LeftHandMiddle4GX"
+		;
 connectAttr "Character1_Ctrl_RightHandThumb1.wm" "HIKFK2State1.RightHandThumb1GX"
 		;
 connectAttr "Character1_Ctrl_RightHandThumb2.wm" "HIKFK2State1.RightHandThumb2GX"
@@ -60861,6 +61649,30 @@ connectAttr "Character1_Ctrl_LeftHandThumbEffector.pull" "HIKEffector2State1.Lef
 		;
 connectAttr "Character1_Ctrl_LeftHandThumbEffector.stiffness" "HIKEffector2State1.LeftHandThumbEffectorStiffness"
 		;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.wm" "HIKEffector2State1.LeftHandIndexEffectorGX[0]"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.rt" "HIKEffector2State1.LeftHandIndexEffectorReachT[0]"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.rr" "HIKEffector2State1.LeftHandIndexEffectorReachR[0]"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.po" "HIKEffector2State1.LeftHandIndexEffectorPivot[0]"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.pull" "HIKEffector2State1.LeftHandIndexEffectorPull"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.stiffness" "HIKEffector2State1.LeftHandIndexEffectorStiffness"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.wm" "HIKEffector2State1.LeftHandMiddleEffectorGX[0]"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.rt" "HIKEffector2State1.LeftHandMiddleEffectorReachT[0]"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.rr" "HIKEffector2State1.LeftHandMiddleEffectorReachR[0]"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.po" "HIKEffector2State1.LeftHandMiddleEffectorPivot[0]"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.pull" "HIKEffector2State1.LeftHandMiddleEffectorPull"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.stiffness" "HIKEffector2State1.LeftHandMiddleEffectorStiffness"
+		;
 connectAttr "Character1_Ctrl_RightHandThumbEffector.wm" "HIKEffector2State1.RightHandThumbEffectorGX[0]"
 		;
 connectAttr "Character1_Ctrl_RightHandThumbEffector.rt" "HIKEffector2State1.RightHandThumbEffectorReachT[0]"
@@ -60972,6 +61784,14 @@ connectAttr "Character1_Ctrl_LeftHandThumbEffector.pint" "HIKPinning2State1.Left
 		;
 connectAttr "Character1_Ctrl_LeftHandThumbEffector.pinr" "HIKPinning2State1.LeftHandThumbEffectorPinR"
 		;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.pint" "HIKPinning2State1.LeftHandIndexEffectorPinT"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.pinr" "HIKPinning2State1.LeftHandIndexEffectorPinR"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.pint" "HIKPinning2State1.LeftHandMiddleEffectorPinT"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.pinr" "HIKPinning2State1.LeftHandMiddleEffectorPinR"
+		;
 connectAttr "Character1_Ctrl_RightHandThumbEffector.pint" "HIKPinning2State1.RightHandThumbEffectorPinT"
 		;
 connectAttr "Character1_Ctrl_RightHandThumbEffector.pinr" "HIKPinning2State1.RightHandThumbEffectorPinR"
@@ -61039,6 +61859,10 @@ connectAttr "Character1_Ctrl_RightHipEffector.po" "HIKState2Effector1.RightHipEf
 		;
 connectAttr "Character1_Ctrl_LeftHandThumbEffector.po" "HIKState2Effector1.LeftHandThumbEffectorpivotOffset[0]"
 		;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.po" "HIKState2Effector1.LeftHandIndexEffectorpivotOffset[0]"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.po" "HIKState2Effector1.LeftHandMiddleEffectorpivotOffset[0]"
+		;
 connectAttr "Character1_Ctrl_RightHandThumbEffector.po" "HIKState2Effector1.RightHandThumbEffectorpivotOffset[0]"
 		;
 connectAttr "Character1_Ctrl_RightHandIndexEffector.po" "HIKState2Effector1.RightHandIndexEffectorpivotOffset[0]"
@@ -61082,6 +61906,10 @@ connectAttr "Character1_Ctrl_LeftHipEffector.po" "HIKState2Effector2.LeftHipEffe
 connectAttr "Character1_Ctrl_RightHipEffector.po" "HIKState2Effector2.RightHipEffectorpivotOffset[0]"
 		;
 connectAttr "Character1_Ctrl_LeftHandThumbEffector.po" "HIKState2Effector2.LeftHandThumbEffectorpivotOffset[0]"
+		;
+connectAttr "Character1_Ctrl_LeftHandIndexEffector.po" "HIKState2Effector2.LeftHandIndexEffectorpivotOffset[0]"
+		;
+connectAttr "Character1_Ctrl_LeftHandMiddleEffector.po" "HIKState2Effector2.LeftHandMiddleEffectorpivotOffset[0]"
 		;
 connectAttr "Character1_Ctrl_RightHandThumbEffector.po" "HIKState2Effector2.RightHandThumbEffectorpivotOffset[0]"
 		;
