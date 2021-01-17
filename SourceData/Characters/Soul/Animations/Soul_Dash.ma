@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
-//Name: Soul_Idle.ma
-//Last modified: Sat, Jan 16, 2021 03:22:45 PM
+//Name: Soul_Dash.ma
+//Last modified: Sat, Jan 16, 2021 08:31:00 PM
 //Codeset: 1252
 file -rdi 1 -ns "Soul_Rig" -rfn "Soul_RigRN" -op "v=0;" -typ "mayaAscii" "C:/Users/163295/Documents/GitHub/ThoseBums_Jam_01/SourceData/Characters/Soul/Soul_Rig.ma";
 file -r -ns "Soul_Rig" -dr 1 -rfn "Soul_RigRN" -op "v=0;" -typ "mayaAscii" "C:/Users/163295/Documents/GitHub/ThoseBums_Jam_01/SourceData/Characters/Soul/Soul_Rig.ma";
@@ -23,13 +23,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "E04C2E13-4E5A-F7D3-D04A-69969A2C8AA0";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -402.94466871971525 144.23368131949186 95.039762861417486 ;
-	setAttr ".r" -type "double3" -6.3383527285817296 638.99999999998772 -5.0828867549261751e-15 ;
+	setAttr ".t" -type "double3" -608.74942422432014 216.13384081916729 195.2182771204354 ;
+	setAttr ".r" -type "double3" -10.538352729746881 -72.600000000025773 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "61647121-411F-4E6A-C191-D881759CD69E";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 396.00682677191071;
+	setAttr ".coi" 624.83552653153833;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -107,6 +107,7 @@ createNode hikIKEffector -n "Soul_Rig:QuickRigCharacter_Ctrl_HipsEffector" -p "S
 	setAttr -k off ".sz";
 	setAttr -l on ".ra" -type "double3" -90 -90 0 ;
 	setAttr -l on ".ra";
+	setAttr ".pin" 3;
 	setAttr ".rt" 1;
 	setAttr ".rr" 1;
 	setAttr ".radi" 15.988528325007508;
@@ -198,8 +199,6 @@ createNode hikIKEffector -n "Soul_Rig:QuickRigCharacter_Ctrl_RightWristEffector"
 	setAttr -k off -cb on ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 4;
-	setAttr ".t" -type "double3" -38.345848083496094 111.08327451507088 1.2250166132947902 ;
-	setAttr ".r" -type "double3" 144.28969804307133 18.727616674004416 76.93723771506572 ;
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
@@ -292,8 +291,6 @@ createNode hikIKEffector -n "Soul_Rig:QuickRigCharacter_Ctrl_RightElbowEffector"
 	setAttr -k off -cb on ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
-	setAttr ".t" -type "double3" -40.598503112792969 122.67392585190315 -23.183593504884964 ;
-	setAttr ".r" -type "double3" -35.236528249478063 -25.309009187091739 91.063066760668107 ;
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
@@ -407,8 +404,6 @@ createNode hikIKEffector -n "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulderEffect
 	setAttr -k off -cb on ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 4;
-	setAttr ".t" -type "double3" -14.534688949584961 137.27211186493241 -7.0576879180861321 ;
-	setAttr ".r" -type "double3" 35.647253064232665 21.14348706409147 29.912134257968695 ;
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
@@ -1200,7 +1195,6 @@ createNode hikFKJoint -n "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulder" -p "Sou
 	setAttr -k off ".tx";
 	setAttr -k off ".ty";
 	setAttr -k off ".tz";
-	setAttr ".r" -type "double3" 0.00011054189836303221 -0.00012800550422629157 3.5085486356956574e-05 ;
 	setAttr -l on ".s";
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
@@ -1223,7 +1217,6 @@ createNode hikFKJoint -n "Soul_Rig:QuickRigCharacter_Ctrl_RightArm" -p "Soul_Rig
 	setAttr -k off ".tx";
 	setAttr -k off ".ty";
 	setAttr -k off ".tz";
-	setAttr ".r" -type "double3" 9.7966664897307201 1.4758137296889651 -38.265805349770886 ;
 	setAttr -l on ".s";
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
@@ -1246,7 +1239,6 @@ createNode hikFKJoint -n "Soul_Rig:QuickRigCharacter_Ctrl_RightForeArm" -p "Soul
 	setAttr -k off ".tx";
 	setAttr -k off ".ty";
 	setAttr -k off ".tz";
-	setAttr ".r" -type "double3" 0.035893970937155913 -0.6085244178042567 103.1391474077063 ;
 	setAttr -l on ".s";
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
@@ -1269,7 +1261,6 @@ createNode hikFKJoint -n "Soul_Rig:QuickRigCharacter_Ctrl_RightHand" -p "Soul_Ri
 	setAttr -k off ".tx";
 	setAttr -k off ".ty";
 	setAttr -k off ".tz";
-	setAttr ".r" -type "double3" 117.28400441193062 -14.323602726329536 -7.0623983642306438 ;
 	setAttr -l on ".s";
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
@@ -1568,729 +1559,25 @@ createNode hikFKJoint -n "Soul_Rig:QuickRigCharacter_Ctrl_Head" -p "Soul_Rig:Qui
 	setAttr ".radi" 4.2636075533353353;
 instanceable -a 0;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "BB1D7134-4D3B-F9E3-443A-DD98F23BE959";
+	rename -uid "E0F675F1-4D8C-8C5B-40F7-7DBBB0295FE5";
 	setAttr -s 5 ".lnk";
 	setAttr -s 5 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "51454936-440E-BE7E-4CA2-4CA0CF530349";
+	rename -uid "3F358D0C-4B74-380D-A603-2B837DCCC7D8";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "26538E56-4878-74CC-FBA1-11AA4CD8B055";
+	rename -uid "05D72B49-476A-7858-4B3B-46A28048D5B5";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "CF140685-4BE6-28A7-42B3-FFB509815369";
+	rename -uid "7B6FD8C4-4661-62D7-A5C9-88BB237997D0";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "AEBC2B88-43E9-91B2-D8F6-F7A50EEC6E7B";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "7845AC4A-47C2-5351-1EF0-71A1DFDED18D";
+	rename -uid "BA353834-45D7-09D1-DD46-2498EE506C2D";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "564A7D3D-4097-D40A-1928-94BFD3218E1D";
 	setAttr ".g" yes;
 createNode reference -n "Soul_RigRN";
 	rename -uid "7A5379C5-449B-4C52-4CF7-4FBCCF71B61A";
 	setAttr -s 806 ".phl";
-	setAttr ".phl[1]" 0;
-	setAttr ".phl[2]" 0;
-	setAttr ".phl[3]" 0;
-	setAttr ".phl[4]" 0;
-	setAttr ".phl[5]" 0;
-	setAttr ".phl[6]" 0;
-	setAttr ".phl[7]" 0;
-	setAttr ".phl[8]" 0;
-	setAttr ".phl[9]" 0;
-	setAttr ".phl[10]" 0;
-	setAttr ".phl[11]" 0;
-	setAttr ".phl[12]" 0;
-	setAttr ".phl[13]" 0;
-	setAttr ".phl[14]" 0;
-	setAttr ".phl[15]" 0;
-	setAttr ".phl[16]" 0;
-	setAttr ".phl[17]" 0;
-	setAttr ".phl[18]" 0;
-	setAttr ".phl[19]" 0;
-	setAttr ".phl[20]" 0;
-	setAttr ".phl[21]" 0;
-	setAttr ".phl[22]" 0;
-	setAttr ".phl[23]" 0;
-	setAttr ".phl[24]" 0;
-	setAttr ".phl[25]" 0;
-	setAttr ".phl[26]" 0;
-	setAttr ".phl[27]" 0;
-	setAttr ".phl[28]" 0;
-	setAttr ".phl[29]" 0;
-	setAttr ".phl[30]" 0;
-	setAttr ".phl[31]" 0;
-	setAttr ".phl[32]" 0;
-	setAttr ".phl[33]" 0;
-	setAttr ".phl[34]" 0;
-	setAttr ".phl[35]" 0;
-	setAttr ".phl[36]" 0;
-	setAttr ".phl[37]" 0;
-	setAttr ".phl[38]" 0;
-	setAttr ".phl[39]" 0;
-	setAttr ".phl[40]" 0;
-	setAttr ".phl[41]" 0;
-	setAttr ".phl[42]" 0;
-	setAttr ".phl[43]" 0;
-	setAttr ".phl[44]" 0;
-	setAttr ".phl[45]" 0;
-	setAttr ".phl[46]" 0;
-	setAttr ".phl[47]" 0;
-	setAttr ".phl[48]" 0;
-	setAttr ".phl[49]" 0;
-	setAttr ".phl[50]" 0;
-	setAttr ".phl[51]" 0;
-	setAttr ".phl[52]" 0;
-	setAttr ".phl[53]" 0;
-	setAttr ".phl[54]" 0;
-	setAttr ".phl[55]" 0;
-	setAttr ".phl[56]" 0;
-	setAttr ".phl[57]" 0;
-	setAttr ".phl[58]" 0;
-	setAttr ".phl[59]" 0;
-	setAttr ".phl[60]" 0;
-	setAttr ".phl[61]" 0;
-	setAttr ".phl[62]" 0;
-	setAttr ".phl[63]" 0;
-	setAttr ".phl[64]" 0;
-	setAttr ".phl[65]" 0;
-	setAttr ".phl[66]" 0;
-	setAttr ".phl[67]" 0;
-	setAttr ".phl[68]" 0;
-	setAttr ".phl[69]" 0;
-	setAttr ".phl[70]" 0;
-	setAttr ".phl[71]" 0;
-	setAttr ".phl[72]" 0;
-	setAttr ".phl[73]" 0;
-	setAttr ".phl[74]" 0;
-	setAttr ".phl[75]" 0;
-	setAttr ".phl[76]" 0;
-	setAttr ".phl[77]" 0;
-	setAttr ".phl[78]" 0;
-	setAttr ".phl[79]" 0;
-	setAttr ".phl[80]" 0;
-	setAttr ".phl[81]" 0;
-	setAttr ".phl[82]" 0;
-	setAttr ".phl[83]" 0;
-	setAttr ".phl[84]" 0;
-	setAttr ".phl[85]" 0;
-	setAttr ".phl[86]" 0;
-	setAttr ".phl[87]" 0;
-	setAttr ".phl[88]" 0;
-	setAttr ".phl[89]" 0;
-	setAttr ".phl[90]" 0;
-	setAttr ".phl[91]" 0;
-	setAttr ".phl[92]" 0;
-	setAttr ".phl[93]" 0;
-	setAttr ".phl[94]" 0;
-	setAttr ".phl[95]" 0;
-	setAttr ".phl[96]" 0;
-	setAttr ".phl[97]" 0;
-	setAttr ".phl[98]" 0;
-	setAttr ".phl[99]" 0;
-	setAttr ".phl[100]" 0;
-	setAttr ".phl[101]" 0;
-	setAttr ".phl[102]" 0;
-	setAttr ".phl[103]" 0;
-	setAttr ".phl[104]" 0;
-	setAttr ".phl[105]" 0;
-	setAttr ".phl[106]" 0;
-	setAttr ".phl[107]" 0;
-	setAttr ".phl[108]" 0;
-	setAttr ".phl[109]" 0;
-	setAttr ".phl[110]" 0;
-	setAttr ".phl[111]" 0;
-	setAttr ".phl[112]" 0;
-	setAttr ".phl[113]" 0;
-	setAttr ".phl[114]" 0;
-	setAttr ".phl[115]" 0;
-	setAttr ".phl[116]" 0;
-	setAttr ".phl[117]" 0;
-	setAttr ".phl[118]" 0;
-	setAttr ".phl[119]" 0;
-	setAttr ".phl[120]" 0;
-	setAttr ".phl[121]" 0;
-	setAttr ".phl[122]" 0;
-	setAttr ".phl[123]" 0;
-	setAttr ".phl[124]" 0;
-	setAttr ".phl[125]" 0;
-	setAttr ".phl[126]" 0;
-	setAttr ".phl[127]" 0;
-	setAttr ".phl[128]" 0;
-	setAttr ".phl[129]" 0;
-	setAttr ".phl[130]" 0;
-	setAttr ".phl[131]" 0;
-	setAttr ".phl[132]" 0;
-	setAttr ".phl[133]" 0;
-	setAttr ".phl[134]" 0;
-	setAttr ".phl[135]" 0;
-	setAttr ".phl[136]" 0;
-	setAttr ".phl[137]" 0;
-	setAttr ".phl[138]" 0;
-	setAttr ".phl[139]" 0;
-	setAttr ".phl[140]" 0;
-	setAttr ".phl[141]" 0;
-	setAttr ".phl[142]" 0;
-	setAttr ".phl[143]" 0;
-	setAttr ".phl[144]" 0;
-	setAttr ".phl[145]" 0;
-	setAttr ".phl[146]" 0;
-	setAttr ".phl[147]" 0;
-	setAttr ".phl[148]" 0;
-	setAttr ".phl[149]" 0;
-	setAttr ".phl[150]" 0;
-	setAttr ".phl[151]" 0;
-	setAttr ".phl[152]" 0;
-	setAttr ".phl[153]" 0;
-	setAttr ".phl[154]" 0;
-	setAttr ".phl[155]" 0;
-	setAttr ".phl[156]" 0;
-	setAttr ".phl[157]" 0;
-	setAttr ".phl[158]" 0;
-	setAttr ".phl[159]" 0;
-	setAttr ".phl[160]" 0;
-	setAttr ".phl[161]" 0;
-	setAttr ".phl[162]" 0;
-	setAttr ".phl[163]" 0;
-	setAttr ".phl[164]" 0;
-	setAttr ".phl[165]" 0;
-	setAttr ".phl[166]" 0;
-	setAttr ".phl[167]" 0;
-	setAttr ".phl[168]" 0;
-	setAttr ".phl[169]" 0;
-	setAttr ".phl[170]" 0;
-	setAttr ".phl[171]" 0;
-	setAttr ".phl[172]" 0;
-	setAttr ".phl[173]" 0;
-	setAttr ".phl[174]" 0;
-	setAttr ".phl[175]" 0;
-	setAttr ".phl[176]" 0;
-	setAttr ".phl[177]" 0;
-	setAttr ".phl[178]" 0;
-	setAttr ".phl[179]" 0;
-	setAttr ".phl[180]" 0;
-	setAttr ".phl[181]" 0;
-	setAttr ".phl[182]" 0;
-	setAttr ".phl[183]" 0;
-	setAttr ".phl[184]" 0;
-	setAttr ".phl[185]" 0;
-	setAttr ".phl[186]" 0;
-	setAttr ".phl[187]" 0;
-	setAttr ".phl[188]" 0;
-	setAttr ".phl[189]" 0;
-	setAttr ".phl[190]" 0;
-	setAttr ".phl[191]" 0;
-	setAttr ".phl[192]" 0;
-	setAttr ".phl[193]" 0;
-	setAttr ".phl[194]" 0;
-	setAttr ".phl[195]" 0;
-	setAttr ".phl[196]" 0;
-	setAttr ".phl[197]" 0;
-	setAttr ".phl[198]" 0;
-	setAttr ".phl[199]" 0;
-	setAttr ".phl[200]" 0;
-	setAttr ".phl[201]" 0;
-	setAttr ".phl[202]" 0;
-	setAttr ".phl[203]" 0;
-	setAttr ".phl[204]" 0;
-	setAttr ".phl[205]" 0;
-	setAttr ".phl[206]" 0;
-	setAttr ".phl[207]" 0;
-	setAttr ".phl[208]" 0;
-	setAttr ".phl[209]" 0;
-	setAttr ".phl[210]" 0;
-	setAttr ".phl[211]" 0;
-	setAttr ".phl[212]" 0;
-	setAttr ".phl[213]" 0;
-	setAttr ".phl[214]" 0;
-	setAttr ".phl[215]" 0;
-	setAttr ".phl[216]" 0;
-	setAttr ".phl[217]" 0;
-	setAttr ".phl[218]" 0;
-	setAttr ".phl[219]" 0;
-	setAttr ".phl[220]" 0;
-	setAttr ".phl[221]" 0;
-	setAttr ".phl[222]" 0;
-	setAttr ".phl[223]" 0;
-	setAttr ".phl[224]" 0;
-	setAttr ".phl[225]" 0;
-	setAttr ".phl[226]" 0;
-	setAttr ".phl[227]" 0;
-	setAttr ".phl[228]" 0;
-	setAttr ".phl[229]" 0;
-	setAttr ".phl[230]" 0;
-	setAttr ".phl[231]" 0;
-	setAttr ".phl[232]" 0;
-	setAttr ".phl[233]" 0;
-	setAttr ".phl[234]" 0;
-	setAttr ".phl[235]" 0;
-	setAttr ".phl[236]" 0;
-	setAttr ".phl[237]" 0;
-	setAttr ".phl[238]" 0;
-	setAttr ".phl[239]" 0;
-	setAttr ".phl[240]" 0;
-	setAttr ".phl[241]" 0;
-	setAttr ".phl[242]" 0;
-	setAttr ".phl[243]" 0;
-	setAttr ".phl[244]" 0;
-	setAttr ".phl[245]" 0;
-	setAttr ".phl[246]" 0;
-	setAttr ".phl[247]" 0;
-	setAttr ".phl[248]" 0;
-	setAttr ".phl[249]" 0;
-	setAttr ".phl[250]" 0;
-	setAttr ".phl[251]" 0;
-	setAttr ".phl[252]" 0;
-	setAttr ".phl[253]" 0;
-	setAttr ".phl[254]" 0;
-	setAttr ".phl[255]" 0;
-	setAttr ".phl[256]" 0;
-	setAttr ".phl[257]" 0;
-	setAttr ".phl[258]" 0;
-	setAttr ".phl[259]" 0;
-	setAttr ".phl[260]" 0;
-	setAttr ".phl[261]" 0;
-	setAttr ".phl[262]" 0;
-	setAttr ".phl[263]" 0;
-	setAttr ".phl[264]" 0;
-	setAttr ".phl[265]" 0;
-	setAttr ".phl[266]" 0;
-	setAttr ".phl[267]" 0;
-	setAttr ".phl[268]" 0;
-	setAttr ".phl[269]" 0;
-	setAttr ".phl[270]" 0;
-	setAttr ".phl[271]" 0;
-	setAttr ".phl[272]" 0;
-	setAttr ".phl[273]" 0;
-	setAttr ".phl[274]" 0;
-	setAttr ".phl[275]" 0;
-	setAttr ".phl[276]" 0;
-	setAttr ".phl[277]" 0;
-	setAttr ".phl[278]" 0;
-	setAttr ".phl[279]" 0;
-	setAttr ".phl[280]" 0;
-	setAttr ".phl[281]" 0;
-	setAttr ".phl[282]" 0;
-	setAttr ".phl[283]" 0;
-	setAttr ".phl[284]" 0;
-	setAttr ".phl[285]" 0;
-	setAttr ".phl[286]" 0;
-	setAttr ".phl[287]" 0;
-	setAttr ".phl[288]" 0;
-	setAttr ".phl[289]" 0;
-	setAttr ".phl[290]" 0;
-	setAttr ".phl[291]" 0;
-	setAttr ".phl[292]" 0;
-	setAttr ".phl[293]" 0;
-	setAttr ".phl[294]" 0;
-	setAttr ".phl[295]" 0;
-	setAttr ".phl[296]" 0;
-	setAttr ".phl[297]" 0;
-	setAttr ".phl[298]" 0;
-	setAttr ".phl[299]" 0;
-	setAttr ".phl[300]" 0;
-	setAttr ".phl[301]" 0;
-	setAttr ".phl[302]" 0;
-	setAttr ".phl[303]" 0;
-	setAttr ".phl[304]" 0;
-	setAttr ".phl[305]" 0;
-	setAttr ".phl[306]" 0;
-	setAttr ".phl[307]" 0;
-	setAttr ".phl[308]" 0;
-	setAttr ".phl[309]" 0;
-	setAttr ".phl[310]" 0;
-	setAttr ".phl[311]" 0;
-	setAttr ".phl[312]" 0;
-	setAttr ".phl[313]" 0;
-	setAttr ".phl[314]" 0;
-	setAttr ".phl[315]" 0;
-	setAttr ".phl[316]" 0;
-	setAttr ".phl[317]" 0;
-	setAttr ".phl[318]" 0;
-	setAttr ".phl[319]" 0;
-	setAttr ".phl[320]" 0;
-	setAttr ".phl[321]" 0;
-	setAttr ".phl[322]" 0;
-	setAttr ".phl[323]" 0;
-	setAttr ".phl[324]" 0;
-	setAttr ".phl[325]" 0;
-	setAttr ".phl[326]" 0;
-	setAttr ".phl[327]" 0;
-	setAttr ".phl[328]" 0;
-	setAttr ".phl[329]" 0;
-	setAttr ".phl[330]" 0;
-	setAttr ".phl[331]" 0;
-	setAttr ".phl[332]" 0;
-	setAttr ".phl[333]" 0;
-	setAttr ".phl[334]" 0;
-	setAttr ".phl[335]" 0;
-	setAttr ".phl[336]" 0;
-	setAttr ".phl[337]" 0;
-	setAttr ".phl[338]" 0;
-	setAttr ".phl[339]" 0;
-	setAttr ".phl[340]" 0;
-	setAttr ".phl[341]" 0;
-	setAttr ".phl[342]" 0;
-	setAttr ".phl[343]" 0;
-	setAttr ".phl[344]" 0;
-	setAttr ".phl[345]" 0;
-	setAttr ".phl[346]" 0;
-	setAttr ".phl[347]" 0;
-	setAttr ".phl[348]" 0;
-	setAttr ".phl[349]" 0;
-	setAttr ".phl[350]" 0;
-	setAttr ".phl[351]" 0;
-	setAttr ".phl[352]" 0;
-	setAttr ".phl[353]" 0;
-	setAttr ".phl[354]" 0;
-	setAttr ".phl[355]" 0;
-	setAttr ".phl[356]" 0;
-	setAttr ".phl[357]" 0;
-	setAttr ".phl[358]" 0;
-	setAttr ".phl[359]" 0;
-	setAttr ".phl[360]" 0;
-	setAttr ".phl[361]" 0;
-	setAttr ".phl[362]" 0;
-	setAttr ".phl[363]" 0;
-	setAttr ".phl[364]" 0;
-	setAttr ".phl[365]" 0;
-	setAttr ".phl[366]" 0;
-	setAttr ".phl[367]" 0;
-	setAttr ".phl[368]" 0;
-	setAttr ".phl[369]" 0;
-	setAttr ".phl[370]" 0;
-	setAttr ".phl[371]" 0;
-	setAttr ".phl[372]" 0;
-	setAttr ".phl[373]" 0;
-	setAttr ".phl[374]" 0;
-	setAttr ".phl[375]" 0;
-	setAttr ".phl[376]" 0;
-	setAttr ".phl[377]" 0;
-	setAttr ".phl[378]" 0;
-	setAttr ".phl[379]" 0;
-	setAttr ".phl[380]" 0;
-	setAttr ".phl[381]" 0;
-	setAttr ".phl[382]" 0;
-	setAttr ".phl[383]" 0;
-	setAttr ".phl[384]" 0;
-	setAttr ".phl[385]" 0;
-	setAttr ".phl[386]" 0;
-	setAttr ".phl[387]" 0;
-	setAttr ".phl[388]" 0;
-	setAttr ".phl[389]" 0;
-	setAttr ".phl[390]" 0;
-	setAttr ".phl[391]" 0;
-	setAttr ".phl[392]" 0;
-	setAttr ".phl[393]" 0;
-	setAttr ".phl[394]" 0;
-	setAttr ".phl[395]" 0;
-	setAttr ".phl[396]" 0;
-	setAttr ".phl[397]" 0;
-	setAttr ".phl[398]" 0;
-	setAttr ".phl[399]" 0;
-	setAttr ".phl[400]" 0;
-	setAttr ".phl[401]" 0;
-	setAttr ".phl[402]" 0;
-	setAttr ".phl[403]" 0;
-	setAttr ".phl[404]" 0;
-	setAttr ".phl[405]" 0;
-	setAttr ".phl[406]" 0;
-	setAttr ".phl[407]" 0;
-	setAttr ".phl[408]" 0;
-	setAttr ".phl[409]" 0;
-	setAttr ".phl[410]" 0;
-	setAttr ".phl[411]" 0;
-	setAttr ".phl[412]" 0;
-	setAttr ".phl[413]" 0;
-	setAttr ".phl[414]" 0;
-	setAttr ".phl[415]" 0;
-	setAttr ".phl[416]" 0;
-	setAttr ".phl[417]" 0;
-	setAttr ".phl[418]" 0;
-	setAttr ".phl[419]" 0;
-	setAttr ".phl[420]" 0;
-	setAttr ".phl[421]" 0;
-	setAttr ".phl[422]" 0;
-	setAttr ".phl[423]" 0;
-	setAttr ".phl[424]" 0;
-	setAttr ".phl[425]" 0;
-	setAttr ".phl[426]" 0;
-	setAttr ".phl[427]" 0;
-	setAttr ".phl[428]" 0;
-	setAttr ".phl[429]" 0;
-	setAttr ".phl[430]" 0;
-	setAttr ".phl[431]" 0;
-	setAttr ".phl[432]" 0;
-	setAttr ".phl[433]" 0;
-	setAttr ".phl[434]" 0;
-	setAttr ".phl[435]" 0;
-	setAttr ".phl[436]" 0;
-	setAttr ".phl[437]" 0;
-	setAttr ".phl[438]" 0;
-	setAttr ".phl[439]" 0;
-	setAttr ".phl[440]" 0;
-	setAttr ".phl[441]" 0;
-	setAttr ".phl[442]" 0;
-	setAttr ".phl[443]" 0;
-	setAttr ".phl[444]" 0;
-	setAttr ".phl[445]" 0;
-	setAttr ".phl[446]" 0;
-	setAttr ".phl[447]" 0;
-	setAttr ".phl[448]" 0;
-	setAttr ".phl[449]" 0;
-	setAttr ".phl[450]" 0;
-	setAttr ".phl[451]" 0;
-	setAttr ".phl[452]" 0;
-	setAttr ".phl[453]" 0;
-	setAttr ".phl[454]" 0;
-	setAttr ".phl[455]" 0;
-	setAttr ".phl[456]" 0;
-	setAttr ".phl[457]" 0;
-	setAttr ".phl[458]" 0;
-	setAttr ".phl[459]" 0;
-	setAttr ".phl[460]" 0;
-	setAttr ".phl[461]" 0;
-	setAttr ".phl[462]" 0;
-	setAttr ".phl[463]" 0;
-	setAttr ".phl[464]" 0;
-	setAttr ".phl[465]" 0;
-	setAttr ".phl[466]" 0;
-	setAttr ".phl[467]" 0;
-	setAttr ".phl[468]" 0;
-	setAttr ".phl[469]" 0;
-	setAttr ".phl[470]" 0;
-	setAttr ".phl[471]" 0;
-	setAttr ".phl[472]" 0;
-	setAttr ".phl[473]" 0;
-	setAttr ".phl[474]" 0;
-	setAttr ".phl[475]" 0;
-	setAttr ".phl[476]" 0;
-	setAttr ".phl[477]" 0;
-	setAttr ".phl[478]" 0;
-	setAttr ".phl[479]" 0;
-	setAttr ".phl[480]" 0;
-	setAttr ".phl[481]" 0;
-	setAttr ".phl[482]" 0;
-	setAttr ".phl[483]" 0;
-	setAttr ".phl[484]" 0;
-	setAttr ".phl[485]" 0;
-	setAttr ".phl[486]" 0;
-	setAttr ".phl[487]" 0;
-	setAttr ".phl[488]" 0;
-	setAttr ".phl[489]" 0;
-	setAttr ".phl[490]" 0;
-	setAttr ".phl[491]" 0;
-	setAttr ".phl[492]" 0;
-	setAttr ".phl[493]" 0;
-	setAttr ".phl[494]" 0;
-	setAttr ".phl[495]" 0;
-	setAttr ".phl[496]" 0;
-	setAttr ".phl[497]" 0;
-	setAttr ".phl[498]" 0;
-	setAttr ".phl[499]" 0;
-	setAttr ".phl[500]" 0;
-	setAttr ".phl[501]" 0;
-	setAttr ".phl[502]" 0;
-	setAttr ".phl[503]" 0;
-	setAttr ".phl[504]" 0;
-	setAttr ".phl[505]" 0;
-	setAttr ".phl[506]" 0;
-	setAttr ".phl[507]" 0;
-	setAttr ".phl[508]" 0;
-	setAttr ".phl[509]" 0;
-	setAttr ".phl[510]" 0;
-	setAttr ".phl[511]" 0;
-	setAttr ".phl[512]" 0;
-	setAttr ".phl[513]" 0;
-	setAttr ".phl[514]" 0;
-	setAttr ".phl[515]" 0;
-	setAttr ".phl[516]" 0;
-	setAttr ".phl[517]" 0;
-	setAttr ".phl[518]" 0;
-	setAttr ".phl[519]" 0;
-	setAttr ".phl[520]" 0;
-	setAttr ".phl[521]" 0;
-	setAttr ".phl[522]" 0;
-	setAttr ".phl[523]" 0;
-	setAttr ".phl[524]" 0;
-	setAttr ".phl[525]" 0;
-	setAttr ".phl[526]" 0;
-	setAttr ".phl[527]" 0;
-	setAttr ".phl[528]" 0;
-	setAttr ".phl[529]" 0;
-	setAttr ".phl[530]" 0;
-	setAttr ".phl[531]" 0;
-	setAttr ".phl[532]" 0;
-	setAttr ".phl[533]" 0;
-	setAttr ".phl[534]" 0;
-	setAttr ".phl[535]" 0;
-	setAttr ".phl[536]" 0;
-	setAttr ".phl[537]" 0;
-	setAttr ".phl[538]" 0;
-	setAttr ".phl[539]" 0;
-	setAttr ".phl[540]" 0;
-	setAttr ".phl[541]" 0;
-	setAttr ".phl[542]" 0;
-	setAttr ".phl[543]" 0;
-	setAttr ".phl[544]" 0;
-	setAttr ".phl[545]" 0;
-	setAttr ".phl[546]" 0;
-	setAttr ".phl[547]" 0;
-	setAttr ".phl[548]" 0;
-	setAttr ".phl[549]" 0;
-	setAttr ".phl[550]" 0;
-	setAttr ".phl[551]" 0;
-	setAttr ".phl[552]" 0;
-	setAttr ".phl[553]" 0;
-	setAttr ".phl[554]" 0;
-	setAttr ".phl[555]" 0;
-	setAttr ".phl[556]" 0;
-	setAttr ".phl[557]" 0;
-	setAttr ".phl[558]" 0;
-	setAttr ".phl[559]" 0;
-	setAttr ".phl[560]" 0;
-	setAttr ".phl[561]" 0;
-	setAttr ".phl[562]" 0;
-	setAttr ".phl[563]" 0;
-	setAttr ".phl[564]" 0;
-	setAttr ".phl[565]" 0;
-	setAttr ".phl[566]" 0;
-	setAttr ".phl[567]" 0;
-	setAttr ".phl[568]" 0;
-	setAttr ".phl[569]" 0;
-	setAttr ".phl[570]" 0;
-	setAttr ".phl[571]" 0;
-	setAttr ".phl[572]" 0;
-	setAttr ".phl[573]" 0;
-	setAttr ".phl[574]" 0;
-	setAttr ".phl[575]" 0;
-	setAttr ".phl[576]" 0;
-	setAttr ".phl[577]" 0;
-	setAttr ".phl[578]" 0;
-	setAttr ".phl[579]" 0;
-	setAttr ".phl[580]" 0;
-	setAttr ".phl[581]" 0;
-	setAttr ".phl[582]" 0;
-	setAttr ".phl[583]" 0;
-	setAttr ".phl[584]" 0;
-	setAttr ".phl[585]" 0;
-	setAttr ".phl[586]" 0;
-	setAttr ".phl[587]" 0;
-	setAttr ".phl[588]" 0;
-	setAttr ".phl[589]" 0;
-	setAttr ".phl[590]" 0;
-	setAttr ".phl[591]" 0;
-	setAttr ".phl[592]" 0;
-	setAttr ".phl[593]" 0;
-	setAttr ".phl[594]" 0;
-	setAttr ".phl[595]" 0;
-	setAttr ".phl[596]" 0;
-	setAttr ".phl[597]" 0;
-	setAttr ".phl[598]" 0;
-	setAttr ".phl[599]" 0;
-	setAttr ".phl[600]" 0;
-	setAttr ".phl[601]" 0;
-	setAttr ".phl[602]" 0;
-	setAttr ".phl[603]" 0;
-	setAttr ".phl[604]" 0;
-	setAttr ".phl[605]" 0;
-	setAttr ".phl[606]" 0;
-	setAttr ".phl[607]" 0;
-	setAttr ".phl[608]" 0;
-	setAttr ".phl[609]" 0;
-	setAttr ".phl[610]" 0;
-	setAttr ".phl[611]" 0;
-	setAttr ".phl[612]" 0;
-	setAttr ".phl[613]" 0;
-	setAttr ".phl[614]" 0;
-	setAttr ".phl[615]" 0;
-	setAttr ".phl[616]" 0;
-	setAttr ".phl[617]" 0;
-	setAttr ".phl[618]" 0;
-	setAttr ".phl[619]" 0;
-	setAttr ".phl[620]" 0;
-	setAttr ".phl[621]" 0;
-	setAttr ".phl[622]" 0;
-	setAttr ".phl[623]" 0;
-	setAttr ".phl[624]" 0;
-	setAttr ".phl[625]" 0;
-	setAttr ".phl[626]" 0;
-	setAttr ".phl[627]" 0;
-	setAttr ".phl[628]" 0;
-	setAttr ".phl[629]" 0;
-	setAttr ".phl[630]" 0;
-	setAttr ".phl[631]" 0;
-	setAttr ".phl[632]" 0;
-	setAttr ".phl[633]" 0;
-	setAttr ".phl[634]" 0;
-	setAttr ".phl[635]" 0;
-	setAttr ".phl[636]" 0;
-	setAttr ".phl[637]" 0;
-	setAttr ".phl[638]" 0;
-	setAttr ".phl[639]" 0;
-	setAttr ".phl[640]" 0;
-	setAttr ".phl[641]" 0;
-	setAttr ".phl[642]" 0;
-	setAttr ".phl[643]" 0;
-	setAttr ".phl[644]" 0;
-	setAttr ".phl[645]" 0;
-	setAttr ".phl[646]" 0;
-	setAttr ".phl[647]" 0;
-	setAttr ".phl[648]" 0;
-	setAttr ".phl[649]" 0;
-	setAttr ".phl[650]" 0;
-	setAttr ".phl[651]" 0;
-	setAttr ".phl[652]" 0;
-	setAttr ".phl[653]" 0;
-	setAttr ".phl[654]" 0;
-	setAttr ".phl[655]" 0;
-	setAttr ".phl[656]" 0;
-	setAttr ".phl[657]" 0;
-	setAttr ".phl[658]" 0;
-	setAttr ".phl[659]" 0;
-	setAttr ".phl[660]" 0;
-	setAttr ".phl[661]" 0;
-	setAttr ".phl[662]" 0;
-	setAttr ".phl[663]" 0;
-	setAttr ".phl[664]" 0;
-	setAttr ".phl[665]" 0;
-	setAttr ".phl[666]" 0;
-	setAttr ".phl[667]" 0;
-	setAttr ".phl[668]" 0;
-	setAttr ".phl[669]" 0;
-	setAttr ".phl[670]" 0;
-	setAttr ".phl[671]" 0;
-	setAttr ".phl[672]" 0;
-	setAttr ".phl[673]" 0;
-	setAttr ".phl[674]" 0;
-	setAttr ".phl[675]" 0;
-	setAttr ".phl[676]" 0;
-	setAttr ".phl[677]" 0;
-	setAttr ".phl[678]" 0;
-	setAttr ".phl[679]" 0;
-	setAttr ".phl[680]" 0;
-	setAttr ".phl[681]" 0;
-	setAttr ".phl[682]" 0;
-	setAttr ".phl[683]" 0;
-	setAttr ".phl[684]" 0;
-	setAttr ".phl[685]" 0;
-	setAttr ".phl[686]" 0;
-	setAttr ".phl[687]" 0;
-	setAttr ".phl[688]" 0;
-	setAttr ".phl[689]" 0;
-	setAttr ".phl[690]" 0;
-	setAttr ".phl[691]" 0;
-	setAttr ".phl[692]" 0;
-	setAttr ".phl[693]" 0;
-	setAttr ".phl[694]" 0;
-	setAttr ".phl[695]" 0;
-	setAttr ".phl[696]" 0;
-	setAttr ".phl[697]" 0;
-	setAttr ".phl[698]" 0;
-	setAttr ".phl[699]" 0;
-	setAttr ".phl[700]" 0;
-	setAttr ".phl[701]" 0;
-	setAttr ".phl[702]" 0;
-	setAttr ".phl[703]" 0;
-	setAttr ".phl[704]" 0;
 	setAttr ".phl[705]" 0;
 	setAttr ".phl[706]" 0;
 	setAttr ".phl[707]" 0;
@@ -2393,164 +1680,713 @@ createNode reference -n "Soul_RigRN";
 	setAttr ".phl[804]" 0;
 	setAttr ".phl[805]" 0;
 	setAttr ".phl[806]" 0;
+	setAttr ".phl[807]" 0;
+	setAttr ".phl[808]" 0;
+	setAttr ".phl[809]" 0;
+	setAttr ".phl[810]" 0;
+	setAttr ".phl[811]" 0;
+	setAttr ".phl[812]" 0;
+	setAttr ".phl[813]" 0;
+	setAttr ".phl[814]" 0;
+	setAttr ".phl[815]" 0;
+	setAttr ".phl[816]" 0;
+	setAttr ".phl[817]" 0;
+	setAttr ".phl[818]" 0;
+	setAttr ".phl[819]" 0;
+	setAttr ".phl[820]" 0;
+	setAttr ".phl[821]" 0;
+	setAttr ".phl[822]" 0;
+	setAttr ".phl[823]" 0;
+	setAttr ".phl[824]" 0;
+	setAttr ".phl[825]" 0;
+	setAttr ".phl[826]" 0;
+	setAttr ".phl[827]" 0;
+	setAttr ".phl[828]" 0;
+	setAttr ".phl[829]" 0;
+	setAttr ".phl[830]" 0;
+	setAttr ".phl[831]" 0;
+	setAttr ".phl[832]" 0;
+	setAttr ".phl[833]" 0;
+	setAttr ".phl[834]" 0;
+	setAttr ".phl[835]" 0;
+	setAttr ".phl[836]" 0;
+	setAttr ".phl[837]" 0;
+	setAttr ".phl[838]" 0;
+	setAttr ".phl[839]" 0;
+	setAttr ".phl[840]" 0;
+	setAttr ".phl[841]" 0;
+	setAttr ".phl[842]" 0;
+	setAttr ".phl[843]" 0;
+	setAttr ".phl[844]" 0;
+	setAttr ".phl[845]" 0;
+	setAttr ".phl[846]" 0;
+	setAttr ".phl[847]" 0;
+	setAttr ".phl[848]" 0;
+	setAttr ".phl[849]" 0;
+	setAttr ".phl[850]" 0;
+	setAttr ".phl[851]" 0;
+	setAttr ".phl[852]" 0;
+	setAttr ".phl[853]" 0;
+	setAttr ".phl[854]" 0;
+	setAttr ".phl[855]" 0;
+	setAttr ".phl[856]" 0;
+	setAttr ".phl[857]" 0;
+	setAttr ".phl[858]" 0;
+	setAttr ".phl[859]" 0;
+	setAttr ".phl[860]" 0;
+	setAttr ".phl[861]" 0;
+	setAttr ".phl[862]" 0;
+	setAttr ".phl[863]" 0;
+	setAttr ".phl[864]" 0;
+	setAttr ".phl[865]" 0;
+	setAttr ".phl[866]" 0;
+	setAttr ".phl[867]" 0;
+	setAttr ".phl[868]" 0;
+	setAttr ".phl[869]" 0;
+	setAttr ".phl[870]" 0;
+	setAttr ".phl[871]" 0;
+	setAttr ".phl[872]" 0;
+	setAttr ".phl[873]" 0;
+	setAttr ".phl[874]" 0;
+	setAttr ".phl[875]" 0;
+	setAttr ".phl[876]" 0;
+	setAttr ".phl[877]" 0;
+	setAttr ".phl[878]" 0;
+	setAttr ".phl[879]" 0;
+	setAttr ".phl[880]" 0;
+	setAttr ".phl[881]" 0;
+	setAttr ".phl[882]" 0;
+	setAttr ".phl[883]" 0;
+	setAttr ".phl[884]" 0;
+	setAttr ".phl[885]" 0;
+	setAttr ".phl[886]" 0;
+	setAttr ".phl[887]" 0;
+	setAttr ".phl[888]" 0;
+	setAttr ".phl[889]" 0;
+	setAttr ".phl[890]" 0;
+	setAttr ".phl[891]" 0;
+	setAttr ".phl[892]" 0;
+	setAttr ".phl[893]" 0;
+	setAttr ".phl[894]" 0;
+	setAttr ".phl[895]" 0;
+	setAttr ".phl[896]" 0;
+	setAttr ".phl[897]" 0;
+	setAttr ".phl[898]" 0;
+	setAttr ".phl[899]" 0;
+	setAttr ".phl[900]" 0;
+	setAttr ".phl[901]" 0;
+	setAttr ".phl[902]" 0;
+	setAttr ".phl[903]" 0;
+	setAttr ".phl[904]" 0;
+	setAttr ".phl[905]" 0;
+	setAttr ".phl[906]" 0;
+	setAttr ".phl[907]" 0;
+	setAttr ".phl[908]" 0;
+	setAttr ".phl[909]" 0;
+	setAttr ".phl[910]" 0;
+	setAttr ".phl[911]" 0;
+	setAttr ".phl[912]" 0;
+	setAttr ".phl[913]" 0;
+	setAttr ".phl[914]" 0;
+	setAttr ".phl[915]" 0;
+	setAttr ".phl[916]" 0;
+	setAttr ".phl[917]" 0;
+	setAttr ".phl[918]" 0;
+	setAttr ".phl[919]" 0;
+	setAttr ".phl[920]" 0;
+	setAttr ".phl[921]" 0;
+	setAttr ".phl[922]" 0;
+	setAttr ".phl[923]" 0;
+	setAttr ".phl[924]" 0;
+	setAttr ".phl[925]" 0;
+	setAttr ".phl[926]" 0;
+	setAttr ".phl[927]" 0;
+	setAttr ".phl[928]" 0;
+	setAttr ".phl[929]" 0;
+	setAttr ".phl[930]" 0;
+	setAttr ".phl[931]" 0;
+	setAttr ".phl[932]" 0;
+	setAttr ".phl[933]" 0;
+	setAttr ".phl[934]" 0;
+	setAttr ".phl[935]" 0;
+	setAttr ".phl[936]" 0;
+	setAttr ".phl[937]" 0;
+	setAttr ".phl[938]" 0;
+	setAttr ".phl[939]" 0;
+	setAttr ".phl[940]" 0;
+	setAttr ".phl[941]" 0;
+	setAttr ".phl[942]" 0;
+	setAttr ".phl[943]" 0;
+	setAttr ".phl[944]" 0;
+	setAttr ".phl[945]" 0;
+	setAttr ".phl[946]" 0;
+	setAttr ".phl[947]" 0;
+	setAttr ".phl[948]" 0;
+	setAttr ".phl[949]" 0;
+	setAttr ".phl[950]" 0;
+	setAttr ".phl[951]" 0;
+	setAttr ".phl[952]" 0;
+	setAttr ".phl[953]" 0;
+	setAttr ".phl[954]" 0;
+	setAttr ".phl[955]" 0;
+	setAttr ".phl[956]" 0;
+	setAttr ".phl[957]" 0;
+	setAttr ".phl[958]" 0;
+	setAttr ".phl[959]" 0;
+	setAttr ".phl[960]" 0;
+	setAttr ".phl[961]" 0;
+	setAttr ".phl[962]" 0;
+	setAttr ".phl[963]" 0;
+	setAttr ".phl[964]" 0;
+	setAttr ".phl[965]" 0;
+	setAttr ".phl[966]" 0;
+	setAttr ".phl[967]" 0;
+	setAttr ".phl[968]" 0;
+	setAttr ".phl[969]" 0;
+	setAttr ".phl[970]" 0;
+	setAttr ".phl[971]" 0;
+	setAttr ".phl[972]" 0;
+	setAttr ".phl[973]" 0;
+	setAttr ".phl[974]" 0;
+	setAttr ".phl[975]" 0;
+	setAttr ".phl[976]" 0;
+	setAttr ".phl[977]" 0;
+	setAttr ".phl[978]" 0;
+	setAttr ".phl[979]" 0;
+	setAttr ".phl[980]" 0;
+	setAttr ".phl[981]" 0;
+	setAttr ".phl[982]" 0;
+	setAttr ".phl[983]" 0;
+	setAttr ".phl[984]" 0;
+	setAttr ".phl[985]" 0;
+	setAttr ".phl[986]" 0;
+	setAttr ".phl[987]" 0;
+	setAttr ".phl[988]" 0;
+	setAttr ".phl[989]" 0;
+	setAttr ".phl[990]" 0;
+	setAttr ".phl[991]" 0;
+	setAttr ".phl[992]" 0;
+	setAttr ".phl[993]" 0;
+	setAttr ".phl[994]" 0;
+	setAttr ".phl[995]" 0;
+	setAttr ".phl[996]" 0;
+	setAttr ".phl[997]" 0;
+	setAttr ".phl[998]" 0;
+	setAttr ".phl[999]" 0;
+	setAttr ".phl[1000]" 0;
+	setAttr ".phl[1001]" 0;
+	setAttr ".phl[1002]" 0;
+	setAttr ".phl[1003]" 0;
+	setAttr ".phl[1004]" 0;
+	setAttr ".phl[1005]" 0;
+	setAttr ".phl[1006]" 0;
+	setAttr ".phl[1007]" 0;
+	setAttr ".phl[1008]" 0;
+	setAttr ".phl[1009]" 0;
+	setAttr ".phl[1010]" 0;
+	setAttr ".phl[1011]" 0;
+	setAttr ".phl[1012]" 0;
+	setAttr ".phl[1013]" 0;
+	setAttr ".phl[1014]" 0;
+	setAttr ".phl[1015]" 0;
+	setAttr ".phl[1016]" 0;
+	setAttr ".phl[1017]" 0;
+	setAttr ".phl[1018]" 0;
+	setAttr ".phl[1019]" 0;
+	setAttr ".phl[1020]" 0;
+	setAttr ".phl[1021]" 0;
+	setAttr ".phl[1022]" 0;
+	setAttr ".phl[1023]" 0;
+	setAttr ".phl[1024]" 0;
+	setAttr ".phl[1025]" 0;
+	setAttr ".phl[1026]" 0;
+	setAttr ".phl[1027]" 0;
+	setAttr ".phl[1028]" 0;
+	setAttr ".phl[1029]" 0;
+	setAttr ".phl[1030]" 0;
+	setAttr ".phl[1031]" 0;
+	setAttr ".phl[1032]" 0;
+	setAttr ".phl[1033]" 0;
+	setAttr ".phl[1034]" 0;
+	setAttr ".phl[1035]" 0;
+	setAttr ".phl[1036]" 0;
+	setAttr ".phl[1037]" 0;
+	setAttr ".phl[1038]" 0;
+	setAttr ".phl[1039]" 0;
+	setAttr ".phl[1040]" 0;
+	setAttr ".phl[1041]" 0;
+	setAttr ".phl[1042]" 0;
+	setAttr ".phl[1043]" 0;
+	setAttr ".phl[1044]" 0;
+	setAttr ".phl[1045]" 0;
+	setAttr ".phl[1046]" 0;
+	setAttr ".phl[1047]" 0;
+	setAttr ".phl[1048]" 0;
+	setAttr ".phl[1049]" 0;
+	setAttr ".phl[1050]" 0;
+	setAttr ".phl[1051]" 0;
+	setAttr ".phl[1052]" 0;
+	setAttr ".phl[1053]" 0;
+	setAttr ".phl[1054]" 0;
+	setAttr ".phl[1055]" 0;
+	setAttr ".phl[1056]" 0;
+	setAttr ".phl[1057]" 0;
+	setAttr ".phl[1058]" 0;
+	setAttr ".phl[1059]" 0;
+	setAttr ".phl[1060]" 0;
+	setAttr ".phl[1061]" 0;
+	setAttr ".phl[1062]" 0;
+	setAttr ".phl[1063]" 0;
+	setAttr ".phl[1064]" 0;
+	setAttr ".phl[1065]" 0;
+	setAttr ".phl[1066]" 0;
+	setAttr ".phl[1067]" 0;
+	setAttr ".phl[1068]" 0;
+	setAttr ".phl[1069]" 0;
+	setAttr ".phl[1070]" 0;
+	setAttr ".phl[1071]" 0;
+	setAttr ".phl[1072]" 0;
+	setAttr ".phl[1073]" 0;
+	setAttr ".phl[1074]" 0;
+	setAttr ".phl[1075]" 0;
+	setAttr ".phl[1076]" 0;
+	setAttr ".phl[1077]" 0;
+	setAttr ".phl[1078]" 0;
+	setAttr ".phl[1079]" 0;
+	setAttr ".phl[1080]" 0;
+	setAttr ".phl[1081]" 0;
+	setAttr ".phl[1082]" 0;
+	setAttr ".phl[1083]" 0;
+	setAttr ".phl[1084]" 0;
+	setAttr ".phl[1085]" 0;
+	setAttr ".phl[1086]" 0;
+	setAttr ".phl[1087]" 0;
+	setAttr ".phl[1088]" 0;
+	setAttr ".phl[1089]" 0;
+	setAttr ".phl[1090]" 0;
+	setAttr ".phl[1091]" 0;
+	setAttr ".phl[1092]" 0;
+	setAttr ".phl[1093]" 0;
+	setAttr ".phl[1094]" 0;
+	setAttr ".phl[1095]" 0;
+	setAttr ".phl[1096]" 0;
+	setAttr ".phl[1097]" 0;
+	setAttr ".phl[1098]" 0;
+	setAttr ".phl[1099]" 0;
+	setAttr ".phl[1100]" 0;
+	setAttr ".phl[1101]" 0;
+	setAttr ".phl[1102]" 0;
+	setAttr ".phl[1103]" 0;
+	setAttr ".phl[1104]" 0;
+	setAttr ".phl[1105]" 0;
+	setAttr ".phl[1106]" 0;
+	setAttr ".phl[1107]" 0;
+	setAttr ".phl[1108]" 0;
+	setAttr ".phl[1109]" 0;
+	setAttr ".phl[1110]" 0;
+	setAttr ".phl[1111]" 0;
+	setAttr ".phl[1112]" 0;
+	setAttr ".phl[1113]" 0;
+	setAttr ".phl[1114]" 0;
+	setAttr ".phl[1115]" 0;
+	setAttr ".phl[1116]" 0;
+	setAttr ".phl[1117]" 0;
+	setAttr ".phl[1118]" 0;
+	setAttr ".phl[1119]" 0;
+	setAttr ".phl[1120]" 0;
+	setAttr ".phl[1121]" 0;
+	setAttr ".phl[1122]" 0;
+	setAttr ".phl[1123]" 0;
+	setAttr ".phl[1124]" 0;
+	setAttr ".phl[1125]" 0;
+	setAttr ".phl[1126]" 0;
+	setAttr ".phl[1127]" 0;
+	setAttr ".phl[1128]" 0;
+	setAttr ".phl[1129]" 0;
+	setAttr ".phl[1130]" 0;
+	setAttr ".phl[1131]" 0;
+	setAttr ".phl[1132]" 0;
+	setAttr ".phl[1133]" 0;
+	setAttr ".phl[1134]" 0;
+	setAttr ".phl[1135]" 0;
+	setAttr ".phl[1136]" 0;
+	setAttr ".phl[1137]" 0;
+	setAttr ".phl[1138]" 0;
+	setAttr ".phl[1139]" 0;
+	setAttr ".phl[1140]" 0;
+	setAttr ".phl[1141]" 0;
+	setAttr ".phl[1142]" 0;
+	setAttr ".phl[1143]" 0;
+	setAttr ".phl[1144]" 0;
+	setAttr ".phl[1145]" 0;
+	setAttr ".phl[1146]" 0;
+	setAttr ".phl[1147]" 0;
+	setAttr ".phl[1148]" 0;
+	setAttr ".phl[1149]" 0;
+	setAttr ".phl[1150]" 0;
+	setAttr ".phl[1151]" 0;
+	setAttr ".phl[1152]" 0;
+	setAttr ".phl[1153]" 0;
+	setAttr ".phl[1154]" 0;
+	setAttr ".phl[1155]" 0;
+	setAttr ".phl[1156]" 0;
+	setAttr ".phl[1157]" 0;
+	setAttr ".phl[1158]" 0;
+	setAttr ".phl[1159]" 0;
+	setAttr ".phl[1160]" 0;
+	setAttr ".phl[1161]" 0;
+	setAttr ".phl[1162]" 0;
+	setAttr ".phl[1163]" 0;
+	setAttr ".phl[1164]" 0;
+	setAttr ".phl[1165]" 0;
+	setAttr ".phl[1166]" 0;
+	setAttr ".phl[1167]" 0;
+	setAttr ".phl[1168]" 0;
+	setAttr ".phl[1169]" 0;
+	setAttr ".phl[1170]" 0;
+	setAttr ".phl[1171]" 0;
+	setAttr ".phl[1172]" 0;
+	setAttr ".phl[1173]" 0;
+	setAttr ".phl[1174]" 0;
+	setAttr ".phl[1175]" 0;
+	setAttr ".phl[1176]" 0;
+	setAttr ".phl[1177]" 0;
+	setAttr ".phl[1178]" 0;
+	setAttr ".phl[1179]" 0;
+	setAttr ".phl[1180]" 0;
+	setAttr ".phl[1181]" 0;
+	setAttr ".phl[1182]" 0;
+	setAttr ".phl[1183]" 0;
+	setAttr ".phl[1184]" 0;
+	setAttr ".phl[1185]" 0;
+	setAttr ".phl[1186]" 0;
+	setAttr ".phl[1187]" 0;
+	setAttr ".phl[1188]" 0;
+	setAttr ".phl[1189]" 0;
+	setAttr ".phl[1190]" 0;
+	setAttr ".phl[1191]" 0;
+	setAttr ".phl[1192]" 0;
+	setAttr ".phl[1193]" 0;
+	setAttr ".phl[1194]" 0;
+	setAttr ".phl[1195]" 0;
+	setAttr ".phl[1196]" 0;
+	setAttr ".phl[1197]" 0;
+	setAttr ".phl[1198]" 0;
+	setAttr ".phl[1199]" 0;
+	setAttr ".phl[1200]" 0;
+	setAttr ".phl[1201]" 0;
+	setAttr ".phl[1202]" 0;
+	setAttr ".phl[1203]" 0;
+	setAttr ".phl[1204]" 0;
+	setAttr ".phl[1205]" 0;
+	setAttr ".phl[1206]" 0;
+	setAttr ".phl[1207]" 0;
+	setAttr ".phl[1208]" 0;
+	setAttr ".phl[1209]" 0;
+	setAttr ".phl[1210]" 0;
+	setAttr ".phl[1211]" 0;
+	setAttr ".phl[1212]" 0;
+	setAttr ".phl[1213]" 0;
+	setAttr ".phl[1214]" 0;
+	setAttr ".phl[1215]" 0;
+	setAttr ".phl[1216]" 0;
+	setAttr ".phl[1217]" 0;
+	setAttr ".phl[1218]" 0;
+	setAttr ".phl[1219]" 0;
+	setAttr ".phl[1220]" 0;
+	setAttr ".phl[1221]" 0;
+	setAttr ".phl[1222]" 0;
+	setAttr ".phl[1223]" 0;
+	setAttr ".phl[1224]" 0;
+	setAttr ".phl[1225]" 0;
+	setAttr ".phl[1226]" 0;
+	setAttr ".phl[1227]" 0;
+	setAttr ".phl[1228]" 0;
+	setAttr ".phl[1229]" 0;
+	setAttr ".phl[1230]" 0;
+	setAttr ".phl[1231]" 0;
+	setAttr ".phl[1232]" 0;
+	setAttr ".phl[1233]" 0;
+	setAttr ".phl[1234]" 0;
+	setAttr ".phl[1235]" 0;
+	setAttr ".phl[1236]" 0;
+	setAttr ".phl[1237]" 0;
+	setAttr ".phl[1238]" 0;
+	setAttr ".phl[1239]" 0;
+	setAttr ".phl[1240]" 0;
+	setAttr ".phl[1241]" 0;
+	setAttr ".phl[1242]" 0;
+	setAttr ".phl[1243]" 0;
+	setAttr ".phl[1244]" 0;
+	setAttr ".phl[1245]" 0;
+	setAttr ".phl[1246]" 0;
+	setAttr ".phl[1247]" 0;
+	setAttr ".phl[1248]" 0;
+	setAttr ".phl[1249]" 0;
+	setAttr ".phl[1250]" 0;
+	setAttr ".phl[1251]" 0;
+	setAttr ".phl[1252]" 0;
+	setAttr ".phl[1253]" 0;
+	setAttr ".phl[1254]" 0;
+	setAttr ".phl[1255]" 0;
+	setAttr ".phl[1256]" 0;
+	setAttr ".phl[1257]" 0;
+	setAttr ".phl[1258]" 0;
+	setAttr ".phl[1259]" 0;
+	setAttr ".phl[1260]" 0;
+	setAttr ".phl[1261]" 0;
+	setAttr ".phl[1262]" 0;
+	setAttr ".phl[1263]" 0;
+	setAttr ".phl[1264]" 0;
+	setAttr ".phl[1265]" 0;
+	setAttr ".phl[1266]" 0;
+	setAttr ".phl[1267]" 0;
+	setAttr ".phl[1268]" 0;
+	setAttr ".phl[1269]" 0;
+	setAttr ".phl[1270]" 0;
+	setAttr ".phl[1271]" 0;
+	setAttr ".phl[1272]" 0;
+	setAttr ".phl[1273]" 0;
+	setAttr ".phl[1274]" 0;
+	setAttr ".phl[1275]" 0;
+	setAttr ".phl[1276]" 0;
+	setAttr ".phl[1277]" 0;
+	setAttr ".phl[1278]" 0;
+	setAttr ".phl[1279]" 0;
+	setAttr ".phl[1280]" 0;
+	setAttr ".phl[1281]" 0;
+	setAttr ".phl[1282]" 0;
+	setAttr ".phl[1283]" 0;
+	setAttr ".phl[1284]" 0;
+	setAttr ".phl[1285]" 0;
+	setAttr ".phl[1286]" 0;
+	setAttr ".phl[1287]" 0;
+	setAttr ".phl[1288]" 0;
+	setAttr ".phl[1289]" 0;
+	setAttr ".phl[1290]" 0;
+	setAttr ".phl[1291]" 0;
+	setAttr ".phl[1292]" 0;
+	setAttr ".phl[1293]" 0;
+	setAttr ".phl[1294]" 0;
+	setAttr ".phl[1295]" 0;
+	setAttr ".phl[1296]" 0;
+	setAttr ".phl[1297]" 0;
+	setAttr ".phl[1298]" 0;
+	setAttr ".phl[1299]" 0;
+	setAttr ".phl[1300]" 0;
+	setAttr ".phl[1301]" 0;
+	setAttr ".phl[1302]" 0;
+	setAttr ".phl[1303]" 0;
+	setAttr ".phl[1304]" 0;
+	setAttr ".phl[1305]" 0;
+	setAttr ".phl[1306]" 0;
+	setAttr ".phl[1307]" 0;
+	setAttr ".phl[1308]" 0;
+	setAttr ".phl[1309]" 0;
+	setAttr ".phl[1310]" 0;
+	setAttr ".phl[1311]" 0;
+	setAttr ".phl[1312]" 0;
+	setAttr ".phl[1313]" 0;
+	setAttr ".phl[1314]" 0;
+	setAttr ".phl[1315]" 0;
+	setAttr ".phl[1316]" 0;
+	setAttr ".phl[1317]" 0;
+	setAttr ".phl[1318]" 0;
+	setAttr ".phl[1319]" 0;
+	setAttr ".phl[1320]" 0;
+	setAttr ".phl[1321]" 0;
+	setAttr ".phl[1322]" 0;
+	setAttr ".phl[1323]" 0;
+	setAttr ".phl[1324]" 0;
+	setAttr ".phl[1325]" 0;
+	setAttr ".phl[1326]" 0;
+	setAttr ".phl[1327]" 0;
+	setAttr ".phl[1328]" 0;
+	setAttr ".phl[1329]" 0;
+	setAttr ".phl[1330]" 0;
+	setAttr ".phl[1331]" 0;
+	setAttr ".phl[1332]" 0;
+	setAttr ".phl[1333]" 0;
+	setAttr ".phl[1334]" 0;
+	setAttr ".phl[1335]" 0;
+	setAttr ".phl[1336]" 0;
+	setAttr ".phl[1337]" 0;
+	setAttr ".phl[1338]" 0;
+	setAttr ".phl[1339]" 0;
+	setAttr ".phl[1340]" 0;
+	setAttr ".phl[1341]" 0;
+	setAttr ".phl[1342]" 0;
+	setAttr ".phl[1343]" 0;
+	setAttr ".phl[1344]" 0;
+	setAttr ".phl[1345]" 0;
+	setAttr ".phl[1346]" 0;
+	setAttr ".phl[1347]" 0;
+	setAttr ".phl[1348]" 0;
+	setAttr ".phl[1349]" 0;
+	setAttr ".phl[1350]" 0;
+	setAttr ".phl[1351]" 0;
+	setAttr ".phl[1352]" 0;
+	setAttr ".phl[1353]" 0;
+	setAttr ".phl[1354]" 0;
+	setAttr ".phl[1355]" 0;
+	setAttr ".phl[1356]" 0;
+	setAttr ".phl[1357]" 0;
+	setAttr ".phl[1358]" 0;
+	setAttr ".phl[1359]" 0;
+	setAttr ".phl[1360]" 0;
+	setAttr ".phl[1361]" 0;
+	setAttr ".phl[1362]" 0;
+	setAttr ".phl[1363]" 0;
+	setAttr ".phl[1364]" 0;
+	setAttr ".phl[1365]" 0;
+	setAttr ".phl[1366]" 0;
+	setAttr ".phl[1367]" 0;
+	setAttr ".phl[1368]" 0;
+	setAttr ".phl[1369]" 0;
+	setAttr ".phl[1370]" 0;
+	setAttr ".phl[1371]" 0;
+	setAttr ".phl[1372]" 0;
+	setAttr ".phl[1373]" 0;
+	setAttr ".phl[1374]" 0;
+	setAttr ".phl[1375]" 0;
+	setAttr ".phl[1376]" 0;
+	setAttr ".phl[1377]" 0;
+	setAttr ".phl[1378]" 0;
+	setAttr ".phl[1379]" 0;
+	setAttr ".phl[1380]" 0;
+	setAttr ".phl[1381]" 0;
+	setAttr ".phl[1382]" 0;
+	setAttr ".phl[1383]" 0;
+	setAttr ".phl[1384]" 0;
+	setAttr ".phl[1385]" 0;
+	setAttr ".phl[1386]" 0;
+	setAttr ".phl[1387]" 0;
+	setAttr ".phl[1388]" 0;
+	setAttr ".phl[1389]" 0;
+	setAttr ".phl[1390]" 0;
+	setAttr ".phl[1391]" 0;
+	setAttr ".phl[1392]" 0;
+	setAttr ".phl[1393]" 0;
+	setAttr ".phl[1394]" 0;
+	setAttr ".phl[1395]" 0;
+	setAttr ".phl[1396]" 0;
+	setAttr ".phl[1397]" 0;
+	setAttr ".phl[1398]" 0;
+	setAttr ".phl[1399]" 0;
+	setAttr ".phl[1400]" 0;
+	setAttr ".phl[1401]" 0;
+	setAttr ".phl[1402]" 0;
+	setAttr ".phl[1403]" 0;
+	setAttr ".phl[1404]" 0;
+	setAttr ".phl[1405]" 0;
+	setAttr ".phl[1406]" 0;
+	setAttr ".phl[1407]" 0;
+	setAttr ".phl[1408]" 0;
+	setAttr ".phl[1409]" 0;
+	setAttr ".phl[1410]" 0;
+	setAttr ".phl[1411]" 0;
+	setAttr ".phl[1412]" 0;
+	setAttr ".phl[1413]" 0;
+	setAttr ".phl[1414]" 0;
+	setAttr ".phl[1415]" 0;
+	setAttr ".phl[1416]" 0;
+	setAttr ".phl[1417]" 0;
+	setAttr ".phl[1418]" 0;
+	setAttr ".phl[1419]" 0;
+	setAttr ".phl[1420]" 0;
+	setAttr ".phl[1421]" 0;
+	setAttr ".phl[1422]" 0;
+	setAttr ".phl[1423]" 0;
+	setAttr ".phl[1424]" 0;
+	setAttr ".phl[1425]" 0;
+	setAttr ".phl[1426]" 0;
+	setAttr ".phl[1427]" 0;
+	setAttr ".phl[1428]" 0;
+	setAttr ".phl[1429]" 0;
+	setAttr ".phl[1430]" 0;
+	setAttr ".phl[1431]" 0;
+	setAttr ".phl[1432]" 0;
+	setAttr ".phl[1433]" 0;
+	setAttr ".phl[1434]" 0;
+	setAttr ".phl[1435]" 0;
+	setAttr ".phl[1436]" 0;
+	setAttr ".phl[1437]" 0;
+	setAttr ".phl[1438]" 0;
+	setAttr ".phl[1439]" 0;
+	setAttr ".phl[1440]" 0;
+	setAttr ".phl[1441]" 0;
+	setAttr ".phl[1442]" 0;
+	setAttr ".phl[1443]" 0;
+	setAttr ".phl[1444]" 0;
+	setAttr ".phl[1445]" 0;
+	setAttr ".phl[1446]" 0;
+	setAttr ".phl[1447]" 0;
+	setAttr ".phl[1448]" 0;
+	setAttr ".phl[1449]" 0;
+	setAttr ".phl[1450]" 0;
+	setAttr ".phl[1451]" 0;
+	setAttr ".phl[1452]" 0;
+	setAttr ".phl[1453]" 0;
+	setAttr ".phl[1454]" 0;
+	setAttr ".phl[1455]" 0;
+	setAttr ".phl[1456]" 0;
+	setAttr ".phl[1457]" 0;
+	setAttr ".phl[1458]" 0;
+	setAttr ".phl[1459]" 0;
+	setAttr ".phl[1460]" 0;
+	setAttr ".phl[1461]" 0;
+	setAttr ".phl[1462]" 0;
+	setAttr ".phl[1463]" 0;
+	setAttr ".phl[1464]" 0;
+	setAttr ".phl[1465]" 0;
+	setAttr ".phl[1466]" 0;
+	setAttr ".phl[1467]" 0;
+	setAttr ".phl[1468]" 0;
+	setAttr ".phl[1469]" 0;
+	setAttr ".phl[1470]" 0;
+	setAttr ".phl[1471]" 0;
+	setAttr ".phl[1472]" 0;
+	setAttr ".phl[1473]" 0;
+	setAttr ".phl[1474]" 0;
+	setAttr ".phl[1475]" 0;
+	setAttr ".phl[1476]" 0;
+	setAttr ".phl[1477]" 0;
+	setAttr ".phl[1478]" 0;
+	setAttr ".phl[1479]" 0;
+	setAttr ".phl[1480]" 0;
+	setAttr ".phl[1481]" 0;
+	setAttr ".phl[1482]" 0;
+	setAttr ".phl[1483]" 0;
+	setAttr ".phl[1484]" 0;
+	setAttr ".phl[1485]" 0;
+	setAttr ".phl[1486]" 0;
+	setAttr ".phl[1487]" 0;
+	setAttr ".phl[1488]" 0;
+	setAttr ".phl[1489]" 0;
+	setAttr ".phl[1490]" 0;
+	setAttr ".phl[1491]" 0;
+	setAttr ".phl[1492]" 0;
+	setAttr ".phl[1493]" 0;
+	setAttr ".phl[1494]" 0;
+	setAttr ".phl[1495]" 0;
+	setAttr ".phl[1496]" 0;
+	setAttr ".phl[1497]" 0;
+	setAttr ".phl[1498]" 0;
+	setAttr ".phl[1499]" 0;
+	setAttr ".phl[1500]" 0;
+	setAttr ".phl[1501]" 0;
+	setAttr ".phl[1502]" 0;
+	setAttr ".phl[1503]" 0;
+	setAttr ".phl[1504]" 0;
+	setAttr ".phl[1505]" 0;
+	setAttr ".phl[1506]" 0;
+	setAttr ".phl[1507]" 0;
+	setAttr ".phl[1508]" 0;
+	setAttr ".phl[1509]" 0;
+	setAttr ".phl[1510]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Soul_RigRN"
-		"Soul_RigRN" 0
-		"Soul_RigRN" 801
-		2 "|Soul_Rig:Root" "visibility" " -k 0 -cb 1 1"
-		2 "|Soul_Rig:Root" "translate" " -type \"double3\" 0 0 0"
-		2 "|Soul_Rig:Root" "rotate" " -type \"double3\" 89.9999847412109375 0 0"
-		2 "|Soul_Rig:Root" "scale" " -type \"double3\" 1 1.00000000000003531 1.00000000000003531"
-		
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis" "drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01" "drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02" "drawStyle" 
-		" 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"visibility" " -av 1"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"translate" " -type \"double3\" 13.90036430044838767 -2.57578814892169694 5.39222012127500694"
-		
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"translateX" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"translateY" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"translateZ" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"rotate" " -type \"double3\" 70.00557896796837554 -76.6257823690920219 123.16828885870253885"
-		
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"rotateX" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"rotateY" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"rotateZ" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"scale" " -type \"double3\" 1 0.99999994039535545 0.99999994039535545"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"scaleX" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"scaleY" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"scaleZ" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
-		"lockInfluenceWeights" " -av -k 1 0"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"visibility" " -av 1"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"translate" " -type \"double3\" -21.95103078908597638 10.00332575681325054 -46.59569292743781688"
-		
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"translateX" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"translateY" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"translateZ" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"rotateX" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"rotateY" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"rotateZ" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"scale" " -type \"double3\" 1 0.99999999999999989 0.99999999999999989"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"scaleX" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"scaleY" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"scaleZ" " -av"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
-		"lockInfluenceWeights" " -av -k 1 0"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R" "drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r" "drawStyle" 
-		" 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r" 
-		"drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L" "drawStyle" " 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l" "drawStyle" 
-		" 2"
-		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L" 
-		"drawStyle" " 2"
-		2 "Soul_Rig:EnvSamplerTex" "fileTextureName" " -type \"string\" \"C:/Users/163295/Documents/GitHub/ThoseBums_Jam_01/SourceData/Characters/Soul/Soul_Texture.TGA\""
-		
-		2 "Soul_Rig:EnvSamplerTex" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "Soul_Rig:layer1" "displayType" " 2"
-		2 "Soul_Rig:HIKSolverNode1" "nodeState" " 0"
-		2 "Soul_Rig:HIKSolverNode1" "InputActive" " 1"
-		2 "Soul_Rig:HIKSolverNode1" "InputStance" " 0"
-		2 "Soul_Rig:HIKSolverNode1" "InputStanceMask" " 0"
+		"Soul_RigRN" 204
 		3 "Soul_Rig:thumb_02_r_rotateX.output" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.rotateX" 
 		""
 		3 "Soul_Rig:thumb_02_r_rotateY.output" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.rotateY" 
@@ -2580,8 +2416,6 @@ createNode reference -n "Soul_RigRN";
 		3 "Soul_Rig:finger_02_r_rotateY.output" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.rotateY" 
 		""
 		3 "Soul_Rig:finger_02_r_rotateZ.output" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.rotateZ" 
-		""
-		3 "Soul_Rig:HIKSolverNode1.OutputCharacterState" "Soul_Rig:HIKState2SK1.InputCharacterState" 
 		""
 		3 "Soul_Rig:spine_01_rotateX.output" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.rotateX" 
 		""
@@ -2756,1035 +2590,6 @@ createNode reference -n "Soul_RigRN";
 		3 "Soul_Rig:Foot_R_rotateY.output" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.rotateY" 
 		""
 		3 "Soul_Rig:Foot_R_rotateZ.output" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.rotateZ" 
-		""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis.translateX" "Soul_RigRN.placeHolderList[1]" 
-		""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis.translateY" "Soul_RigRN.placeHolderList[2]" 
-		""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis.translateZ" "Soul_RigRN.placeHolderList[3]" 
-		""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis.rotateX" "Soul_RigRN.placeHolderList[4]" 
-		""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis.rotateY" "Soul_RigRN.placeHolderList[5]" 
-		""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis.rotateZ" "Soul_RigRN.placeHolderList[6]" 
-		""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HipsSx" "|Soul_Rig:Root|Soul_Rig:Pelvis.scaleX" 
-		"Soul_RigRN.placeHolderList[7]" "Soul_RigRN.placeHolderList[8]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HipsSy" "|Soul_Rig:Root|Soul_Rig:Pelvis.scaleY" 
-		"Soul_RigRN.placeHolderList[9]" "Soul_RigRN.placeHolderList[10]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HipsSz" "|Soul_Rig:Root|Soul_Rig:Pelvis.scaleZ" 
-		"Soul_RigRN.placeHolderList[11]" "Soul_RigRN.placeHolderList[12]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.rotateX" 
-		"Soul_RigRN.placeHolderList[13]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.rotateY" 
-		"Soul_RigRN.placeHolderList[14]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.rotateZ" 
-		"Soul_RigRN.placeHolderList[15]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.SpineSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.scaleX" 
-		"Soul_RigRN.placeHolderList[16]" "Soul_RigRN.placeHolderList[17]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.SpineSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.scaleY" 
-		"Soul_RigRN.placeHolderList[18]" "Soul_RigRN.placeHolderList[19]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.SpineSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.scaleZ" 
-		"Soul_RigRN.placeHolderList[20]" "Soul_RigRN.placeHolderList[21]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.translateX" 
-		"Soul_RigRN.placeHolderList[22]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.translateY" 
-		"Soul_RigRN.placeHolderList[23]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.translateZ" 
-		"Soul_RigRN.placeHolderList[24]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.rotateX" 
-		"Soul_RigRN.placeHolderList[25]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.rotateY" 
-		"Soul_RigRN.placeHolderList[26]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.rotateZ" 
-		"Soul_RigRN.placeHolderList[27]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.scaleX" 
-		"Soul_RigRN.placeHolderList[28]" "Soul_RigRN.placeHolderList[29]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.scaleY" 
-		"Soul_RigRN.placeHolderList[30]" "Soul_RigRN.placeHolderList[31]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.scaleZ" 
-		"Soul_RigRN.placeHolderList[32]" "Soul_RigRN.placeHolderList[33]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.translateX" 
-		"Soul_RigRN.placeHolderList[34]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.translateY" 
-		"Soul_RigRN.placeHolderList[35]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.translateZ" 
-		"Soul_RigRN.placeHolderList[36]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.rotateX" 
-		"Soul_RigRN.placeHolderList[37]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.rotateY" 
-		"Soul_RigRN.placeHolderList[38]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.rotateZ" 
-		"Soul_RigRN.placeHolderList[39]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.scaleX" 
-		"Soul_RigRN.placeHolderList[40]" "Soul_RigRN.placeHolderList[41]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.scaleY" 
-		"Soul_RigRN.placeHolderList[42]" "Soul_RigRN.placeHolderList[43]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.scaleZ" 
-		"Soul_RigRN.placeHolderList[44]" "Soul_RigRN.placeHolderList[45]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.translateX" 
-		"Soul_RigRN.placeHolderList[46]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.translateY" 
-		"Soul_RigRN.placeHolderList[47]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.translateZ" 
-		"Soul_RigRN.placeHolderList[48]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.rotateX" 
-		"Soul_RigRN.placeHolderList[49]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.rotateY" 
-		"Soul_RigRN.placeHolderList[50]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.rotateZ" 
-		"Soul_RigRN.placeHolderList[51]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.NeckSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.scaleX" 
-		"Soul_RigRN.placeHolderList[52]" "Soul_RigRN.placeHolderList[53]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.NeckSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.scaleY" 
-		"Soul_RigRN.placeHolderList[54]" "Soul_RigRN.placeHolderList[55]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.NeckSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.scaleZ" 
-		"Soul_RigRN.placeHolderList[56]" "Soul_RigRN.placeHolderList[57]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.translateX" 
-		"Soul_RigRN.placeHolderList[58]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.translateY" 
-		"Soul_RigRN.placeHolderList[59]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.translateZ" 
-		"Soul_RigRN.placeHolderList[60]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.rotateX" 
-		"Soul_RigRN.placeHolderList[61]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.rotateY" 
-		"Soul_RigRN.placeHolderList[62]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.rotateZ" 
-		"Soul_RigRN.placeHolderList[63]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HeadSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.scaleX" 
-		"Soul_RigRN.placeHolderList[64]" "Soul_RigRN.placeHolderList[65]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HeadSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.scaleY" 
-		"Soul_RigRN.placeHolderList[66]" "Soul_RigRN.placeHolderList[67]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HeadSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.scaleZ" 
-		"Soul_RigRN.placeHolderList[68]" "Soul_RigRN.placeHolderList[69]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.translateX" 
-		"Soul_RigRN.placeHolderList[70]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.translateY" 
-		"Soul_RigRN.placeHolderList[71]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.translateZ" 
-		"Soul_RigRN.placeHolderList[72]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.scaleX" 
-		"Soul_RigRN.placeHolderList[73]" "Soul_RigRN.placeHolderList[74]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.scaleY" 
-		"Soul_RigRN.placeHolderList[75]" "Soul_RigRN.placeHolderList[76]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[77]" "Soul_RigRN.placeHolderList[78]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderTx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.translateX" 
-		"Soul_RigRN.placeHolderList[79]" "Soul_RigRN.placeHolderList[80]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderTy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.translateY" 
-		"Soul_RigRN.placeHolderList[81]" "Soul_RigRN.placeHolderList[82]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderTz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.translateZ" 
-		"Soul_RigRN.placeHolderList[83]" "Soul_RigRN.placeHolderList[84]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderRx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.rotateX" 
-		"Soul_RigRN.placeHolderList[85]" "Soul_RigRN.placeHolderList[86]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderRy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.rotateY" 
-		"Soul_RigRN.placeHolderList[87]" "Soul_RigRN.placeHolderList[88]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderRz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[89]" "Soul_RigRN.placeHolderList[90]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.rotateX" 
-		"Soul_RigRN.placeHolderList[91]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.rotateY" 
-		"Soul_RigRN.placeHolderList[92]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.rotateZ" 
-		"Soul_RigRN.placeHolderList[93]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftArmSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.scaleX" 
-		"Soul_RigRN.placeHolderList[94]" "Soul_RigRN.placeHolderList[95]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftArmSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.scaleY" 
-		"Soul_RigRN.placeHolderList[96]" "Soul_RigRN.placeHolderList[97]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftArmSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.scaleZ" 
-		"Soul_RigRN.placeHolderList[98]" "Soul_RigRN.placeHolderList[99]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.translateX" 
-		"Soul_RigRN.placeHolderList[100]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.translateY" 
-		"Soul_RigRN.placeHolderList[101]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.translateZ" 
-		"Soul_RigRN.placeHolderList[102]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.rotateX" 
-		"Soul_RigRN.placeHolderList[103]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.rotateY" 
-		"Soul_RigRN.placeHolderList[104]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[105]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftForeArmSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.scaleX" 
-		"Soul_RigRN.placeHolderList[106]" "Soul_RigRN.placeHolderList[107]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftForeArmSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.scaleY" 
-		"Soul_RigRN.placeHolderList[108]" "Soul_RigRN.placeHolderList[109]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftForeArmSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[110]" "Soul_RigRN.placeHolderList[111]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.translateX" 
-		"Soul_RigRN.placeHolderList[112]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.translateY" 
-		"Soul_RigRN.placeHolderList[113]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.translateZ" 
-		"Soul_RigRN.placeHolderList[114]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.rotateX" 
-		"Soul_RigRN.placeHolderList[115]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.rotateY" 
-		"Soul_RigRN.placeHolderList[116]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.rotateZ" 
-		"Soul_RigRN.placeHolderList[117]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.scaleX" 
-		"Soul_RigRN.placeHolderList[118]" "Soul_RigRN.placeHolderList[119]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.scaleY" 
-		"Soul_RigRN.placeHolderList[120]" "Soul_RigRN.placeHolderList[121]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.scaleZ" 
-		"Soul_RigRN.placeHolderList[122]" "Soul_RigRN.placeHolderList[123]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.translateX" 
-		"Soul_RigRN.placeHolderList[124]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.translateY" 
-		"Soul_RigRN.placeHolderList[125]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.translateZ" 
-		"Soul_RigRN.placeHolderList[126]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.rotateX" 
-		"Soul_RigRN.placeHolderList[127]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.rotateY" 
-		"Soul_RigRN.placeHolderList[128]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[129]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.scaleX" 
-		"Soul_RigRN.placeHolderList[130]" "Soul_RigRN.placeHolderList[131]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.scaleY" 
-		"Soul_RigRN.placeHolderList[132]" "Soul_RigRN.placeHolderList[133]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[134]" "Soul_RigRN.placeHolderList[135]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.translateX" 
-		"Soul_RigRN.placeHolderList[136]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.translateY" 
-		"Soul_RigRN.placeHolderList[137]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.translateZ" 
-		"Soul_RigRN.placeHolderList[138]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.rotateX" 
-		"Soul_RigRN.placeHolderList[139]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.rotateY" 
-		"Soul_RigRN.placeHolderList[140]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[141]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.scaleX" 
-		"Soul_RigRN.placeHolderList[142]" "Soul_RigRN.placeHolderList[143]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.scaleY" 
-		"Soul_RigRN.placeHolderList[144]" "Soul_RigRN.placeHolderList[145]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[146]" "Soul_RigRN.placeHolderList[147]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.translateX" 
-		"Soul_RigRN.placeHolderList[148]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.translateY" 
-		"Soul_RigRN.placeHolderList[149]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.translateZ" 
-		"Soul_RigRN.placeHolderList[150]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.rotateX" 
-		"Soul_RigRN.placeHolderList[151]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.rotateY" 
-		"Soul_RigRN.placeHolderList[152]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[153]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.translateX" 
-		"Soul_RigRN.placeHolderList[154]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.translateY" 
-		"Soul_RigRN.placeHolderList[155]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.translateZ" 
-		"Soul_RigRN.placeHolderList[156]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb3Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.scaleX" 
-		"Soul_RigRN.placeHolderList[157]" "Soul_RigRN.placeHolderList[158]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb3Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.scaleY" 
-		"Soul_RigRN.placeHolderList[159]" "Soul_RigRN.placeHolderList[160]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb3Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[161]" "Soul_RigRN.placeHolderList[162]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.scaleX" 
-		"Soul_RigRN.placeHolderList[163]" "Soul_RigRN.placeHolderList[164]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.scaleY" 
-		"Soul_RigRN.placeHolderList[165]" "Soul_RigRN.placeHolderList[166]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[167]" "Soul_RigRN.placeHolderList[168]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.translateX" 
-		"Soul_RigRN.placeHolderList[169]" "Soul_RigRN.placeHolderList[170]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.translateY" 
-		"Soul_RigRN.placeHolderList[171]" "Soul_RigRN.placeHolderList[172]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.translateZ" 
-		"Soul_RigRN.placeHolderList[173]" "Soul_RigRN.placeHolderList[174]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.rotateX" 
-		"Soul_RigRN.placeHolderList[175]" "Soul_RigRN.placeHolderList[176]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.rotateY" 
-		"Soul_RigRN.placeHolderList[177]" "Soul_RigRN.placeHolderList[178]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[179]" "Soul_RigRN.placeHolderList[180]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.scaleX" 
-		"Soul_RigRN.placeHolderList[181]" "Soul_RigRN.placeHolderList[182]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.scaleY" 
-		"Soul_RigRN.placeHolderList[183]" "Soul_RigRN.placeHolderList[184]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[185]" "Soul_RigRN.placeHolderList[186]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.translateX" 
-		"Soul_RigRN.placeHolderList[187]" "Soul_RigRN.placeHolderList[188]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.translateY" 
-		"Soul_RigRN.placeHolderList[189]" "Soul_RigRN.placeHolderList[190]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.translateZ" 
-		"Soul_RigRN.placeHolderList[191]" "Soul_RigRN.placeHolderList[192]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.rotateX" 
-		"Soul_RigRN.placeHolderList[193]" "Soul_RigRN.placeHolderList[194]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.rotateY" 
-		"Soul_RigRN.placeHolderList[195]" "Soul_RigRN.placeHolderList[196]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[197]" "Soul_RigRN.placeHolderList[198]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.scaleX" 
-		"Soul_RigRN.placeHolderList[199]" "Soul_RigRN.placeHolderList[200]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.scaleY" 
-		"Soul_RigRN.placeHolderList[201]" "Soul_RigRN.placeHolderList[202]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[203]" "Soul_RigRN.placeHolderList[204]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.translateX" 
-		"Soul_RigRN.placeHolderList[205]" "Soul_RigRN.placeHolderList[206]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.translateY" 
-		"Soul_RigRN.placeHolderList[207]" "Soul_RigRN.placeHolderList[208]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.translateZ" 
-		"Soul_RigRN.placeHolderList[209]" "Soul_RigRN.placeHolderList[210]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.rotateX" 
-		"Soul_RigRN.placeHolderList[211]" "Soul_RigRN.placeHolderList[212]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.rotateY" 
-		"Soul_RigRN.placeHolderList[213]" "Soul_RigRN.placeHolderList[214]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[215]" "Soul_RigRN.placeHolderList[216]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.translateX" 
-		"Soul_RigRN.placeHolderList[217]" "Soul_RigRN.placeHolderList[218]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.translateY" 
-		"Soul_RigRN.placeHolderList[219]" "Soul_RigRN.placeHolderList[220]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.translateZ" 
-		"Soul_RigRN.placeHolderList[221]" "Soul_RigRN.placeHolderList[222]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.rotateX" 
-		"Soul_RigRN.placeHolderList[223]" "Soul_RigRN.placeHolderList[224]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.rotateY" 
-		"Soul_RigRN.placeHolderList[225]" "Soul_RigRN.placeHolderList[226]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[227]" "Soul_RigRN.placeHolderList[228]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.scaleX" 
-		"Soul_RigRN.placeHolderList[229]" "Soul_RigRN.placeHolderList[230]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.scaleY" 
-		"Soul_RigRN.placeHolderList[231]" "Soul_RigRN.placeHolderList[232]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[233]" "Soul_RigRN.placeHolderList[234]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.scaleX" 
-		"Soul_RigRN.placeHolderList[235]" "Soul_RigRN.placeHolderList[236]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.scaleY" 
-		"Soul_RigRN.placeHolderList[237]" "Soul_RigRN.placeHolderList[238]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[239]" "Soul_RigRN.placeHolderList[240]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.translateX" 
-		"Soul_RigRN.placeHolderList[241]" "Soul_RigRN.placeHolderList[242]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.translateY" 
-		"Soul_RigRN.placeHolderList[243]" "Soul_RigRN.placeHolderList[244]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.translateZ" 
-		"Soul_RigRN.placeHolderList[245]" "Soul_RigRN.placeHolderList[246]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.rotateX" 
-		"Soul_RigRN.placeHolderList[247]" "Soul_RigRN.placeHolderList[248]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.rotateY" 
-		"Soul_RigRN.placeHolderList[249]" "Soul_RigRN.placeHolderList[250]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[251]" "Soul_RigRN.placeHolderList[252]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.scaleX" 
-		"Soul_RigRN.placeHolderList[253]" "Soul_RigRN.placeHolderList[254]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.scaleY" 
-		"Soul_RigRN.placeHolderList[255]" "Soul_RigRN.placeHolderList[256]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[257]" "Soul_RigRN.placeHolderList[258]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.translateX" 
-		"Soul_RigRN.placeHolderList[259]" "Soul_RigRN.placeHolderList[260]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.translateY" 
-		"Soul_RigRN.placeHolderList[261]" "Soul_RigRN.placeHolderList[262]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.translateZ" 
-		"Soul_RigRN.placeHolderList[263]" "Soul_RigRN.placeHolderList[264]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.rotateX" 
-		"Soul_RigRN.placeHolderList[265]" "Soul_RigRN.placeHolderList[266]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.rotateY" 
-		"Soul_RigRN.placeHolderList[267]" "Soul_RigRN.placeHolderList[268]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[269]" "Soul_RigRN.placeHolderList[270]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.scaleX" 
-		"Soul_RigRN.placeHolderList[271]" "Soul_RigRN.placeHolderList[272]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.scaleY" 
-		"Soul_RigRN.placeHolderList[273]" "Soul_RigRN.placeHolderList[274]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[275]" "Soul_RigRN.placeHolderList[276]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.translateX" 
-		"Soul_RigRN.placeHolderList[277]" "Soul_RigRN.placeHolderList[278]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.translateY" 
-		"Soul_RigRN.placeHolderList[279]" "Soul_RigRN.placeHolderList[280]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.translateZ" 
-		"Soul_RigRN.placeHolderList[281]" "Soul_RigRN.placeHolderList[282]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.rotateX" 
-		"Soul_RigRN.placeHolderList[283]" "Soul_RigRN.placeHolderList[284]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.rotateY" 
-		"Soul_RigRN.placeHolderList[285]" "Soul_RigRN.placeHolderList[286]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[287]" "Soul_RigRN.placeHolderList[288]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.translateX" 
-		"Soul_RigRN.placeHolderList[289]" "Soul_RigRN.placeHolderList[290]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.translateY" 
-		"Soul_RigRN.placeHolderList[291]" "Soul_RigRN.placeHolderList[292]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.translateZ" 
-		"Soul_RigRN.placeHolderList[293]" "Soul_RigRN.placeHolderList[294]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.rotateX" 
-		"Soul_RigRN.placeHolderList[295]" "Soul_RigRN.placeHolderList[296]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.rotateY" 
-		"Soul_RigRN.placeHolderList[297]" "Soul_RigRN.placeHolderList[298]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[299]" "Soul_RigRN.placeHolderList[300]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.scaleX" 
-		"Soul_RigRN.placeHolderList[301]" "Soul_RigRN.placeHolderList[302]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.scaleY" 
-		"Soul_RigRN.placeHolderList[303]" "Soul_RigRN.placeHolderList[304]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[305]" "Soul_RigRN.placeHolderList[306]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.scaleX" 
-		"Soul_RigRN.placeHolderList[307]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.scaleY" 
-		"Soul_RigRN.placeHolderList[308]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.scaleZ" 
-		"Soul_RigRN.placeHolderList[309]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.lockInfluenceWeights" 
-		"Soul_RigRN.placeHolderList[310]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.visibility" 
-		"Soul_RigRN.placeHolderList[311]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.translateX" 
-		"Soul_RigRN.placeHolderList[312]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.translateY" 
-		"Soul_RigRN.placeHolderList[313]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.translateZ" 
-		"Soul_RigRN.placeHolderList[314]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.rotateX" 
-		"Soul_RigRN.placeHolderList[315]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.rotateY" 
-		"Soul_RigRN.placeHolderList[316]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.rotateZ" 
-		"Soul_RigRN.placeHolderList[317]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.lockInfluenceWeights" 
-		"Soul_RigRN.placeHolderList[318]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.translateX" 
-		"Soul_RigRN.placeHolderList[319]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.translateY" 
-		"Soul_RigRN.placeHolderList[320]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.translateZ" 
-		"Soul_RigRN.placeHolderList[321]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.scaleX" 
-		"Soul_RigRN.placeHolderList[322]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.scaleY" 
-		"Soul_RigRN.placeHolderList[323]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.scaleZ" 
-		"Soul_RigRN.placeHolderList[324]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.visibility" 
-		"Soul_RigRN.placeHolderList[325]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.rotateX" 
-		"Soul_RigRN.placeHolderList[326]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.rotateY" 
-		"Soul_RigRN.placeHolderList[327]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.rotateZ" 
-		"Soul_RigRN.placeHolderList[328]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.scaleX" 
-		"Soul_RigRN.placeHolderList[329]" "Soul_RigRN.placeHolderList[330]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.scaleY" 
-		"Soul_RigRN.placeHolderList[331]" "Soul_RigRN.placeHolderList[332]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[333]" "Soul_RigRN.placeHolderList[334]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderTx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.translateX" 
-		"Soul_RigRN.placeHolderList[335]" "Soul_RigRN.placeHolderList[336]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderTy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.translateY" 
-		"Soul_RigRN.placeHolderList[337]" "Soul_RigRN.placeHolderList[338]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderTz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.translateZ" 
-		"Soul_RigRN.placeHolderList[339]" "Soul_RigRN.placeHolderList[340]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderRx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.rotateX" 
-		"Soul_RigRN.placeHolderList[341]" "Soul_RigRN.placeHolderList[342]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderRy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.rotateY" 
-		"Soul_RigRN.placeHolderList[343]" "Soul_RigRN.placeHolderList[344]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderRz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[345]" "Soul_RigRN.placeHolderList[346]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.rotateX" 
-		"Soul_RigRN.placeHolderList[347]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.rotateY" 
-		"Soul_RigRN.placeHolderList[348]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.rotateZ" 
-		"Soul_RigRN.placeHolderList[349]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightArmSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.scaleX" 
-		"Soul_RigRN.placeHolderList[350]" "Soul_RigRN.placeHolderList[351]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightArmSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.scaleY" 
-		"Soul_RigRN.placeHolderList[352]" "Soul_RigRN.placeHolderList[353]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightArmSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.scaleZ" 
-		"Soul_RigRN.placeHolderList[354]" "Soul_RigRN.placeHolderList[355]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.translateX" 
-		"Soul_RigRN.placeHolderList[356]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.translateY" 
-		"Soul_RigRN.placeHolderList[357]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.translateZ" 
-		"Soul_RigRN.placeHolderList[358]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.rotateX" 
-		"Soul_RigRN.placeHolderList[359]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.rotateY" 
-		"Soul_RigRN.placeHolderList[360]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[361]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightForeArmSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.scaleX" 
-		"Soul_RigRN.placeHolderList[362]" "Soul_RigRN.placeHolderList[363]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightForeArmSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.scaleY" 
-		"Soul_RigRN.placeHolderList[364]" "Soul_RigRN.placeHolderList[365]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightForeArmSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[366]" "Soul_RigRN.placeHolderList[367]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.translateX" 
-		"Soul_RigRN.placeHolderList[368]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.translateY" 
-		"Soul_RigRN.placeHolderList[369]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.translateZ" 
-		"Soul_RigRN.placeHolderList[370]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.rotateX" 
-		"Soul_RigRN.placeHolderList[371]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.rotateY" 
-		"Soul_RigRN.placeHolderList[372]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.rotateZ" 
-		"Soul_RigRN.placeHolderList[373]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.scaleX" 
-		"Soul_RigRN.placeHolderList[374]" "Soul_RigRN.placeHolderList[375]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.scaleY" 
-		"Soul_RigRN.placeHolderList[376]" "Soul_RigRN.placeHolderList[377]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.scaleZ" 
-		"Soul_RigRN.placeHolderList[378]" "Soul_RigRN.placeHolderList[379]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.translateX" 
-		"Soul_RigRN.placeHolderList[380]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.translateY" 
-		"Soul_RigRN.placeHolderList[381]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.translateZ" 
-		"Soul_RigRN.placeHolderList[382]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.rotateX" 
-		"Soul_RigRN.placeHolderList[383]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.rotateY" 
-		"Soul_RigRN.placeHolderList[384]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[385]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.scaleX" 
-		"Soul_RigRN.placeHolderList[386]" "Soul_RigRN.placeHolderList[387]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.scaleY" 
-		"Soul_RigRN.placeHolderList[388]" "Soul_RigRN.placeHolderList[389]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[390]" "Soul_RigRN.placeHolderList[391]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.translateX" 
-		"Soul_RigRN.placeHolderList[392]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.translateY" 
-		"Soul_RigRN.placeHolderList[393]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.translateZ" 
-		"Soul_RigRN.placeHolderList[394]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.rotateX" 
-		"Soul_RigRN.placeHolderList[395]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.rotateY" 
-		"Soul_RigRN.placeHolderList[396]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[397]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.scaleX" 
-		"Soul_RigRN.placeHolderList[398]" "Soul_RigRN.placeHolderList[399]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.scaleY" 
-		"Soul_RigRN.placeHolderList[400]" "Soul_RigRN.placeHolderList[401]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[402]" "Soul_RigRN.placeHolderList[403]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.translateX" 
-		"Soul_RigRN.placeHolderList[404]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.translateY" 
-		"Soul_RigRN.placeHolderList[405]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.translateZ" 
-		"Soul_RigRN.placeHolderList[406]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.rotateX" 
-		"Soul_RigRN.placeHolderList[407]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.rotateY" 
-		"Soul_RigRN.placeHolderList[408]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[409]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.translateX" 
-		"Soul_RigRN.placeHolderList[410]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.translateY" 
-		"Soul_RigRN.placeHolderList[411]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.translateZ" 
-		"Soul_RigRN.placeHolderList[412]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb3Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.scaleX" 
-		"Soul_RigRN.placeHolderList[413]" "Soul_RigRN.placeHolderList[414]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb3Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.scaleY" 
-		"Soul_RigRN.placeHolderList[415]" "Soul_RigRN.placeHolderList[416]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb3Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[417]" "Soul_RigRN.placeHolderList[418]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.rotateX" 
-		"Soul_RigRN.placeHolderList[419]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.rotateY" 
-		"Soul_RigRN.placeHolderList[420]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[421]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.scaleX" 
-		"Soul_RigRN.placeHolderList[422]" "Soul_RigRN.placeHolderList[423]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.scaleY" 
-		"Soul_RigRN.placeHolderList[424]" "Soul_RigRN.placeHolderList[425]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[426]" "Soul_RigRN.placeHolderList[427]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.translateX" 
-		"Soul_RigRN.placeHolderList[428]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.translateY" 
-		"Soul_RigRN.placeHolderList[429]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.translateZ" 
-		"Soul_RigRN.placeHolderList[430]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.rotateX" 
-		"Soul_RigRN.placeHolderList[431]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.rotateY" 
-		"Soul_RigRN.placeHolderList[432]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[433]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.scaleX" 
-		"Soul_RigRN.placeHolderList[434]" "Soul_RigRN.placeHolderList[435]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.scaleY" 
-		"Soul_RigRN.placeHolderList[436]" "Soul_RigRN.placeHolderList[437]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[438]" "Soul_RigRN.placeHolderList[439]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.translateX" 
-		"Soul_RigRN.placeHolderList[440]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.translateY" 
-		"Soul_RigRN.placeHolderList[441]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.translateZ" 
-		"Soul_RigRN.placeHolderList[442]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.rotateX" 
-		"Soul_RigRN.placeHolderList[443]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.rotateY" 
-		"Soul_RigRN.placeHolderList[444]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[445]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex3Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.scaleX" 
-		"Soul_RigRN.placeHolderList[446]" "Soul_RigRN.placeHolderList[447]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex3Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.scaleY" 
-		"Soul_RigRN.placeHolderList[448]" "Soul_RigRN.placeHolderList[449]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex3Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[450]" "Soul_RigRN.placeHolderList[451]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.translateX" 
-		"Soul_RigRN.placeHolderList[452]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.translateY" 
-		"Soul_RigRN.placeHolderList[453]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.translateZ" 
-		"Soul_RigRN.placeHolderList[454]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.rotateX" 
-		"Soul_RigRN.placeHolderList[455]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.rotateY" 
-		"Soul_RigRN.placeHolderList[456]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[457]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.translateX" 
-		"Soul_RigRN.placeHolderList[458]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.translateY" 
-		"Soul_RigRN.placeHolderList[459]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.translateZ" 
-		"Soul_RigRN.placeHolderList[460]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex4Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.scaleX" 
-		"Soul_RigRN.placeHolderList[461]" "Soul_RigRN.placeHolderList[462]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex4Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.scaleY" 
-		"Soul_RigRN.placeHolderList[463]" "Soul_RigRN.placeHolderList[464]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex4Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[465]" "Soul_RigRN.placeHolderList[466]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.rotateX" 
-		"Soul_RigRN.placeHolderList[467]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.rotateY" 
-		"Soul_RigRN.placeHolderList[468]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[469]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.scaleX" 
-		"Soul_RigRN.placeHolderList[470]" "Soul_RigRN.placeHolderList[471]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.scaleY" 
-		"Soul_RigRN.placeHolderList[472]" "Soul_RigRN.placeHolderList[473]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[474]" "Soul_RigRN.placeHolderList[475]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.translateX" 
-		"Soul_RigRN.placeHolderList[476]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.translateY" 
-		"Soul_RigRN.placeHolderList[477]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.translateZ" 
-		"Soul_RigRN.placeHolderList[478]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.rotateX" 
-		"Soul_RigRN.placeHolderList[479]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.rotateY" 
-		"Soul_RigRN.placeHolderList[480]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[481]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.scaleX" 
-		"Soul_RigRN.placeHolderList[482]" "Soul_RigRN.placeHolderList[483]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.scaleY" 
-		"Soul_RigRN.placeHolderList[484]" "Soul_RigRN.placeHolderList[485]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[486]" "Soul_RigRN.placeHolderList[487]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.translateX" 
-		"Soul_RigRN.placeHolderList[488]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.translateY" 
-		"Soul_RigRN.placeHolderList[489]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.translateZ" 
-		"Soul_RigRN.placeHolderList[490]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.rotateX" 
-		"Soul_RigRN.placeHolderList[491]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.rotateY" 
-		"Soul_RigRN.placeHolderList[492]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[493]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle3Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.scaleX" 
-		"Soul_RigRN.placeHolderList[494]" "Soul_RigRN.placeHolderList[495]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle3Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.scaleY" 
-		"Soul_RigRN.placeHolderList[496]" "Soul_RigRN.placeHolderList[497]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle3Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[498]" "Soul_RigRN.placeHolderList[499]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.translateX" 
-		"Soul_RigRN.placeHolderList[500]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.translateY" 
-		"Soul_RigRN.placeHolderList[501]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.translateZ" 
-		"Soul_RigRN.placeHolderList[502]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.rotateX" 
-		"Soul_RigRN.placeHolderList[503]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.rotateY" 
-		"Soul_RigRN.placeHolderList[504]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[505]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.translateX" 
-		"Soul_RigRN.placeHolderList[506]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.translateY" 
-		"Soul_RigRN.placeHolderList[507]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.translateZ" 
-		"Soul_RigRN.placeHolderList[508]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle4Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.scaleX" 
-		"Soul_RigRN.placeHolderList[509]" "Soul_RigRN.placeHolderList[510]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle4Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.scaleY" 
-		"Soul_RigRN.placeHolderList[511]" "Soul_RigRN.placeHolderList[512]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle4Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[513]" "Soul_RigRN.placeHolderList[514]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.rotateX" 
-		"Soul_RigRN.placeHolderList[515]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.rotateY" 
-		"Soul_RigRN.placeHolderList[516]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.rotateZ" 
-		"Soul_RigRN.placeHolderList[517]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightUpLegSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.scaleX" 
-		"Soul_RigRN.placeHolderList[518]" "Soul_RigRN.placeHolderList[519]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightUpLegSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.scaleY" 
-		"Soul_RigRN.placeHolderList[520]" "Soul_RigRN.placeHolderList[521]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightUpLegSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.scaleZ" 
-		"Soul_RigRN.placeHolderList[522]" "Soul_RigRN.placeHolderList[523]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.translateX" 
-		"Soul_RigRN.placeHolderList[524]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.translateY" 
-		"Soul_RigRN.placeHolderList[525]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.translateZ" 
-		"Soul_RigRN.placeHolderList[526]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.rotateX" 
-		"Soul_RigRN.placeHolderList[527]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.rotateY" 
-		"Soul_RigRN.placeHolderList[528]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[529]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightLegSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.scaleX" 
-		"Soul_RigRN.placeHolderList[530]" "Soul_RigRN.placeHolderList[531]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightLegSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.scaleY" 
-		"Soul_RigRN.placeHolderList[532]" "Soul_RigRN.placeHolderList[533]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightLegSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[534]" "Soul_RigRN.placeHolderList[535]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.translateX" 
-		"Soul_RigRN.placeHolderList[536]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.translateY" 
-		"Soul_RigRN.placeHolderList[537]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.translateZ" 
-		"Soul_RigRN.placeHolderList[538]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.rotateX" 
-		"Soul_RigRN.placeHolderList[539]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.rotateY" 
-		"Soul_RigRN.placeHolderList[540]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.rotateZ" 
-		"Soul_RigRN.placeHolderList[541]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightFootSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.scaleX" 
-		"Soul_RigRN.placeHolderList[542]" "Soul_RigRN.placeHolderList[543]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightFootSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.scaleY" 
-		"Soul_RigRN.placeHolderList[544]" "Soul_RigRN.placeHolderList[545]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightFootSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.scaleZ" 
-		"Soul_RigRN.placeHolderList[546]" "Soul_RigRN.placeHolderList[547]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.translateX" 
-		"Soul_RigRN.placeHolderList[548]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.translateY" 
-		"Soul_RigRN.placeHolderList[549]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.translateZ" 
-		"Soul_RigRN.placeHolderList[550]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.rotateX" 
-		"Soul_RigRN.placeHolderList[551]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.rotateY" 
-		"Soul_RigRN.placeHolderList[552]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.rotateZ" 
-		"Soul_RigRN.placeHolderList[553]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightToeBaseSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.scaleX" 
-		"Soul_RigRN.placeHolderList[554]" "Soul_RigRN.placeHolderList[555]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightToeBaseSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.scaleY" 
-		"Soul_RigRN.placeHolderList[556]" "Soul_RigRN.placeHolderList[557]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightToeBaseSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.scaleZ" 
-		"Soul_RigRN.placeHolderList[558]" "Soul_RigRN.placeHolderList[559]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.translateX" 
-		"Soul_RigRN.placeHolderList[560]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.translateY" 
-		"Soul_RigRN.placeHolderList[561]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.translateZ" 
-		"Soul_RigRN.placeHolderList[562]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.rotateX" 
-		"Soul_RigRN.placeHolderList[563]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.rotateY" 
-		"Soul_RigRN.placeHolderList[564]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.rotateZ" 
-		"Soul_RigRN.placeHolderList[565]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftUpLegSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.scaleX" 
-		"Soul_RigRN.placeHolderList[566]" "Soul_RigRN.placeHolderList[567]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftUpLegSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.scaleY" 
-		"Soul_RigRN.placeHolderList[568]" "Soul_RigRN.placeHolderList[569]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftUpLegSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.scaleZ" 
-		"Soul_RigRN.placeHolderList[570]" "Soul_RigRN.placeHolderList[571]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.translateX" 
-		"Soul_RigRN.placeHolderList[572]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.translateY" 
-		"Soul_RigRN.placeHolderList[573]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.translateZ" 
-		"Soul_RigRN.placeHolderList[574]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.rotateX" 
-		"Soul_RigRN.placeHolderList[575]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.rotateY" 
-		"Soul_RigRN.placeHolderList[576]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.rotateZ" 
-		"Soul_RigRN.placeHolderList[577]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftLegSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.scaleX" 
-		"Soul_RigRN.placeHolderList[578]" "Soul_RigRN.placeHolderList[579]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftLegSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.scaleY" 
-		"Soul_RigRN.placeHolderList[580]" "Soul_RigRN.placeHolderList[581]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftLegSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.scaleZ" 
-		"Soul_RigRN.placeHolderList[582]" "Soul_RigRN.placeHolderList[583]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.translateX" 
-		"Soul_RigRN.placeHolderList[584]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.translateY" 
-		"Soul_RigRN.placeHolderList[585]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.translateZ" 
-		"Soul_RigRN.placeHolderList[586]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.rotateX" 
-		"Soul_RigRN.placeHolderList[587]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.rotateY" 
-		"Soul_RigRN.placeHolderList[588]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.rotateZ" 
-		"Soul_RigRN.placeHolderList[589]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftFootSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.scaleX" 
-		"Soul_RigRN.placeHolderList[590]" "Soul_RigRN.placeHolderList[591]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftFootSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.scaleY" 
-		"Soul_RigRN.placeHolderList[592]" "Soul_RigRN.placeHolderList[593]" ""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftFootSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.scaleZ" 
-		"Soul_RigRN.placeHolderList[594]" "Soul_RigRN.placeHolderList[595]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.translateX" 
-		"Soul_RigRN.placeHolderList[596]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.translateY" 
-		"Soul_RigRN.placeHolderList[597]" ""
-		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.translateZ" 
-		"Soul_RigRN.placeHolderList[598]" ""
-		5 3 "Soul_RigRN" "Soul_Rig:QuickRigCharacter.OutputCharacterDefinition" 
-		"Soul_RigRN.placeHolderList[599]" ""
-		5 3 "Soul_RigRN" "Soul_Rig:QuickRigCharacter.OutputCharacterDefinition" 
-		"Soul_RigRN.placeHolderList[600]" ""
-		5 3 "Soul_RigRN" "Soul_Rig:QuickRigCharacter.OutputCharacterDefinition" 
-		"Soul_RigRN.placeHolderList[601]" ""
-		5 3 "Soul_RigRN" "Soul_Rig:QuickRigCharacter.OutputCharacterDefinition" 
-		"Soul_RigRN.placeHolderList[602]" ""
-		5 3 "Soul_RigRN" "Soul_Rig:QuickRigCharacter.OutputCharacterDefinition" 
-		"Soul_RigRN.placeHolderList[603]" ""
-		5 3 "Soul_RigRN" "Soul_Rig:QuickRigCharacter.OutputCharacterDefinition" 
-		"Soul_RigRN.placeHolderList[604]" ""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKproperties1.OutputPropertySetState" "Soul_RigRN.placeHolderList[605]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKproperties1.OutputPropertySetState" "Soul_RigRN.placeHolderList[606]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistHipsPosition" "Soul_RigRN.placeHolderList[607]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistHipsOrientation" 
-		"Soul_RigRN.placeHolderList[608]" ""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullLeftFoot" "Soul_RigRN.placeHolderList[609]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullRightFoot" "Soul_RigRN.placeHolderList[610]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlChestPullLeftHand" "Soul_RigRN.placeHolderList[611]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlChestPullRightHand" "Soul_RigRN.placeHolderList[612]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullLeftKnee" "Soul_RigRN.placeHolderList[613]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistLeftKnee" "Soul_RigRN.placeHolderList[614]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullRightKnee" "Soul_RigRN.placeHolderList[615]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistRightKnee" "Soul_RigRN.placeHolderList[616]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullLeftElbow" "Soul_RigRN.placeHolderList[617]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistLeftElbow" "Soul_RigRN.placeHolderList[618]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullRightElbow" "Soul_RigRN.placeHolderList[619]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistRightElbow" "Soul_RigRN.placeHolderList[620]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.ParamCtrlSpineStiffness" "Soul_RigRN.placeHolderList[621]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistChestPosition" "Soul_RigRN.placeHolderList[622]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistChestOrientation" 
-		"Soul_RigRN.placeHolderList[623]" ""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullRightToeBase" "Soul_RigRN.placeHolderList[624]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistLeftCollar" "Soul_RigRN.placeHolderList[625]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistRightCollar" "Soul_RigRN.placeHolderList[626]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullHead" "Soul_RigRN.placeHolderList[627]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.ParamCtrlNeckStiffness" "Soul_RigRN.placeHolderList[628]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKproperties1.rigAlign" "Soul_RigRN.placeHolderList[629]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.OutputCharacterState" "Soul_RigRN.placeHolderList[630]" 
-		"Soul_Rig:HIKState2SK1.InputCharacterState"
-		5 3 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.OutputCharacterState" "Soul_RigRN.placeHolderList[631]" 
-		"Soul_Rig:HIKState2SK1.InputCharacterState"
-		5 3 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.doubleEvalCharacterState" 
-		"Soul_RigRN.placeHolderList[632]" ""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.doubleEvalCharacterState" 
-		"Soul_RigRN.placeHolderList[633]" ""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.InputCharacterState" "Soul_RigRN.placeHolderList[634]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.InputEffectorState" "Soul_RigRN.placeHolderList[635]" 
-		""
-		5 4 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.InputEffectorStateNoAux" "Soul_RigRN.placeHolderList[636]" 
-		""
-		5 0 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.OutputCharacterState" "Soul_Rig:HIKState2SK1.InputCharacterState" 
-		"Soul_RigRN.placeHolderList[637]" "Soul_RigRN.placeHolderList[638]" "Soul_Rig:HIKState2SK1.InputCharacterState"
-		
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HipsT" "Soul_RigRN.placeHolderList[639]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HipsR" "Soul_RigRN.placeHolderList[640]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftUpLegT" "Soul_RigRN.placeHolderList[641]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftUpLegR" "Soul_RigRN.placeHolderList[642]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftLegT" "Soul_RigRN.placeHolderList[643]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftLegR" "Soul_RigRN.placeHolderList[644]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftFootT" "Soul_RigRN.placeHolderList[645]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftFootR" "Soul_RigRN.placeHolderList[646]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightUpLegT" "Soul_RigRN.placeHolderList[647]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightUpLegR" "Soul_RigRN.placeHolderList[648]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightLegT" "Soul_RigRN.placeHolderList[649]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightLegR" "Soul_RigRN.placeHolderList[650]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightFootT" "Soul_RigRN.placeHolderList[651]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightFootR" "Soul_RigRN.placeHolderList[652]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.SpineT" "Soul_RigRN.placeHolderList[653]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.SpineR" "Soul_RigRN.placeHolderList[654]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftArmT" "Soul_RigRN.placeHolderList[655]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftArmR" "Soul_RigRN.placeHolderList[656]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftForeArmT" "Soul_RigRN.placeHolderList[657]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftForeArmR" "Soul_RigRN.placeHolderList[658]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandT" "Soul_RigRN.placeHolderList[659]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandR" "Soul_RigRN.placeHolderList[660]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightArmT" "Soul_RigRN.placeHolderList[661]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightArmR" "Soul_RigRN.placeHolderList[662]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightForeArmT" "Soul_RigRN.placeHolderList[663]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightForeArmR" "Soul_RigRN.placeHolderList[664]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandT" "Soul_RigRN.placeHolderList[665]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandR" "Soul_RigRN.placeHolderList[666]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HeadT" "Soul_RigRN.placeHolderList[667]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HeadR" "Soul_RigRN.placeHolderList[668]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightToeBaseT" "Soul_RigRN.placeHolderList[669]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightToeBaseR" "Soul_RigRN.placeHolderList[670]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.NeckT" "Soul_RigRN.placeHolderList[671]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.NeckR" "Soul_RigRN.placeHolderList[672]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine1T" "Soul_RigRN.placeHolderList[673]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine1R" "Soul_RigRN.placeHolderList[674]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine2T" "Soul_RigRN.placeHolderList[675]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine2R" "Soul_RigRN.placeHolderList[676]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb1T" "Soul_RigRN.placeHolderList[677]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb1R" "Soul_RigRN.placeHolderList[678]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb2T" "Soul_RigRN.placeHolderList[679]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb2R" "Soul_RigRN.placeHolderList[680]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb3T" "Soul_RigRN.placeHolderList[681]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb3R" "Soul_RigRN.placeHolderList[682]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb1T" "Soul_RigRN.placeHolderList[683]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb1R" "Soul_RigRN.placeHolderList[684]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb2T" "Soul_RigRN.placeHolderList[685]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb2R" "Soul_RigRN.placeHolderList[686]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb3T" "Soul_RigRN.placeHolderList[687]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb3R" "Soul_RigRN.placeHolderList[688]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex1T" "Soul_RigRN.placeHolderList[689]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex1R" "Soul_RigRN.placeHolderList[690]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex2T" "Soul_RigRN.placeHolderList[691]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex2R" "Soul_RigRN.placeHolderList[692]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex3T" "Soul_RigRN.placeHolderList[693]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex3R" "Soul_RigRN.placeHolderList[694]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex4T" "Soul_RigRN.placeHolderList[695]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex4R" "Soul_RigRN.placeHolderList[696]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle1T" "Soul_RigRN.placeHolderList[697]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle1R" "Soul_RigRN.placeHolderList[698]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle2T" "Soul_RigRN.placeHolderList[699]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle2R" "Soul_RigRN.placeHolderList[700]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle3T" "Soul_RigRN.placeHolderList[701]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle3R" "Soul_RigRN.placeHolderList[702]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle4T" "Soul_RigRN.placeHolderList[703]" 
-		""
-		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle4R" "Soul_RigRN.placeHolderList[704]" 
 		""
 		5 3 "Soul_RigRN" "Soul_Rig:Pelvis_rotateX.output" "Soul_RigRN.placeHolderList[705]" 
 		"Soul_Rig:Pelvis.rx"
@@ -3989,7 +2794,1193 @@ createNode reference -n "Soul_RigRN";
 		5 3 "Soul_RigRN" "Soul_Rig:finger_04_r_rotateY.output" "Soul_RigRN.placeHolderList[805]" 
 		"Soul_Rig:finger_04_r.ry"
 		5 3 "Soul_RigRN" "Soul_Rig:finger_04_r_rotateZ.output" "Soul_RigRN.placeHolderList[806]" 
-		"Soul_Rig:finger_04_r.rz";
+		"Soul_Rig:finger_04_r.rz"
+		"Soul_RigRN" 597
+		2 "|Soul_Rig:Root" "visibility" " -k 0 -cb 1 1"
+		2 "|Soul_Rig:Root" "translate" " -type \"double3\" 0 0 0"
+		2 "|Soul_Rig:Root" "rotate" " -type \"double3\" 89.9999847412109375 0 0"
+		2 "|Soul_Rig:Root" "scale" " -type \"double3\" 1 1.00000000000003531 1.00000000000003531"
+		
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis" "drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01" "drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02" "drawStyle" 
+		" 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"visibility" " -av 1"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"translate" " -type \"double3\" 13.90036430044838767 -2.57578814892169694 5.39222012127500694"
+		
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"translateX" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"translateY" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"translateZ" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"rotate" " -type \"double3\" 70.00557896796837554 -76.6257823690920219 123.16828885870253885"
+		
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"rotateX" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"rotateY" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"rotateZ" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"scale" " -type \"double3\" 1 0.99999994039535545 0.99999994039535545"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"scaleX" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"scaleY" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"scaleZ" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01" 
+		"lockInfluenceWeights" " -av -k 1 0"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"visibility" " -av 1"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"translate" " -type \"double3\" -21.95103078908597638 10.00332575681325054 -46.59569292743781688"
+		
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"translateX" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"translateY" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"translateZ" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"rotateX" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"rotateY" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"rotateZ" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"scale" " -type \"double3\" 1 0.99999999999999989 0.99999999999999989"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"scaleX" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"scaleY" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"scaleZ" " -av"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01" 
+		"lockInfluenceWeights" " -av -k 1 0"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R" "drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r" "drawStyle" 
+		" 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r" 
+		"drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L" "drawStyle" " 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l" "drawStyle" 
+		" 2"
+		2 "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L" 
+		"drawStyle" " 2"
+		2 "Soul_Rig:EnvSamplerTex" "fileTextureName" " -type \"string\" \"C:/Users/163295/Documents/GitHub/ThoseBums_Jam_01/SourceData/Characters/Soul/Soul_Texture.TGA\""
+		
+		2 "Soul_Rig:EnvSamplerTex" "colorSpace" " -type \"string\" \"sRGB\""
+		2 "Soul_Rig:layer1" "displayType" " 2"
+		2 "Soul_Rig:HIKSolverNode1" "nodeState" " 0"
+		2 "Soul_Rig:HIKSolverNode1" "InputActive" " 1"
+		2 "Soul_Rig:HIKSolverNode1" "InputStance" " 0"
+		2 "Soul_Rig:HIKSolverNode1" "InputStanceMask" " 0"
+		3 "Soul_Rig:HIKSolverNode1.OutputCharacterState" "Soul_Rig:HIKState2SK1.InputCharacterState" 
+		""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HipsSx" "|Soul_Rig:Root|Soul_Rig:Pelvis.scaleX" 
+		"Soul_RigRN.placeHolderList[807]" "Soul_RigRN.placeHolderList[808]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HipsSy" "|Soul_Rig:Root|Soul_Rig:Pelvis.scaleY" 
+		"Soul_RigRN.placeHolderList[809]" "Soul_RigRN.placeHolderList[810]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HipsSz" "|Soul_Rig:Root|Soul_Rig:Pelvis.scaleZ" 
+		"Soul_RigRN.placeHolderList[811]" "Soul_RigRN.placeHolderList[812]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis.translateX" "Soul_RigRN.placeHolderList[813]" 
+		""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis.translateY" "Soul_RigRN.placeHolderList[814]" 
+		""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis.translateZ" "Soul_RigRN.placeHolderList[815]" 
+		""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis.rotateX" "Soul_RigRN.placeHolderList[816]" 
+		""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis.rotateY" "Soul_RigRN.placeHolderList[817]" 
+		""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis.rotateZ" "Soul_RigRN.placeHolderList[818]" 
+		""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.SpineSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.scaleX" 
+		"Soul_RigRN.placeHolderList[819]" "Soul_RigRN.placeHolderList[820]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.SpineSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.scaleY" 
+		"Soul_RigRN.placeHolderList[821]" "Soul_RigRN.placeHolderList[822]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.SpineSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.scaleZ" 
+		"Soul_RigRN.placeHolderList[823]" "Soul_RigRN.placeHolderList[824]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.rotateX" 
+		"Soul_RigRN.placeHolderList[825]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.rotateY" 
+		"Soul_RigRN.placeHolderList[826]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.rotateZ" 
+		"Soul_RigRN.placeHolderList[827]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.translateX" 
+		"Soul_RigRN.placeHolderList[828]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.translateY" 
+		"Soul_RigRN.placeHolderList[829]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01.translateZ" 
+		"Soul_RigRN.placeHolderList[830]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.scaleX" 
+		"Soul_RigRN.placeHolderList[831]" "Soul_RigRN.placeHolderList[832]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.scaleY" 
+		"Soul_RigRN.placeHolderList[833]" "Soul_RigRN.placeHolderList[834]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.scaleZ" 
+		"Soul_RigRN.placeHolderList[835]" "Soul_RigRN.placeHolderList[836]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.rotateX" 
+		"Soul_RigRN.placeHolderList[837]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.rotateY" 
+		"Soul_RigRN.placeHolderList[838]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.rotateZ" 
+		"Soul_RigRN.placeHolderList[839]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.translateX" 
+		"Soul_RigRN.placeHolderList[840]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.translateY" 
+		"Soul_RigRN.placeHolderList[841]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02.translateZ" 
+		"Soul_RigRN.placeHolderList[842]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.scaleX" 
+		"Soul_RigRN.placeHolderList[843]" "Soul_RigRN.placeHolderList[844]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.scaleY" 
+		"Soul_RigRN.placeHolderList[845]" "Soul_RigRN.placeHolderList[846]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.scaleZ" 
+		"Soul_RigRN.placeHolderList[847]" "Soul_RigRN.placeHolderList[848]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.rotateX" 
+		"Soul_RigRN.placeHolderList[849]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.rotateY" 
+		"Soul_RigRN.placeHolderList[850]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.rotateZ" 
+		"Soul_RigRN.placeHolderList[851]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.translateX" 
+		"Soul_RigRN.placeHolderList[852]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.translateY" 
+		"Soul_RigRN.placeHolderList[853]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03.translateZ" 
+		"Soul_RigRN.placeHolderList[854]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.NeckSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.scaleX" 
+		"Soul_RigRN.placeHolderList[855]" "Soul_RigRN.placeHolderList[856]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.NeckSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.scaleY" 
+		"Soul_RigRN.placeHolderList[857]" "Soul_RigRN.placeHolderList[858]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.NeckSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.scaleZ" 
+		"Soul_RigRN.placeHolderList[859]" "Soul_RigRN.placeHolderList[860]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.rotateX" 
+		"Soul_RigRN.placeHolderList[861]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.rotateY" 
+		"Soul_RigRN.placeHolderList[862]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.rotateZ" 
+		"Soul_RigRN.placeHolderList[863]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.translateX" 
+		"Soul_RigRN.placeHolderList[864]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.translateY" 
+		"Soul_RigRN.placeHolderList[865]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01.translateZ" 
+		"Soul_RigRN.placeHolderList[866]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HeadSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.scaleX" 
+		"Soul_RigRN.placeHolderList[867]" "Soul_RigRN.placeHolderList[868]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HeadSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.scaleY" 
+		"Soul_RigRN.placeHolderList[869]" "Soul_RigRN.placeHolderList[870]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HeadSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.scaleZ" 
+		"Soul_RigRN.placeHolderList[871]" "Soul_RigRN.placeHolderList[872]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.rotateX" 
+		"Soul_RigRN.placeHolderList[873]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.rotateY" 
+		"Soul_RigRN.placeHolderList[874]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.rotateZ" 
+		"Soul_RigRN.placeHolderList[875]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.translateX" 
+		"Soul_RigRN.placeHolderList[876]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.translateY" 
+		"Soul_RigRN.placeHolderList[877]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:neck_01|Soul_Rig:head.translateZ" 
+		"Soul_RigRN.placeHolderList[878]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.scaleX" 
+		"Soul_RigRN.placeHolderList[879]" "Soul_RigRN.placeHolderList[880]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.scaleY" 
+		"Soul_RigRN.placeHolderList[881]" "Soul_RigRN.placeHolderList[882]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[883]" "Soul_RigRN.placeHolderList[884]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderTx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.translateX" 
+		"Soul_RigRN.placeHolderList[885]" "Soul_RigRN.placeHolderList[886]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderTy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.translateY" 
+		"Soul_RigRN.placeHolderList[887]" "Soul_RigRN.placeHolderList[888]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderTz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.translateZ" 
+		"Soul_RigRN.placeHolderList[889]" "Soul_RigRN.placeHolderList[890]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderRx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.rotateX" 
+		"Soul_RigRN.placeHolderList[891]" "Soul_RigRN.placeHolderList[892]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderRy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.rotateY" 
+		"Soul_RigRN.placeHolderList[893]" "Soul_RigRN.placeHolderList[894]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftShoulderRz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[895]" "Soul_RigRN.placeHolderList[896]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftArmSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.scaleX" 
+		"Soul_RigRN.placeHolderList[897]" "Soul_RigRN.placeHolderList[898]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftArmSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.scaleY" 
+		"Soul_RigRN.placeHolderList[899]" "Soul_RigRN.placeHolderList[900]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftArmSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.scaleZ" 
+		"Soul_RigRN.placeHolderList[901]" "Soul_RigRN.placeHolderList[902]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.rotateX" 
+		"Soul_RigRN.placeHolderList[903]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.rotateY" 
+		"Soul_RigRN.placeHolderList[904]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.rotateZ" 
+		"Soul_RigRN.placeHolderList[905]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.translateX" 
+		"Soul_RigRN.placeHolderList[906]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.translateY" 
+		"Soul_RigRN.placeHolderList[907]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L.translateZ" 
+		"Soul_RigRN.placeHolderList[908]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftForeArmSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.scaleX" 
+		"Soul_RigRN.placeHolderList[909]" "Soul_RigRN.placeHolderList[910]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftForeArmSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.scaleY" 
+		"Soul_RigRN.placeHolderList[911]" "Soul_RigRN.placeHolderList[912]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftForeArmSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[913]" "Soul_RigRN.placeHolderList[914]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.rotateX" 
+		"Soul_RigRN.placeHolderList[915]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.rotateY" 
+		"Soul_RigRN.placeHolderList[916]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[917]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.translateX" 
+		"Soul_RigRN.placeHolderList[918]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.translateY" 
+		"Soul_RigRN.placeHolderList[919]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l.translateZ" 
+		"Soul_RigRN.placeHolderList[920]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.scaleX" 
+		"Soul_RigRN.placeHolderList[921]" "Soul_RigRN.placeHolderList[922]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.scaleY" 
+		"Soul_RigRN.placeHolderList[923]" "Soul_RigRN.placeHolderList[924]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.scaleZ" 
+		"Soul_RigRN.placeHolderList[925]" "Soul_RigRN.placeHolderList[926]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.rotateX" 
+		"Soul_RigRN.placeHolderList[927]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.rotateY" 
+		"Soul_RigRN.placeHolderList[928]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.rotateZ" 
+		"Soul_RigRN.placeHolderList[929]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.translateX" 
+		"Soul_RigRN.placeHolderList[930]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.translateY" 
+		"Soul_RigRN.placeHolderList[931]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L.translateZ" 
+		"Soul_RigRN.placeHolderList[932]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.scaleX" 
+		"Soul_RigRN.placeHolderList[933]" "Soul_RigRN.placeHolderList[934]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.scaleY" 
+		"Soul_RigRN.placeHolderList[935]" "Soul_RigRN.placeHolderList[936]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[937]" "Soul_RigRN.placeHolderList[938]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.rotateX" 
+		"Soul_RigRN.placeHolderList[939]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.rotateY" 
+		"Soul_RigRN.placeHolderList[940]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[941]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.translateX" 
+		"Soul_RigRN.placeHolderList[942]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.translateY" 
+		"Soul_RigRN.placeHolderList[943]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l.translateZ" 
+		"Soul_RigRN.placeHolderList[944]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.scaleX" 
+		"Soul_RigRN.placeHolderList[945]" "Soul_RigRN.placeHolderList[946]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.scaleY" 
+		"Soul_RigRN.placeHolderList[947]" "Soul_RigRN.placeHolderList[948]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[949]" "Soul_RigRN.placeHolderList[950]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.rotateX" 
+		"Soul_RigRN.placeHolderList[951]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.rotateY" 
+		"Soul_RigRN.placeHolderList[952]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[953]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.translateX" 
+		"Soul_RigRN.placeHolderList[954]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.translateY" 
+		"Soul_RigRN.placeHolderList[955]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l.translateZ" 
+		"Soul_RigRN.placeHolderList[956]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.rotateX" 
+		"Soul_RigRN.placeHolderList[957]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.rotateY" 
+		"Soul_RigRN.placeHolderList[958]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[959]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.translateX" 
+		"Soul_RigRN.placeHolderList[960]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.translateY" 
+		"Soul_RigRN.placeHolderList[961]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.translateZ" 
+		"Soul_RigRN.placeHolderList[962]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb3Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.scaleX" 
+		"Soul_RigRN.placeHolderList[963]" "Soul_RigRN.placeHolderList[964]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb3Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.scaleY" 
+		"Soul_RigRN.placeHolderList[965]" "Soul_RigRN.placeHolderList[966]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb3Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:thumb_01_l|Soul_Rig:thumb_02_l|Soul_Rig:thumb_03_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[967]" "Soul_RigRN.placeHolderList[968]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.scaleX" 
+		"Soul_RigRN.placeHolderList[969]" "Soul_RigRN.placeHolderList[970]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.scaleY" 
+		"Soul_RigRN.placeHolderList[971]" "Soul_RigRN.placeHolderList[972]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[973]" "Soul_RigRN.placeHolderList[974]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.translateX" 
+		"Soul_RigRN.placeHolderList[975]" "Soul_RigRN.placeHolderList[976]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.translateY" 
+		"Soul_RigRN.placeHolderList[977]" "Soul_RigRN.placeHolderList[978]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.translateZ" 
+		"Soul_RigRN.placeHolderList[979]" "Soul_RigRN.placeHolderList[980]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.rotateX" 
+		"Soul_RigRN.placeHolderList[981]" "Soul_RigRN.placeHolderList[982]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.rotateY" 
+		"Soul_RigRN.placeHolderList[983]" "Soul_RigRN.placeHolderList[984]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex1Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[985]" "Soul_RigRN.placeHolderList[986]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.scaleX" 
+		"Soul_RigRN.placeHolderList[987]" "Soul_RigRN.placeHolderList[988]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.scaleY" 
+		"Soul_RigRN.placeHolderList[989]" "Soul_RigRN.placeHolderList[990]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[991]" "Soul_RigRN.placeHolderList[992]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.translateX" 
+		"Soul_RigRN.placeHolderList[993]" "Soul_RigRN.placeHolderList[994]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.translateY" 
+		"Soul_RigRN.placeHolderList[995]" "Soul_RigRN.placeHolderList[996]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.translateZ" 
+		"Soul_RigRN.placeHolderList[997]" "Soul_RigRN.placeHolderList[998]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.rotateX" 
+		"Soul_RigRN.placeHolderList[999]" "Soul_RigRN.placeHolderList[1000]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.rotateY" 
+		"Soul_RigRN.placeHolderList[1001]" "Soul_RigRN.placeHolderList[1002]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex2Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[1003]" "Soul_RigRN.placeHolderList[1004]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.scaleX" 
+		"Soul_RigRN.placeHolderList[1005]" "Soul_RigRN.placeHolderList[1006]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.scaleY" 
+		"Soul_RigRN.placeHolderList[1007]" "Soul_RigRN.placeHolderList[1008]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[1009]" "Soul_RigRN.placeHolderList[1010]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.translateX" 
+		"Soul_RigRN.placeHolderList[1011]" "Soul_RigRN.placeHolderList[1012]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.translateY" 
+		"Soul_RigRN.placeHolderList[1013]" "Soul_RigRN.placeHolderList[1014]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.translateZ" 
+		"Soul_RigRN.placeHolderList[1015]" "Soul_RigRN.placeHolderList[1016]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.rotateX" 
+		"Soul_RigRN.placeHolderList[1017]" "Soul_RigRN.placeHolderList[1018]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.rotateY" 
+		"Soul_RigRN.placeHolderList[1019]" "Soul_RigRN.placeHolderList[1020]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex3Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[1021]" "Soul_RigRN.placeHolderList[1022]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.translateX" 
+		"Soul_RigRN.placeHolderList[1023]" "Soul_RigRN.placeHolderList[1024]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.translateY" 
+		"Soul_RigRN.placeHolderList[1025]" "Soul_RigRN.placeHolderList[1026]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.translateZ" 
+		"Soul_RigRN.placeHolderList[1027]" "Soul_RigRN.placeHolderList[1028]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.rotateX" 
+		"Soul_RigRN.placeHolderList[1029]" "Soul_RigRN.placeHolderList[1030]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.rotateY" 
+		"Soul_RigRN.placeHolderList[1031]" "Soul_RigRN.placeHolderList[1032]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[1033]" "Soul_RigRN.placeHolderList[1034]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.scaleX" 
+		"Soul_RigRN.placeHolderList[1035]" "Soul_RigRN.placeHolderList[1036]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.scaleY" 
+		"Soul_RigRN.placeHolderList[1037]" "Soul_RigRN.placeHolderList[1038]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandIndex4Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:indexFinger_01_l|Soul_Rig:indexFinger_02_l|Soul_Rig:indexFinger_03_l|Soul_Rig:indexFinger_04_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[1039]" "Soul_RigRN.placeHolderList[1040]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.scaleX" 
+		"Soul_RigRN.placeHolderList[1041]" "Soul_RigRN.placeHolderList[1042]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.scaleY" 
+		"Soul_RigRN.placeHolderList[1043]" "Soul_RigRN.placeHolderList[1044]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[1045]" "Soul_RigRN.placeHolderList[1046]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.translateX" 
+		"Soul_RigRN.placeHolderList[1047]" "Soul_RigRN.placeHolderList[1048]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.translateY" 
+		"Soul_RigRN.placeHolderList[1049]" "Soul_RigRN.placeHolderList[1050]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.translateZ" 
+		"Soul_RigRN.placeHolderList[1051]" "Soul_RigRN.placeHolderList[1052]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.rotateX" 
+		"Soul_RigRN.placeHolderList[1053]" "Soul_RigRN.placeHolderList[1054]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.rotateY" 
+		"Soul_RigRN.placeHolderList[1055]" "Soul_RigRN.placeHolderList[1056]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle1Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[1057]" "Soul_RigRN.placeHolderList[1058]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.scaleX" 
+		"Soul_RigRN.placeHolderList[1059]" "Soul_RigRN.placeHolderList[1060]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.scaleY" 
+		"Soul_RigRN.placeHolderList[1061]" "Soul_RigRN.placeHolderList[1062]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[1063]" "Soul_RigRN.placeHolderList[1064]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.translateX" 
+		"Soul_RigRN.placeHolderList[1065]" "Soul_RigRN.placeHolderList[1066]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.translateY" 
+		"Soul_RigRN.placeHolderList[1067]" "Soul_RigRN.placeHolderList[1068]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.translateZ" 
+		"Soul_RigRN.placeHolderList[1069]" "Soul_RigRN.placeHolderList[1070]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.rotateX" 
+		"Soul_RigRN.placeHolderList[1071]" "Soul_RigRN.placeHolderList[1072]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.rotateY" 
+		"Soul_RigRN.placeHolderList[1073]" "Soul_RigRN.placeHolderList[1074]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle2Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[1075]" "Soul_RigRN.placeHolderList[1076]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.scaleX" 
+		"Soul_RigRN.placeHolderList[1077]" "Soul_RigRN.placeHolderList[1078]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.scaleY" 
+		"Soul_RigRN.placeHolderList[1079]" "Soul_RigRN.placeHolderList[1080]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[1081]" "Soul_RigRN.placeHolderList[1082]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.translateX" 
+		"Soul_RigRN.placeHolderList[1083]" "Soul_RigRN.placeHolderList[1084]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.translateY" 
+		"Soul_RigRN.placeHolderList[1085]" "Soul_RigRN.placeHolderList[1086]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.translateZ" 
+		"Soul_RigRN.placeHolderList[1087]" "Soul_RigRN.placeHolderList[1088]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.rotateX" 
+		"Soul_RigRN.placeHolderList[1089]" "Soul_RigRN.placeHolderList[1090]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.rotateY" 
+		"Soul_RigRN.placeHolderList[1091]" "Soul_RigRN.placeHolderList[1092]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle3Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[1093]" "Soul_RigRN.placeHolderList[1094]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Tx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.translateX" 
+		"Soul_RigRN.placeHolderList[1095]" "Soul_RigRN.placeHolderList[1096]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Ty" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.translateY" 
+		"Soul_RigRN.placeHolderList[1097]" "Soul_RigRN.placeHolderList[1098]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Tz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.translateZ" 
+		"Soul_RigRN.placeHolderList[1099]" "Soul_RigRN.placeHolderList[1100]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Rx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.rotateX" 
+		"Soul_RigRN.placeHolderList[1101]" "Soul_RigRN.placeHolderList[1102]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Ry" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.rotateY" 
+		"Soul_RigRN.placeHolderList[1103]" "Soul_RigRN.placeHolderList[1104]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Rz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[1105]" "Soul_RigRN.placeHolderList[1106]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.scaleX" 
+		"Soul_RigRN.placeHolderList[1107]" "Soul_RigRN.placeHolderList[1108]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.scaleY" 
+		"Soul_RigRN.placeHolderList[1109]" "Soul_RigRN.placeHolderList[1110]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandMiddle4Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:finger_01_l|Soul_Rig:finger_02_l|Soul_Rig:finger_03_l|Soul_Rig:finger_04_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[1111]" "Soul_RigRN.placeHolderList[1112]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.scaleX" 
+		"Soul_RigRN.placeHolderList[1113]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.scaleY" 
+		"Soul_RigRN.placeHolderList[1114]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.scaleZ" 
+		"Soul_RigRN.placeHolderList[1115]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.lockInfluenceWeights" 
+		"Soul_RigRN.placeHolderList[1116]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.visibility" 
+		"Soul_RigRN.placeHolderList[1117]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.translateX" 
+		"Soul_RigRN.placeHolderList[1118]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.translateY" 
+		"Soul_RigRN.placeHolderList[1119]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.translateZ" 
+		"Soul_RigRN.placeHolderList[1120]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.rotateX" 
+		"Soul_RigRN.placeHolderList[1121]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.rotateY" 
+		"Soul_RigRN.placeHolderList[1122]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01.rotateZ" 
+		"Soul_RigRN.placeHolderList[1123]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.lockInfluenceWeights" 
+		"Soul_RigRN.placeHolderList[1124]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.visibility" 
+		"Soul_RigRN.placeHolderList[1125]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.translateX" 
+		"Soul_RigRN.placeHolderList[1126]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.translateY" 
+		"Soul_RigRN.placeHolderList[1127]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.translateZ" 
+		"Soul_RigRN.placeHolderList[1128]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.rotateX" 
+		"Soul_RigRN.placeHolderList[1129]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.rotateY" 
+		"Soul_RigRN.placeHolderList[1130]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.rotateZ" 
+		"Soul_RigRN.placeHolderList[1131]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.scaleX" 
+		"Soul_RigRN.placeHolderList[1132]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.scaleY" 
+		"Soul_RigRN.placeHolderList[1133]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_l|Soul_Rig:UpperArm_L|Soul_Rig:lowerarm_l|Soul_Rig:Hand_L|Soul_Rig:Prop_Bow_Rigged_01|Soul_Rig:Prop_Bow_01.scaleZ" 
+		"Soul_RigRN.placeHolderList[1134]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1135]" "Soul_RigRN.placeHolderList[1136]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1137]" "Soul_RigRN.placeHolderList[1138]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1139]" "Soul_RigRN.placeHolderList[1140]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderTx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.translateX" 
+		"Soul_RigRN.placeHolderList[1141]" "Soul_RigRN.placeHolderList[1142]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderTy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.translateY" 
+		"Soul_RigRN.placeHolderList[1143]" "Soul_RigRN.placeHolderList[1144]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderTz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1145]" "Soul_RigRN.placeHolderList[1146]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderRx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1147]" "Soul_RigRN.placeHolderList[1148]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderRy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1149]" "Soul_RigRN.placeHolderList[1150]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightShoulderRz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1151]" "Soul_RigRN.placeHolderList[1152]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightArmSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.scaleX" 
+		"Soul_RigRN.placeHolderList[1153]" "Soul_RigRN.placeHolderList[1154]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightArmSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.scaleY" 
+		"Soul_RigRN.placeHolderList[1155]" "Soul_RigRN.placeHolderList[1156]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightArmSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.scaleZ" 
+		"Soul_RigRN.placeHolderList[1157]" "Soul_RigRN.placeHolderList[1158]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.rotateX" 
+		"Soul_RigRN.placeHolderList[1159]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.rotateY" 
+		"Soul_RigRN.placeHolderList[1160]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.rotateZ" 
+		"Soul_RigRN.placeHolderList[1161]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.translateX" 
+		"Soul_RigRN.placeHolderList[1162]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.translateY" 
+		"Soul_RigRN.placeHolderList[1163]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R.translateZ" 
+		"Soul_RigRN.placeHolderList[1164]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightForeArmSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1165]" "Soul_RigRN.placeHolderList[1166]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightForeArmSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1167]" "Soul_RigRN.placeHolderList[1168]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightForeArmSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1169]" "Soul_RigRN.placeHolderList[1170]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1171]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1172]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1173]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.translateX" 
+		"Soul_RigRN.placeHolderList[1174]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.translateY" 
+		"Soul_RigRN.placeHolderList[1175]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1176]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.scaleX" 
+		"Soul_RigRN.placeHolderList[1177]" "Soul_RigRN.placeHolderList[1178]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.scaleY" 
+		"Soul_RigRN.placeHolderList[1179]" "Soul_RigRN.placeHolderList[1180]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.scaleZ" 
+		"Soul_RigRN.placeHolderList[1181]" "Soul_RigRN.placeHolderList[1182]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.rotateX" 
+		"Soul_RigRN.placeHolderList[1183]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.rotateY" 
+		"Soul_RigRN.placeHolderList[1184]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.rotateZ" 
+		"Soul_RigRN.placeHolderList[1185]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.translateX" 
+		"Soul_RigRN.placeHolderList[1186]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.translateY" 
+		"Soul_RigRN.placeHolderList[1187]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R.translateZ" 
+		"Soul_RigRN.placeHolderList[1188]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1189]" "Soul_RigRN.placeHolderList[1190]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1191]" "Soul_RigRN.placeHolderList[1192]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1193]" "Soul_RigRN.placeHolderList[1194]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1195]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1196]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1197]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.translateX" 
+		"Soul_RigRN.placeHolderList[1198]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.translateY" 
+		"Soul_RigRN.placeHolderList[1199]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1200]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1201]" "Soul_RigRN.placeHolderList[1202]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1203]" "Soul_RigRN.placeHolderList[1204]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1205]" "Soul_RigRN.placeHolderList[1206]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1207]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1208]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1209]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.translateX" 
+		"Soul_RigRN.placeHolderList[1210]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.translateY" 
+		"Soul_RigRN.placeHolderList[1211]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1212]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1213]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1214]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1215]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.translateX" 
+		"Soul_RigRN.placeHolderList[1216]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.translateY" 
+		"Soul_RigRN.placeHolderList[1217]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1218]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb3Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1219]" "Soul_RigRN.placeHolderList[1220]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb3Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1221]" "Soul_RigRN.placeHolderList[1222]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb3Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:thumb_01_r|Soul_Rig:thumb_02_r|Soul_Rig:thumb_03_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1223]" "Soul_RigRN.placeHolderList[1224]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1225]" "Soul_RigRN.placeHolderList[1226]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1227]" "Soul_RigRN.placeHolderList[1228]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1229]" "Soul_RigRN.placeHolderList[1230]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1231]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1232]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1233]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.translateX" 
+		"Soul_RigRN.placeHolderList[1234]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.translateY" 
+		"Soul_RigRN.placeHolderList[1235]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1236]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1237]" "Soul_RigRN.placeHolderList[1238]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1239]" "Soul_RigRN.placeHolderList[1240]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1241]" "Soul_RigRN.placeHolderList[1242]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1243]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1244]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1245]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.translateX" 
+		"Soul_RigRN.placeHolderList[1246]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.translateY" 
+		"Soul_RigRN.placeHolderList[1247]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1248]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex3Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1249]" "Soul_RigRN.placeHolderList[1250]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex3Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1251]" "Soul_RigRN.placeHolderList[1252]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex3Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1253]" "Soul_RigRN.placeHolderList[1254]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1255]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1256]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1257]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.translateX" 
+		"Soul_RigRN.placeHolderList[1258]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.translateY" 
+		"Soul_RigRN.placeHolderList[1259]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1260]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1261]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1262]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1263]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.translateX" 
+		"Soul_RigRN.placeHolderList[1264]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.translateY" 
+		"Soul_RigRN.placeHolderList[1265]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1266]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex4Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1267]" "Soul_RigRN.placeHolderList[1268]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex4Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1269]" "Soul_RigRN.placeHolderList[1270]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex4Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:indexFinger_01_r|Soul_Rig:indexFinger_02_r|Soul_Rig:indexFinger_03_r|Soul_Rig:indexFinger_04_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1271]" "Soul_RigRN.placeHolderList[1272]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle1Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1273]" "Soul_RigRN.placeHolderList[1274]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle1Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1275]" "Soul_RigRN.placeHolderList[1276]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle1Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1277]" "Soul_RigRN.placeHolderList[1278]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1279]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1280]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1281]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.translateX" 
+		"Soul_RigRN.placeHolderList[1282]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.translateY" 
+		"Soul_RigRN.placeHolderList[1283]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1284]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle2Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1285]" "Soul_RigRN.placeHolderList[1286]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle2Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1287]" "Soul_RigRN.placeHolderList[1288]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle2Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1289]" "Soul_RigRN.placeHolderList[1290]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1291]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1292]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1293]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.translateX" 
+		"Soul_RigRN.placeHolderList[1294]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.translateY" 
+		"Soul_RigRN.placeHolderList[1295]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1296]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle3Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1297]" "Soul_RigRN.placeHolderList[1298]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle3Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1299]" "Soul_RigRN.placeHolderList[1300]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle3Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1301]" "Soul_RigRN.placeHolderList[1302]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1303]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1304]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1305]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.translateX" 
+		"Soul_RigRN.placeHolderList[1306]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.translateY" 
+		"Soul_RigRN.placeHolderList[1307]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1308]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1309]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1310]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1311]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.translateX" 
+		"Soul_RigRN.placeHolderList[1312]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.translateY" 
+		"Soul_RigRN.placeHolderList[1313]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1314]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle4Sx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1315]" "Soul_RigRN.placeHolderList[1316]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle4Sy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1317]" "Soul_RigRN.placeHolderList[1318]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle4Sz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:spine_01|Soul_Rig:spine_02|Soul_Rig:spine_03|Soul_Rig:clavicle_r|Soul_Rig:UpperArm_R|Soul_Rig:lowerarm_r|Soul_Rig:Hand_R|Soul_Rig:finger_01_r|Soul_Rig:finger_02_r|Soul_Rig:finger_03_r|Soul_Rig:finger_04_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1319]" "Soul_RigRN.placeHolderList[1320]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightUpLegSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.scaleX" 
+		"Soul_RigRN.placeHolderList[1321]" "Soul_RigRN.placeHolderList[1322]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightUpLegSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.scaleY" 
+		"Soul_RigRN.placeHolderList[1323]" "Soul_RigRN.placeHolderList[1324]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightUpLegSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.scaleZ" 
+		"Soul_RigRN.placeHolderList[1325]" "Soul_RigRN.placeHolderList[1326]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.rotateX" 
+		"Soul_RigRN.placeHolderList[1327]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.rotateY" 
+		"Soul_RigRN.placeHolderList[1328]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.rotateZ" 
+		"Soul_RigRN.placeHolderList[1329]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.translateX" 
+		"Soul_RigRN.placeHolderList[1330]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.translateY" 
+		"Soul_RigRN.placeHolderList[1331]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R.translateZ" 
+		"Soul_RigRN.placeHolderList[1332]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightLegSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1333]" "Soul_RigRN.placeHolderList[1334]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightLegSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1335]" "Soul_RigRN.placeHolderList[1336]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightLegSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1337]" "Soul_RigRN.placeHolderList[1338]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1339]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1340]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1341]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.translateX" 
+		"Soul_RigRN.placeHolderList[1342]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.translateY" 
+		"Soul_RigRN.placeHolderList[1343]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1344]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightFootSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.scaleX" 
+		"Soul_RigRN.placeHolderList[1345]" "Soul_RigRN.placeHolderList[1346]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightFootSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.scaleY" 
+		"Soul_RigRN.placeHolderList[1347]" "Soul_RigRN.placeHolderList[1348]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightFootSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.scaleZ" 
+		"Soul_RigRN.placeHolderList[1349]" "Soul_RigRN.placeHolderList[1350]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.rotateX" 
+		"Soul_RigRN.placeHolderList[1351]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.rotateY" 
+		"Soul_RigRN.placeHolderList[1352]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.rotateZ" 
+		"Soul_RigRN.placeHolderList[1353]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.translateX" 
+		"Soul_RigRN.placeHolderList[1354]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.translateY" 
+		"Soul_RigRN.placeHolderList[1355]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R.translateZ" 
+		"Soul_RigRN.placeHolderList[1356]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightToeBaseSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.scaleX" 
+		"Soul_RigRN.placeHolderList[1357]" "Soul_RigRN.placeHolderList[1358]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightToeBaseSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.scaleY" 
+		"Soul_RigRN.placeHolderList[1359]" "Soul_RigRN.placeHolderList[1360]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightToeBaseSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.scaleZ" 
+		"Soul_RigRN.placeHolderList[1361]" "Soul_RigRN.placeHolderList[1362]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.rotateX" 
+		"Soul_RigRN.placeHolderList[1363]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.rotateY" 
+		"Soul_RigRN.placeHolderList[1364]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.rotateZ" 
+		"Soul_RigRN.placeHolderList[1365]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.translateX" 
+		"Soul_RigRN.placeHolderList[1366]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.translateY" 
+		"Soul_RigRN.placeHolderList[1367]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_R|Soul_Rig:calf_r|Soul_Rig:Foot_R|Soul_Rig:ball_r.translateZ" 
+		"Soul_RigRN.placeHolderList[1368]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftUpLegSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.scaleX" 
+		"Soul_RigRN.placeHolderList[1369]" "Soul_RigRN.placeHolderList[1370]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftUpLegSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.scaleY" 
+		"Soul_RigRN.placeHolderList[1371]" "Soul_RigRN.placeHolderList[1372]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftUpLegSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.scaleZ" 
+		"Soul_RigRN.placeHolderList[1373]" "Soul_RigRN.placeHolderList[1374]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.rotateX" 
+		"Soul_RigRN.placeHolderList[1375]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.rotateY" 
+		"Soul_RigRN.placeHolderList[1376]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.rotateZ" 
+		"Soul_RigRN.placeHolderList[1377]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.translateX" 
+		"Soul_RigRN.placeHolderList[1378]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.translateY" 
+		"Soul_RigRN.placeHolderList[1379]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L.translateZ" 
+		"Soul_RigRN.placeHolderList[1380]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftLegSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.scaleX" 
+		"Soul_RigRN.placeHolderList[1381]" "Soul_RigRN.placeHolderList[1382]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftLegSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.scaleY" 
+		"Soul_RigRN.placeHolderList[1383]" "Soul_RigRN.placeHolderList[1384]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftLegSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.scaleZ" 
+		"Soul_RigRN.placeHolderList[1385]" "Soul_RigRN.placeHolderList[1386]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.rotateX" 
+		"Soul_RigRN.placeHolderList[1387]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.rotateY" 
+		"Soul_RigRN.placeHolderList[1388]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.rotateZ" 
+		"Soul_RigRN.placeHolderList[1389]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.translateX" 
+		"Soul_RigRN.placeHolderList[1390]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.translateY" 
+		"Soul_RigRN.placeHolderList[1391]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l.translateZ" 
+		"Soul_RigRN.placeHolderList[1392]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftFootSx" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.scaleX" 
+		"Soul_RigRN.placeHolderList[1393]" "Soul_RigRN.placeHolderList[1394]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftFootSy" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.scaleY" 
+		"Soul_RigRN.placeHolderList[1395]" "Soul_RigRN.placeHolderList[1396]" ""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftFootSz" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.scaleZ" 
+		"Soul_RigRN.placeHolderList[1397]" "Soul_RigRN.placeHolderList[1398]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.rotateX" 
+		"Soul_RigRN.placeHolderList[1399]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.rotateY" 
+		"Soul_RigRN.placeHolderList[1400]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.rotateZ" 
+		"Soul_RigRN.placeHolderList[1401]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.translateX" 
+		"Soul_RigRN.placeHolderList[1402]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.translateY" 
+		"Soul_RigRN.placeHolderList[1403]" ""
+		5 4 "Soul_RigRN" "|Soul_Rig:Root|Soul_Rig:Pelvis|Soul_Rig:Thigh_L|Soul_Rig:calf_l|Soul_Rig:Foot_L.translateZ" 
+		"Soul_RigRN.placeHolderList[1404]" ""
+		5 3 "Soul_RigRN" "Soul_Rig:QuickRigCharacter.OutputCharacterDefinition" 
+		"Soul_RigRN.placeHolderList[1405]" ""
+		5 3 "Soul_RigRN" "Soul_Rig:QuickRigCharacter.OutputCharacterDefinition" 
+		"Soul_RigRN.placeHolderList[1406]" ""
+		5 3 "Soul_RigRN" "Soul_Rig:QuickRigCharacter.OutputCharacterDefinition" 
+		"Soul_RigRN.placeHolderList[1407]" ""
+		5 3 "Soul_RigRN" "Soul_Rig:QuickRigCharacter.OutputCharacterDefinition" 
+		"Soul_RigRN.placeHolderList[1408]" ""
+		5 3 "Soul_RigRN" "Soul_Rig:QuickRigCharacter.OutputCharacterDefinition" 
+		"Soul_RigRN.placeHolderList[1409]" ""
+		5 3 "Soul_RigRN" "Soul_Rig:QuickRigCharacter.OutputCharacterDefinition" 
+		"Soul_RigRN.placeHolderList[1410]" ""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKproperties1.OutputPropertySetState" "Soul_RigRN.placeHolderList[1411]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKproperties1.OutputPropertySetState" "Soul_RigRN.placeHolderList[1412]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistHipsPosition" "Soul_RigRN.placeHolderList[1413]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistHipsOrientation" 
+		"Soul_RigRN.placeHolderList[1414]" ""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullLeftFoot" "Soul_RigRN.placeHolderList[1415]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullRightFoot" "Soul_RigRN.placeHolderList[1416]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlChestPullLeftHand" "Soul_RigRN.placeHolderList[1417]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlChestPullRightHand" "Soul_RigRN.placeHolderList[1418]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullLeftKnee" "Soul_RigRN.placeHolderList[1419]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistLeftKnee" "Soul_RigRN.placeHolderList[1420]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullRightKnee" "Soul_RigRN.placeHolderList[1421]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistRightKnee" "Soul_RigRN.placeHolderList[1422]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullLeftElbow" "Soul_RigRN.placeHolderList[1423]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistLeftElbow" "Soul_RigRN.placeHolderList[1424]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullRightElbow" "Soul_RigRN.placeHolderList[1425]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistRightElbow" "Soul_RigRN.placeHolderList[1426]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.ParamCtrlSpineStiffness" "Soul_RigRN.placeHolderList[1427]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistChestPosition" "Soul_RigRN.placeHolderList[1428]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistChestOrientation" 
+		"Soul_RigRN.placeHolderList[1429]" ""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullRightToeBase" "Soul_RigRN.placeHolderList[1430]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistLeftCollar" "Soul_RigRN.placeHolderList[1431]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlResistRightCollar" "Soul_RigRN.placeHolderList[1432]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.CtrlPullHead" "Soul_RigRN.placeHolderList[1433]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKproperties1.ParamCtrlNeckStiffness" "Soul_RigRN.placeHolderList[1434]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKproperties1.rigAlign" "Soul_RigRN.placeHolderList[1435]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.OutputCharacterState" "Soul_RigRN.placeHolderList[1436]" 
+		"Soul_Rig:HIKState2SK1.InputCharacterState"
+		5 3 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.OutputCharacterState" "Soul_RigRN.placeHolderList[1437]" 
+		"Soul_Rig:HIKState2SK1.InputCharacterState"
+		5 3 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.doubleEvalCharacterState" 
+		"Soul_RigRN.placeHolderList[1438]" ""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.doubleEvalCharacterState" 
+		"Soul_RigRN.placeHolderList[1439]" ""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.InputCharacterState" "Soul_RigRN.placeHolderList[1440]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.InputEffectorState" "Soul_RigRN.placeHolderList[1441]" 
+		""
+		5 4 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.InputEffectorStateNoAux" "Soul_RigRN.placeHolderList[1442]" 
+		""
+		5 0 "Soul_RigRN" "Soul_Rig:HIKSolverNode1.OutputCharacterState" "Soul_Rig:HIKState2SK1.InputCharacterState" 
+		"Soul_RigRN.placeHolderList[1443]" "Soul_RigRN.placeHolderList[1444]" "Soul_Rig:HIKState2SK1.InputCharacterState"
+		
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HipsT" "Soul_RigRN.placeHolderList[1445]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HipsR" "Soul_RigRN.placeHolderList[1446]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftUpLegT" "Soul_RigRN.placeHolderList[1447]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftUpLegR" "Soul_RigRN.placeHolderList[1448]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftLegT" "Soul_RigRN.placeHolderList[1449]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftLegR" "Soul_RigRN.placeHolderList[1450]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftFootT" "Soul_RigRN.placeHolderList[1451]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftFootR" "Soul_RigRN.placeHolderList[1452]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightUpLegT" "Soul_RigRN.placeHolderList[1453]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightUpLegR" "Soul_RigRN.placeHolderList[1454]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightLegT" "Soul_RigRN.placeHolderList[1455]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightLegR" "Soul_RigRN.placeHolderList[1456]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightFootT" "Soul_RigRN.placeHolderList[1457]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightFootR" "Soul_RigRN.placeHolderList[1458]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.SpineT" "Soul_RigRN.placeHolderList[1459]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.SpineR" "Soul_RigRN.placeHolderList[1460]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftArmT" "Soul_RigRN.placeHolderList[1461]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftArmR" "Soul_RigRN.placeHolderList[1462]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftForeArmT" "Soul_RigRN.placeHolderList[1463]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftForeArmR" "Soul_RigRN.placeHolderList[1464]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandT" "Soul_RigRN.placeHolderList[1465]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandR" "Soul_RigRN.placeHolderList[1466]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightArmT" "Soul_RigRN.placeHolderList[1467]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightArmR" "Soul_RigRN.placeHolderList[1468]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightForeArmT" "Soul_RigRN.placeHolderList[1469]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightForeArmR" "Soul_RigRN.placeHolderList[1470]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandT" "Soul_RigRN.placeHolderList[1471]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandR" "Soul_RigRN.placeHolderList[1472]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HeadT" "Soul_RigRN.placeHolderList[1473]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.HeadR" "Soul_RigRN.placeHolderList[1474]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightToeBaseT" "Soul_RigRN.placeHolderList[1475]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightToeBaseR" "Soul_RigRN.placeHolderList[1476]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.NeckT" "Soul_RigRN.placeHolderList[1477]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.NeckR" "Soul_RigRN.placeHolderList[1478]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine1T" "Soul_RigRN.placeHolderList[1479]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine1R" "Soul_RigRN.placeHolderList[1480]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine2T" "Soul_RigRN.placeHolderList[1481]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.Spine2R" "Soul_RigRN.placeHolderList[1482]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb1T" "Soul_RigRN.placeHolderList[1483]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb1R" "Soul_RigRN.placeHolderList[1484]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb2T" "Soul_RigRN.placeHolderList[1485]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb2R" "Soul_RigRN.placeHolderList[1486]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb3T" "Soul_RigRN.placeHolderList[1487]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.LeftHandThumb3R" "Soul_RigRN.placeHolderList[1488]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb1T" "Soul_RigRN.placeHolderList[1489]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb1R" "Soul_RigRN.placeHolderList[1490]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb2T" "Soul_RigRN.placeHolderList[1491]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb2R" "Soul_RigRN.placeHolderList[1492]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb3T" "Soul_RigRN.placeHolderList[1493]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandThumb3R" "Soul_RigRN.placeHolderList[1494]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex1T" "Soul_RigRN.placeHolderList[1495]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex1R" "Soul_RigRN.placeHolderList[1496]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex2T" "Soul_RigRN.placeHolderList[1497]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex2R" "Soul_RigRN.placeHolderList[1498]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex3T" "Soul_RigRN.placeHolderList[1499]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex3R" "Soul_RigRN.placeHolderList[1500]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex4T" "Soul_RigRN.placeHolderList[1501]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandIndex4R" "Soul_RigRN.placeHolderList[1502]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle1T" "Soul_RigRN.placeHolderList[1503]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle1R" "Soul_RigRN.placeHolderList[1504]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle2T" "Soul_RigRN.placeHolderList[1505]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle2R" "Soul_RigRN.placeHolderList[1506]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle3T" "Soul_RigRN.placeHolderList[1507]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle3R" "Soul_RigRN.placeHolderList[1508]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle4T" "Soul_RigRN.placeHolderList[1509]" 
+		""
+		5 3 "Soul_RigRN" "Soul_Rig:HIKState2SK1.RightHandMiddle4R" "Soul_RigRN.placeHolderList[1510]" 
+		"";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode HIKControlSetNode -n "Soul_Rig:QuickRigCharacter_ControlRig";
@@ -4095,266 +4086,266 @@ createNode HIKState2FK -n "HIKState2FK1";
 	setAttr ".ReferenceGX" -type "matrix" 1 0 -0 0 -0 1 -2.6631610694494157e-07 0 0 2.6631610694494157e-07 1 0
 		 0 0 0 1;
 	setAttr ".HipsGX" -type "matrix" 1 0 0 0 0 1 -2.6631610694494157e-07 0 0 2.6631610694494157e-07 1 0
-		 0 89.482528686523438 -4.6491622924804688e-05 1;
-	setAttr ".LeftUpLegGX" -type "matrix" 1 -0.00046323685091920197 -7.6669755799230188e-05 0
-		 0.00046349482727237046 0.99999427795410156 0.0033993835095316172 0 7.5094583735335618e-05 -0.0033994188997894526 0.99999439716339111 0
-		 9.8967103958129883 85.010719299316406 -2.0469541549682617 1;
-	setAttr ".LeftLegGX" -type "matrix" 0.99999982118606567 -0.00046440938604064286 -2.212309482274577e-05 0
-		 0.00046430047950707376 0.99998879432678223 -0.0046927030198276043 0 2.4302185920532793e-05 0.0046926918439567089 0.99998891353607178 0
-		 11.145748138427734 45.099552154541016 -2.185596227645874 1;
-	setAttr ".LeftFootGX" -type "matrix" 1 -5.8207660913467407e-11 -7.5033234833710161e-12 0
-		 5.8207660913467407e-11 1 -2.6542693376541138e-07 0 7.5033390958822999e-12 2.6542693376541138e-07 1 0
-		 11.40831184387207 7.41656494140625 -3.64925217628479 1;
-	setAttr ".RightUpLegGX" -type "matrix" 1.0000001192092896 0.00046257840585894883 7.7617129136342555e-05 0
-		 -0.00046284191193990409 0.99999427795410156 0.0034299669787287712 0 -7.6030039053875953e-05 -0.0034300023689866066 0.99999439716339111 0
-		 -9.8967056274414063 85.010726928710938 -2.0469505786895752 1;
-	setAttr ".RightLegGX" -type "matrix" 1 0.0004644594737328589 2.212084291386418e-05 0
-		 -0.0004643505671992898 0.99998903274536133 -0.0046921852044761181 0 -2.4299926735693589e-05 0.0046921740286052227 0.99998915195465088 0
-		 -11.14570426940918 45.099590301513672 -2.1855862140655518 1;
-	setAttr ".RightFootGX" -type "matrix" 1 -2.9103830456733704e-11 2.5011143330033736e-12 0
-		 2.9103830456733704e-11 1 -2.6589259505271912e-07 0 -2.5011065267477317e-12 2.6589259505271912e-07 1 0
-		 -11.408351898193359 7.4165802001953125 -3.649254322052002 1;
-	setAttr ".SpineGX" -type "matrix" 0.97793740034103394 -0.021182579919695854 0.2078210860490799 0
-		 -0.011466636322438717 0.98790240287780762 0.15465214848518372 0 -0.20858290791511536 -0.15362313389778137 0.96586388349533081 0
-		 4.6155367396973068e-15 99.759124755859375 -1.5529294013977051 1;
-	setAttr ".LeftArmGX" -type "matrix" 0.075626358389854431 -0.46035605669021606 0.88450729846954346 0
-		 -0.21191535890102386 0.85936355590820313 0.46538853645324707 0 -0.97435760498046875 -0.22263626754283905 -0.03256598487496376 0
-		 5.218050479888916 143.28915405273438 20.911104202270508 1;
-	setAttr ".LeftForeArmGX" -type "matrix" -0.90718609094619751 -0.34431719779968262 0.24178279936313629 0
-		 -0.20373484492301941 0.86231613159179688 0.4635765552520752 0 -0.3681105375289917 0.3712906539440155 -0.85243052244186401 0
-		 8.8832550048828125 125.30341339111328 49.468894958496094 1;
-	setAttr ".LeftHandGX" -type "matrix" -0.46227264404296875 -0.10734997689723969 0.88021588325500488 0
-		 0.47133660316467285 0.81105631589889526 0.34645241498947144 0 -0.75109636783599854 0.57503342628479004 -0.32433122396469116 0
-		 -16.354787826538086 116.69729614257813 54.385711669921875 1;
-	setAttr ".RightArmGX" -type "matrix" 0.84785765409469604 0.40556794404983521 0.34154412150382996 0
-		 -0.49059030413627625 0.84441101551055908 0.21515430510044098 0 -0.20114389061927795 -0.34997841715812683 0.91490799188613892 0
-		 -13.891046524047852 137.50143432617188 -11.652968406677246 1;
-	setAttr ".RightForeArmGX" -type "matrix" -0.001055436092428863 0.25581911206245422 -0.96672403812408447 0
-		 -0.4909856915473938 0.84204649925231934 0.22336244583129883 0 0.87116700410842896 0.47488343715667725 0.12471482157707214 0
-		 -41.018081665039063 121.43304443359375 -24.23883056640625 1;
-	setAttr ".RightHandGX" -type "matrix" 0.2242351770401001 0.094237431883811951 -0.96996819972991943 0
-		 -0.56244271993637085 -0.80030393600463867 -0.20777790248394012 0 -0.79584991931915283 0.59214258193969727 -0.12645286321640015 0
-		 -39.251773834228516 115.4097900390625 2.13916015625 1;
-	setAttr ".HeadGX" -type "matrix" 0.98475766181945801 0.047962158918380737 0.16718859970569611 0
-		 -0.024280311539769173 0.98972421884536743 -0.1409132331609726 0 -0.1722291111946106 0.13470602035522461 0.97580307722091675 0
-		 -9.8576059341430664 156.60845947265625 6.7206020355224609 1;
-	setAttr ".RightToeBaseGX" -type "matrix" 1 -2.9103707291366909e-11 2.5011143330033736e-12 0
-		 2.9103707291366909e-11 1 -2.6589259505271912e-07 0 -2.5011065267477317e-12 2.6589259505271912e-07 1 0
-		 -11.408346176147461 1.5491952896118164 5.989377498626709 1;
-	setAttr ".LeftShoulderGX" -type "matrix" 0.50026851892471313 0.15151378512382507 0.85251092910766602 0
-		 -0.45641028881072998 0.88282746076583862 0.11092779785394669 0 -0.73581314086914063 -0.44458848237991333 0.51080328226089478 0
-		 -5.2482991218566895 138.92034912109375 14.161806106567383 1;
-	setAttr ".RightShoulderGX" -type "matrix" 0.50026893615722656 0.15151324868202209 0.85251086950302124 0
-		 -0.45640942454338074 0.88282811641693115 0.11092796921730042 0 -0.7358134388923645 -0.44458779692649841 0.51080358028411865 0
-		 -12.69965648651123 136.66400146484375 1.4643070697784424 1;
-	setAttr ".NeckGX" -type "matrix" 0.98263442516326904 0.083236761391162872 0.16583618521690369 0
-		 -0.060050904750823975 0.9882969856262207 -0.14022602140903473 0 -0.17556732892990112 0.12783229351043701 0.97613292932510376 0
-		 -8.7971343994140625 144.49198913574219 6.5185031890869141 1;
-	setAttr ".Spine1GX" -type "matrix" 0.80815678834915161 0.032385140657424927 0.5880768895149231 0
-		 -0.23149055242538452 0.93559455871582031 0.26659992337226868 0 -0.54156750440597534 -0.35158869624137878 0.76360368728637695 0
-		 -0.39602425694465637 117.52997589111328 2.1219601631164551 1;
-	setAttr ".Spine2GX" -type "matrix" 0.50027155876159668 0.15151296555995941 0.85250979661941528 0
-		 -0.45640772581100464 0.88282942771911621 0.11092847585678101 0 -0.7358132004737854 -0.44458627700805664 0.51080590486526489 0
-		 -3.0797014236450195 135.02044677734375 4.8467741012573242 1;
-	setAttr ".LeftHandThumb1GX" -type "matrix" -0.81542259454727173 -0.076670661568641663 0.57376617193222046 0
-		 -0.34574425220489502 0.85947555303573608 -0.37651431560516357 0 -0.46427029371261597 -0.50539463758468628 -0.72734403610229492 0
-		 -21.91511344909668 117.96141052246094 55.611957550048828 1;
-	setAttr ".LeftHandThumb2GX" -type "matrix" -0.52140969038009644 0.30850589275360107 0.7955855131149292 0
-		 -0.4465668797492981 0.69583010673522949 -0.56249392032623291 0 -0.72712451219558716 -0.64857178926467896 -0.22504375874996185 0
-		 -27.383842468261719 114.86540985107422 56.654747009277344 1;
-	setAttr ".LeftHandThumb3GX" -type "matrix" -0.74932348728179932 0.0073679983615875244 0.66216319799423218 0
-		 -0.3265131413936615 0.86582481861114502 -0.37912610173225403 0 -0.57611066102981567 -0.5002930760383606 -0.6463770866394043 0
-		 -29.877168655395508 113.55033111572266 61.56927490234375 1;
-	setAttr ".LeftHandIndex1GX" -type "matrix" -0.62488758563995361 -0.17271029949188232 0.7613714337348938 0
-		 0.43827170133590698 0.72945624589920044 0.5251774787902832 0 -0.64609086513519287 0.6618645191192627 -0.38013419508934021 0
-		 -22.980321884155273 117.44146728515625 62.808242797851563 1;
-	setAttr ".LeftHandIndex2GX" -type "matrix" -0.73290181159973145 -0.66756659746170044 0.13118548691272736 0
-		 -0.22271353006362915 0.41762000322341919 0.8809044361114502 0 -0.64284801483154297 0.61639976501464844 -0.45475035905838013 0
-		 -25.878707885742188 117.07089233398438 65.675270080566406 1;
-	setAttr ".LeftHandIndex3GX" -type "matrix" 0.10500179976224899 -0.60924357175827026 -0.78600066900253296 0
-		 -0.78927910327911377 -0.53187829256057739 0.30682921409606934 0 -0.60499048233032227 0.58815628290176392 -0.53671115636825562 0
-		 -28.67213249206543 114.53649139404297 65.292259216308594 1;
-	setAttr ".LeftHandIndex4GX" -type "matrix" 0.10500269383192062 -0.60924386978149414 -0.78600007295608521 0
-		 -0.78927868604660034 -0.53187882900238037 0.30682891607284546 0 -0.60499048233032227 0.58815526962280273 -0.53671205043792725 0
-		 -27.481834411621094 113.10536193847656 62.002590179443359 1;
-	setAttr ".LeftHandMiddle1GX" -type "matrix" -0.76394999027252197 -0.35285961627960205 0.54025042057037354 0
-		 0.32188606262207031 0.51724231243133545 0.79300040006637573 0 -0.55925822257995605 0.77971166372299194 -0.28156673908233643 0
-		 -18.557991027832031 113.64358520507813 64.19720458984375 1;
-	setAttr ".LeftHandMiddle2GX" -type "matrix" -0.55495935678482056 -0.5802270770072937 -0.59611791372299194 0
-		 -0.60015237331390381 -0.21696619689464569 0.76989781856536865 0 -0.57605308294296265 0.78502362966537476 -0.22781729698181152 0
-		 -21.717800140380859 111.62239074707031 66.192893981933594 1;
-	setAttr ".LeftHandMiddle3GX" -type "matrix" 0.2376706600189209 -0.0009123384952545166 -0.97134542465209961 0
-		 -0.64358186721801758 -0.74915009737014771 -0.15676921606063843 0 -0.72754049301147461 0.66239970922470093 -0.17863810062408447 0
-		 -23.217472076416016 109.59683990478516 63.7451171875 1;
-	setAttr ".LeftHandMiddle4GX" -type "matrix" 0.23767077922821045 -0.00091221928596496582 -0.97134548425674438 0
-		 -0.64358198642730713 -0.74914997816085815 -0.15676933526992798 0 -0.72754043340682983 0.66239982843399048 -0.17863798141479492 0
-		 -21.509050369262695 109.98246765136719 61.305438995361328 1;
-	setAttr ".RightHandThumb1GX" -type "matrix" 0.42779451608657837 -0.31255984306335449 -0.84811455011367798 0
-		 -0.31679189205169678 0.82694411277770996 -0.46454969048500061 0 0.84654289484024048 0.46740761399269104 0.2547457218170166 0
-		 -42.925777435302734 118.72819519042969 5.2228589057922363 1;
-	setAttr ".RightHandThumb2GX" -type "matrix" 0.21503445506095886 -0.39241433143615723 -0.89429926872253418 0
-		 -0.42596065998077393 0.78634130954742432 -0.44746515154838562 0 0.87881612777709961 0.47715672850608826 0.0019374063704162836 0
-		 -41.974315643310547 120.94392395019531 11.118958473205566 1;
-	setAttr ".RightHandThumb3GX" -type "matrix" 0.24582155048847198 -0.3825550377368927 -0.89063096046447754 0
-		 -0.40612438321113586 0.79364025592803955 -0.45298808813095093 0 0.88013339042663574 0.47306114435195923 0.039728954434394836 0
-		 -40.550376892089844 121.52516937255859 16.571718215942383 1;
-	setAttr ".RightHandIndex1GX" -type "matrix" 0.062245965003967285 -0.42418384552001953 -0.903434157371521 0
-		 -0.71559059619903564 -0.64996886253356934 0.25587210059165955 0 -0.69574093818664551 0.63056206703186035 -0.34400010108947754 0
-		 -43.932830810546875 115.74526214599609 11.801802635192871 1;
-	setAttr ".RightHandIndex2GX" -type "matrix" -0.63747155666351318 -0.74660807847976685 -0.19027988612651825 0
-		 -0.44652825593948364 0.15674245357513428 0.88093388080596924 0 -0.6278873085975647 0.64653557538986206 -0.43330028653144836 0
-		 -44.533340454101563 117.84015655517578 15.267106056213379 1;
-	setAttr ".RightHandIndex3GX" -type "matrix" -0.27925071120262146 0.5115891695022583 0.81258577108383179 0
-		 0.76073801517486572 0.63424599170684814 -0.1378767341375351 0 -0.58591532707214355 0.57966256141662598 -0.56629878282546997 0
-		 -42.088981628417969 120.73353576660156 15.103340148925781 1;
-	setAttr ".RightHandIndex4GX" -type "matrix" -0.27925130724906921 0.5115891695022583 0.81258559226989746 0
-		 0.76073819398880005 0.63424563407897949 -0.13787595927715302 0 -0.5859147310256958 0.57966285943984985 -0.56629937887191772 0
-		 -42.111991882324219 118.25974273681641 12.246212005615234 1;
-	setAttr ".RightHandMiddle1GX" -type "matrix" -0.15033799409866333 0.03864268958568573 -0.98787927627563477 0
-		 -0.50366067886352539 -0.86283594369888306 0.042897015810012817 0 -0.85071998834609985 0.50400489568710327 0.14917992055416107 0
-		 -38.849754333496094 112.60460662841797 12.259109497070313 1;
-	setAttr ".RightHandMiddle2GX" -type "matrix" -0.47345829010009766 -0.88066506385803223 0.016324400901794434 0
-		 0.18668881058692932 -0.082219839096069336 0.97897261381149292 0 -0.86080467700958252 0.46655029058456421 0.20333808660507202 0
-		 -37.664299011230469 112.67060852050781 16.338661193847656 1;
-	setAttr ".RightHandMiddle3GX" -type "matrix" 0.28754046559333801 -0.14734938740730286 0.9463660717010498 0
-		 0.65679872035980225 0.74949944019317627 -0.082862138748168945 0 -0.69709110260009766 0.64539813995361328 0.31229031085968018 0
-		 -35.981082916259766 115.69049072265625 15.713708877563477 1;
-	setAttr ".RightHandMiddle4GX" -type "matrix" 0.28754037618637085 -0.14734908938407898 0.94636613130569458 0
-		 0.6567986011505127 0.74949955940246582 -0.082862228155136108 0 -0.69709128141403198 0.64539813995361328 0.31229007244110107 0
-		 -37.048336029052734 114.98905181884766 12.995686531066895 1;
+		 0 87.627593994140625 -4.7206878662109375e-05 1;
+	setAttr ".LeftUpLegGX" -type "matrix" 1 1.3113829027133761e-06 -2.3113639144867193e-06 0
+		 -1.3112207852827851e-06 1 7.0151385443750769e-05 0 2.3114557734515984e-06 -7.0151385443750769e-05 1 0
+		 9.8967103958129883 83.155784606933594 -2.0469546318054199 1;
+	setAttr ".LeftLegGX" -type "matrix" 1 3.1068818628909867e-08 1.9027524444936716e-08 0
+		 -3.10688967886108e-08 1 4.0207887650467455e-06 0 -1.9027400099957958e-08 -4.0207887650467455e-06 1 0
+		 11.16419792175293 43.244991302490234 -2.0467848777770996 1;
+	setAttr ".LeftFootGX" -type "matrix" 1 -5.5432622196801426e-22 -4.1629212962001824e-15 0
+		 -5.5432622196801426e-22 1 -2.6631596483639441e-07 0 4.1629212962001824e-15 2.6631596483639441e-07 1 0
+		 11.444295883178711 5.5694122314453125 -3.6873962879180908 1;
+	setAttr ".RightUpLegGX" -type "matrix" 1 1.6091729548861622e-06 -3.0665507892990718e-06 0
+		 -1.6094778629849316e-06 1 -9.9402459454722703e-05 0 3.0663907182315597e-06 9.9402459454722703e-05 1 0
+		 -9.8967056274414063 83.155792236328125 -2.0469510555267334 1;
+	setAttr ".RightLegGX" -type "matrix" 1 2.5318411811525721e-09 -6.5889601330582082e-08 0
+		 -2.5312225648832509e-09 1 9.3883327281218953e-06 0 6.5889629752291512e-08 -9.3883327281218953e-06 1 0
+		 -11.164155006408691 43.245014190673828 -2.0465710163116455 1;
+	setAttr ".RightFootGX" -type "matrix" 1 -8.8818170195279584e-16 -2.4329822011226465e-14 0
+		 8.8817519038701383e-16 1 -2.6631732907844707e-07 0 2.4329822011226465e-14 2.6631732907844707e-07 1 0
+		 -11.444337844848633 5.5694198608398438 -3.6873972415924072 1;
+	setAttr ".SpineGX" -type "matrix" 0.97793734073638916 -0.030767612159252167 0.20661954581737518 0
+		 -0.01146647147834301 0.97969663143157959 0.20015731453895569 0 -0.20858284831047058 -0.19811055064201355 0.95772922039031982 0
+		 4.6155367396973068e-15 97.904190063476563 -1.5529302358627319 1;
+	setAttr ".LeftArmGX" -type "matrix" 0.1069929450750351 -0.63710927963256836 0.76331138610839844 0
+		 -0.26575982570648193 0.72145920991897583 0.63942813873291016 0 -0.9580836296081543 -0.27127182483673096 -0.092127010226249695 0
+		 4.2737174034118652 137.30348205566406 26.050710678100586 1;
+	setAttr ".LeftForeArmGX" -type "matrix" -0.88184070587158203 -0.44665071368217468 0.15119534730911255 0
+		 -0.25799429416656494 0.72539138793945313 0.63815885782241821 0 -0.39470988512039185 0.52374690771102905 -0.75491279363632202 0
+		 9.1491279602050781 113.77014923095703 50.027374267578125 1;
+	setAttr ".LeftHandGX" -type "matrix" -0.45104849338531494 -0.32644402980804443 0.83065611124038696 0
+		 0.41855341196060181 0.74464637041091919 0.51991820335388184 0 -0.78826922178268433 0.58218228816986084 -0.19923731684684753 0
+		 -15.45402717590332 102.6864013671875 52.679656982421875 1;
+	setAttr ".RightArmGX" -type "matrix" 0.82076221704483032 0.37519308924674988 0.4307895302772522 0
+		 -0.54396963119506836 0.74362128973007202 0.38874706625938416 0 -0.17448906600475311 -0.55340534448623657 0.81442999839782715 0
+		 -14.534684181213379 137.53762817382813 -7.1947979927062988 1;
+	setAttr ".RightForeArmGX" -type "matrix" -0.021308513358235359 0.45995724201202393 -0.88768553733825684 0
+		 -0.54417967796325684 0.73950254917144775 0.3962385356426239 0 0.83869826793670654 0.49150362610816956 0.23454165458679199 0
+		 -40.5986328125 122.88398742675781 -23.270017623901367 1;
+	setAttr ".RightHandGX" -type "matrix" 0.21405291557312012 0.31787785887718201 -0.92365312576293945 0
+		 -0.50966000556945801 -0.77031809091567993 -0.38321885466575623 0 -0.83332341909408569 0.55277812480926514 -0.0028791425283998251 0
+		 -38.34600830078125 111.37779235839844 1.1785125732421875 1;
+	setAttr ".HeadGX" -type "matrix" 0.97339451313018799 0.13108639419078827 0.18793460726737976 0
+		 -0.11563145369291306 0.98911380767822266 -0.091012202203273773 0 -0.19781915843486786 0.066859617829322815 0.97795563936233521 0
+		 -11.613473892211914 152.71778869628906 12.913608551025391 1;
+	setAttr ".RightToeBaseGX" -type "matrix" 1 -7.6571699022449946e-16 -2.4329822011226465e-14 0
+		 7.6571053159827664e-16 1 -2.6631732907844707e-07 0 2.4329822011226465e-14 2.6631732907844707e-07 1 0
+		 -11.444332122802734 -0.29796504974365234 5.9512348175048828 1;
+	setAttr ".LeftShoulderGX" -type "matrix" 0.49239766597747803 -0.0061353147029876709 0.87034910917282104 0
+		 -0.51275515556335449 0.80597907304763794 0.2957712709903717 0 -0.70329743623733521 -0.59191286563873291 0.39371612668037415 0
+		 -5.9090943336486816 133.8455810546875 18.399749755859375 1;
+	setAttr ".RightShoulderGX" -type "matrix" 0.49239790439605713 -0.0061360001564025879 0.87034904956817627 0
+		 -0.51275449991226196 0.80597937107086182 0.29577165842056274 0 -0.70329785346984863 -0.59191250801086426 0.39371612668037415 0
+		 -13.243236541748047 133.937255859375 5.4366374015808105 1;
+	setAttr ".NeckGX" -type "matrix" 0.97339451313018799 0.13108637928962708 0.18793436884880066 0
+		 -0.11563145369291306 0.98911374807357788 -0.091012194752693176 0 -0.19781893491744995 0.066859647631645203 0.97795569896697998 0
+		 -9.8424816131591797 140.7093505859375 12.116924285888672 1;
+	setAttr ".Spine1GX" -type "matrix" 0.80644941329956055 -0.044552870094776154 0.5896223783493042 0
+		 -0.25536435842514038 0.87313175201416016 0.41524708271026611 0 -0.53331840038299561 -0.48544424772262573 0.69275933504104614 0
+		 -0.39602139592170715 115.48616027832031 2.9395737648010254 1;
+	setAttr ".Spine2GX" -type "matrix" 0.49240005016326904 -0.0061358511447906494 0.87034738063812256 0
+		 -0.51275241374969482 0.80597996711730957 0.29577231407165527 0 -0.70329737663269043 -0.59191107749938965 0.39371839165687561 0
+		 -3.5241184234619141 132.22039794921875 8.4824600219726563 1;
+	setAttr ".LeftHandThumb1GX" -type "matrix" -0.80656468868255615 -0.25252634286880493 0.53449392318725586 0
+		 -0.40257748961448669 0.89673823118209839 -0.18382789194583893 0 -0.43287959694862366 -0.36344432830810547 -0.82493847608566284 0
+		 -21.080602645874023 103.29056549072266 54.092288970947266 1;
+	setAttr ".LeftHandThumb2GX" -type "matrix" -0.53756016492843628 0.093147121369838715 0.83806484937667847 0
+		 -0.49316176772117615 0.77144694328308105 -0.40207177400588989 0 -0.68397414684295654 -0.62943929433822632 -0.36876237392425537 0
+		 -26.331336975097656 99.694931030273438 54.376605987548828 1;
+	setAttr ".LeftHandThumb3GX" -type "matrix" -0.74578011035919189 -0.18570733070373535 0.63978499174118042 0
+		 -0.38381272554397583 0.90473294258117676 -0.18478772044181824 0 -0.54451805353164673 -0.38336858153343201 -0.74600851535797119 0
+		 -28.71537971496582 97.181022644042969 58.859382629394531 1;
+	setAttr ".LeftHandIndex1GX" -type "matrix" -0.60947412252426147 -0.37466731667518616 0.69868850708007813 0
+		 0.39154729247093201 0.62405681610107422 0.67619782686233521 0 -0.68937063217163086 0.68569463491439819 -0.23364663124084473 0
+		 -22.08326530456543 101.14537811279297 60.990428924560547 1;
+	setAttr ".LeftHandIndex2GX" -type "matrix" -0.68719762563705444 -0.7260291576385498 -0.025320053100585938 0
+		 -0.24632939696311951 0.20008252561092377 0.94830828905105591 0 -0.68343347311019897 0.65791225433349609 -0.31633865833282471 0
+		 -24.94073486328125 99.971748352050781 63.676555633544922 1;
+	setAttr ".LeftHandIndex3GX" -type "matrix" 0.14174753427505493 -0.41499066352844238 -0.89871609210968018 0
+		 -0.75168567895889282 -0.63586395978927612 0.1750587671995163 0 -0.64410901069641113 0.65073782205581665 -0.40207457542419434 0
+		 -27.563835144042969 97.406906127929688 62.720485687255859 1;
+	setAttr ".LeftHandIndex4GX" -type "matrix" 0.14174878597259521 -0.41499108076095581 -0.89871567487716675 0
+		 -0.75168520212173462 -0.63586461544036865 0.17505852878093719 0 -0.64410924911499023 0.65073686838150024 -0.40207543969154358 0
+		 -26.294509887695313 96.807945251464844 59.2109375 1;
+	setAttr ".LeftHandMiddle1GX" -type "matrix" -0.73726481199264526 -0.51083242893218994 0.44214352965354919 0
+		 0.29026579856872559 0.35145717859268188 0.89006948471069336 0 -0.61007088422775269 0.78455603122711182 -0.11083978414535522 0
+		 -17.417015075683594 97.429817199707031 61.565578460693359 1;
+	setAttr ".LeftHandMiddle2GX" -type "matrix" -0.51800131797790527 -0.47080361843109131 -0.71415585279464722 0
+		 -0.58186781406402588 -0.41802400350570679 0.6976286768913269 0 -0.6269804835319519 0.77691692113876343 -0.057408332824707031 0
+		 -20.430591583251953 94.822067260742188 63.038814544677734 1;
+	setAttr ".LeftHandMiddle3GX" -type "matrix" 0.23367665708065033 0.22639279067516327 -0.94559067487716675 0
+		 -0.5937848687171936 -0.73687660694122314 -0.32316011190414429 0 -0.76994478702545166 0.63699233531951904 -0.037762045860290527 0
+		 -21.803524017333984 93.28680419921875 60.192501068115234 1;
+	setAttr ".LeftHandMiddle4GX" -type "matrix" 0.2336767166852951 0.22639286518096924 -0.94559067487716675 0
+		 -0.59378498792648315 -0.73687654733657837 -0.32316017150878906 0 -0.76994478702545166 0.63699239492416382 -0.037761986255645752 0
+		 -20.13288688659668 94.304977416992188 57.913963317871094 1;
+	setAttr ".RightHandThumb1GX" -type "matrix" 0.44422087073326111 -0.091681890189647675 -0.89121407270431519 0
+		 -0.37188154458999634 0.88613778352737427 -0.2765219509601593 0 0.81509041786193848 0.45426285266876221 0.35954603552818298 0
+		 -42.217872619628906 113.69898223876953 4.8717637062072754 1;
+	setAttr ".RightHandThumb2GX" -type "matrix" 0.23697090148925781 -0.17311128973960876 -0.95596921443939209 0
+		 -0.47809803485870361 0.83581924438476563 -0.26986753940582275 0 0.84573459625244141 0.52099776268005371 0.11530066281557083 0
+		 -41.391838073730469 114.63167572021484 11.11888599395752 1;
+	setAttr ".RightHandThumb3GX" -type "matrix" 0.2670612633228302 -0.16232192516326904 -0.94991070032119751 0
+		 -0.4588017463684082 0.8454136848449707 -0.27345439791679382 0 0.84745478630065918 0.50884956121444702 0.15130360424518585 0
+		 -39.98907470703125 114.10000610351563 16.582183837890625 1;
+	setAttr ".RightHandIndex1GX" -type "matrix" 0.086554765701293945 -0.21192711591720581 -0.97344505786895752 0
+		 -0.67061823606491089 -0.73497927188873291 0.10038256645202637 0 -0.73673582077026367 0.64412140846252441 -0.20573800802230835 0
+		 -43.003707885742188 109.29386138916016 10.631267547607422 1;
+	setAttr ".RightHandIndex2GX" -type "matrix" -0.5879749059677124 -0.72669655084609985 -0.35524320602416992 0
+		 -0.45260539650917053 -0.068418614566326141 0.88908237218856812 0 -0.6703982949256897 0.68354314565658569 -0.28867796063423157 0
+		 -43.727272033691406 110.53896331787109 14.463199615478516 1;
+	setAttr ".RightHandIndex3GX" -type "matrix" -0.30913987755775452 0.3028394877910614 0.90151041746139526 0
+		 0.71712732315063477 0.69684219360351563 0.011826246976852417 0 -0.62462884187698364 0.65015363693237305 -0.43259602785110474 0
+		 -41.47796630859375 113.55010223388672 14.960163116455078 1;
+	setAttr ".RightHandIndex4GX" -type "matrix" -0.30914086103439331 0.30283957719802856 0.90151005983352661 0
+		 0.71712774038314819 0.69684195518493652 0.011827260255813599 0 -0.62462782859802246 0.65015393495559692 -0.43259671330451965 0
+		 -41.349582672119141 111.76306915283203 11.632490158081055 1;
+	setAttr ".RightHandMiddle1GX" -type "matrix" -0.15614587068557739 0.24344775080680847 -0.95726251602172852 0
+		 -0.4460006058216095 -0.88210314512252808 -0.15158317983150482 0 -0.88130688667297363 0.40327060222625732 0.24631458520889282 0
+		 -37.724502563476563 106.4642333984375 10.447532653808594 1;
+	setAttr ".RightHandMiddle2GX" -type "matrix" -0.41479396820068359 -0.8917156457901001 -0.18107768893241882 0
+		 0.19523593783378601 -0.28159016370773315 0.93946260213851929 0 -0.88872313499450684 0.35433059930801392 0.29089689254760742 0
+		 -36.531028747558594 105.71504211425781 14.455865859985352 1;
+	setAttr ".RightHandMiddle3GX" -type "matrix" 0.30001169443130493 -0.33138170838356018 0.8945273756980896 0
+		 0.60607516765594482 0.79035371541976929 0.089521154761314392 0 -0.73665863275527954 0.51529335975646973 0.43795758485794067 0
+		 -35.051181793212891 108.90081024169922 14.522172927856445 1;
+	setAttr ".RightHandMiddle4GX" -type "matrix" 0.30001130700111389 -0.33138144016265869 0.89452767372131348 0
+		 0.6060752272605896 0.79035371541976929 0.089521139860153198 0 -0.73665881156921387 0.51529371738433838 0.43795710802078247 0
+		 -36.080192565917969 108.7418212890625 11.705337524414063 1;
 createNode HIKState2FK -n "HIKState2FK2";
 	rename -uid "EB62D22C-4751-C9FF-C86D-92A73C9F2A18";
 	setAttr ".ihi" 0;
 	setAttr ".ReferenceGX" -type "matrix" 1 0 -0 0 -0 1 -2.6631610694494157e-07 0 0 2.6631610694494157e-07 1 0
 		 0 0 0 1;
 	setAttr ".HipsGX" -type "matrix" 1 0 0 0 0 1 -2.6631610694494157e-07 0 0 2.6631610694494157e-07 1 0
-		 0 89.482528686523438 -4.6491622924804688e-05 1;
-	setAttr ".LeftUpLegGX" -type "matrix" 1 -0.00046323685091920197 -7.6669755799230188e-05 0
-		 0.00046349482727237046 0.99999427795410156 0.0033993835095316172 0 7.5094583735335618e-05 -0.0033994188997894526 0.99999439716339111 0
-		 9.8967103958129883 85.010719299316406 -2.0469541549682617 1;
-	setAttr ".LeftLegGX" -type "matrix" 0.99999982118606567 -0.00046440938604064286 -2.212309482274577e-05 0
-		 0.00046430047950707376 0.99998879432678223 -0.0046927030198276043 0 2.4302185920532793e-05 0.0046926918439567089 0.99998891353607178 0
-		 11.145748138427734 45.099552154541016 -2.185596227645874 1;
-	setAttr ".LeftFootGX" -type "matrix" 1 -5.8207660913467407e-11 -7.5033234833710161e-12 0
-		 5.8207660913467407e-11 1 -2.6542693376541138e-07 0 7.5033390958822999e-12 2.6542693376541138e-07 1 0
-		 11.40831184387207 7.41656494140625 -3.64925217628479 1;
-	setAttr ".RightUpLegGX" -type "matrix" 1.0000001192092896 0.00046257840585894883 7.7617129136342555e-05 0
-		 -0.00046284191193990409 0.99999427795410156 0.0034299669787287712 0 -7.6030039053875953e-05 -0.0034300023689866066 0.99999439716339111 0
-		 -9.8967056274414063 85.010726928710938 -2.0469505786895752 1;
-	setAttr ".RightLegGX" -type "matrix" 1 0.0004644594737328589 2.212084291386418e-05 0
-		 -0.0004643505671992898 0.99998903274536133 -0.0046921852044761181 0 -2.4299926735693589e-05 0.0046921740286052227 0.99998915195465088 0
-		 -11.14570426940918 45.099590301513672 -2.1855862140655518 1;
-	setAttr ".RightFootGX" -type "matrix" 1 -2.9103830456733704e-11 2.5011143330033736e-12 0
-		 2.9103830456733704e-11 1 -2.6589259505271912e-07 0 -2.5011065267477317e-12 2.6589259505271912e-07 1 0
-		 -11.408351898193359 7.4165802001953125 -3.649254322052002 1;
-	setAttr ".SpineGX" -type "matrix" 0.97793740034103394 -0.021182579919695854 0.2078210860490799 0
-		 -0.011466636322438717 0.98790240287780762 0.15465214848518372 0 -0.20858290791511536 -0.15362313389778137 0.96586388349533081 0
-		 4.6155367396973068e-15 99.759124755859375 -1.5529294013977051 1;
-	setAttr ".LeftArmGX" -type "matrix" 0.075626358389854431 -0.46035605669021606 0.88450729846954346 0
-		 -0.21191535890102386 0.85936355590820313 0.46538853645324707 0 -0.97435760498046875 -0.22263626754283905 -0.03256598487496376 0
-		 5.218050479888916 143.28915405273438 20.911104202270508 1;
-	setAttr ".LeftForeArmGX" -type "matrix" -0.90718609094619751 -0.34431719779968262 0.24178279936313629 0
-		 -0.20373484492301941 0.86231613159179688 0.4635765552520752 0 -0.3681105375289917 0.3712906539440155 -0.85243052244186401 0
-		 8.8832550048828125 125.30341339111328 49.468894958496094 1;
-	setAttr ".LeftHandGX" -type "matrix" -0.46227264404296875 -0.10734997689723969 0.88021588325500488 0
-		 0.47133660316467285 0.81105631589889526 0.34645241498947144 0 -0.75109636783599854 0.57503342628479004 -0.32433122396469116 0
-		 -16.354787826538086 116.69729614257813 54.385711669921875 1;
-	setAttr ".RightArmGX" -type "matrix" 0.84785765409469604 0.40556794404983521 0.34154412150382996 0
-		 -0.49059030413627625 0.84441101551055908 0.21515430510044098 0 -0.20114389061927795 -0.34997841715812683 0.91490799188613892 0
-		 -13.891046524047852 137.50143432617188 -11.652968406677246 1;
-	setAttr ".RightForeArmGX" -type "matrix" -0.001055436092428863 0.25581911206245422 -0.96672403812408447 0
-		 -0.4909856915473938 0.84204649925231934 0.22336244583129883 0 0.87116700410842896 0.47488343715667725 0.12471482157707214 0
-		 -41.018081665039063 121.43304443359375 -24.23883056640625 1;
-	setAttr ".RightHandGX" -type "matrix" 0.2242351770401001 0.094237431883811951 -0.96996819972991943 0
-		 -0.56244271993637085 -0.80030393600463867 -0.20777790248394012 0 -0.79584991931915283 0.59214258193969727 -0.12645286321640015 0
-		 -39.251773834228516 115.4097900390625 2.13916015625 1;
-	setAttr ".HeadGX" -type "matrix" 0.98475766181945801 0.047962158918380737 0.16718859970569611 0
-		 -0.024280311539769173 0.98972421884536743 -0.1409132331609726 0 -0.1722291111946106 0.13470602035522461 0.97580307722091675 0
-		 -9.8576059341430664 156.60845947265625 6.7206020355224609 1;
-	setAttr ".RightToeBaseGX" -type "matrix" 1 -2.9103707291366909e-11 2.5011143330033736e-12 0
-		 2.9103707291366909e-11 1 -2.6589259505271912e-07 0 -2.5011065267477317e-12 2.6589259505271912e-07 1 0
-		 -11.408346176147461 1.5491952896118164 5.989377498626709 1;
-	setAttr ".LeftShoulderGX" -type "matrix" 0.50026851892471313 0.15151378512382507 0.85251092910766602 0
-		 -0.45641028881072998 0.88282746076583862 0.11092779785394669 0 -0.73581314086914063 -0.44458848237991333 0.51080328226089478 0
-		 -5.2482991218566895 138.92034912109375 14.161806106567383 1;
-	setAttr ".RightShoulderGX" -type "matrix" 0.50026893615722656 0.15151324868202209 0.85251086950302124 0
-		 -0.45640942454338074 0.88282811641693115 0.11092796921730042 0 -0.7358134388923645 -0.44458779692649841 0.51080358028411865 0
-		 -12.69965648651123 136.66400146484375 1.4643070697784424 1;
-	setAttr ".NeckGX" -type "matrix" 0.98263442516326904 0.083236761391162872 0.16583618521690369 0
-		 -0.060050904750823975 0.9882969856262207 -0.14022602140903473 0 -0.17556732892990112 0.12783229351043701 0.97613292932510376 0
-		 -8.7971343994140625 144.49198913574219 6.5185031890869141 1;
-	setAttr ".Spine1GX" -type "matrix" 0.80815678834915161 0.032385140657424927 0.5880768895149231 0
-		 -0.23149055242538452 0.93559455871582031 0.26659992337226868 0 -0.54156750440597534 -0.35158869624137878 0.76360368728637695 0
-		 -0.39602425694465637 117.52997589111328 2.1219601631164551 1;
-	setAttr ".Spine2GX" -type "matrix" 0.50027155876159668 0.15151296555995941 0.85250979661941528 0
-		 -0.45640772581100464 0.88282942771911621 0.11092847585678101 0 -0.7358132004737854 -0.44458627700805664 0.51080590486526489 0
-		 -3.0797014236450195 135.02044677734375 4.8467741012573242 1;
-	setAttr ".LeftHandThumb1GX" -type "matrix" -0.81542259454727173 -0.076670661568641663 0.57376617193222046 0
-		 -0.34574425220489502 0.85947555303573608 -0.37651431560516357 0 -0.46427029371261597 -0.50539463758468628 -0.72734403610229492 0
-		 -21.91511344909668 117.96141052246094 55.611957550048828 1;
-	setAttr ".LeftHandThumb2GX" -type "matrix" -0.52140969038009644 0.30850589275360107 0.7955855131149292 0
-		 -0.4465668797492981 0.69583010673522949 -0.56249392032623291 0 -0.72712451219558716 -0.64857178926467896 -0.22504375874996185 0
-		 -27.383842468261719 114.86540985107422 56.654747009277344 1;
-	setAttr ".LeftHandThumb3GX" -type "matrix" -0.74932348728179932 0.0073679983615875244 0.66216319799423218 0
-		 -0.3265131413936615 0.86582481861114502 -0.37912610173225403 0 -0.57611066102981567 -0.5002930760383606 -0.6463770866394043 0
-		 -29.877168655395508 113.55033111572266 61.56927490234375 1;
-	setAttr ".LeftHandIndex1GX" -type "matrix" -0.62488758563995361 -0.17271029949188232 0.7613714337348938 0
-		 0.43827170133590698 0.72945624589920044 0.5251774787902832 0 -0.64609086513519287 0.6618645191192627 -0.38013419508934021 0
-		 -22.980321884155273 117.44146728515625 62.808242797851563 1;
-	setAttr ".LeftHandIndex2GX" -type "matrix" -0.73290181159973145 -0.66756659746170044 0.13118548691272736 0
-		 -0.22271353006362915 0.41762000322341919 0.8809044361114502 0 -0.64284801483154297 0.61639976501464844 -0.45475035905838013 0
-		 -25.878707885742188 117.07089233398438 65.675270080566406 1;
-	setAttr ".LeftHandIndex3GX" -type "matrix" 0.10500179976224899 -0.60924357175827026 -0.78600066900253296 0
-		 -0.78927910327911377 -0.53187829256057739 0.30682921409606934 0 -0.60499048233032227 0.58815628290176392 -0.53671115636825562 0
-		 -28.67213249206543 114.53649139404297 65.292259216308594 1;
-	setAttr ".LeftHandIndex4GX" -type "matrix" 0.10500269383192062 -0.60924386978149414 -0.78600007295608521 0
-		 -0.78927868604660034 -0.53187882900238037 0.30682891607284546 0 -0.60499048233032227 0.58815526962280273 -0.53671205043792725 0
-		 -27.481834411621094 113.10536193847656 62.002590179443359 1;
-	setAttr ".LeftHandMiddle1GX" -type "matrix" -0.76394999027252197 -0.35285961627960205 0.54025042057037354 0
-		 0.32188606262207031 0.51724231243133545 0.79300040006637573 0 -0.55925822257995605 0.77971166372299194 -0.28156673908233643 0
-		 -18.557991027832031 113.64358520507813 64.19720458984375 1;
-	setAttr ".LeftHandMiddle2GX" -type "matrix" -0.55495935678482056 -0.5802270770072937 -0.59611791372299194 0
-		 -0.60015237331390381 -0.21696619689464569 0.76989781856536865 0 -0.57605308294296265 0.78502362966537476 -0.22781729698181152 0
-		 -21.717800140380859 111.62239074707031 66.192893981933594 1;
-	setAttr ".LeftHandMiddle3GX" -type "matrix" 0.2376706600189209 -0.0009123384952545166 -0.97134542465209961 0
-		 -0.64358186721801758 -0.74915009737014771 -0.15676921606063843 0 -0.72754049301147461 0.66239970922470093 -0.17863810062408447 0
-		 -23.217472076416016 109.59683990478516 63.7451171875 1;
-	setAttr ".LeftHandMiddle4GX" -type "matrix" 0.23767077922821045 -0.00091221928596496582 -0.97134548425674438 0
-		 -0.64358198642730713 -0.74914997816085815 -0.15676933526992798 0 -0.72754043340682983 0.66239982843399048 -0.17863798141479492 0
-		 -21.509050369262695 109.98246765136719 61.305438995361328 1;
-	setAttr ".RightHandThumb1GX" -type "matrix" 0.42779451608657837 -0.31255984306335449 -0.84811455011367798 0
-		 -0.31679189205169678 0.82694411277770996 -0.46454969048500061 0 0.84654289484024048 0.46740761399269104 0.2547457218170166 0
-		 -42.925777435302734 118.72819519042969 5.2228589057922363 1;
-	setAttr ".RightHandThumb2GX" -type "matrix" 0.21503445506095886 -0.39241433143615723 -0.89429926872253418 0
-		 -0.42596065998077393 0.78634130954742432 -0.44746515154838562 0 0.87881612777709961 0.47715672850608826 0.0019374063704162836 0
-		 -41.974315643310547 120.94392395019531 11.118958473205566 1;
-	setAttr ".RightHandThumb3GX" -type "matrix" 0.24582155048847198 -0.3825550377368927 -0.89063096046447754 0
-		 -0.40612438321113586 0.79364025592803955 -0.45298808813095093 0 0.88013339042663574 0.47306114435195923 0.039728954434394836 0
-		 -40.550376892089844 121.52516937255859 16.571718215942383 1;
-	setAttr ".RightHandIndex1GX" -type "matrix" 0.062245965003967285 -0.42418384552001953 -0.903434157371521 0
-		 -0.71559059619903564 -0.64996886253356934 0.25587210059165955 0 -0.69574093818664551 0.63056206703186035 -0.34400010108947754 0
-		 -43.932830810546875 115.74526214599609 11.801802635192871 1;
-	setAttr ".RightHandIndex2GX" -type "matrix" -0.63747155666351318 -0.74660807847976685 -0.19027988612651825 0
-		 -0.44652825593948364 0.15674245357513428 0.88093388080596924 0 -0.6278873085975647 0.64653557538986206 -0.43330028653144836 0
-		 -44.533340454101563 117.84015655517578 15.267106056213379 1;
-	setAttr ".RightHandIndex3GX" -type "matrix" -0.27925071120262146 0.5115891695022583 0.81258577108383179 0
-		 0.76073801517486572 0.63424599170684814 -0.1378767341375351 0 -0.58591532707214355 0.57966256141662598 -0.56629878282546997 0
-		 -42.088981628417969 120.73353576660156 15.103340148925781 1;
-	setAttr ".RightHandIndex4GX" -type "matrix" -0.27925130724906921 0.5115891695022583 0.81258559226989746 0
-		 0.76073819398880005 0.63424563407897949 -0.13787595927715302 0 -0.5859147310256958 0.57966285943984985 -0.56629937887191772 0
-		 -42.111991882324219 118.25974273681641 12.246212005615234 1;
-	setAttr ".RightHandMiddle1GX" -type "matrix" -0.15033799409866333 0.03864268958568573 -0.98787927627563477 0
-		 -0.50366067886352539 -0.86283594369888306 0.042897015810012817 0 -0.85071998834609985 0.50400489568710327 0.14917992055416107 0
-		 -38.849754333496094 112.60460662841797 12.259109497070313 1;
-	setAttr ".RightHandMiddle2GX" -type "matrix" -0.47345829010009766 -0.88066506385803223 0.016324400901794434 0
-		 0.18668881058692932 -0.082219839096069336 0.97897261381149292 0 -0.86080467700958252 0.46655029058456421 0.20333808660507202 0
-		 -37.664299011230469 112.67060852050781 16.338661193847656 1;
-	setAttr ".RightHandMiddle3GX" -type "matrix" 0.28754046559333801 -0.14734938740730286 0.9463660717010498 0
-		 0.65679872035980225 0.74949944019317627 -0.082862138748168945 0 -0.69709110260009766 0.64539813995361328 0.31229031085968018 0
-		 -35.981082916259766 115.69049072265625 15.713708877563477 1;
-	setAttr ".RightHandMiddle4GX" -type "matrix" 0.28754037618637085 -0.14734908938407898 0.94636613130569458 0
-		 0.6567986011505127 0.74949955940246582 -0.082862228155136108 0 -0.69709128141403198 0.64539813995361328 0.31229007244110107 0
-		 -37.048336029052734 114.98905181884766 12.995686531066895 1;
+		 0 87.627593994140625 -4.7206878662109375e-05 1;
+	setAttr ".LeftUpLegGX" -type "matrix" 1 1.3113829027133761e-06 -2.3113639144867193e-06 0
+		 -1.3112207852827851e-06 1 7.0151385443750769e-05 0 2.3114557734515984e-06 -7.0151385443750769e-05 1 0
+		 9.8967103958129883 83.155784606933594 -2.0469546318054199 1;
+	setAttr ".LeftLegGX" -type "matrix" 1 3.1068818628909867e-08 1.9027524444936716e-08 0
+		 -3.10688967886108e-08 1 4.0207887650467455e-06 0 -1.9027400099957958e-08 -4.0207887650467455e-06 1 0
+		 11.16419792175293 43.244991302490234 -2.0467848777770996 1;
+	setAttr ".LeftFootGX" -type "matrix" 1 -5.5432622196801426e-22 -4.1629212962001824e-15 0
+		 -5.5432622196801426e-22 1 -2.6631596483639441e-07 0 4.1629212962001824e-15 2.6631596483639441e-07 1 0
+		 11.444295883178711 5.5694122314453125 -3.6873962879180908 1;
+	setAttr ".RightUpLegGX" -type "matrix" 1 1.6091729548861622e-06 -3.0665507892990718e-06 0
+		 -1.6094778629849316e-06 1 -9.9402459454722703e-05 0 3.0663907182315597e-06 9.9402459454722703e-05 1 0
+		 -9.8967056274414063 83.155792236328125 -2.0469510555267334 1;
+	setAttr ".RightLegGX" -type "matrix" 1 2.5318411811525721e-09 -6.5889601330582082e-08 0
+		 -2.5312225648832509e-09 1 9.3883327281218953e-06 0 6.5889629752291512e-08 -9.3883327281218953e-06 1 0
+		 -11.164155006408691 43.245014190673828 -2.0465710163116455 1;
+	setAttr ".RightFootGX" -type "matrix" 1 -8.8818170195279584e-16 -2.4329822011226465e-14 0
+		 8.8817519038701383e-16 1 -2.6631732907844707e-07 0 2.4329822011226465e-14 2.6631732907844707e-07 1 0
+		 -11.444337844848633 5.5694198608398438 -3.6873972415924072 1;
+	setAttr ".SpineGX" -type "matrix" 0.97793734073638916 -0.030767612159252167 0.20661954581737518 0
+		 -0.01146647147834301 0.97969663143157959 0.20015731453895569 0 -0.20858284831047058 -0.19811055064201355 0.95772922039031982 0
+		 4.6155367396973068e-15 97.904190063476563 -1.5529302358627319 1;
+	setAttr ".LeftArmGX" -type "matrix" 0.1069929450750351 -0.63710927963256836 0.76331138610839844 0
+		 -0.26575982570648193 0.72145920991897583 0.63942813873291016 0 -0.9580836296081543 -0.27127182483673096 -0.092127010226249695 0
+		 4.2737174034118652 137.30348205566406 26.050710678100586 1;
+	setAttr ".LeftForeArmGX" -type "matrix" -0.88184070587158203 -0.44665071368217468 0.15119534730911255 0
+		 -0.25799429416656494 0.72539138793945313 0.63815885782241821 0 -0.39470988512039185 0.52374690771102905 -0.75491279363632202 0
+		 9.1491279602050781 113.77014923095703 50.027374267578125 1;
+	setAttr ".LeftHandGX" -type "matrix" -0.45104849338531494 -0.32644402980804443 0.83065611124038696 0
+		 0.41855341196060181 0.74464637041091919 0.51991820335388184 0 -0.78826922178268433 0.58218228816986084 -0.19923731684684753 0
+		 -15.45402717590332 102.6864013671875 52.679656982421875 1;
+	setAttr ".RightArmGX" -type "matrix" 0.82076221704483032 0.37519308924674988 0.4307895302772522 0
+		 -0.54396963119506836 0.74362128973007202 0.38874706625938416 0 -0.17448906600475311 -0.55340534448623657 0.81442999839782715 0
+		 -14.534684181213379 137.53762817382813 -7.1947979927062988 1;
+	setAttr ".RightForeArmGX" -type "matrix" -0.021308513358235359 0.45995724201202393 -0.88768553733825684 0
+		 -0.54417967796325684 0.73950254917144775 0.3962385356426239 0 0.83869826793670654 0.49150362610816956 0.23454165458679199 0
+		 -40.5986328125 122.88398742675781 -23.270017623901367 1;
+	setAttr ".RightHandGX" -type "matrix" 0.21405291557312012 0.31787785887718201 -0.92365312576293945 0
+		 -0.50966000556945801 -0.77031809091567993 -0.38321885466575623 0 -0.83332341909408569 0.55277812480926514 -0.0028791425283998251 0
+		 -38.34600830078125 111.37779235839844 1.1785125732421875 1;
+	setAttr ".HeadGX" -type "matrix" 0.97339451313018799 0.13108639419078827 0.18793460726737976 0
+		 -0.11563145369291306 0.98911380767822266 -0.091012202203273773 0 -0.19781915843486786 0.066859617829322815 0.97795563936233521 0
+		 -11.613473892211914 152.71778869628906 12.913608551025391 1;
+	setAttr ".RightToeBaseGX" -type "matrix" 1 -7.6571699022449946e-16 -2.4329822011226465e-14 0
+		 7.6571053159827664e-16 1 -2.6631732907844707e-07 0 2.4329822011226465e-14 2.6631732907844707e-07 1 0
+		 -11.444332122802734 -0.29796504974365234 5.9512348175048828 1;
+	setAttr ".LeftShoulderGX" -type "matrix" 0.49239766597747803 -0.0061353147029876709 0.87034910917282104 0
+		 -0.51275515556335449 0.80597907304763794 0.2957712709903717 0 -0.70329743623733521 -0.59191286563873291 0.39371612668037415 0
+		 -5.9090943336486816 133.8455810546875 18.399749755859375 1;
+	setAttr ".RightShoulderGX" -type "matrix" 0.49239790439605713 -0.0061360001564025879 0.87034904956817627 0
+		 -0.51275449991226196 0.80597937107086182 0.29577165842056274 0 -0.70329785346984863 -0.59191250801086426 0.39371612668037415 0
+		 -13.243236541748047 133.937255859375 5.4366374015808105 1;
+	setAttr ".NeckGX" -type "matrix" 0.97339451313018799 0.13108637928962708 0.18793436884880066 0
+		 -0.11563145369291306 0.98911374807357788 -0.091012194752693176 0 -0.19781893491744995 0.066859647631645203 0.97795569896697998 0
+		 -9.8424816131591797 140.7093505859375 12.116924285888672 1;
+	setAttr ".Spine1GX" -type "matrix" 0.80644941329956055 -0.044552870094776154 0.5896223783493042 0
+		 -0.25536435842514038 0.87313175201416016 0.41524708271026611 0 -0.53331840038299561 -0.48544424772262573 0.69275933504104614 0
+		 -0.39602139592170715 115.48616027832031 2.9395737648010254 1;
+	setAttr ".Spine2GX" -type "matrix" 0.49240005016326904 -0.0061358511447906494 0.87034738063812256 0
+		 -0.51275241374969482 0.80597996711730957 0.29577231407165527 0 -0.70329737663269043 -0.59191107749938965 0.39371839165687561 0
+		 -3.5241184234619141 132.22039794921875 8.4824600219726563 1;
+	setAttr ".LeftHandThumb1GX" -type "matrix" -0.80656468868255615 -0.25252634286880493 0.53449392318725586 0
+		 -0.40257748961448669 0.89673823118209839 -0.18382789194583893 0 -0.43287959694862366 -0.36344432830810547 -0.82493847608566284 0
+		 -21.080602645874023 103.29056549072266 54.092288970947266 1;
+	setAttr ".LeftHandThumb2GX" -type "matrix" -0.53756016492843628 0.093147121369838715 0.83806484937667847 0
+		 -0.49316176772117615 0.77144694328308105 -0.40207177400588989 0 -0.68397414684295654 -0.62943929433822632 -0.36876237392425537 0
+		 -26.331336975097656 99.694931030273438 54.376605987548828 1;
+	setAttr ".LeftHandThumb3GX" -type "matrix" -0.74578011035919189 -0.18570733070373535 0.63978499174118042 0
+		 -0.38381272554397583 0.90473294258117676 -0.18478772044181824 0 -0.54451805353164673 -0.38336858153343201 -0.74600851535797119 0
+		 -28.71537971496582 97.181022644042969 58.859382629394531 1;
+	setAttr ".LeftHandIndex1GX" -type "matrix" -0.60947412252426147 -0.37466731667518616 0.69868850708007813 0
+		 0.39154729247093201 0.62405681610107422 0.67619782686233521 0 -0.68937063217163086 0.68569463491439819 -0.23364663124084473 0
+		 -22.08326530456543 101.14537811279297 60.990428924560547 1;
+	setAttr ".LeftHandIndex2GX" -type "matrix" -0.68719762563705444 -0.7260291576385498 -0.025320053100585938 0
+		 -0.24632939696311951 0.20008252561092377 0.94830828905105591 0 -0.68343347311019897 0.65791225433349609 -0.31633865833282471 0
+		 -24.94073486328125 99.971748352050781 63.676555633544922 1;
+	setAttr ".LeftHandIndex3GX" -type "matrix" 0.14174753427505493 -0.41499066352844238 -0.89871609210968018 0
+		 -0.75168567895889282 -0.63586395978927612 0.1750587671995163 0 -0.64410901069641113 0.65073782205581665 -0.40207457542419434 0
+		 -27.563835144042969 97.406906127929688 62.720485687255859 1;
+	setAttr ".LeftHandIndex4GX" -type "matrix" 0.14174878597259521 -0.41499108076095581 -0.89871567487716675 0
+		 -0.75168520212173462 -0.63586461544036865 0.17505852878093719 0 -0.64410924911499023 0.65073686838150024 -0.40207543969154358 0
+		 -26.294509887695313 96.807945251464844 59.2109375 1;
+	setAttr ".LeftHandMiddle1GX" -type "matrix" -0.73726481199264526 -0.51083242893218994 0.44214352965354919 0
+		 0.29026579856872559 0.35145717859268188 0.89006948471069336 0 -0.61007088422775269 0.78455603122711182 -0.11083978414535522 0
+		 -17.417015075683594 97.429817199707031 61.565578460693359 1;
+	setAttr ".LeftHandMiddle2GX" -type "matrix" -0.51800131797790527 -0.47080361843109131 -0.71415585279464722 0
+		 -0.58186781406402588 -0.41802400350570679 0.6976286768913269 0 -0.6269804835319519 0.77691692113876343 -0.057408332824707031 0
+		 -20.430591583251953 94.822067260742188 63.038814544677734 1;
+	setAttr ".LeftHandMiddle3GX" -type "matrix" 0.23367665708065033 0.22639279067516327 -0.94559067487716675 0
+		 -0.5937848687171936 -0.73687660694122314 -0.32316011190414429 0 -0.76994478702545166 0.63699233531951904 -0.037762045860290527 0
+		 -21.803524017333984 93.28680419921875 60.192501068115234 1;
+	setAttr ".LeftHandMiddle4GX" -type "matrix" 0.2336767166852951 0.22639286518096924 -0.94559067487716675 0
+		 -0.59378498792648315 -0.73687654733657837 -0.32316017150878906 0 -0.76994478702545166 0.63699239492416382 -0.037761986255645752 0
+		 -20.13288688659668 94.304977416992188 57.913963317871094 1;
+	setAttr ".RightHandThumb1GX" -type "matrix" 0.44422087073326111 -0.091681890189647675 -0.89121407270431519 0
+		 -0.37188154458999634 0.88613778352737427 -0.2765219509601593 0 0.81509041786193848 0.45426285266876221 0.35954603552818298 0
+		 -42.217872619628906 113.69898223876953 4.8717637062072754 1;
+	setAttr ".RightHandThumb2GX" -type "matrix" 0.23697090148925781 -0.17311128973960876 -0.95596921443939209 0
+		 -0.47809803485870361 0.83581924438476563 -0.26986753940582275 0 0.84573459625244141 0.52099776268005371 0.11530066281557083 0
+		 -41.391838073730469 114.63167572021484 11.11888599395752 1;
+	setAttr ".RightHandThumb3GX" -type "matrix" 0.2670612633228302 -0.16232192516326904 -0.94991070032119751 0
+		 -0.4588017463684082 0.8454136848449707 -0.27345439791679382 0 0.84745478630065918 0.50884956121444702 0.15130360424518585 0
+		 -39.98907470703125 114.10000610351563 16.582183837890625 1;
+	setAttr ".RightHandIndex1GX" -type "matrix" 0.086554765701293945 -0.21192711591720581 -0.97344505786895752 0
+		 -0.67061823606491089 -0.73497927188873291 0.10038256645202637 0 -0.73673582077026367 0.64412140846252441 -0.20573800802230835 0
+		 -43.003707885742188 109.29386138916016 10.631267547607422 1;
+	setAttr ".RightHandIndex2GX" -type "matrix" -0.5879749059677124 -0.72669655084609985 -0.35524320602416992 0
+		 -0.45260539650917053 -0.068418614566326141 0.88908237218856812 0 -0.6703982949256897 0.68354314565658569 -0.28867796063423157 0
+		 -43.727272033691406 110.53896331787109 14.463199615478516 1;
+	setAttr ".RightHandIndex3GX" -type "matrix" -0.30913987755775452 0.3028394877910614 0.90151041746139526 0
+		 0.71712732315063477 0.69684219360351563 0.011826246976852417 0 -0.62462884187698364 0.65015363693237305 -0.43259602785110474 0
+		 -41.47796630859375 113.55010223388672 14.960163116455078 1;
+	setAttr ".RightHandIndex4GX" -type "matrix" -0.30914086103439331 0.30283957719802856 0.90151005983352661 0
+		 0.71712774038314819 0.69684195518493652 0.011827260255813599 0 -0.62462782859802246 0.65015393495559692 -0.43259671330451965 0
+		 -41.349582672119141 111.76306915283203 11.632490158081055 1;
+	setAttr ".RightHandMiddle1GX" -type "matrix" -0.15614587068557739 0.24344775080680847 -0.95726251602172852 0
+		 -0.4460006058216095 -0.88210314512252808 -0.15158317983150482 0 -0.88130688667297363 0.40327060222625732 0.24631458520889282 0
+		 -37.724502563476563 106.4642333984375 10.447532653808594 1;
+	setAttr ".RightHandMiddle2GX" -type "matrix" -0.41479396820068359 -0.8917156457901001 -0.18107768893241882 0
+		 0.19523593783378601 -0.28159016370773315 0.93946260213851929 0 -0.88872313499450684 0.35433059930801392 0.29089689254760742 0
+		 -36.531028747558594 105.71504211425781 14.455865859985352 1;
+	setAttr ".RightHandMiddle3GX" -type "matrix" 0.30001169443130493 -0.33138170838356018 0.8945273756980896 0
+		 0.60607516765594482 0.79035371541976929 0.089521154761314392 0 -0.73665863275527954 0.51529335975646973 0.43795758485794067 0
+		 -35.051181793212891 108.90081024169922 14.522172927856445 1;
+	setAttr ".RightHandMiddle4GX" -type "matrix" 0.30001130700111389 -0.33138144016265869 0.89452767372131348 0
+		 0.6060752272605896 0.79035371541976929 0.089521139860153198 0 -0.73665881156921387 0.51529371738433838 0.43795710802078247 0
+		 -36.080192565917969 108.7418212890625 11.705337524414063 1;
 createNode HIKEffectorFromCharacter -n "HIKEffectorFromCharacter1";
 	rename -uid "442B014F-4D93-0B5A-455B-98A40FE9AD3F";
 	setAttr ".ihi" 0;
@@ -4367,144 +4358,144 @@ createNode HIKState2Effector -n "HIKState2Effector1";
 	rename -uid "52919F2D-4004-5DED-01BD-8A9A9D08E5B2";
 	setAttr ".ihi" 0;
 	setAttr ".HipsEffectorGXM[0]" -type "matrix" 1 0 0 0 0 1 -2.6631610694494157e-07 0
-		 0 2.6631610694494157e-07 1 0 2.384185791015625e-06 85.010726928710938 -2.0469522476196289 1;
-	setAttr ".LeftAnkleEffectorGXM[0]" -type "matrix" 1 -5.8207660913467407e-11 -7.5033234833710161e-12 0
-		 5.8207660913467407e-11 1 -2.6542693376541138e-07 0 7.5033390958822999e-12 2.6542693376541138e-07 1 0
-		 11.40831184387207 7.41656494140625 -3.64925217628479 1;
-	setAttr ".RightAnkleEffectorGXM[0]" -type "matrix" 1 -2.9103830456733704e-11 2.5011143330033736e-12 0
-		 2.9103830456733704e-11 1 -2.6589259505271912e-07 0 -2.5011065267477317e-12 2.6589259505271912e-07 1 0
-		 -11.408351898193359 7.4165802001953125 -3.649254322052002 1;
-	setAttr ".LeftWristEffectorGXM[0]" -type "matrix" -0.46227264404296875 -0.10734997689723969 0.88021588325500488 0
-		 0.47133660316467285 0.81105631589889526 0.34645241498947144 0 -0.75109636783599854 0.57503342628479004 -0.32433122396469116 0
-		 -16.354787826538086 116.69729614257813 54.385711669921875 1;
-	setAttr ".RightWristEffectorGXM[0]" -type "matrix" 0.2242351770401001 0.094237431883811951 -0.96996819972991943 0
-		 -0.56244277954101563 -0.80030399560928345 -0.20777791738510132 0 -0.79584991931915283 0.59214258193969727 -0.12645286321640015 0
-		 -39.251773834228516 115.4097900390625 2.13916015625 1;
-	setAttr ".LeftKneeEffectorGXM[0]" -type "matrix" 0.99999982118606567 -0.00046440938604064286 -2.212309482274577e-05 0
-		 0.00046430047950707376 0.99998879432678223 -0.0046927030198276043 0 2.4302185920532793e-05 0.0046926918439567089 0.99998891353607178 0
-		 11.145748138427734 45.099552154541016 -2.185596227645874 1;
-	setAttr ".RightKneeEffectorGXM[0]" -type "matrix" 1 0.0004644594737328589 2.212084291386418e-05 0
-		 -0.0004643505671992898 0.99998903274536133 -0.0046921852044761181 0 -2.4299926735693589e-05 0.0046921740286052227 0.99998915195465088 0
-		 -11.14570426940918 45.099590301513672 -2.1855862140655518 1;
-	setAttr ".LeftElbowEffectorGXM[0]" -type "matrix" -0.90718615055084229 -0.344317227602005 0.24178281426429749 0
-		 -0.20373484492301941 0.86231613159179688 0.4635765552520752 0 -0.36811056733131409 0.37129068374633789 -0.85243058204650879 0
-		 8.8832550048828125 125.30341339111328 49.468894958496094 1;
-	setAttr ".RightElbowEffectorGXM[0]" -type "matrix" -0.0010554362088441849 0.25581914186477661 -0.96672409772872925 0
-		 -0.4909856915473938 0.84204649925231934 0.22336244583129883 0 0.87116700410842896 0.47488343715667725 0.12471482157707214 0
-		 -41.018081665039063 121.43304443359375 -24.23883056640625 1;
-	setAttr ".ChestOriginEffectorGXM[0]" -type "matrix" 0.97793745994567871 -0.021182581782341003 0.20782110095024109 0
-		 -0.011466636322438717 0.98790240287780762 0.15465214848518372 0 -0.20858290791511536 -0.15362313389778137 0.96586388349533081 0
-		 4.6155367396973068e-15 99.759124755859375 -1.5529294013977051 1;
-	setAttr ".ChestEndEffectorGXM[0]" -type "matrix" 0.50027155876159668 0.15151296555995941 0.85250979661941528 0
-		 -0.45640772581100464 0.88282942771911621 0.11092847585678101 0 -0.7358132004737854 -0.44458627700805664 0.51080590486526489 0
-		 -8.9739780426025391 137.79217529296875 7.813056468963623 1;
-	setAttr ".RightFootEffectorGXM[0]" -type "matrix" 1 -2.9103707291366909e-11 2.5011143330033736e-12 0
-		 2.9103707291366909e-11 1 -2.6589259505271912e-07 0 -2.5011065267477317e-12 2.6589259505271912e-07 1 0
-		 -11.408346176147461 1.5491952896118164 5.989377498626709 1;
-	setAttr ".LeftShoulderEffectorGXM[0]" -type "matrix" 0.075626358389854431 -0.46035605669021606 0.88450729846954346 0
-		 -0.21191535890102386 0.85936355590820313 0.46538853645324707 0 -0.97435760498046875 -0.22263626754283905 -0.03256598487496376 0
-		 5.218050479888916 143.28915405273438 20.911104202270508 1;
-	setAttr ".RightShoulderEffectorGXM[0]" -type "matrix" 0.84785765409469604 0.40556794404983521 0.34154412150382996 0
-		 -0.49059033393859863 0.84441107511520386 0.21515432000160217 0 -0.20114389061927795 -0.34997841715812683 0.91490799188613892 0
-		 -13.891046524047852 137.50143432617188 -11.652968406677246 1;
-	setAttr ".HeadEffectorGXM[0]" -type "matrix" 0.98475772142410278 0.047962162643671036 0.1671886146068573 0
-		 -0.024280313402414322 0.98972427845001221 -0.14091324806213379 0 -0.1722291111946106 0.13470602035522461 0.97580307722091675 0
-		 -9.8576059341430664 156.60845947265625 6.7206020355224609 1;
-	setAttr ".LeftHipEffectorGXM[0]" -type "matrix" 1 -0.00046323685091920197 -7.6669755799230188e-05 0
-		 0.00046349482727237046 0.99999427795410156 0.0033993835095316172 0 7.5094583735335618e-05 -0.0033994188997894526 0.99999439716339111 0
-		 9.8967103958129883 85.010719299316406 -2.0469541549682617 1;
-	setAttr ".RightHipEffectorGXM[0]" -type "matrix" 1.0000001192092896 0.00046257840585894883 7.7617129136342555e-05 0
-		 -0.00046284191193990409 0.99999427795410156 0.0034299669787287712 0 -7.6030039053875953e-05 -0.0034300023689866066 0.99999439716339111 0
-		 -9.8967056274414063 85.010726928710938 -2.0469505786895752 1;
-	setAttr ".LeftHandThumbEffectorGXM[0]" -type "matrix" -0.74932348728179932 0.0073679983615875244 0.66216319799423218 0
-		 -0.3265131413936615 0.86582481861114502 -0.37912610173225403 0 -0.57611066102981567 -0.5002930760383606 -0.6463770866394043 0
-		 -29.877168655395508 113.55033111572266 61.56927490234375 1;
-	setAttr ".LeftHandIndexEffectorGXM[0]" -type "matrix" 0.10500180721282959 -0.60924363136291504 -0.78600072860717773 0
-		 -0.78927910327911377 -0.53187829256057739 0.30682921409606934 0 -0.60499048233032227 0.58815628290176392 -0.53671115636825562 0
-		 -27.481834411621094 113.10536193847656 62.002590179443359 1;
-	setAttr ".LeftHandMiddleEffectorGXM[0]" -type "matrix" 0.2376706600189209 -0.0009123384952545166 -0.97134542465209961 0
-		 -0.64358186721801758 -0.74915009737014771 -0.15676921606063843 0 -0.72754049301147461 0.66239970922470093 -0.17863810062408447 0
-		 -21.509050369262695 109.98246765136719 61.305438995361328 1;
-	setAttr ".RightHandThumbEffectorGXM[0]" -type "matrix" 0.24582155048847198 -0.3825550377368927 -0.89063096046447754 0
-		 -0.40612438321113586 0.79364025592803955 -0.45298808813095093 0 0.88013339042663574 0.47306114435195923 0.039728954434394836 0
-		 -40.550376892089844 121.52516937255859 16.571718215942383 1;
-	setAttr ".RightHandIndexEffectorGXM[0]" -type "matrix" -0.27925071120262146 0.5115891695022583 0.81258577108383179 0
-		 0.76073801517486572 0.63424599170684814 -0.1378767341375351 0 -0.58591538667678833 0.57966262102127075 -0.56629884243011475 0
-		 -42.111991882324219 118.25974273681641 12.246212005615234 1;
-	setAttr ".RightHandMiddleEffectorGXM[0]" -type "matrix" 0.28754046559333801 -0.14734938740730286 0.9463660717010498 0
-		 0.65679872035980225 0.74949944019317627 -0.082862138748168945 0 -0.69709110260009766 0.64539813995361328 0.31229031085968018 0
-		 -37.048336029052734 114.98905181884766 12.995686531066895 1;
+		 0 2.6631610694494157e-07 1 0 2.384185791015625e-06 83.155792236328125 -2.0469527244567871 1;
+	setAttr ".LeftAnkleEffectorGXM[0]" -type "matrix" 1 -5.5432622196801426e-22 -4.1629212962001824e-15 0
+		 -5.5432622196801426e-22 1 -2.6631596483639441e-07 0 4.1629212962001824e-15 2.6631596483639441e-07 1 0
+		 11.444295883178711 5.5694122314453125 -3.6873962879180908 1;
+	setAttr ".RightAnkleEffectorGXM[0]" -type "matrix" 1 -8.8818170195279584e-16 -2.4329822011226465e-14 0
+		 8.8817519038701383e-16 1 -2.6631732907844707e-07 0 2.4329822011226465e-14 2.6631732907844707e-07 1 0
+		 -11.444337844848633 5.5694198608398438 -3.6873972415924072 1;
+	setAttr ".LeftWristEffectorGXM[0]" -type "matrix" -0.45104849338531494 -0.32644402980804443 0.83065611124038696 0
+		 0.41855341196060181 0.74464637041091919 0.51991820335388184 0 -0.78826922178268433 0.58218228816986084 -0.19923731684684753 0
+		 -15.45402717590332 102.6864013671875 52.679656982421875 1;
+	setAttr ".RightWristEffectorGXM[0]" -type "matrix" 0.21405291557312012 0.31787785887718201 -0.92365312576293945 0
+		 -0.50966000556945801 -0.77031809091567993 -0.38321885466575623 0 -0.83332347869873047 0.55277818441390991 -0.0028791427612304688 0
+		 -38.34600830078125 111.37779235839844 1.1785125732421875 1;
+	setAttr ".LeftKneeEffectorGXM[0]" -type "matrix" 1 3.1068818628909867e-08 1.9027524444936716e-08 0
+		 -3.10688967886108e-08 1 4.0207887650467455e-06 0 -1.9027400099957958e-08 -4.0207887650467455e-06 1 0
+		 11.16419792175293 43.244991302490234 -2.0467848777770996 1;
+	setAttr ".RightKneeEffectorGXM[0]" -type "matrix" 1 2.5318411811525721e-09 -6.5889601330582082e-08 0
+		 -2.5312225648832509e-09 1 9.3883327281218953e-06 0 6.5889629752291512e-08 -9.3883327281218953e-06 1 0
+		 -11.164155006408691 43.245014190673828 -2.0465710163116455 1;
+	setAttr ".LeftElbowEffectorGXM[0]" -type "matrix" -0.88184076547622681 -0.44665074348449707 0.15119536221027374 0
+		 -0.25799429416656494 0.72539138793945313 0.63815885782241821 0 -0.39470988512039185 0.52374690771102905 -0.75491279363632202 0
+		 9.1491279602050781 113.77014923095703 50.027374267578125 1;
+	setAttr ".RightElbowEffectorGXM[0]" -type "matrix" -0.021308513358235359 0.45995724201202393 -0.88768553733825684 0
+		 -0.54417967796325684 0.73950254917144775 0.3962385356426239 0 0.83869826793670654 0.49150362610816956 0.23454165458679199 0
+		 -40.5986328125 122.88398742675781 -23.270017623901367 1;
+	setAttr ".ChestOriginEffectorGXM[0]" -type "matrix" 0.97793740034103394 -0.030767614021897316 0.20661956071853638 0
+		 -0.01146647147834301 0.97969663143157959 0.20015731453895569 0 -0.20858284831047058 -0.19811055064201355 0.95772922039031982 0
+		 4.6155367396973068e-15 97.904190063476563 -1.5529302358627319 1;
+	setAttr ".ChestEndEffectorGXM[0]" -type "matrix" 0.49240005016326904 -0.0061358511447906494 0.87034738063812256 0
+		 -0.51275241374969482 0.80597996711730957 0.29577231407165527 0 -0.70329737663269043 -0.59191107749938965 0.39371839165687561 0
+		 -9.5761651992797852 133.89141845703125 11.918193817138672 1;
+	setAttr ".RightFootEffectorGXM[0]" -type "matrix" 1 -7.6571699022449946e-16 -2.4329822011226465e-14 0
+		 7.6571053159827664e-16 1 -2.6631732907844707e-07 0 2.4329822011226465e-14 2.6631732907844707e-07 1 0
+		 -11.444332122802734 -0.29796504974365234 5.9512348175048828 1;
+	setAttr ".LeftShoulderEffectorGXM[0]" -type "matrix" 0.1069929450750351 -0.63710927963256836 0.76331138610839844 0
+		 -0.26575982570648193 0.72145920991897583 0.63942813873291016 0 -0.9580836296081543 -0.27127182483673096 -0.092127010226249695 0
+		 4.2737174034118652 137.30348205566406 26.050710678100586 1;
+	setAttr ".RightShoulderEffectorGXM[0]" -type "matrix" 0.82076221704483032 0.37519308924674988 0.4307895302772522 0
+		 -0.54396969079971313 0.7436213493347168 0.38874709606170654 0 -0.17448906600475311 -0.55340534448623657 0.81442999839782715 0
+		 -14.534684181213379 137.53762817382813 -7.1947979927062988 1;
+	setAttr ".HeadEffectorGXM[0]" -type "matrix" 0.97339451313018799 0.13108639419078827 0.18793460726737976 0
+		 -0.11563145369291306 0.98911380767822266 -0.091012202203273773 0 -0.19781917333602905 0.066859625279903412 0.97795569896697998 0
+		 -11.613473892211914 152.71778869628906 12.913608551025391 1;
+	setAttr ".LeftHipEffectorGXM[0]" -type "matrix" 1 1.3113829027133761e-06 -2.3113639144867193e-06 0
+		 -1.3112207852827851e-06 1 7.0151385443750769e-05 0 2.3114557734515984e-06 -7.0151385443750769e-05 1 0
+		 9.8967103958129883 83.155784606933594 -2.0469546318054199 1;
+	setAttr ".RightHipEffectorGXM[0]" -type "matrix" 1 1.6091729548861622e-06 -3.0665507892990718e-06 0
+		 -1.6094778629849316e-06 1 -9.9402459454722703e-05 0 3.0663907182315597e-06 9.9402459454722703e-05 1 0
+		 -9.8967056274414063 83.155792236328125 -2.0469510555267334 1;
+	setAttr ".LeftHandThumbEffectorGXM[0]" -type "matrix" -0.74578011035919189 -0.18570733070373535 0.63978499174118042 0
+		 -0.38381272554397583 0.90473294258117676 -0.18478772044181824 0 -0.54451805353164673 -0.38336858153343201 -0.74600851535797119 0
+		 -28.71537971496582 97.181022644042969 58.859382629394531 1;
+	setAttr ".LeftHandIndexEffectorGXM[0]" -type "matrix" 0.14174753427505493 -0.41499066352844238 -0.89871609210968018 0
+		 -0.7516857385635376 -0.6358640193939209 0.17505878210067749 0 -0.64410901069641113 0.65073782205581665 -0.40207457542419434 0
+		 -26.294509887695313 96.807945251464844 59.2109375 1;
+	setAttr ".LeftHandMiddleEffectorGXM[0]" -type "matrix" 0.23367667198181152 0.22639280557632446 -0.94559073448181152 0
+		 -0.5937848687171936 -0.73687660694122314 -0.32316011190414429 0 -0.76994478702545166 0.63699233531951904 -0.037762045860290527 0
+		 -20.13288688659668 94.304977416992188 57.913963317871094 1;
+	setAttr ".RightHandThumbEffectorGXM[0]" -type "matrix" 0.2670612633228302 -0.16232192516326904 -0.94991070032119751 0
+		 -0.4588017463684082 0.8454136848449707 -0.27345439791679382 0 0.84745484590530396 0.5088496208190918 0.15130361914634705 0
+		 -39.98907470703125 114.10000610351563 16.582183837890625 1;
+	setAttr ".RightHandIndexEffectorGXM[0]" -type "matrix" -0.30913987755775452 0.3028394877910614 0.90151041746139526 0
+		 0.71712732315063477 0.69684219360351563 0.011826246976852417 0 -0.62462884187698364 0.65015363693237305 -0.43259602785110474 0
+		 -41.349582672119141 111.76306915283203 11.632490158081055 1;
+	setAttr ".RightHandMiddleEffectorGXM[0]" -type "matrix" 0.30001169443130493 -0.33138170838356018 0.8945273756980896 0
+		 0.60607516765594482 0.79035371541976929 0.089521154761314392 0 -0.73665863275527954 0.51529335975646973 0.43795758485794067 0
+		 -36.080192565917969 108.7418212890625 11.705337524414063 1;
 createNode HIKState2Effector -n "HIKState2Effector2";
 	rename -uid "2BC47851-48B1-8141-09BC-F4A02F066B9C";
 	setAttr ".ihi" 0;
 	setAttr ".HipsEffectorGXM[0]" -type "matrix" 1 0 0 0 0 1 -2.6631610694494157e-07 0
-		 0 2.6631610694494157e-07 1 0 2.384185791015625e-06 85.010726928710938 -2.0469522476196289 1;
-	setAttr ".LeftAnkleEffectorGXM[0]" -type "matrix" 1 -5.8207660913467407e-11 -7.5033234833710161e-12 0
-		 5.8207660913467407e-11 1 -2.6542693376541138e-07 0 7.5033390958822999e-12 2.6542693376541138e-07 1 0
-		 11.40831184387207 7.41656494140625 -3.64925217628479 1;
-	setAttr ".RightAnkleEffectorGXM[0]" -type "matrix" 1 -2.9103830456733704e-11 2.5011143330033736e-12 0
-		 2.9103830456733704e-11 1 -2.6589259505271912e-07 0 -2.5011065267477317e-12 2.6589259505271912e-07 1 0
-		 -11.408351898193359 7.4165802001953125 -3.649254322052002 1;
-	setAttr ".LeftWristEffectorGXM[0]" -type "matrix" -0.46227264404296875 -0.10734997689723969 0.88021588325500488 0
-		 0.47133660316467285 0.81105631589889526 0.34645241498947144 0 -0.75109636783599854 0.57503342628479004 -0.32433122396469116 0
-		 -16.354787826538086 116.69729614257813 54.385711669921875 1;
-	setAttr ".RightWristEffectorGXM[0]" -type "matrix" 0.2242351770401001 0.094237431883811951 -0.96996819972991943 0
-		 -0.56244277954101563 -0.80030399560928345 -0.20777791738510132 0 -0.79584991931915283 0.59214258193969727 -0.12645286321640015 0
-		 -39.251773834228516 115.4097900390625 2.13916015625 1;
-	setAttr ".LeftKneeEffectorGXM[0]" -type "matrix" 0.99999982118606567 -0.00046440938604064286 -2.212309482274577e-05 0
-		 0.00046430047950707376 0.99998879432678223 -0.0046927030198276043 0 2.4302185920532793e-05 0.0046926918439567089 0.99998891353607178 0
-		 11.145748138427734 45.099552154541016 -2.185596227645874 1;
-	setAttr ".RightKneeEffectorGXM[0]" -type "matrix" 1 0.0004644594737328589 2.212084291386418e-05 0
-		 -0.0004643505671992898 0.99998903274536133 -0.0046921852044761181 0 -2.4299926735693589e-05 0.0046921740286052227 0.99998915195465088 0
-		 -11.14570426940918 45.099590301513672 -2.1855862140655518 1;
-	setAttr ".LeftElbowEffectorGXM[0]" -type "matrix" -0.90718615055084229 -0.344317227602005 0.24178281426429749 0
-		 -0.20373484492301941 0.86231613159179688 0.4635765552520752 0 -0.36811056733131409 0.37129068374633789 -0.85243058204650879 0
-		 8.8832550048828125 125.30341339111328 49.468894958496094 1;
-	setAttr ".RightElbowEffectorGXM[0]" -type "matrix" -0.0010554362088441849 0.25581914186477661 -0.96672409772872925 0
-		 -0.4909856915473938 0.84204649925231934 0.22336244583129883 0 0.87116700410842896 0.47488343715667725 0.12471482157707214 0
-		 -41.018081665039063 121.43304443359375 -24.23883056640625 1;
-	setAttr ".ChestOriginEffectorGXM[0]" -type "matrix" 0.97793745994567871 -0.021182581782341003 0.20782110095024109 0
-		 -0.011466636322438717 0.98790240287780762 0.15465214848518372 0 -0.20858290791511536 -0.15362313389778137 0.96586388349533081 0
-		 4.6155367396973068e-15 99.759124755859375 -1.5529294013977051 1;
-	setAttr ".ChestEndEffectorGXM[0]" -type "matrix" 0.50027155876159668 0.15151296555995941 0.85250979661941528 0
-		 -0.45640772581100464 0.88282942771911621 0.11092847585678101 0 -0.7358132004737854 -0.44458627700805664 0.51080590486526489 0
-		 -8.9739780426025391 137.79217529296875 7.813056468963623 1;
-	setAttr ".RightFootEffectorGXM[0]" -type "matrix" 1 -2.9103707291366909e-11 2.5011143330033736e-12 0
-		 2.9103707291366909e-11 1 -2.6589259505271912e-07 0 -2.5011065267477317e-12 2.6589259505271912e-07 1 0
-		 -11.408346176147461 1.5491952896118164 5.989377498626709 1;
-	setAttr ".LeftShoulderEffectorGXM[0]" -type "matrix" 0.075626358389854431 -0.46035605669021606 0.88450729846954346 0
-		 -0.21191535890102386 0.85936355590820313 0.46538853645324707 0 -0.97435760498046875 -0.22263626754283905 -0.03256598487496376 0
-		 5.218050479888916 143.28915405273438 20.911104202270508 1;
-	setAttr ".RightShoulderEffectorGXM[0]" -type "matrix" 0.84785765409469604 0.40556794404983521 0.34154412150382996 0
-		 -0.49059033393859863 0.84441107511520386 0.21515432000160217 0 -0.20114389061927795 -0.34997841715812683 0.91490799188613892 0
-		 -13.891046524047852 137.50143432617188 -11.652968406677246 1;
-	setAttr ".HeadEffectorGXM[0]" -type "matrix" 0.98475772142410278 0.047962162643671036 0.1671886146068573 0
-		 -0.024280313402414322 0.98972427845001221 -0.14091324806213379 0 -0.1722291111946106 0.13470602035522461 0.97580307722091675 0
-		 -9.8576059341430664 156.60845947265625 6.7206020355224609 1;
-	setAttr ".LeftHipEffectorGXM[0]" -type "matrix" 1 -0.00046323685091920197 -7.6669755799230188e-05 0
-		 0.00046349482727237046 0.99999427795410156 0.0033993835095316172 0 7.5094583735335618e-05 -0.0033994188997894526 0.99999439716339111 0
-		 9.8967103958129883 85.010719299316406 -2.0469541549682617 1;
-	setAttr ".RightHipEffectorGXM[0]" -type "matrix" 1.0000001192092896 0.00046257840585894883 7.7617129136342555e-05 0
-		 -0.00046284191193990409 0.99999427795410156 0.0034299669787287712 0 -7.6030039053875953e-05 -0.0034300023689866066 0.99999439716339111 0
-		 -9.8967056274414063 85.010726928710938 -2.0469505786895752 1;
-	setAttr ".LeftHandThumbEffectorGXM[0]" -type "matrix" -0.74932348728179932 0.0073679983615875244 0.66216319799423218 0
-		 -0.3265131413936615 0.86582481861114502 -0.37912610173225403 0 -0.57611066102981567 -0.5002930760383606 -0.6463770866394043 0
-		 -29.877168655395508 113.55033111572266 61.56927490234375 1;
-	setAttr ".LeftHandIndexEffectorGXM[0]" -type "matrix" 0.10500180721282959 -0.60924363136291504 -0.78600072860717773 0
-		 -0.78927910327911377 -0.53187829256057739 0.30682921409606934 0 -0.60499048233032227 0.58815628290176392 -0.53671115636825562 0
-		 -27.481834411621094 113.10536193847656 62.002590179443359 1;
-	setAttr ".LeftHandMiddleEffectorGXM[0]" -type "matrix" 0.2376706600189209 -0.0009123384952545166 -0.97134542465209961 0
-		 -0.64358186721801758 -0.74915009737014771 -0.15676921606063843 0 -0.72754049301147461 0.66239970922470093 -0.17863810062408447 0
-		 -21.509050369262695 109.98246765136719 61.305438995361328 1;
-	setAttr ".RightHandThumbEffectorGXM[0]" -type "matrix" 0.24582155048847198 -0.3825550377368927 -0.89063096046447754 0
-		 -0.40612438321113586 0.79364025592803955 -0.45298808813095093 0 0.88013339042663574 0.47306114435195923 0.039728954434394836 0
-		 -40.550376892089844 121.52516937255859 16.571718215942383 1;
-	setAttr ".RightHandIndexEffectorGXM[0]" -type "matrix" -0.27925071120262146 0.5115891695022583 0.81258577108383179 0
-		 0.76073801517486572 0.63424599170684814 -0.1378767341375351 0 -0.58591538667678833 0.57966262102127075 -0.56629884243011475 0
-		 -42.111991882324219 118.25974273681641 12.246212005615234 1;
-	setAttr ".RightHandMiddleEffectorGXM[0]" -type "matrix" 0.28754046559333801 -0.14734938740730286 0.9463660717010498 0
-		 0.65679872035980225 0.74949944019317627 -0.082862138748168945 0 -0.69709110260009766 0.64539813995361328 0.31229031085968018 0
-		 -37.048336029052734 114.98905181884766 12.995686531066895 1;
+		 0 2.6631610694494157e-07 1 0 2.384185791015625e-06 83.155792236328125 -2.0469527244567871 1;
+	setAttr ".LeftAnkleEffectorGXM[0]" -type "matrix" 1 -5.5432622196801426e-22 -4.1629212962001824e-15 0
+		 -5.5432622196801426e-22 1 -2.6631596483639441e-07 0 4.1629212962001824e-15 2.6631596483639441e-07 1 0
+		 11.444295883178711 5.5694122314453125 -3.6873962879180908 1;
+	setAttr ".RightAnkleEffectorGXM[0]" -type "matrix" 1 -8.8818170195279584e-16 -2.4329822011226465e-14 0
+		 8.8817519038701383e-16 1 -2.6631732907844707e-07 0 2.4329822011226465e-14 2.6631732907844707e-07 1 0
+		 -11.444337844848633 5.5694198608398438 -3.6873972415924072 1;
+	setAttr ".LeftWristEffectorGXM[0]" -type "matrix" -0.45104849338531494 -0.32644402980804443 0.83065611124038696 0
+		 0.41855341196060181 0.74464637041091919 0.51991820335388184 0 -0.78826922178268433 0.58218228816986084 -0.19923731684684753 0
+		 -15.45402717590332 102.6864013671875 52.679656982421875 1;
+	setAttr ".RightWristEffectorGXM[0]" -type "matrix" 0.21405291557312012 0.31787785887718201 -0.92365312576293945 0
+		 -0.50966000556945801 -0.77031809091567993 -0.38321885466575623 0 -0.83332347869873047 0.55277818441390991 -0.0028791427612304688 0
+		 -38.34600830078125 111.37779235839844 1.1785125732421875 1;
+	setAttr ".LeftKneeEffectorGXM[0]" -type "matrix" 1 3.1068818628909867e-08 1.9027524444936716e-08 0
+		 -3.10688967886108e-08 1 4.0207887650467455e-06 0 -1.9027400099957958e-08 -4.0207887650467455e-06 1 0
+		 11.16419792175293 43.244991302490234 -2.0467848777770996 1;
+	setAttr ".RightKneeEffectorGXM[0]" -type "matrix" 1 2.5318411811525721e-09 -6.5889601330582082e-08 0
+		 -2.5312225648832509e-09 1 9.3883327281218953e-06 0 6.5889629752291512e-08 -9.3883327281218953e-06 1 0
+		 -11.164155006408691 43.245014190673828 -2.0465710163116455 1;
+	setAttr ".LeftElbowEffectorGXM[0]" -type "matrix" -0.88184076547622681 -0.44665074348449707 0.15119536221027374 0
+		 -0.25799429416656494 0.72539138793945313 0.63815885782241821 0 -0.39470988512039185 0.52374690771102905 -0.75491279363632202 0
+		 9.1491279602050781 113.77014923095703 50.027374267578125 1;
+	setAttr ".RightElbowEffectorGXM[0]" -type "matrix" -0.021308513358235359 0.45995724201202393 -0.88768553733825684 0
+		 -0.54417967796325684 0.73950254917144775 0.3962385356426239 0 0.83869826793670654 0.49150362610816956 0.23454165458679199 0
+		 -40.5986328125 122.88398742675781 -23.270017623901367 1;
+	setAttr ".ChestOriginEffectorGXM[0]" -type "matrix" 0.97793740034103394 -0.030767614021897316 0.20661956071853638 0
+		 -0.01146647147834301 0.97969663143157959 0.20015731453895569 0 -0.20858284831047058 -0.19811055064201355 0.95772922039031982 0
+		 4.6155367396973068e-15 97.904190063476563 -1.5529302358627319 1;
+	setAttr ".ChestEndEffectorGXM[0]" -type "matrix" 0.49240005016326904 -0.0061358511447906494 0.87034738063812256 0
+		 -0.51275241374969482 0.80597996711730957 0.29577231407165527 0 -0.70329737663269043 -0.59191107749938965 0.39371839165687561 0
+		 -9.5761651992797852 133.89141845703125 11.918193817138672 1;
+	setAttr ".RightFootEffectorGXM[0]" -type "matrix" 1 -7.6571699022449946e-16 -2.4329822011226465e-14 0
+		 7.6571053159827664e-16 1 -2.6631732907844707e-07 0 2.4329822011226465e-14 2.6631732907844707e-07 1 0
+		 -11.444332122802734 -0.29796504974365234 5.9512348175048828 1;
+	setAttr ".LeftShoulderEffectorGXM[0]" -type "matrix" 0.1069929450750351 -0.63710927963256836 0.76331138610839844 0
+		 -0.26575982570648193 0.72145920991897583 0.63942813873291016 0 -0.9580836296081543 -0.27127182483673096 -0.092127010226249695 0
+		 4.2737174034118652 137.30348205566406 26.050710678100586 1;
+	setAttr ".RightShoulderEffectorGXM[0]" -type "matrix" 0.82076221704483032 0.37519308924674988 0.4307895302772522 0
+		 -0.54396969079971313 0.7436213493347168 0.38874709606170654 0 -0.17448906600475311 -0.55340534448623657 0.81442999839782715 0
+		 -14.534684181213379 137.53762817382813 -7.1947979927062988 1;
+	setAttr ".HeadEffectorGXM[0]" -type "matrix" 0.97339451313018799 0.13108639419078827 0.18793460726737976 0
+		 -0.11563145369291306 0.98911380767822266 -0.091012202203273773 0 -0.19781917333602905 0.066859625279903412 0.97795569896697998 0
+		 -11.613473892211914 152.71778869628906 12.913608551025391 1;
+	setAttr ".LeftHipEffectorGXM[0]" -type "matrix" 1 1.3113829027133761e-06 -2.3113639144867193e-06 0
+		 -1.3112207852827851e-06 1 7.0151385443750769e-05 0 2.3114557734515984e-06 -7.0151385443750769e-05 1 0
+		 9.8967103958129883 83.155784606933594 -2.0469546318054199 1;
+	setAttr ".RightHipEffectorGXM[0]" -type "matrix" 1 1.6091729548861622e-06 -3.0665507892990718e-06 0
+		 -1.6094778629849316e-06 1 -9.9402459454722703e-05 0 3.0663907182315597e-06 9.9402459454722703e-05 1 0
+		 -9.8967056274414063 83.155792236328125 -2.0469510555267334 1;
+	setAttr ".LeftHandThumbEffectorGXM[0]" -type "matrix" -0.74578011035919189 -0.18570733070373535 0.63978499174118042 0
+		 -0.38381272554397583 0.90473294258117676 -0.18478772044181824 0 -0.54451805353164673 -0.38336858153343201 -0.74600851535797119 0
+		 -28.71537971496582 97.181022644042969 58.859382629394531 1;
+	setAttr ".LeftHandIndexEffectorGXM[0]" -type "matrix" 0.14174753427505493 -0.41499066352844238 -0.89871609210968018 0
+		 -0.7516857385635376 -0.6358640193939209 0.17505878210067749 0 -0.64410901069641113 0.65073782205581665 -0.40207457542419434 0
+		 -26.294509887695313 96.807945251464844 59.2109375 1;
+	setAttr ".LeftHandMiddleEffectorGXM[0]" -type "matrix" 0.23367667198181152 0.22639280557632446 -0.94559073448181152 0
+		 -0.5937848687171936 -0.73687660694122314 -0.32316011190414429 0 -0.76994478702545166 0.63699233531951904 -0.037762045860290527 0
+		 -20.13288688659668 94.304977416992188 57.913963317871094 1;
+	setAttr ".RightHandThumbEffectorGXM[0]" -type "matrix" 0.2670612633228302 -0.16232192516326904 -0.94991070032119751 0
+		 -0.4588017463684082 0.8454136848449707 -0.27345439791679382 0 0.84745484590530396 0.5088496208190918 0.15130361914634705 0
+		 -39.98907470703125 114.10000610351563 16.582183837890625 1;
+	setAttr ".RightHandIndexEffectorGXM[0]" -type "matrix" -0.30913987755775452 0.3028394877910614 0.90151041746139526 0
+		 0.71712732315063477 0.69684219360351563 0.011826246976852417 0 -0.62462884187698364 0.65015363693237305 -0.43259602785110474 0
+		 -41.349582672119141 111.76306915283203 11.632490158081055 1;
+	setAttr ".RightHandMiddleEffectorGXM[0]" -type "matrix" 0.30001169443130493 -0.33138170838356018 0.8945273756980896 0
+		 0.60607516765594482 0.79035371541976929 0.089521154761314392 0 -0.73665863275527954 0.51529335975646973 0.43795758485794067 0
+		 -36.080192565917969 108.7418212890625 11.705337524414063 1;
 createNode pairBlend -n "pairBlend1";
 	rename -uid "301BF799-4892-82E1-A01B-6C855ED728B5";
 createNode pairBlend -n "pairBlend2";
@@ -4587,44 +4578,41 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
 		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
 		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1312\n            -height 706\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1263\n            -height 706\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 1\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
 		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
 		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n"
 		+ "            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n"
 		+ "            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n"
-		+ "                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n"
-		+ "                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 1\n                -displayValues 0\n                -autoFit 1\n                -autoFitTime 0\n                -snapTime \"integer\" \n"
-		+ "                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1.25\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n"
-		+ "                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n"
-		+ "                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n"
-		+ "                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
-		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n"
-		+ "                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n"
-		+ "                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n"
-		+ "                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n"
-		+ "                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"ModelPanel\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"ModelPanel\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 0\n            -holdOuts 1\n            -selectionHiliteDisplay 0\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 1\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n"
-		+ "            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 0\n            -nurbsCurves 0\n"
-		+ "            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 0\n            -lights 0\n            -cameras 0\n            -controlVertices 0\n            -hulls 0\n            -grid 0\n            -imagePlane 0\n            -joints 0\n            -ikHandles 0\n            -deformers 0\n            -dynamics 0\n            -particleInstancers 0\n            -fluids 0\n            -hairSystems 0\n            -follicles 0\n            -nCloths 0\n            -nParticles 0\n            -nRigids 0\n            -dynamicConstraints 0\n            -locators 0\n            -manipulators 0\n            -pluginShapes 0\n            -dimensions 0\n            -handles 0\n            -pivots 0\n            -textures 0\n            -strokes 0\n            -motionTrails 0\n            -clipGhosts 0\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 0\n            -height 0\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n"
-		+ "        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 0 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1312\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1312\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -isSet 0\n                -isSetMember 0\n                -displayMode \"DAG\" \n"
+		+ "                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                -selectionOrder \"display\" \n                -expandAttribute 1\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n"
+		+ "                -displayInfinities 1\n                -displayValues 0\n                -autoFit 1\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1.25\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -clipTime \"on\" \n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n"
+		+ "                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n"
+		+ "                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n"
+		+ "                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n"
+		+ "                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n"
+		+ "                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n"
+		+ "                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n"
+		+ "\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n"
+		+ "                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n"
+		+ "                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n"
+		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n"
+		+ "                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1263\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1263\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "DA43F5C1-425D-83E3-3BA1-8A80D8A9405F";
-	setAttr ".b" -type "string" "playbackOptions -min 0 -max 79 -ast 0 -aet 80 ";
+	setAttr ".b" -type "string" "playbackOptions -min 0 -max 22 -ast 0 -aet 22 ";
 	setAttr ".st" 6;
 createNode animLayer -n "BaseAnimation";
 	rename -uid "2567151E-4F88-B37E-4DD6-81AB5333F1B6";
@@ -4633,406 +4621,441 @@ createNode animLayer -n "BaseAnimation";
 	setAttr ".ovrd" yes;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_ChestEndEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "E81E0E2C-48E2-59AD-CF61-60BF1DA1EF57";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -53.35912722986091 34 -53.359127229860931
-		 60 -53.35912722986091 80 -53.35912722986091;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 2;
-	setAttr -s 4 ".kot[2:3]"  18 2;
-	setAttr -s 4 ".kix[1:3]"  0.27777779102325439 0.37777778506278992 
-		1;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 0.37777778506278992 
-		1 1;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 7 ".ktv[0:6]"  0 -53.370960424093951 3 -47.850842355860451
+		 8 -47.850819026772164 14 -47.850903079498508 15 -47.500113584233709 18 -45.497562763280207
+		 22 -53.370957233994353;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 0.99999999997314248 
+		1 1 0.95568246224165265 1 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  0 7.3290492393048887e-06 0 0 0.29439944185363548 
+		0 0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_ChestEndEffector_rotate_Merged_Layer_inputBY";
 	rename -uid "BB41BF49-4516-0DCA-35BB-8F81019E9B31";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 34.368259219723015 34 34.368259219723036
-		 60 34.368259219723015 80 34.368259219723015;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kot[3]"  2;
-	setAttr -s 4 ".kix[1:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068 1;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 7 ".ktv[0:6]"  0 34.381112639291842 3 27.973294033778981
+		 8 27.973270013481425 14 27.973291127592073 15 29.09642995456835 18 35.951674492180757
+		 22 34.381112195138925;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 0.99999999997152744 
+		1 0.99999999998472244 0.69159792874536841 1 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  0 -7.5461990334329787e-06 0 5.5276612419818238e-06 
+		0.7222827043167489 0 0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_ChestEndEffector_rotate_Merged_Layer_inputBZ";
 	rename -uid "63315C5B-486F-56BB-1552-B09F314B16EA";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 18.842200388331033 34 23.81001909982912
-		 60 32.591214849878547 80 18.842200388331033;
-	setAttr -s 4 ".kit[0:3]"  18 18 1 1;
-	setAttr -s 4 ".kot[1:3]"  18 1 2;
-	setAttr -s 4 ".kix[2:3]"  0.37777778506278992 0.2222222238779068;
-	setAttr -s 4 ".kiy[2:3]"  -0.014045633375644684 -0.040717184543609619;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 0.99287886024280125 
-		0.2222222238779068 1;
-	setAttr -s 4 ".koy[0:3]"  0.0145380524918437 0.11912837144423645 
-		-0.015301218256354332 0;
+	setAttr -s 7 ".ktv[0:6]"  0 18.821237149713028 3 47.712378632784585
+		 8 54.51543623154798 14 54.359785740266794 15 53.912868081313704 18 15.548518018714516
+		 22 18.821233355253259;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 0.42379691639803224 
+		1 0.99917078375495683 0.81845576335627812 1 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  0.0145380524918437 0.90575723770308303 
+		0 -0.040715413426679913 -0.57456954620732548 0 0.0145380524918437;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_ChestEndEffector_translateX_Merged_Layer_inputB";
 	rename -uid "0491AE73-42FA-C970-241A-1790F58DBFD3";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -9.565673828125 34 -9.565671443939209
-		 60 -9.5656719207763672 80 -9.565673828125;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  -8.099121373561502e-09;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 7 ".ktv[0:6]"  0 -9.5761642456054688 3 -7.1902456283569336
+		 8 -7.190241813659668 14 -7.1902494430541992 15 -7.8161296844482422 18 -11.52437686920166
+		 22 -9.5761661529541016;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[6]"  1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[6]"  1;
+	setAttr -s 7 ".koy[6]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_ChestEndEffector_translateY_Merged_Layer_inputB";
 	rename -uid "E0C46591-4B06-2A55-92C3-DBBBA9586A49";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 133.88924853097907 34 141.55801185541432
-		 60 132.74285566461668 80 133.88924853097907;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  0.0057065468281507492;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 7 ".ktv[0:6]"  0 133.89141528302051 3 98.661595720725856
+		 8 98.051533519030841 14 96.421818845890712 15 94.967137283134562 18 122.42347591018613
+		 22 133.89141528302;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[6]"  1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[6]"  1;
+	setAttr -s 7 ".koy[6]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_ChestEndEffector_translateZ_Merged_Layer_inputB";
 	rename -uid "2488F8B9-4089-9D19-5D20-5C8A042CF1A7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 11.933225048953979 34 7.7374453835053707
-		 60 12.098805493162818 80 11.933225048953979;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  -0.00082423101412132382;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 7 ".ktv[0:6]"  0 11.918225659882582 3 37.978320647732225
+		 8 40.066768056063687 14 38.967772413304139 15 39.592112083272077 18 4.741244494518245
+		 22 11.918227567231215;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[6]"  1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[6]"  1;
+	setAttr -s 7 ".koy[6]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_ChestOriginEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "8D80AF99-4D0D-4D5F-982E-1D84A9020738";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -11.982099412041061 34 -11.982099412041061
-		 60 -11.98209941204105 80 -11.982099412041061;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kot[3]"  2;
-	setAttr -s 4 ".kix[1:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068 1;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 7 ".ktv[0:6]"  0 -11.993738587053489 3 -11.095609270014691
+		 8 -11.095618657210251 14 -11.095675049135446 15 -10.500457625780143 18 -7.2864051689650617
+		 22 -11.993738383703352;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 1 0.99999999999565137 
+		1 0.89491625962819898 1 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  0 0 -2.9490744606213689e-06 0 0.44623411820822717 
+		0 0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_ChestOriginEffector_rotate_Merged_Layer_inputBY";
 	rename -uid "5E90B355-49DB-DF60-FAF0-DAA544D34089";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 1.2389634916370142 34 1.2389634916370125
-		 60 1.2389634916370149 80 1.2389634916370142;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kot[3]"  2;
-	setAttr -s 4 ".kix[1:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068 1;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 7 ".ktv[0:6]"  0 1.2501751662333529 3 -0.019623065973837429
+		 8 -0.019619181516724767 14 -0.019626782134604923 15 0.91892870326356446 18 5.9870566757615542
+		 22 1.2501760925513761;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 1 1 1 0.78610491279189287 
+		1 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  0 0 0 0 0.61809308852668032 0 0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_ChestOriginEffector_rotate_Merged_Layer_inputBZ";
 	rename -uid "7D0B13DC-4E51-E8C6-297A-4583DCA087D5";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 11.499430978672862 34 11.499424211164548
-		 60 11.499396811813378 80 11.499430978672862;
-	setAttr -s 4 ".kit[0:3]"  18 18 1 1;
-	setAttr -s 4 ".kot[1:3]"  18 1 2;
-	setAttr -s 4 ".kix[2:3]"  0.37777778506278992 0.2222222238779068;
-	setAttr -s 4 ".kiy[2:3]"  1.8488680808559366e-08 1.0126434091262126e-07;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 0.99999999999995559 
-		0.2222222238779068 1;
-	setAttr -s 4 ".koy[0:3]"  -1.9644105009319901e-08 -2.9816209654030876e-07 
-		2.196064485815441e-08 0;
+	setAttr -s 7 ".ktv[0:6]"  0 11.484894192460802 3 42.59581531021022
+		 8 49.398865851331415 14 44.10281571395295 15 46.710369076847655 18 1.1908482316127085
+		 22 11.484895070762217;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 0.42379727709063636 
+		1 1 1 1 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  -1.9644105009319901e-08 0.90575706893767183 
+		0 0 0 0 -1.9644105009319901e-08;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_ChestOriginEffector_translateX_Merged_Layer_inputB";
 	rename -uid "3D0D28A1-4F52-A509-97F0-23928018C27F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 0.0021777651272714138 34 0.0021777651272714138
-		 60 0.0021777651272714138 80 0.0021777651272714138;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  0;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 7 ".ktv[0:6]"  0 4.6155367396973068e-15 3 -5.1027143399551278e-08
+		 8 -5.1027072345277702e-08 14 -5.1027072345277702e-08 15 -5.1027072345277702e-08 18 4.7405046643689275e-06
+		 22 0;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[6]"  1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[6]"  1;
+	setAttr -s 7 ".koy[6]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_ChestOriginEffector_translateY_Merged_Layer_inputB";
 	rename -uid "F0ACD46A-4339-26B6-832A-FB9EC76891E9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 97.904076035146687 34 102.58733409178701
-		 60 95.37453501952146 80 97.904076035146687;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  0.012591620907187462;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 7 ".ktv[0:6]"  0 97.904190477043429 3 79.010756384734677
+		 8 82.565657507782319 14 79.599715124969734 15 79.455382239227546 18 86.794405122980663
+		 22 97.904190477043429;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[6]"  1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[6]"  1;
+	setAttr -s 7 ".koy[6]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_ChestOriginEffector_translateZ_Merged_Layer_inputB";
 	rename -uid "3542F9A5-455A-5A18-32DC-F58CE34BA808";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -1.5492289400333459 34 -1.5492272159691243
-		 60 -1.5492284215979713 80 -1.5492289400333459;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  -1.5217160864722246e-09;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 7 ".ktv[0:6]"  0 -1.5529041623997191 3 3.9860795154243909
+		 8 3.9860771242917186 14 3.9860770496692211 15 3.9860770112310484 18 -7.6856248497295514
+		 22 -1.5529041623997191;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[6]"  1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[6]"  1;
+	setAttr -s 7 ".koy[6]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Head_rotate_Merged_Layer_inputBX";
 	rename -uid "56C7F8B0-43BB-1B66-B8E3-BD9A6215B15F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -1.2590183456050367e-05 21 0.5622783087844796
-		 54 -9.8335024261169516e-06 80 -1.2590183456050367e-05;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.28888890147209167;
-	setAttr -s 4 ".kiy[3]"  0;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 5 ".ktv[0:4]"  0 -1.1905803897154826e-05 3 -0.92597961960536657
+		 13 -0.92597910701223007 16 0.88917375344602201 22 -1.3416325216138768e-05;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Head_rotate_Merged_Layer_inputBY";
 	rename -uid "4B609431-4580-96EF-3763-93BDC58F0C21";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 0 21 -5.202560756299885 54 9.9790731624609521e-13
-		 80 0;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.28888890147209167;
-	setAttr -s 4 ".kiy[3]"  0;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 3 -1.3802929488854232 13 -1.3802933333539364
+		 16 -2.2520382504346452 22 0;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Head_rotate_Merged_Layer_inputBZ";
 	rename -uid "E5E19085-4EFD-B58E-6665-B5B8E3208ADF";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 0 21 -1.0021222747170391 54 5.8468749379591478e-06
-		 80 0;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kix[1:3]"  0.2222222238779068 0.36666667461395264 
-		0.28888890147209167;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.2222222238779068 0.36666667461395264 
-		0.28888890147209167 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 0 3 7.0783415521363384 13 7.0783480004896644
+		 16 13.175134901286139 22 0;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[0:4]"  1 18 18 18 1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[0:4]"  0.2222222238779068 0.99999999999948708 
+		0.99999999999948708 1 0.2222222238779068;
+	setAttr -s 5 ".koy[0:4]"  0 1.0129049717722346e-06 1.0129049717722349e-06 
+		0 0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_HeadEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "CCB21918-4631-4F8D-1296-A5AB6ECA2C4C";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -11.487631303093755 21 -10.912322727659012
-		 54 -9.4942420783258008 80 -11.487631303093755;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kot[3]"  2;
-	setAttr -s 4 ".kix[1:3]"  0.2222222238779068 0.36666667461395264 
-		0.28888890147209167;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.2222222238779068 0.36666667461395264 
-		0.28888890147209167 1;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -11.487534894707126 3 -5.2416170380042413
+		 13 -5.7119890510066051 16 -0.55819236691582941 22 -11.487515829926991;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[0:4]"  1 18 18 18 1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[0:4]"  0.2222222238779068 1 1 1 0.2222222238779068;
+	setAttr -s 5 ".koy[0:4]"  0 0 0 0 0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_HeadEffector_rotate_Merged_Layer_inputBY";
 	rename -uid "89233E19-43A8-7F0C-A973-6291B8D37552";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 6.640868061888999 21 3.0444449868050412
-		 54 0.20625343477317448 80 6.640868061888999;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kot[3]"  2;
-	setAttr -s 4 ".kix[1:3]"  0.2222222238779068 0.36666667461395264 
-		0.28888890147209167;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.2222222238779068 0.36666667461395264 
-		0.28888890147209167 1;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 6.6400928538147461 3 1.6870302902182739
+		 13 2.3396442345424373 16 5.7175138793952867 22 6.6401097835508596;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[0:4]"  1 18 18 18 1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[0:4]"  0.2222222238779068 1 0.99478666174888564 
+		0.97204766992414804 0.2222222238779068;
+	setAttr -s 5 ".koy[0:4]"  0 0 0.10197792705535948 0.23478357565007549 
+		0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_HeadEffector_rotate_Merged_Layer_inputBZ";
 	rename -uid "26FEEA8B-4BFA-6801-773F-2B8DA9256A26";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -5.2570653620451395 21 -5.5754748994801924
-		 54 -2.2867913688156367 80 -5.2570653620451395;
-	setAttr -s 4 ".kit[0:3]"  18 18 1 1;
-	setAttr -s 4 ".kot[1:3]"  18 1 2;
-	setAttr -s 4 ".kix[2:3]"  0.36666667461395264 0.28888890147209167;
-	setAttr -s 4 ".kiy[2:3]"  1.0541713058032087e-09 2.2005046673712059e-09;
-	setAttr -s 4 ".kox[0:3]"  0.2222222238779068 1 0.28888890147209167 
-		1;
-	setAttr -s 4 ".koy[0:3]"  -1.0853706822189224e-09 0 1.1065450777891783e-09 
-		0;
+	setAttr -s 5 ".ktv[0:4]"  0 -5.2571876033268952 3 28.050500998879659
+		 13 21.896883108894265 16 22.778266516469515 22 -5.2571373977115154;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[0:4]"  1 18 18 18 1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[0:4]"  0.2222222238779068 1 1 1 0.2222222238779068;
+	setAttr -s 5 ".koy[0:4]"  -1.0853706822189224e-09 0 0 0 -1.0853706822189224e-09;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_HeadEffector_translateX_Merged_Layer_inputB";
 	rename -uid "10D4B889-43FE-BBEB-682A-A2A4A7A7D96D";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -11.613744735717773 21 -12.024658203125
-		 54 -8.8178310394287109 80 -11.613744735717773;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kix[1:3]"  0.2222222238779068 0.36666667461395264 
-		0.28888890147209167;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.2222222238779068 0.36666667461395264 
-		0.28888890147209167 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -11.61347484588623 3 -7.6554703712463379
+		 13 -7.7970666885375977 16 -11.078481674194336 22 -11.613542556762695;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[0:4]"  1 18 18 18 1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[0:4]"  0.2222222238779068 1 0.61732971775908208 
+		0.12364039580215781 0.2222222238779068;
+	setAttr -s 5 ".koy[0:4]"  0 0 -0.78670453130224938 -0.99232708948505777 
+		0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_HeadEffector_translateY_Merged_Layer_inputB";
 	rename -uid "0520B110-48A4-60A6-9010-9CAA6BEFD8F7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 152.71778525717508 21 157.9208044461665
-		 54 152.22840572787928 80 152.71778525717508;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.28888890147209167;
-	setAttr -s 4 ".kiy[3]"  -1.0504231795493979e-06;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 5 ".ktv[0:4]"  0 152.71776999839111 3 119.96260439478857
+		 13 134.23665268861711 16 133.11522804020137 22 152.71776999838704;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_HeadEffector_translateZ_Merged_Layer_inputB";
 	rename -uid "749E8417-4E9B-0246-3214-358BAC6B7E4D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 12.913674017764428 21 9.1568051336367304
-		 54 11.586241254988439 80 12.913674017764428;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.28888890147209167;
-	setAttr -s 4 ".kiy[3]"  0.01767192967236042;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 5 ".ktv[0:4]"  0 12.913654944274036 3 43.452168941383775
+		 13 41.791490064570063 16 23.786782429490195 22 12.913670203063099;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Hips_rotate_Merged_Layer_inputBX";
 	rename -uid "3419990C-47B3-91F8-F36F-DABBE0DCED60";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 0 25 0 60 0 80 0;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  0;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 6 ".ktv[0:5]"  0 0 3 -5.9179094349749703e-06 7 -5.9179097396318353e-06
+		 13 -5.9179097396318353e-06 18 -3.2317409123996404e-06 22 0;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Hips_rotate_Merged_Layer_inputBY";
 	rename -uid "48A8CF4F-4590-90A0-3F79-AE97E27AACCB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 0 25 0 60 0 80 0;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  0;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 6 ".ktv[0:5]"  0 0 3 4.2565491393107781e-13 7 1.3496871452664811e-14
+		 13 0 18 0 22 0;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Hips_rotate_Merged_Layer_inputBZ";
 	rename -uid "95340AB8-4681-EE07-D928-40A526DCE690";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 0 25 1.2864578572285776e-06 60 1.2840135627892166e-06
-		 80 0;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[0:3]"  1 18 18 1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  0;
-	setAttr -s 4 ".kox[0:3]"  0.26666668057441711 1 1 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  0 0 -1.0969967791295081e-10 0;
+	setAttr -s 6 ".ktv[0:5]"  0 0 3 22.29928419602912 7 22.299287355723983
+		 13 22.299287355723983 18 -24.333378630597856 22 0;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[0:5]"  1 18 18 18 18 1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[0:5]"  0.26666668057441711 0.99999999999923017 
+		1 1 1 0.26666668057441711;
+	setAttr -s 6 ".koy[0:5]"  0 1.2408092715789238e-06 0 0 0 0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_Hips_translateX_Merged_Layer_inputB";
 	rename -uid "52A99444-45C1-20BD-EF8F-F39920350A3B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 0 25 0 60 0 80 0;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  0;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 6 ".ktv[0:5]"  0 0 3 -2.1141931938473135e-07 7 -2.1141886463738047e-07
+		 13 -2.1141886463738047e-07 18 -1.154548954218626e-07 22 0;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_Hips_translateY_Merged_Layer_inputB";
 	rename -uid "5ECF7504-461A-CD56-8004-E3B3066906CB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 87.627601623535156 25 92.328216552743683
-		 60 85.699325561532845 80 87.627601623535156;
-	setAttr -s 4 ".kit[0:3]"  1 18 18 1;
-	setAttr -s 4 ".kot[0:3]"  1 18 18 1;
-	setAttr -s 4 ".kix[0:3]"  0.26383562645687919 1 1 0.26151888382672267;
-	setAttr -s 4 ".kiy[0:3]"  0.96456765559089019 0 0 0.96519835961424283;
-	setAttr -s 4 ".kox[0:3]"  0.2638355311090898 1 1 0.26464982655723551;
-	setAttr -s 4 ".koy[0:3]"  0.96456768167111251 0 0 0.96434458016998537;
+	setAttr -s 6 ".ktv[0:5]"  0 87.627593994150104 3 68.913467001513695
+		 7 72.717193197805045 13 69.358092856008156 18 78.070580071104416 22 87.627593994150104;
+	setAttr -s 6 ".kit[0:5]"  1 18 18 18 18 1;
+	setAttr -s 6 ".kot[0:5]"  1 18 18 18 18 1;
+	setAttr -s 6 ".kix[0:5]"  0.26383562645687919 1 1 1 0.016418596187239391 
+		0.26383562645687919;
+	setAttr -s 6 ".kiy[0:5]"  0.96456765559089019 0 0 0 0.99986520576487725 
+		0.96456765559089019;
+	setAttr -s 6 ".kox[0:5]"  0.2638355311090898 1 1 1 0.016418596187239391 
+		0.2638355311090898;
+	setAttr -s 6 ".koy[0:5]"  0.96456768167111251 0 0 0 0.99986520576487736 
+		0.96456768167111251;
 	setAttr ".pre" 3;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_Hips_translateZ_Merged_Layer_inputB";
 	rename -uid "0971AA9E-4825-DFDA-89F8-E8B9A13EE7BB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -2.3336640879279003e-05 25 -2.261838727385486e-05
-		 60 -2.3906930571776569e-05 80 -2.3336640879279003e-05;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  2.8388043027405274e-09;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 6 ".ktv[0:5]"  0 -2.387023878379271e-05 3 1.5234351103500654
+		 7 1.5234270634376199 13 1.5234266456922452 18 -2.0362758146107987 22 -2.387023878379271e-05;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_HipsEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "9D966DE5-4456-DA54-D922-2F856BB8090C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 0 25 0 60 0 80 0;
-	setAttr -s 4 ".kit[3]"  2;
-	setAttr -s 4 ".kot[3]"  2;
+	setAttr -s 6 ".ktv[0:5]"  0 0 3 -5.9179094349749703e-06 7 -5.9179097396318353e-06
+		 13 -5.9179097396318353e-06 18 -3.2317409123996404e-06 22 0;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_HipsEffector_rotate_Merged_Layer_inputBY";
 	rename -uid "A1924DC7-41F6-60A3-006C-57867A10936D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 0 25 0 60 0 80 0;
-	setAttr -s 4 ".kit[3]"  2;
-	setAttr -s 4 ".kot[3]"  2;
+	setAttr -s 6 ".ktv[0:5]"  0 0 3 4.2565491393107781e-13 7 1.3496871452664811e-14
+		 13 0 18 0 22 0;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_HipsEffector_rotate_Merged_Layer_inputBZ";
 	rename -uid "57C94E14-419F-5C21-EDD5-0AB5A9CABDEC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 0 25 0 60 0 80 0;
-	setAttr -s 4 ".kit[3]"  2;
-	setAttr -s 4 ".kot[3]"  2;
+	setAttr -s 6 ".ktv[0:5]"  0 0 3 22.29928419602912 7 22.299287355723983
+		 13 22.299287355723983 18 -24.333378630597856 22 0;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_HipsEffector_translateX_Merged_Layer_inputB";
 	rename -uid "6AD5B240-4FFE-C30B-7374-B2A25489DA5A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 2.384185791015625e-06 25 2.384185791015625e-06
-		 60 2.384185791015625e-06 80 2.384185791015625e-06;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  0;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 6 ".ktv[0:5]"  0 2.384185791015625e-06 3 2.384185791015625e-06
+		 7 2.384185791015625e-06 13 2.384185791015625e-06 18 7.152557373046875e-06 22 2.384185791015625e-06;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_HipsEffector_translateY_Merged_Layer_inputB";
 	rename -uid "A768806C-4E95-E5BD-258D-C7B5C3A4927F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 83.155792236328125 25 87.85641534005525
-		 60 80.626252111847975 80 83.155792236328125;
-	setAttr -s 4 ".kit[0:3]"  1 18 18 1;
-	setAttr -s 4 ".kot[0:3]"  1 18 18 1;
-	setAttr -s 4 ".kix[0:3]"  0.011111111380159855 1 1 0.2222222238779068;
-	setAttr -s 4 ".kiy[0:3]"  0 0 0 1.968100905418396;
-	setAttr -s 4 ".kox[0:3]"  0.26666668057441711 1 1 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  2.1540768146514893 0 0 0;
+	setAttr -s 6 ".ktv[0:5]"  0 83.15579278146167 3 65.552780701897134
+		 7 69.356506898188911 13 65.997406556392036 18 73.152618956485796 22 83.15579278146167;
+	setAttr -s 6 ".kit[0:5]"  1 18 18 18 18 1;
+	setAttr -s 6 ".kot[0:5]"  1 18 18 18 18 1;
+	setAttr -s 6 ".kix[0:5]"  0.011111111380159855 1 1 1 0.017481489936706049 
+		0.011111111380159855;
+	setAttr -s 6 ".kiy[0:5]"  0 0 0 0 0.99984718707890197 0;
+	setAttr -s 6 ".kox[0:5]"  0.26666668057441711 1 1 1 0.017481489936706052 
+		0.26666668057441711;
+	setAttr -s 6 ".koy[0:5]"  2.1540768146514893 0 0 0 0.99984718707890197 
+		2.1540768146514893;
 	setAttr ".pre" 3;
 	setAttr ".pst" 3;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_HipsEffector_translateZ_Merged_Layer_inputB";
 	rename -uid "1D5F6193-4F69-9E1E-4BF8-2791CAA50D9D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -2.0469303131103516 25 -2.0469293268781708
-		 60 -2.0469306154214686 80 -2.0469303131103516;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  1.5049295143398922e-09;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 6 ".ktv[0:5]"  0 -2.0469305787296808 3 -2.067196077547417
+		 7 -2.0672057933899159 13 -2.0672062111352907 18 -2.0587566584922379 22 -2.0469305787296808;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftAnkleEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "B3102A14-4B24-7D9E-C6E6-DBAD1A60CA0B";
 	setAttr ".tan" 18;
@@ -5067,47 +5090,110 @@ createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftArm_rotate_Merged_Layer_in
 	rename -uid "47BDAEDE-49E6-A9D1-B87C-C394C06E02A4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -11.8184753747777;
+	setAttr -s 5 ".ktv[0:4]"  0 -11.863325928803198 3 -29.708759191298075
+		 12 -29.708644823315289 16 -32.491208157463355 22 -11.85285255974312;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftArm_rotate_Merged_Layer_inputBY";
 	rename -uid "00BDC396-4A5B-222F-0FF4-12B1B03EDE16";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 21.276948532103777;
+	setAttr -s 5 ".ktv[0:4]"  0 21.269747551908615 3 36.330203236633615
+		 12 36.330376107701667 16 22.670006660001889 22 21.271441994480821;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftArm_rotate_Merged_Layer_inputBZ";
 	rename -uid "8B72CF7F-487E-9278-E184-029F79DDF26F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -39.723810136582088;
+	setAttr -s 5 ".ktv[0:4]"  0 -39.847447155187233 3 -96.567708057425151
+		 12 -96.567454210391446 16 -99.778195764888451 22 -39.818557337296141;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftElbowEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "06AC0DA2-47FF-C2A3-299A-7BBBB33881E5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -37.360672605955671;
+	setAttr -s 5 ".ktv[0:4]"  0 -37.360695055709478 3 -89.574357857406838
+		 12 -88.633270850996226 16 -69.950104779960228 22 -37.360670269722853;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftElbowEffector_rotate_Merged_Layer_inputBY";
 	rename -uid "08845299-48D6-EF37-8226-1E9AE672F178";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -24.127904989122158;
+	setAttr -s 5 ".ktv[0:4]"  0 -24.127884353093123 3 -22.543346084073381
+		 12 -22.844911452916033 16 -17.084300863427988 22 -24.127890122040597;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftElbowEffector_rotate_Merged_Layer_inputBZ";
 	rename -uid "29D7CF7F-4AA4-D50A-1365-3D83977C5599";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 169.82093137205857;
+	setAttr -s 5 ".ktv[0:4]"  0 169.8209607895102 3 195.30513507059729
+		 12 194.94224845034736 16 187.93773174692672 22 169.82093606859186;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftElbowEffector_translateX_Merged_Layer_inputB";
 	rename -uid "B1B2E628-4C30-AA82-785D-2D81D6416720";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 9.2268171310424805;
+	setAttr -s 5 ".ktv[0:4]"  0 9.1636848449707031 3 -4.6771240234375
+		 12 -4.6770315170288086 16 -13.140953063964844 22 9.1798210144042969;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftElbowEffector_translateY_Merged_Layer_inputB";
 	rename -uid "58963E0B-4230-2C98-B416-90AD60E04AAE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 113.80204203168272;
+	setAttr -s 5 ".ktv[0:4]"  0 113.77612498179226 3 71.055561847181067
+		 12 72.079472336892906 16 94.345113157029274 22 113.782732036605;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftElbowEffector_translateZ_Merged_Layer_inputB";
 	rename -uid "6C1CD215-4BDE-7C9B-FD1D-B1B8553622A8";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 50.042815951850059;
+	setAttr -s 5 ".ktv[0:4]"  0 50.030303737916682 3 40.037334291894517
+		 12 40.160305145633068 16 38.05248484242167 22 50.033500455984843;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftFoot_rotate_Merged_Layer_inputBX";
 	rename -uid "731F8379-4D8E-EC66-2845-0C8252B327DB";
 	setAttr ".tan" 18;
@@ -5127,287 +5213,686 @@ createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftForeArm_rotate_Merged_Laye
 	rename -uid "390DF0EF-41FA-5122-DB2D-18A85F80D2E9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0.0096475375622456696;
+	setAttr -s 5 ".ktv[0:4]"  0 0.028014843207470001 3 0.047748718317262157
+		 12 0.047753286492948334 16 0.035804395805741712 22 0.023729431503160821;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftForeArm_rotate_Merged_Layer_inputBY";
 	rename -uid "0D2E1097-4358-3942-664C-6DA2FAB14F1C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0.51039202149945539;
+	setAttr -s 5 ".ktv[0:4]"  0 0.50442465588154795 3 -0.21266977467934089
+		 12 -0.21282755351508806 16 -0.13266511831015573 22 0.50581419237249303;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftForeArm_rotate_Merged_Layer_inputBZ";
 	rename -uid "A2A8160E-41EB-B954-727C-85920754A871";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 72.346098760218226;
+	setAttr -s 5 ".ktv[0:4]"  0 72.232487281674068 3 36.526814697821877
+		 12 36.526990498824389 16 34.954205824337095 22 72.259031331417546;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHand_rotate_Merged_Layer_inputBX";
 	rename -uid "2D337CE9-4E8A-FF1B-A623-66B9669C8091";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -33.126797993578954;
+	setAttr -s 5 ".ktv[0:4]"  0 -33.126845023546686 3 -8.5791537005678133
+		 12 -14.626661518364815 16 -45.486621338572284 22 -33.126836285565204;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHand_rotate_Merged_Layer_inputBY";
 	rename -uid "A1BB772A-4137-D44B-5013-20B2A8E529B4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 24.183411676139478;
+	setAttr -s 5 ".ktv[0:4]"  0 24.18342189662064 3 6.523890076458704
+		 12 -17.498926454301749 16 59.961829328484242 22 24.18340582088803;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHand_rotate_Merged_Layer_inputBZ";
 	rename -uid "2BA922AB-4533-00F9-FA9F-8A9BE753F86B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -42.817183770658716;
+	setAttr -s 5 ".ktv[0:4]"  0 -42.817206871559904 3 -5.7338079273578613
+		 12 0.51623176440196017 16 -57.557158508586589 22 -42.817196917465829;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndex1_rotate_Merged_Layer_inputBX";
 	rename -uid "EDF30C6D-464C-CFF8-3E48-3CBB37CD8BB9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -5.9076900778764303;
+	setAttr -s 4 ".ktv[0:3]"  0 -5.9076751095903433 3 -5.9076758494685304
+		 13 -5.9076594426963371 19 -5.907677933222466;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndex1_rotate_Merged_Layer_inputBY";
 	rename -uid "27B375B1-4078-1422-9654-3F992D9FC139";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 7.1823795938232609;
+	setAttr -s 4 ".ktv[0:3]"  0 7.1823726028511556 3 7.1823709271378373
+		 13 7.1823731175789494 19 7.1823755514211891;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndex1_rotate_Merged_Layer_inputBZ";
 	rename -uid "E8C9C1B9-4299-43CA-D980-FAB2069BD953";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 9.0633014237803771;
+	setAttr -s 4 ".ktv[0:3]"  0 9.0633001265140098 3 9.0632929053042623
+		 13 9.0632934298981365 19 9.063295555533017;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndex2_rotate_Merged_Layer_inputBX";
 	rename -uid "F21388F3-434B-59C4-9813-F4AE81D6B3C8";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 9.0936733351312698e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 0.00010072161288552852 3 9.7228937854509763e-05
+		 13 0.00011078632647528373 19 9.7391172707257095e-05;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndex2_rotate_Merged_Layer_inputBY";
 	rename -uid "03F0925F-4B79-79FB-9D84-D7838AFF94C0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0.00010488193107618234;
+	setAttr -s 4 ".ktv[0:3]"  0 0.00013842288653070231 3 0.00012455158281608541
+		 13 0.00014627617668973178 19 0.00012670074271695442;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndex2_rotate_Merged_Layer_inputBZ";
 	rename -uid "35100610-48C1-1A21-042E-BA809E737FE4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 47.97179724777812;
+	setAttr -s 4 ".ktv[0:3]"  0 47.97180123208274 3 47.971801989504613
+		 13 47.971789287435044 19 47.97180766660783;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndex3_rotate_Merged_Layer_inputBX";
 	rename -uid "A9F01371-4498-F5DF-6BB5-CF9A63CAC122";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -2.3814125577762053;
+	setAttr -s 4 ".ktv[0:3]"  0 -2.3813900351047281 3 -2.381397835749119
+		 13 -2.3813853124486442 19 -2.3813955824494308;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndex3_rotate_Merged_Layer_inputBY";
 	rename -uid "276DAC0D-4A3F-BDF1-2DDC-9C8736FA7F4B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -2.9889388001999984;
+	setAttr -s 4 ".ktv[0:3]"  0 -2.9889545276480529 3 -2.9889479275867061
+		 13 -2.9889480369035746 19 -2.9889486289845912;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndex3_rotate_Merged_Layer_inputBZ";
 	rename -uid "65351F26-4641-C802-EF6C-C0B80124DD38";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 77.093437714267765;
+	setAttr -s 4 ".ktv[0:3]"  0 77.093465378833912 3 77.093443867058582
+		 13 77.093460360246652 19 77.093459492269716;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndex4_rotate_Merged_Layer_inputBX";
 	rename -uid "091F62D5-499C-7A4F-D41D-29B70F2FF28F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 4.2765484079503609e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 5.6521154792266403e-05 3 5.1188279649450039e-05
+		 13 5.0126951578844124e-05 19 5.7695410136484388e-05;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndex4_rotate_Merged_Layer_inputBY";
 	rename -uid "4465F53D-4A23-E7AC-BA14-DB848B8599DA";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 5.0754400470806862e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 6.0772404265620878e-05 3 5.7408935176341832e-05
+		 13 5.5471216778230049e-05 19 5.0848728164844426e-05;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndex4_rotate_Merged_Layer_inputBZ";
 	rename -uid "DBA27A90-4704-12EF-5676-3D9EB6D1AAD6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 2.7358304629287491e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 2.8748634491636236e-05 3 4.3462590347891365e-05
+		 13 4.3854995123826987e-05 19 3.1815266640630595e-05;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndexEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "630DD589-4E53-CEE8-F58C-1DA9527F9380";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 162.29844618882936;
+	setAttr -s 4 ".ktv[0:3]"  0 162.85275826862278 3 86.152097706601381
+		 13 87.059971955845256 19 162.8528071810903;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndexEffector_rotate_Merged_Layer_inputBY";
 	rename -uid "D74C67BA-4CC5-8EFC-2892-8A92B57C28B2";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 71.353498218121274;
+	setAttr -s 4 ".ktv[0:3]"  0 71.266424419612079 3 19.769983946557392
+		 13 20.108070130747723 19 71.266429205246155;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandIndexEffector_rotate_Merged_Layer_inputBZ";
 	rename -uid "41DDB1EA-4999-AD6B-7ACB-2AB10A8126A0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 7.4930121702841435;
+	setAttr -s 4 ".ktv[0:3]"  0 8.0080261034932558 3 -40.109914521346312
+		 13 -39.847305331817978 19 8.008047760708223;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftHandIndexEffector_translateX_Merged_Layer_inputB";
 	rename -uid "0E9D49CC-448F-E5A4-7D7D-3BB0ACC8700C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -26.23228645324707;
+	setAttr -s 4 ".ktv[0:3]"  0 -26.279960632324219 3 -39.603431701660156
+		 13 -39.603462219238281 19 -26.263824462890625;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftHandIndexEffector_translateY_Merged_Layer_inputB";
 	rename -uid "97E9ABE2-4783-9C8F-F0C8-64A1D800B862";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 96.338538611295874;
+	setAttr -s 4 ".ktv[0:3]"  0 96.813910927176352 3 57.734193107392329
+		 13 71.218445946882341 19 96.820517981986029;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftHandIndexEffector_translateZ_Merged_Layer_inputB";
 	rename -uid "25D2580D-4D7E-A179-A827-EA895563D455";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 59.219218161389662;
+	setAttr -s 4 ".ktv[0:3]"  0 59.21385863833077 3 24.093681452206678
+		 13 24.432369125311691 19 59.21706680049072;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddle1_rotate_Merged_Layer_inputBX";
 	rename -uid "886E84E0-4D88-8FD9-D61B-E483F342AEB7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -7.8812518110700323;
+	setAttr -s 4 ".ktv[0:3]"  0 -7.8812555932824555 3 -7.881247903888486
+		 13 -7.8812240859883502 19 -7.8812477614930936;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddle1_rotate_Merged_Layer_inputBY";
 	rename -uid "46DE9B5A-42CC-D5F7-A65B-B08B6990A49F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 12.001488135863216;
+	setAttr -s 4 ".ktv[0:3]"  0 12.001496419035824 3 12.001486964945093
+		 13 12.00148293716274 19 12.001497442496841;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddle1_rotate_Merged_Layer_inputBZ";
 	rename -uid "7289044A-437F-B8AE-6622-0FB31F14C974";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 29.271885365285659;
+	setAttr -s 4 ".ktv[0:3]"  0 29.271893180686138 3 29.271886729424434
+		 13 29.271893393992549 19 29.271890615808729;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddle2_rotate_Merged_Layer_inputBX";
 	rename -uid "1CD17CF3-4ACE-4895-6184-11BA5E2A5593";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0.00010610735753854767;
+	setAttr -s 4 ".ktv[0:3]"  0 0.00013047598942592085 3 0.00011235668837127446
+		 13 0.00013007451593664461 19 0.00011879238611048265;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddle2_rotate_Merged_Layer_inputBY";
 	rename -uid "2B2ED6CD-4402-2304-0BF1-2B8DA22EE33A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -2.7094077709317813e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 -4.3891008499731684e-05 3 -4.4337460487151061e-05
+		 13 -4.3429869834628398e-05 19 -4.2126037926498404e-05;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddle2_rotate_Merged_Layer_inputBZ";
 	rename -uid "30B7AA69-414E-BC1D-5D7B-4395DA08EC5C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 72.236656325796105;
+	setAttr -s 4 ".ktv[0:3]"  0 72.236687501274787 3 72.236665731185624
+		 13 72.236673280821691 19 72.236683943645204;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddle3_rotate_Merged_Layer_inputBX";
 	rename -uid "0562288B-4193-E0AF-B26C-68A77945B5F6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1.3781931338729261;
+	setAttr -s 4 ".ktv[0:3]"  0 1.3782141236186718 3 1.3782136951387725
+		 13 1.3782127464947269 19 1.3782115597840772;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddle3_rotate_Merged_Layer_inputBY";
 	rename -uid "642A6080-40FA-D1E8-0FF5-AFA0451E6AAD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 2.142921585848538;
+	setAttr -s 4 ".ktv[0:3]"  0 2.1429238020278434 3 2.1429131286780767
+		 13 2.1429273325976683 19 2.1429218787037101;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddle3_rotate_Merged_Layer_inputBZ";
 	rename -uid "CE00CFF9-45D0-05F1-7795-05A52B7796B0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 64.654348191611234;
+	setAttr -s 4 ".ktv[0:3]"  0 64.654370503375731 3 64.654363237929701
+		 13 64.654367876127424 19 64.654369187102404;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddle4_rotate_Merged_Layer_inputBX";
 	rename -uid "7BE41C11-4765-4B47-3A3C-E890486D7A6C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -1.2365528697365333e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 -8.0238986325261435e-06 3 -1.763445908665084e-05
+		 13 -2.3866831902014725e-05 19 -5.2400077633624379e-06;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddle4_rotate_Merged_Layer_inputBY";
 	rename -uid "1903FD86-443C-A2D3-687B-CFBA9E2F606F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 2.1185725861241054e-06;
+	setAttr -s 4 ".ktv[0:3]"  0 2.4957735945184929e-07 3 -1.1000961843964161e-05
+		 13 -4.688257408523663e-06 19 -6.1898067710662148e-06;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddle4_rotate_Merged_Layer_inputBZ";
 	rename -uid "B133A2C9-4702-B524-6074-30ABF46913E4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1.4001187445474168e-06;
+	setAttr -s 4 ".ktv[0:3]"  0 -1.4994818681289572e-06 3 -8.0048081651995261e-06
+		 13 -4.4601621073525308e-06 19 -9.3804659506916182e-06;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddleEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "BC58AB38-4457-B764-E478-B8BB854B5951";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 116.96120308734062;
+	setAttr -s 4 ".ktv[0:3]"  0 117.20298483764638 3 90.918529467354006
+		 13 91.764933566187295 19 117.20301098370579;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddleEffector_rotate_Merged_Layer_inputBY";
 	rename -uid "B83AE668-4144-B3D8-38D3-AE8399A32CE9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 42.062457100777912;
+	setAttr -s 4 ".ktv[0:3]"  0 42.13908575053545 3 -22.139254025301394
+		 13 -21.688568876575935 19 42.139112362371783;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandMiddleEffector_rotate_Merged_Layer_inputBZ";
 	rename -uid "4371A495-444A-72A2-6737-C99425C26A27";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -43.468878471818833;
+	setAttr -s 4 ".ktv[0:3]"  0 -43.272513580630807 3 -50.017682589120085
+		 13 -50.174813566797496 19 -43.272513501577436;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftHandMiddleEffector_translateX_Merged_Layer_inputB";
 	rename -uid "7505B06E-43F3-F1C1-CF4B-39AEF401E4A5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -20.070659637451172;
+	setAttr -s 4 ".ktv[0:3]"  0 -20.118331909179688 3 -33.862457275390625
+		 13 -33.86248779296875 19 -20.102195739746094;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftHandMiddleEffector_translateY_Merged_Layer_inputB";
 	rename -uid "FA4D549F-4D33-F76A-3E7F-A5A1936B79D4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 93.84007246730495;
+	setAttr -s 4 ".ktv[0:3]"  0 94.310943438107884 3 54.221036008262708
+		 13 67.718277876958922 19 94.317550492917562;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftHandMiddleEffector_translateZ_Merged_Layer_inputB";
 	rename -uid "379BB2F1-4971-A5B9-1ECD-E5802A5BD791";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 57.913595395177751;
+	setAttr -s 4 ".ktv[0:3]"  0 57.916887604318511 3 24.875685826654969
+		 13 25.270634565841238 19 57.920095766478468;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandThumb1_rotate_Merged_Layer_inputBX";
 	rename -uid "3390CEF7-4D29-1FDB-613F-E8A9959F037B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 64.946277691049815;
+	setAttr -s 4 ".ktv[0:3]"  0 64.946259391312481 3 64.946273587837425
+		 13 64.946301750160416 19 64.946265570636882;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandThumb1_rotate_Merged_Layer_inputBY";
 	rename -uid "CF89A852-471E-294A-211F-779A60811E26";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 37.42108099543622;
+	setAttr -s 4 ".ktv[0:3]"  0 37.421074532530177 3 37.421077422191878
+		 13 37.421082808737808 19 37.421075591795805;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandThumb1_rotate_Merged_Layer_inputBZ";
 	rename -uid "B629BD7A-4F4F-EB23-A0BA-7DB7F1EBB050";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 3.8130333855994381;
+	setAttr -s 4 ".ktv[0:3]"  0 3.8130246509426535 3 3.8130289677592248
+		 13 3.813039059811119 19 3.8130264946916763;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandThumb2_rotate_Merged_Layer_inputBX";
 	rename -uid "C8645840-44A9-8591-201C-D299949FF282";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -2.3484184357400894e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 -1.7272456173447703e-05 3 -3.3220372756784095e-05
+		 13 -2.8416875242259206e-05 19 -3.0254759499863749e-05;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandThumb2_rotate_Merged_Layer_inputBY";
 	rename -uid "9DA1B333-4424-70CF-073F-8F94A3FA1AAF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1.2404191599355932e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 2.2575788027504873e-05 3 7.0074899101377702e-06
+		 13 7.2723221836975574e-06 19 1.81959647231632e-05;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandThumb2_rotate_Merged_Layer_inputBZ";
 	rename -uid "ED7B016F-4E1B-A9D9-2C3E-C9B7CF67B2C5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 34.346559040033583;
+	setAttr -s 4 ".ktv[0:3]"  0 34.346585103589092 3 34.346562897404283
+		 13 34.346571768961404 19 34.34657589201894;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandThumb3_rotate_Merged_Layer_inputBX";
 	rename -uid "FC18EE0E-4EFC-0DBF-F7E6-EABCF7DD43DC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 3.9232807181158535;
+	setAttr -s 4 ".ktv[0:3]"  0 3.9232587992580821 3 3.9232697215390115
+		 13 3.9232740172314946 19 3.9232577739650965;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandThumb3_rotate_Merged_Layer_inputBY";
 	rename -uid "44BE702E-422D-339B-4A35-F788E831D174";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0.88958130605326424;
+	setAttr -s 4 ".ktv[0:3]"  0 0.88958893097075731 3 0.88957402722933865
+		 13 0.88957309781788485 19 0.88958563033077354;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandThumb3_rotate_Merged_Layer_inputBZ";
 	rename -uid "1699DBE3-4AAD-887A-F9BB-A09D3E0E0714";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -27.420529500630757;
+	setAttr -s 4 ".ktv[0:3]"  0 -27.420535997398886 3 -27.420530560368412
+		 13 -27.420538588687666 19 -27.420534839219172;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandThumbEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "AD655DC8-4FA6-3C74-733A-BC8526A93569";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -61.571762805104015;
+	setAttr -s 4 ".ktv[0:3]"  0 -61.718540004338642 3 -126.28645277557011
+		 13 -126.87926914288342 19 -61.718558187979305;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandThumbEffector_rotate_Merged_Layer_inputBY";
 	rename -uid "56E5E7CB-431B-C2BB-E8FC-F5AF5D726B6C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -53.582957484522737;
+	setAttr -s 4 ".ktv[0:3]"  0 -53.426906997063043 3 -133.41933378677888
+		 13 -132.69523348272588 19 -53.426904612773306;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHandThumbEffector_rotate_Merged_Layer_inputBZ";
 	rename -uid "9762AB81-4019-2FC1-5E0C-8AA1D9277635";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -99.2460289668266;
+	setAttr -s 4 ".ktv[0:3]"  0 -99.213327740358821 3 -40.804962824078189
+		 13 -40.767830090386049 19 -99.213323497777495;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftHandThumbEffector_translateX_Merged_Layer_inputB";
 	rename -uid "BDFEFC78-479F-7EA5-1939-5BB7EDB0A7C3";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -28.653156280517578;
+	setAttr -s 4 ".ktv[0:3]"  0 -28.700822830200195 3 -41.185173034667969
+		 13 -41.185199737548828 19 -28.6846923828125;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftHandThumbEffector_translateY_Merged_Layer_inputB";
 	rename -uid "4A3A03D0-4A59-D3D6-63E0-2F9918941B67";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 96.712821541492289;
+	setAttr -s 4 ".ktv[0:3]"  0 97.186980783986684 3 59.28618390971414
+		 13 72.752564899108492 19 97.193595468189883;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftHandThumbEffector_translateZ_Merged_Layer_inputB";
 	rename -uid "E2CE6876-4411-5D83-88BC-408328CC210D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 58.868948943440273;
+	setAttr -s 4 ".ktv[0:3]"  0 58.862296237685271 3 22.992401653124446
+		 13 23.306330028867357 19 58.865508214544519;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftHipEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "C06C70E9-4830-35C8-9AB4-0A8410C44726";
 	setAttr ".tan" 18;
@@ -5487,47 +5972,110 @@ createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftShoulder_rotate_Merged_Lay
 	rename -uid "70A54D56-48B7-31C8-03E8-BB8BAECC2B0A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 5.6034165458733655e-05;
+	setAttr -s 5 ".ktv[0:4]"  0 4.9263626934074261e-05 3 7.3782483925147668e-05
+		 12 9.9748525186987345e-05 16 -1.2878281229399322e-05 22 5.5952742590713437e-05;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftShoulder_rotate_Merged_Layer_inputBY";
 	rename -uid "2A0CFF44-4B0D-C889-346E-B69C473D6768";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -0.00012842646535351441;
+	setAttr -s 5 ".ktv[0:4]"  0 -0.00012817091791239915 3 -0.00013260204504553238
+		 12 -0.00013561128037800895 16 -0.00019910312394524822 22 -0.00012513056491541004;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftShoulder_rotate_Merged_Layer_inputBZ";
 	rename -uid "CC2F7F09-4EB8-D141-9ACC-CD9C54F4B1C0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0.00016450514694405237;
+	setAttr -s 5 ".ktv[0:4]"  0 0.00017286820446147847 3 0.00018542509928647872
+		 12 0.00018641892918915776 16 0.00024891925966817011 22 0.00017623006904497868;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftShoulderEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "C27AE425-4F0E-EE18-0F39-7BB6C04124FF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 29.666774124285649;
+	setAttr -s 5 ".ktv[0:4]"  0 29.582612774204581 3 74.248889188149391
+		 12 76.253185333024348 16 117.35014245368751 22 29.602303330962638;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftShoulderEffector_rotate_Merged_Layer_inputBY";
 	rename -uid "C74467CB-4425-3207-8414-70A56030E25E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 42.695663038353018;
+	setAttr -s 5 ".ktv[0:4]"  0 42.76655430648195 3 112.29233729130337
+		 12 111.76940246632731 16 119.3970092090527 22 42.749995285012766;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftShoulderEffector_rotate_Merged_Layer_inputBZ";
 	rename -uid "E56AF1C7-4953-D481-E71B-AEAFA288FA20";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -74.614979513770933;
+	setAttr -s 5 ".ktv[0:4]"  0 -74.739007718399634 3 -36.50799414355393
+		 12 -34.72980076667973 16 1.6233470879135123 22 -74.709989397718729;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftShoulderEffector_translateX_Merged_Layer_inputB";
 	rename -uid "E1B1554C-4A7A-D75C-AE30-16AA8D408BD6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 4.273707389831543;
+	setAttr -s 5 ".ktv[0:4]"  0 4.2737331390380859 3 8.4667110443115234
+		 12 8.4666891098022461 16 6.0105347633361816 22 4.2737255096435547;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftShoulderEffector_translateY_Merged_Layer_inputB";
 	rename -uid "E3EE6C69-491F-D1E9-29CB-10B241FC7D49";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 137.30345985914573;
+	setAttr -s 5 ".ktv[0:4]"  0 137.30349037672588 3 101.44993851833202
+		 12 102.5899227465455 16 122.36538465626212 22 137.30349037672588;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftShoulderEffector_translateZ_Merged_Layer_inputB";
 	rename -uid "27E6046C-4EE3-4DDE-5865-91B64C1DA266";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 26.050749151573328;
+	setAttr -s 5 ".ktv[0:4]"  0 26.050741522186925 3 47.513260202569022
+		 12 47.147701881897596 16 37.309148951399834 22 26.050741522186925;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftUpLeg_rotate_Merged_Layer_inputBX";
 	rename -uid "637791C7-43DE-D161-26CC-DEABE4A93B0C";
 	setAttr ".tan" 18;
@@ -5547,75 +6095,113 @@ createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftWristEffector_rotate_Merge
 	rename -uid "D22E3992-497C-5D54-5497-E2AB2A67568E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -38.019088856587324;
+	setAttr -s 5 ".ktv[0:4]"  0 -38.019149239655299 3 -94.010815655957487
+		 12 -111.78573811251047 16 -55.3784420535058 22 -38.019131829711071;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftWristEffector_rotate_Merged_Layer_inputBY";
 	rename -uid "48393148-4D18-B228-2DFB-30917EA52DB1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -19.053084640628665;
+	setAttr -s 5 ".ktv[0:4]"  0 -19.053079980355012 3 -32.016078878188047
+		 12 -25.4662583643156 16 -10.463927260306306 22 -19.053076836613801;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_LeftWristEffector_rotate_Merged_Layer_inputBZ";
 	rename -uid "3281C398-472F-5572-F51B-F58E57FB8CBB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 118.50209878577263;
+	setAttr -s 5 ".ktv[0:4]"  0 118.50210527256866 3 191.54547685824517
+		 12 218.32280568181213 16 113.30584237315003 22 118.50209719820741;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftWristEffector_translateX_Merged_Layer_inputB";
 	rename -uid "92C0917C-4D79-F575-BD9E-C8A8783CD692";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -15.376347541809082;
+	setAttr -s 5 ".ktv[0:4]"  0 -15.439468383789063 3 -28.307950973510742
+		 12 -28.307823181152344 16 -38.496059417724609 22 -15.423334121704102;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftWristEffector_translateY_Merged_Layer_inputB";
 	rename -uid "C72CF9B5-4076-50B2-6327-BFB80C7C4F3E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 102.71830872035704;
+	setAttr -s 5 ".ktv[0:4]"  0 102.69236878228401 3 60.66033471531518
+		 12 61.55257706953693 16 86.379439233860111 22 102.69898346648822;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_LeftWristEffector_translateZ_Merged_Layer_inputB";
 	rename -uid "0E1BFED6-411B-EC9B-DDC9-9D9AE3E95B72";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 52.695095714917173;
+	setAttr -s 5 ".ktv[0:4]"  0 52.682579686280434 3 31.747433604776614
+		 12 32.038136662219351 16 32.679790612879899 22 52.685787848442423;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Neck_rotate_Merged_Layer_inputBX";
 	rename -uid "8C151CF4-4A3A-CF00-D08A-A5A79629E524";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 50.04388278374001 21 49.736236591455075
-		 54 49.235131567865288 80 50.04388278374001;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kix[1:3]"  0.2222222238779068 0.36666667461395264 
-		0.28888890147209167;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.2222222238779068 0.36666667461395264 
-		0.28888890147209167 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 50.043847424708396 3 48.864590107240929
+		 13 48.864579259559427 16 50.206412730765138 22 50.043860972704273;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[0:4]"  1 18 18 18 1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[0:4]"  0.2222222238779068 0.99999999999854838 
+		1 1 0.2222222238779068;
+	setAttr -s 5 ".koy[0:4]"  0 -1.7039498252355532e-06 0 0 0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Neck_rotate_Merged_Layer_inputBY";
 	rename -uid "1AD172F1-411B-8C15-3731-AD9BEC91CA11";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 1.1888404312864038 21 -1.4307079147197188
-		 54 -10.481189318718501 80 1.1888404312864038;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kix[1:3]"  0.2222222238779068 0.36666667461395264 
-		0.28888890147209167;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.2222222238779068 0.36666667461395264 
-		0.28888890147209167 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 1.1885855448649123 3 -5.0180561859152348
+		 13 -0.42057028222710457 16 -7.3816155348184722 22 1.188542428457718;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[0:4]"  1 18 18 18 1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[0:4]"  0.2222222238779068 1 1 1 0.2222222238779068;
+	setAttr -s 5 ".koy[0:4]"  0 0 0 0 0;
 	setAttr ".pre" 3;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Neck_rotate_Merged_Layer_inputBZ";
 	rename -uid "402EA357-4E46-51E8-1244-4D9E9FF5CEED";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -36.284262828744644 21 -35.946008256803601
-		 54 -28.206645774879316 80 -36.284262828744644;
-	setAttr -s 4 ".kit[0:3]"  1 18 18 1;
-	setAttr -s 4 ".kot[0:3]"  1 18 18 1;
-	setAttr -s 4 ".kix[0:3]"  0.011111111380159855 0.99968007360867128 
-		1 0.28888890147209167;
-	setAttr -s 4 ".kiy[0:3]"  0 0.025293288235450996 0 0.028108064085245132;
-	setAttr -s 4 ".kox[0:3]"  0.2222222238779068 0.99968007360867128 
-		1 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  0.021826019510626793 0.025293288235450996 
-		0 0;
+	setAttr -s 5 ".ktv[0:4]"  0 -36.285006428754933 3 -32.667902520494302
+		 13 -35.263985144919403 16 -29.783172653801177 22 -36.284967123428181;
+	setAttr -s 5 ".kit[0:4]"  1 18 18 18 1;
+	setAttr -s 5 ".kot[0:4]"  1 18 18 18 1;
+	setAttr -s 5 ".kix[0:4]"  0.011111111380159855 1 1 1 0.011111111380159855;
+	setAttr -s 5 ".kiy[0:4]"  0 0 0 0 0;
+	setAttr -s 5 ".kox[0:4]"  0.2222222238779068 1 1 1 0.2222222238779068;
+	setAttr -s 5 ".koy[0:4]"  0.021826019510626793 0 0 0 0.021826019510626793;
 	setAttr ".pre" 3;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightAnkleEffector_rotate_Merged_Layer_inputBX";
@@ -5697,257 +6283,614 @@ createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndex1_rotate_Merged_
 	rename -uid "396FB4AA-47AE-0430-93D5-ADB556455230";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -5.2858300013352224;
+	setAttr -s 4 ".ktv[0:3]"  0 -5.2858130223921007 3 -5.2858341033013012
+		 13 -5.2858305088744881 19 -5.2858147380259632;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndex1_rotate_Merged_Layer_inputBY";
 	rename -uid "DF1750BC-4D9A-AC8A-5FAA-5A98D31365C4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -11.629269026807549;
+	setAttr -s 4 ".ktv[0:3]"  0 -11.629282412262492 3 -11.629301321549494
+		 13 -11.629309374148947 19 -11.62928449798699;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndex1_rotate_Merged_Layer_inputBZ";
 	rename -uid "B405CB11-4E91-1D9D-9278-22A7149F76F2";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 30.283155658806667;
+	setAttr -s 4 ".ktv[0:3]"  0 30.283172711767794 3 30.283160868468389
+		 13 30.283170758129081 19 30.283166435067653;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndex2_rotate_Merged_Layer_inputBX";
 	rename -uid "1EE89ADA-4AC1-BF4F-8F79-A6891341E571";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 3.9940324938374087e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 4.8414220802298436e-05 3 6.2868703916274426e-05
+		 13 6.9593589655802697e-05 19 5.1565085267341119e-05;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndex2_rotate_Merged_Layer_inputBY";
 	rename -uid "E79F1574-4E57-6B3C-B9A1-909FB9122DB4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -4.9933846089694764e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 -5.5245278811518832e-05 3 -6.3185051996213947e-05
+		 13 -6.8830345906497649e-05 19 -4.5885664490963879e-05;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndex2_rotate_Merged_Layer_inputBZ";
 	rename -uid "E21AF15F-4826-4530-2DB0-95B6DDAF72CC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 63.718364127910775;
+	setAttr -s 4 ".ktv[0:3]"  0 63.718376530183576 3 63.718363178939022
+		 13 63.718342980153651 19 63.71837634111003;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndex3_rotate_Merged_Layer_inputBX";
 	rename -uid "3603C4A4-4CA4-2D2F-DAA0-6689B2DACE17";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 6.0284592482601678;
+	setAttr -s 4 ".ktv[0:3]"  0 6.0284544826271969 3 6.0284519068039044
+		 13 6.0284517839291283 19 6.0284414446407153;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndex3_rotate_Merged_Layer_inputBY";
 	rename -uid "3571B0FB-4C5F-918F-51E0-3DA83C43FFC6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 4.1730836352799727;
+	setAttr -s 4 ".ktv[0:3]"  0 4.1730481262626835 3 4.1730696400567924
+		 13 4.1730509777964633 19 4.173057081653206;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndex3_rotate_Merged_Layer_inputBZ";
 	rename -uid "3F119155-409D-3425-6E0B-5BB00FA9A13E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 111.53704619578569;
+	setAttr -s 4 ".ktv[0:3]"  0 111.53705026050457 3 111.53704896652323
+		 13 111.53703202996839 19 111.53705928827388;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndex4_rotate_Merged_Layer_inputBX";
 	rename -uid "D0CA1053-4FAE-BEB0-C5B7-519EA77A0527";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -4.9777651734970077e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 -6.2915159846761834e-05 3 -5.7295762705247415e-05
+		 13 -4.916389960369103e-05 19 -6.8365564388255952e-05;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndex4_rotate_Merged_Layer_inputBY";
 	rename -uid "52C2DAFC-48A8-4D26-1E35-EFB5B5AFBD31";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -1.2487583868426069e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 -3.0981912597058741e-05 3 -1.6016059507773418e-05
+		 13 -1.2857385564561416e-05 19 -2.760167702229982e-05;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndex4_rotate_Merged_Layer_inputBZ";
 	rename -uid "8E0B2CD6-4F83-95D8-7221-A287D3916BCB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -2.4892092460041598e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 -4.1691819284813051e-05 3 -2.9060080420433736e-05
+		 13 -2.7197024257398438e-05 19 -4.4406266381080478e-05;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndexEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "12EF0535-4BA3-99A8-A4F6-579C7BFB819E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 28.929382514904201;
+	setAttr -s 4 ".ktv[0:3]"  0 29.001220034717605 3 34.290989771914845
+		 13 35.482507267363061 19 29.00120462819655;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndexEffector_rotate_Merged_Layer_inputBY";
 	rename -uid "9A7F2A48-40C3-A0DF-6AB5-939785A7F39F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -117.50267362925567;
+	setAttr -s 4 ".ktv[0:3]"  0 -117.6977215558843 3 42.001268358869119
+		 13 41.764897114921304 19 -117.69772088496664;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandIndexEffector_rotate_Merged_Layer_inputBZ";
 	rename -uid "51E975F7-403B-DBD6-EF37-87A47C71A880";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -98.713778279792578;
+	setAttr -s 4 ".ktv[0:3]"  0 -98.787280164469124 3 -183.89585633538135
+		 13 -183.14598273960047 19 -98.787244387321493;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightHandIndexEffector_translateX_Merged_Layer_inputB";
 	rename -uid "DB98C458-4474-DC5E-9D4F-8CB01B8E9F8F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -41.349567413330078;
+	setAttr -s 4 ".ktv[0:3]"  0 -41.349414825439453 3 -35.743751525878906
+		 13 -35.743736267089844 19 -41.349586486816406;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightHandIndexEffector_translateY_Merged_Layer_inputB";
 	rename -uid "CB70AE24-4BB1-5E8D-70BC-EFBBF1FFE65F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 111.43260644743785;
+	setAttr -s 4 ".ktv[0:3]"  0 111.76287532007524 3 104.55728617879741
+		 13 116.90723135458433 19 111.76306605490601;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightHandIndexEffector_translateZ_Merged_Layer_inputB";
 	rename -uid "A371F240-4FB1-3AA2-6E03-6694F7289B83";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 11.68037330422827;
+	setAttr -s 4 ".ktv[0:3]"  0 11.632407388766222 3 -46.238463213061621
+		 13 -46.641845086425803 19 11.632529459129518;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddle1_rotate_Merged_Layer_inputBX";
 	rename -uid "3DC749AD-49B6-590C-19F5-4DA8175D951F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 7.3960237759130276;
+	setAttr -s 4 ".ktv[0:3]"  0 7.3960257394507192 3 7.3960233667772233
+		 13 7.3960173453438696 19 7.3960282790949261;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddle1_rotate_Merged_Layer_inputBY";
 	rename -uid "6527455D-4ADE-2183-BEBF-B9B100D6B6E9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 14.776955345195887;
+	setAttr -s 4 ".ktv[0:3]"  0 14.77695233611397 3 14.776959122423024
+		 13 14.776945218754486 19 14.776963170089028;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddle1_rotate_Merged_Layer_inputBZ";
 	rename -uid "B567B24E-4CB5-5ED4-0E2C-81A993EB5F13";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 16.112367873657984;
+	setAttr -s 4 ".ktv[0:3]"  0 16.112369936654549 3 16.112370972369526
+		 13 16.112379680937071 19 16.112377723988345;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddle2_rotate_Merged_Layer_inputBX";
 	rename -uid "5DC60E24-468A-52FE-5817-5E8FA9D86959";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -1.1517624560410344e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 1.0024973542652245e-05 3 8.1541249504769787e-07
+		 13 5.6647168698436671e-06 19 2.0445110894252205e-07;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddle2_rotate_Merged_Layer_inputBY";
 	rename -uid "4F198BA4-4330-F6E5-879B-FD8E012863FF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -0.00011590104422747935;
+	setAttr -s 4 ".ktv[0:3]"  0 -0.0001413289174837385 3 -0.00012074844992652514
+		 13 -0.0001258953370377484 19 -0.00013543236728609802;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddle2_rotate_Merged_Layer_inputBZ";
 	rename -uid "01C37B97-484C-1EC4-0EEB-279A1EB9EA89";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 88.919579791466973;
+	setAttr -s 4 ".ktv[0:3]"  0 88.919579379230811 3 88.91957046819509
+		 13 88.919564124545232 19 88.919579439160358;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddle3_rotate_Merged_Layer_inputBX";
 	rename -uid "AC4A2015-4EEE-61DA-25D0-57A54B5422E3";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -0.51794219818063369;
+	setAttr -s 4 ".ktv[0:3]"  0 -0.51796133527573152 3 -0.51795686328297952
+		 13 -0.51797447817228814 19 -0.5179576775118867;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddle3_rotate_Merged_Layer_inputBY";
 	rename -uid "01BBCDCD-4048-EC4E-9BFA-3881D1E0C800";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -0.50154051633097152;
+	setAttr -s 4 ".ktv[0:3]"  0 -0.50159061740269895 3 -0.50158225046216287
+		 13 -0.50159814828793658 19 -0.50158804552638747;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddle3_rotate_Merged_Layer_inputBZ";
 	rename -uid "2DF3CE42-42D4-58B5-8BBD-7685E62F8CAE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 91.328869018933077;
+	setAttr -s 4 ".ktv[0:3]"  0 91.328861095324839 3 91.328857375193465
+		 13 91.328844677135947 19 91.328854579483178;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddle4_rotate_Merged_Layer_inputBX";
 	rename -uid "4B2270E3-4044-5CA0-D2DD-A381448D1968";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 4.2564751632826393e-06;
+	setAttr -s 4 ".ktv[0:3]"  0 -1.5529000645280971e-05 3 -1.0802855847948898e-05
+		 13 -1.1182150813483396e-05 19 -7.9009984846030928e-06;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddle4_rotate_Merged_Layer_inputBY";
 	rename -uid "84828469-494B-DE7F-B9E9-4AAB9B3EB584";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -8.4556177730277013e-06;
+	setAttr -s 4 ".ktv[0:3]"  0 -2.4810105824669355e-05 3 -2.1895367305515199e-05
+		 13 -2.5112819307902158e-05 19 -9.5211376811491684e-06;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddle4_rotate_Merged_Layer_inputBZ";
 	rename -uid "A49D9CCF-427E-E83B-00FB-599211690901";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1.1552794830766527e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 4.6795494435922689e-06 3 2.0411141406683012e-06
+		 13 2.1127793516534564e-06 19 7.1961243722025191e-06;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddleEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "CB4443CC-40EF-E621-7E11-249B015BE744";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -42.861701354419623;
+	setAttr -s 4 ".ktv[0:3]"  0 -43.233140358213269 3 -97.628229101687651
+		 13 -96.708515005274478 19 -43.233150602702878;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddleEffector_rotate_Merged_Layer_inputBY";
 	rename -uid "70A29DF9-4A5E-4C8C-83A1-7C921F94AED8";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -59.189644072271626;
+	setAttr -s 4 ".ktv[0:3]"  0 -59.147342456364235 3 -229.99073268075384
+		 13 -229.30914520356225 19 -59.147340221343555;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandMiddleEffector_rotate_Merged_Layer_inputBZ";
 	rename -uid "F6CFE970-49D3-5056-A0E0-E691465AD072";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -7.8029293363354384;
+	setAttr -s 4 ".ktv[0:3]"  0 -7.4493871302172208 3 28.266994112902967
+		 13 29.128426848829747 19 -7.449369594113092;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightHandMiddleEffector_translateX_Merged_Layer_inputB";
 	rename -uid "1BF9A43C-43E6-D310-B32C-4687C716E132";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -36.080177307128906;
+	setAttr -s 4 ".ktv[0:3]"  0 -36.080020904541016 3 -31.438337326049805
+		 13 -31.438323974609375 19 -36.080192565917969;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightHandMiddleEffector_translateY_Merged_Layer_inputB";
 	rename -uid "9733A3D8-4BCD-D3D5-D89B-43A482A4ED80";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 108.41112968521593;
+	setAttr -s 4 ".ktv[0:3]"  0 108.74162743690412 3 100.51527148210829
+		 13 112.84290829096955 19 108.7418258011312;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightHandMiddleEffector_translateZ_Merged_Layer_inputB";
 	rename -uid "BD956D82-4A0E-C72D-41D1-3D91732FFC22";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 11.742766641711217;
+	setAttr -s 4 ".ktv[0:3]"  0 11.705258718863835 3 -47.661563807337565
+		 13 -47.999924171750244 19 11.705374113508947;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandThumb1_rotate_Merged_Layer_inputBX";
 	rename -uid "03CC99F2-45BC-13F1-04E6-B4B2F6B27AA7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -120.30073917458328;
+	setAttr -s 4 ".ktv[0:3]"  0 -120.30074281546331 3 -120.30074057767786
+		 13 -120.30074488231324 19 -120.30074516233299;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandThumb1_rotate_Merged_Layer_inputBY";
 	rename -uid "617BEF5D-489D-98AA-335D-66B7DDF290E2";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 24.479989733079677;
+	setAttr -s 4 ".ktv[0:3]"  0 24.479995623552927 3 24.480000202295781
+		 13 24.480008491640209 19 24.480000233023034;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandThumb1_rotate_Merged_Layer_inputBZ";
 	rename -uid "D703ED70-41B0-BF83-A3BC-FFB22DF1BE58";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -31.075269943445495;
+	setAttr -s 4 ".ktv[0:3]"  0 -31.075277933047676 3 -31.075272181991551
+		 13 -31.075273151895427 19 -31.075277680672151;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandThumb2_rotate_Merged_Layer_inputBX";
 	rename -uid "D8D1241C-4580-D46A-EB16-2098150E93EB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 2.1346563806272304e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 1.3807139632518364e-05 3 1.6142024880565265e-05
+		 13 2.0904936237756784e-05 19 9.0344827794906624e-06;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandThumb2_rotate_Merged_Layer_inputBY";
 	rename -uid "6EE97C34-4A05-E0DD-AED5-309FF26BFECE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1.150743220126718e-05;
+	setAttr -s 4 ".ktv[0:3]"  0 2.5638854444315659e-05 3 3.0849439938114688e-05
+		 13 5.3783822120492461e-05 19 2.3133937025872598e-05;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandThumb2_rotate_Merged_Layer_inputBZ";
 	rename -uid "9A876665-48AE-343E-0F43-24819E572A16";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 14.79870592893198;
+	setAttr -s 4 ".ktv[0:3]"  0 14.798721407409305 3 14.798643737133322
+		 13 14.798658715480242 19 14.798712499633483;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandThumb3_rotate_Merged_Layer_inputBX";
 	rename -uid "A92F84ED-4FCA-415A-ABD2-05BCBD418CFD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0.27939608468344301;
+	setAttr -s 4 ".ktv[0:3]"  0 0.2793957721870084 3 0.27938760725943396
+		 13 0.27938306633896753 19 0.27939721106437121;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandThumb3_rotate_Merged_Layer_inputBY";
 	rename -uid "716219C0-468F-BD6F-E339-3EAC1C773C6B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0.005326690886183684;
+	setAttr -s 4 ".ktv[0:3]"  0 0.005336835337196393 3 0.0053385792224967506
+		 13 0.0053248501242573075 19 0.0053347168111385511;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandThumb3_rotate_Merged_Layer_inputBZ";
 	rename -uid "9D259E48-42EB-D5CF-BC76-55A0EB787B22";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -2.1949718022806688;
+	setAttr -s 4 ".ktv[0:3]"  0 -2.1949897213410674 3 -2.1949603327177991
+		 13 -2.1949768402991867 19 -2.1949731961456287;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandThumbEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "409B1199-42B2-F8E1-77E5-3FB3FEF9093C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1.1232025633503497;
+	setAttr -s 4 ".ktv[0:3]"  0 1.1607515986935391 3 56.659248697435451
+		 13 56.339528502609248 19 1.1607454147356013;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandThumbEffector_rotate_Merged_Layer_inputBY";
 	rename -uid "36BD8549-4EE7-22A2-3F28-EEB5FD3E59A5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -3.3819075155663638;
+	setAttr -s 4 ".ktv[0:3]"  0 -3.2075032553986205 3 -15.923000707558268
+		 13 -16.691606543655393 19 -3.2074973710419363;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHandThumbEffector_rotate_Merged_Layer_inputBZ";
 	rename -uid "03DC11AA-4D88-CE30-116E-3D93A2592AFC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 82.24679963295965;
+	setAttr -s 4 ".ktv[0:3]"  0 82.330790782748494 3 -88.315018099028634
+		 13 -87.82525814085038 19 82.330805175971761;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightHandThumbEffector_translateX_Merged_Layer_inputB";
 	rename -uid "533E631C-4DB4-6402-7899-0A833F077263";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -39.989059448242188;
+	setAttr -s 4 ".ktv[0:3]"  0 -39.988906860351563 3 -39.186923980712891
+		 13 -39.186904907226563 19 -39.989078521728516;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightHandThumbEffector_translateY_Merged_Layer_inputB";
 	rename -uid "09924B28-4F44-6BA9-163F-D98F1CEA901F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 113.75242934586154;
+	setAttr -s 4 ".ktv[0:3]"  0 114.09981858197064 3 102.08328051655913
+		 13 114.37386899219632 19 114.10001694619645;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightHandThumbEffector_translateZ_Merged_Layer_inputB";
 	rename -uid "CE103668-47A6-FF0D-870A-83995175D959";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 16.638114705726064;
+	setAttr -s 4 ".ktv[0:3]"  0 16.58209978359297 3 -49.958079808208609
+		 13 -50.321296749870669 19 16.582219946609666;
+	setAttr -s 4 ".kit[3]"  1;
+	setAttr -s 4 ".kot[3]"  1;
+	setAttr -s 4 ".kix[3]"  1;
+	setAttr -s 4 ".kiy[3]"  0;
+	setAttr -s 4 ".kox[3]"  1;
+	setAttr -s 4 ".koy[3]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHipEffector_rotate_Merged_Layer_inputBX";
 	rename -uid "CEE49687-47CA-E77B-D038-C49FD0873756";
 	setAttr ".tan" 18;
@@ -6055,122 +6998,142 @@ createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightUpLeg_rotate_Merged_Layer
 	setAttr -s 2 ".ktv[0:1]"  1 0 80 0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Spine_rotate_Merged_Layer_inputBX";
 	rename -uid "4842F127-4C45-479C-F9AD-B4949D4F5DC9";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -11.993738801397377 34 -11.993738801397365
-		 60 -11.993738801397337 80 -11.993738801397377;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kix[1:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 7 ".ktv[0:6]"  0 -11.993738461911811 3 -11.095603435819941
+		 8 -11.095613280484153 14 -11.095669156334861 15 -10.500452376479711 18 -7.2864019597469154
+		 22 -11.993738258561685;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 1 0.99999999999521727 
+		1 0.8949163851678974 1 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  0 0 -3.0927924766074053e-06 0 0.44623386644003571 
+		0 0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Spine_rotate_Merged_Layer_inputBY";
 	rename -uid "317A1810-4DFC-2885-9820-3EA879122825";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 1.2501831805762662 34 1.2501831805762642
-		 60 1.2501831805762595 80 1.2501831805762662;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kix[1:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 7 ".ktv[0:6]"  0 1.2501751335352234 3 -0.019625439590494179
+		 8 -0.019621955231928202 14 -0.019629305256110455 15 0.91892599375174433 18 5.9870548536802222
+		 22 1.2501760598532836;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 1 1 1 0.78610487774121329 
+		1 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  0 0 0 0 0.61809313310493275 0 0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Spine_rotate_Merged_Layer_inputBZ";
 	rename -uid "E491562F-4372-FDE9-8056-A7A021A91181";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 11.484897768161209 34 8.0949819286170737
-		 60 13.570445195198586 80 11.484897768161209;
-	setAttr -s 4 ".kit[0:3]"  1 18 18 1;
-	setAttr -s 4 ".kot[0:3]"  1 18 18 1;
-	setAttr -s 4 ".kix[0:3]"  0.011111111380159855 1 1 0.2222222238779068;
-	setAttr -s 4 ".kiy[0:3]"  0 0 0 -0.023591889068484306;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 1 1 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  -0.029639974236488342 0 0 0;
+	setAttr -s 7 ".ktv[0:6]"  0 11.484894199408791 3 20.29652934613237
+		 8 27.099578458564551 14 21.803528297181089 15 24.411081805225731 18 25.524223113338099
+		 22 11.48489507771021;
+	setAttr -s 7 ".kit[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[0:6]"  0.011111111380159855 0.69937928891090928 
+		1 1 0.89904001280784773 1 0.011111111380159855;
+	setAttr -s 7 ".kiy[0:6]"  0 0.71475073294294067 0 0 0.43786648121369703 
+		0 0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 0.69937928891090928 
+		1 1 0.89904001280784784 1 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  -0.029639974236488342 0.71475073294294067 
+		0 0 0.43786648121369709 0 -0.029639974236488342;
 	setAttr ".pre" 3;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Spine1_rotate_Merged_Layer_inputBX";
 	rename -uid "CB90AF66-4020-95AC-F9EE-8692A60C63CA";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -23.020844831372536 34 -23.02084483137255
-		 60 -23.020844831372536 80 -23.020844831372536;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kix[1:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 7 ".ktv[0:6]"  0 -23.020830896642963 3 -23.333133628947081
+		 8 -23.333114097491809 14 -23.749299325458274 15 -23.879232807396853 18 -24.250626416608092
+		 22 -23.020833222895241;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 1 1 0.99916669849005235 
+		0.99785370371337079 1 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  0 0 0 -0.040815543956791912 -0.065482715165976271 
+		0 0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Spine1_rotate_Merged_Layer_inputBY";
 	rename -uid "928320ED-4B15-FB2D-2831-99B9CBAF4598";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 7.7963634002584801 34 7.7963634002584943
-		 60 7.7963634002584863 80 7.7963634002584801;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kot[1:3]"  18 1 1;
-	setAttr -s 4 ".kix[1:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 1 0.2222222238779068 
-		0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 7 ".ktv[0:6]"  0 7.7963572985650416 3 1.3703878473443325
+		 8 1.3703670197871245 14 0.47323329399024527 15 0.86325903660730152 18 4.0679197342633424
+		 22 7.7963587495142583;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 0.99999999997859346 
+		0.99999999997859335 1 0.90483434717891753 0.88772691326961384 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  0 -6.5431700715574576e-06 -6.5431700715574559e-06 
+		0 0.42576378916636665 0.46037042417688323 0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Spine1_rotate_Merged_Layer_inputBZ";
 	rename -uid "126224A7-4ECB-4BEE-C9B9-5D9CD7F65B7E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 16.978058957586345 34 9.2528245069893291
-		 60 16.072458070068201 80 16.978058957586345;
-	setAttr -s 4 ".kit[3]"  1;
-	setAttr -s 4 ".kot[3]"  1;
-	setAttr -s 4 ".kix[3]"  0.2222222238779068;
-	setAttr -s 4 ".kiy[3]"  4.3758429768558926e-08;
-	setAttr -s 4 ".kox[3]"  0.011111111380159855;
-	setAttr -s 4 ".koy[3]"  0;
+	setAttr -s 7 ".ktv[0:6]"  0 16.97805494239897 3 33.714886446322083
+		 8 33.714886389377313 14 38.752675029458317 15 38.284069722445039 18 32.487396405540288
+		 22 16.978052816830512;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[6]"  1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[6]"  1;
+	setAttr -s 7 ".koy[6]"  0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Spine2_rotate_Merged_Layer_inputBX";
 	rename -uid "3764F339-4264-71A8-45F6-B281921AC53B";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 -17.48741031891975 34 -17.487410318919753
-		 60 -17.487410318919796 80 -17.48741031891975;
-	setAttr -s 4 ".kit[0:3]"  18 18 1 1;
-	setAttr -s 4 ".kix[2:3]"  0.37777778506278992 0.2222222238779068;
-	setAttr -s 4 ".kiy[2:3]"  0 0;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 7 ".ktv[0:6]"  0 -17.487418245259576 3 -9.4167422676722499
+		 8 -9.4167368623331296 14 -9.4167375227473578 15 -9.2717356788801784 18 -12.782290230049343
+		 22 -17.487412147598302;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 0.99999999999855815 
+		1 1 1 0.85198270786837782 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  0 1.6981373672206809e-06 0 0 0 -0.52356992416798176 
+		0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Spine2_rotate_Merged_Layer_inputBY";
 	rename -uid "DDDC81B0-4CE3-6579-1C21-D5884173B98C";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 17.318039523033921 34 17.318039523033921
-		 60 17.318039523033917 80 17.318039523033921;
-	setAttr -s 4 ".kit[0:3]"  18 1 1 1;
-	setAttr -s 4 ".kix[1:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068;
-	setAttr -s 4 ".kiy[1:3]"  0 0 0;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 0.37777778506278992 
-		0.2222222238779068 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  0 0 0 0;
+	setAttr -s 7 ".ktv[0:6]"  0 17.318031368490587 3 26.647825855338414
+		 8 26.647816813426751 14 26.647832297267144 15 28.225436418404332 18 22.757201787589793
+		 22 17.318029591021826;
+	setAttr -s 7 ".kit[6]"  1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[6]"  1;
+	setAttr -s 7 ".kiy[6]"  0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 1 1 0.99999999999178391 
+		1 0.77483365252611192 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  0 0 0 4.0536599351881377e-06 0 -0.63216517692217467 
+		0;
 createNode animCurveTA -n "QuickRigCharacter_Ctrl_Spine2_rotate_Merged_Layer_inputBZ";
 	rename -uid "7E97B58B-4566-6D78-BB9D-69986C3F43B6";
-	setAttr ".tan" 1;
+	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  0 5.1630598203279874 34 6.9405170413607191
-		 49 -7.3299399477553919 80 5.1630598203279874;
-	setAttr -s 4 ".kix[0:3]"  0.011111111380159855 0.96344679073933548 
-		0.98536822997878004 0.37777778506278992;
-	setAttr -s 4 ".kiy[0:3]"  0 -0.26789976001123089 -0.17043899597359166 
-		0.16703955829143524;
-	setAttr -s 4 ".kox[0:3]"  0.27777779102325439 0.96344678678653095 
-		0.98536821973310829 0.011111111380159855;
-	setAttr -s 4 ".koy[0:3]"  0.12140525877475739 -0.26789977422668537 
-		-0.17043905520744027 0;
+	setAttr -s 7 ".ktv[0:6]"  0 5.1630583049801038 3 -11.476961254256674
+		 8 -11.476969366686784 14 -11.476969319146932 15 -13.614796174562095 18 -4.537925662288627
+		 22 5.1630560718953946;
+	setAttr -s 7 ".kit[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[0:6]"  0.011111111380159855 0.99999999999675238 
+		1 1 1 0.57998111899778071 0.011111111380159855;
+	setAttr -s 7 ".kiy[0:6]"  0 -2.5485950839649269e-06 0 0 0 0.81462991695989306 
+		0;
+	setAttr -s 7 ".kox[0:6]"  0.27777779102325439 0.99999999999675226 
+		1 1 1 0.5799811189977806 0.27777779102325439;
+	setAttr -s 7 ".koy[0:6]"  0.12140525877475739 -2.5485950839649269e-06 
+		0 0 0 0.81462991695989295 0.12140525877475739;
 createNode phong -n "Mat_PolygonFantasyKingdom_Mat_01_A";
 	rename -uid "6D16568D-4E39-E1D3-4597-75B23E456F2F";
 	setAttr ".dc" 1;
@@ -6265,62 +7228,400 @@ createNode animCurveTU -n "Prop_Bow_01_visibility";
 	rename -uid "FA80BB3C-408E-526D-0A52-8D92C2053F2D";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 3 ".ktv[0:2]"  0 1 16 1 22 1;
+	setAttr -s 3 ".kot[0:2]"  5 5 5;
 createNode animCurveTL -n "Prop_Bow_01_translateX";
 	rename -uid "7765C385-4955-55D2-34CB-72A710C22C8E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -21.951030789085976;
+	setAttr -s 5 ".ktv[0:4]"  0 -21.951030789085976 3 -3.1950651781437287
+		 16 -3.1950651781437287 17 -2.9582941978452566 22 -21.951030789085976;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTL -n "Prop_Bow_01_translateY";
 	rename -uid "9CE1A9B5-4B8B-16BD-385A-A8AC84B9F7AD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 10.003325756813251;
+	setAttr -s 5 ".ktv[0:4]"  0 10.003325756813251 3 -5.1257161167969754
+		 16 -5.1257161167969754 17 -6.2678828332075671 22 10.003325756813251;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTL -n "Prop_Bow_01_translateZ";
 	rename -uid "EB1A510A-4F0C-62D3-392B-1F80E8BDDEE6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 -46.595692927437817;
+	setAttr -s 5 ".ktv[0:4]"  0 -46.595692927437817 3 -12.958042137751223
+		 16 -12.958042137751223 17 -28.314916854134644 22 -46.595692927437817;
+	setAttr -s 5 ".kit[4]"  1;
+	setAttr -s 5 ".kot[4]"  1;
+	setAttr -s 5 ".kix[4]"  1;
+	setAttr -s 5 ".kiy[4]"  0;
+	setAttr -s 5 ".kox[4]"  1;
+	setAttr -s 5 ".koy[4]"  0;
 createNode animCurveTA -n "Prop_Bow_01_rotateX";
 	rename -uid "B99A1C84-45CF-29D3-7DB6-BBAC2D2CC41E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 9.2140466746005939e-15;
+	setAttr -s 3 ".ktv[0:2]"  0 9.2140466746005939e-15 16 9.2140466746005939e-15
+		 22 0;
 createNode animCurveTA -n "Prop_Bow_01_rotateY";
 	rename -uid "95A9BBD1-417F-656F-1BA0-D9A87DCDD951";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  0 0 16 0 22 0;
 createNode animCurveTA -n "Prop_Bow_01_rotateZ";
 	rename -uid "6DB17844-4497-2359-4E6C-C782C9B1220A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
+	setAttr -s 3 ".ktv[0:2]"  0 0 16 0 22 0;
 createNode animCurveTU -n "Prop_Bow_01_scaleX";
 	rename -uid "53B1373A-47D7-8BEA-1DB0-D0AFAC21049E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
+	setAttr -s 3 ".ktv[0:2]"  0 1 16 1 22 1;
 createNode animCurveTU -n "Prop_Bow_01_scaleY";
 	rename -uid "65BC4F63-4A6F-2A8B-AFBE-649EB8FD0D35";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0.99999999999999989;
+	setAttr -s 3 ".ktv[0:2]"  0 0.99999999999999989 16 0.99999999999999989
+		 22 0.99999999999999989;
 createNode animCurveTU -n "Prop_Bow_01_scaleZ";
 	rename -uid "4254D34E-45CD-885F-1712-B79AAAEC165D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0.99999999999999989;
+	setAttr -s 3 ".ktv[0:2]"  0 0.99999999999999989 16 0.99999999999999989
+		 22 0.99999999999999989;
 createNode animCurveTU -n "Prop_Bow_01_lockInfluenceWeights";
 	rename -uid "95836706-491F-D1ED-25C9-178871CDEA21";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-	setAttr ".kot[0]"  5;
+	setAttr -s 3 ".ktv[0:2]"  0 0 16 0 22 0;
+	setAttr -s 3 ".kot[0:2]"  5 5 5;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightArm_rotateZ";
+	rename -uid "9555EC88-4C52-16BD-AE68-8BACC8282313";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 -38.265773842340131 3 10.773752514555873
+		 9 24.144285145928929 13 10.773624225405221 16 -52.62662818402557 22 -38.265664872433753;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightArm_rotateY";
+	rename -uid "F195D450-4149-DEEA-B629-EE858382AC13";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 1.4758106562070044 3 23.526363733537881
+		 9 8.2039341226361149 13 23.526344766003618 16 6.5781209497624245 22 1.4762838381713277;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightArm_rotateX";
+	rename -uid "33CC1188-4013-CF58-2544-D8AB8A569A5F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 9.7966419526416413 3 36.061419605832711
+		 9 37.909145656373973 13 36.061340638514324 16 7.1168393035461879 22 9.7966569718779635;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightForeArm_rotateZ";
+	rename -uid "432E8DE7-4395-E041-8415-28913877AB9F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 103.13917331505145 3 25.594460305999895
+		 9 37.77081689814765 13 25.594397811042917 16 76.367535215704777 22 103.13918835051071;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightForeArm_rotateY";
+	rename -uid "1DA1A4E9-4BE9-2F66-B304-F2896A398EC0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 -0.60855592132951719 3 -0.17483343866271461
+		 9 0.41569377138555141 13 -0.17486250822812263 16 -0.42374376486873161 22 -0.60869503861505625;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightForeArm_rotateX";
+	rename -uid "99D2E3DB-4F56-2DEA-2038-4CB333EC6904";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 0.035875435459076684 3 -0.01777792573243564
+		 9 0.00026863508215202388 13 -0.017809993724513862 16 -0.10025629429136317 22 0.036329280200593797;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHand_rotateZ";
+	rename -uid "907967DA-4E87-95AE-18EA-CAB78E146184";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 -7.0624406238227468 3 22.699765832661608
+		 9 -18.502209074068428 13 -59.636477578694894 16 -18.041446577171811 22 -7.0624375796503003;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHand_rotateY";
+	rename -uid "AB965B42-427B-F041-C021-8EAE11550A6E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 -14.32364611367262 3 14.929442253764075
+		 9 15.834498958757864 13 -4.7847327246182836 16 -11.060365229970689 22 -14.323640257065824;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightHand_rotateX";
+	rename -uid "11C18912-4236-FA6A-066C-91AC23A39E6B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 117.28400330247869 3 131.45823472911485
+		 9 100.31111351965033 13 107.96826271149421 16 101.05456777591559 22 117.28402013458586;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightShoulder_rotateZ";
+	rename -uid "37CF4EF0-43F3-A4FD-FA24-36A6E84325BE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 3.3963890883549223e-05 3 2.9171577272922487e-05
+		 9 2.9580411143200344e-05 13 1.9736556957631868e-05 16 4.3804982085048039e-05;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightShoulder_rotateY";
+	rename -uid "4E8767BD-406A-97A7-6A9B-4283A30992B2";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 -0.00013583259807107333 3 -3.2523007647794107e-05
+		 9 -4.7216041245016744e-05 13 -6.1393125046312402e-05 16 -9.064177676471787e-05;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightShoulder_rotateX";
+	rename -uid "FA3375C8-4A03-95AB-4F25-2482D888F36C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 0.00012392437271600043 3 3.0350988544451906e-05
+		 9 5.0309796882902881e-05 13 6.59918622013553e-05 16 6.9116508131124627e-05;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightWristEffector_rotateX";
+	rename -uid "1FE0823D-4D28-F234-36AD-FCB5AA5B0093";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 144.33689495753694 3 229.33868886632166
+		 9 205.85626626401151 13 214.85773936765992 16 290.86597388021625 22 324.33691160652558;
+	setAttr -s 6 ".kit[5]"  2;
+	setAttr -s 6 ".kot[5]"  2;
+	setAttr ".roti" 5;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightWristEffector_rotateY";
+	rename -uid "2941D837-4E2F-949F-7156-1AA7335BDAC1";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 18.53462627310963 3 133.55767260817208
+		 9 188.13188981570238 13 216.50309959787822 16 147.63466709751913 22 161.46537023094169;
+	setAttr -s 6 ".kit[5]"  2;
+	setAttr -s 6 ".kot[5]"  2;
+	setAttr ".roti" 5;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightWristEffector_rotateZ";
+	rename -uid "6A0776EE-42E7-7AD7-8616-0FB07AD1D7F7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 76.952262498085375 3 101.66124549616492
+		 9 94.976339030140835 13 99.97816755850657 16 233.11990225732953 22 256.95226850681945;
+	setAttr -s 6 ".kit[5]"  2;
+	setAttr -s 6 ".kot[5]"  2;
+	setAttr ".roti" 5;
+createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightWristEffector_translateZ";
+	rename -uid "C843C880-4F3C-1160-31B1-E39D3422B85F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 1.1784297013223097 3 -36.853316585569075
+		 9 -30.540288512835939 13 -37.229777671484605 16 17.070470857550511 22 1.1785479569883399;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightWristEffector_translateY";
+	rename -uid "A1436DDB-463D-2AFC-1852-E9A97E027C7C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 111.37760130970429 3 102.80285100115897
+		 9 123.30182698103144 13 102.58933486606504 16 93.284426911381473 22 111.37779204453608;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightWristEffector_translateX";
+	rename -uid "31024419-49B7-CF74-3631-D0ACCFB193BF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 -38.345840454101563 3 -30.519166946411133
+		 9 -30.511226654052734 13 -30.519121170043945 16 -43.857429504394531 22 -38.346015930175781;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightElbowEffector_rotateX";
+	rename -uid "D0938CF8-4580-1AE2-B270-B78ECDB0860A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 -35.216611659759863 3 -107.93238278473643
+		 9 -102.78851905361381 13 -108.35218556847636 16 -28.685599372857517 22 -35.216615516585811;
+	setAttr -s 6 ".kit[5]"  2;
+	setAttr -s 6 ".kot[5]"  2;
+	setAttr ".roti" 5;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightElbowEffector_rotateY";
+	rename -uid "B9134E2A-42A4-2C03-5F64-C18C94431016";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 -25.111737929614989 3 -154.92850039315496
+		 9 -169.92783145579995 13 -154.09106116208753 16 -35.507765389129538 22 -25.111736322259738;
+	setAttr -s 6 ".kit[5]"  2;
+	setAttr -s 6 ".kot[5]"  2;
+	setAttr ".roti" 5;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightElbowEffector_rotateZ";
+	rename -uid "00A8279F-4AB3-AFB9-A2C4-BD89BDC3C752";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 91.054923321620819 3 110.0884556338701
+		 9 111.29684137709501 13 110.27070663332547 16 78.564268902601199 22 91.054923633864192;
+	setAttr -s 6 ".kit[5]"  2;
+	setAttr -s 6 ".kot[5]"  2;
+	setAttr ".roti" 5;
+createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightElbowEffector_translateZ";
+	rename -uid "1DBD3DE1-47CB-BCA9-E757-32B08E0268F0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 -23.270106968280469 3 -14.459369735130995
+		 9 -6.4355490099884642 13 -15.023252524480037 16 -4.8221574307907229 22 -23.26998871261647;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightElbowEffector_translateY";
+	rename -uid "E854D668-45A0-1F64-867D-C495236923F2";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 122.88379525970871 3 114.30728534490777
+		 9 128.06073169436365 13 114.45151156929759 16 109.04049811039394 22 122.88397836514596;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightElbowEffector_translateX";
+	rename -uid "892DCE94-484E-6AF5-5DC6-FEAAD04CEABE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 -40.598484039306641 3 -20.451593399047852
+		 9 -19.043365478515625 13 -20.451536178588867 16 -41.090461730957031 22 -40.598651885986328;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightShoulderEffector_rotateX";
+	rename -uid "CEB96EAB-4424-CD18-06F7-A0BE086E199E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 35.465065909876479 3 68.57660898518607
+		 9 66.844257037309291 13 68.410597247830779 16 35.149151912469947 22 35.465182340700395;
+	setAttr -s 6 ".kit[5]"  2;
+	setAttr -s 6 ".kot[5]"  2;
+	setAttr ".roti" 5;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightShoulderEffector_rotateY";
+	rename -uid "11A9FAF2-4E7D-F31E-EB43-07AB5EF3AB00";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 21.243952365725502 3 -3.759529644801312
+		 9 -30.795995583708741 13 -2.8589498248417513 16 27.513176357905508 22 21.244333761627821;
+	setAttr -s 6 ".kit[5]"  2;
+	setAttr -s 6 ".kot[5]"  2;
+	setAttr ".roti" 5;
+createNode animCurveTA -n "QuickRigCharacter_Ctrl_RightShoulderEffector_rotateZ";
+	rename -uid "6BC2ED1A-4D57-BAEF-5122-02AA37E3E75E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 29.828980160926793 3 78.871153520013848
+		 9 82.631180453772657 13 78.800333256548981 16 18.79828443118268 22 29.829291238900936;
+	setAttr -s 6 ".kit[5]"  2;
+	setAttr -s 6 ".kot[5]"  2;
+	setAttr ".roti" 5;
+createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightShoulderEffector_translateZ";
+	rename -uid "6A5C4746-4419-3548-2071-788BA0BFCCA6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 -7.1947575495227936 3 18.862143956238587
+		 9 22.549914376804541 13 18.32039799752485 16 5.2599377727261185 22 -7.194760887382901;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightShoulderEffector_translateY";
+	rename -uid "B6221E16-4552-F306-938D-C08B5DBFC422";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 137.53763008991285 3 112.66160844106668
+		 9 111.07349558151255 13 113.34054840467833 16 127.16072705378819 22 137.53763008991373;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
+createNode animCurveTL -n "QuickRigCharacter_Ctrl_RightShoulderEffector_translateX";
+	rename -uid "50E770E5-4C84-6BCA-6E70-149F6A5A8B3A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 -14.534687995910645 3 -14.17151927947998
+		 9 -14.170228004455566 13 -14.171487808227539 16 -14.211455345153809 22 -14.534693717956543;
+	setAttr -s 6 ".kit[5]"  1;
+	setAttr -s 6 ".kot[5]"  1;
+	setAttr -s 6 ".kix[5]"  1;
+	setAttr -s 6 ".kiy[5]"  0;
+	setAttr -s 6 ".kox[5]"  1;
+	setAttr -s 6 ".koy[5]"  0;
 select -ne :time1;
-	setAttr ".o" 40;
-	setAttr ".unw" 40;
+	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -6353,650 +7654,548 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
-connectAttr "pairBlend1.otx" "Soul_RigRN.phl[1]";
-connectAttr "pairBlend1.oty" "Soul_RigRN.phl[2]";
-connectAttr "pairBlend1.otz" "Soul_RigRN.phl[3]";
-connectAttr "pairBlend1.orx" "Soul_RigRN.phl[4]";
-connectAttr "pairBlend1.ory" "Soul_RigRN.phl[5]";
-connectAttr "pairBlend1.orz" "Soul_RigRN.phl[6]";
-connectAttr "Soul_RigRN.phl[7]" "Soul_RigRN.phl[8]";
-connectAttr "Soul_RigRN.phl[9]" "Soul_RigRN.phl[10]";
-connectAttr "Soul_RigRN.phl[11]" "Soul_RigRN.phl[12]";
-connectAttr "pairBlend8.orx" "Soul_RigRN.phl[13]";
-connectAttr "pairBlend8.ory" "Soul_RigRN.phl[14]";
-connectAttr "pairBlend8.orz" "Soul_RigRN.phl[15]";
-connectAttr "Soul_RigRN.phl[16]" "Soul_RigRN.phl[17]";
-connectAttr "Soul_RigRN.phl[18]" "Soul_RigRN.phl[19]";
-connectAttr "Soul_RigRN.phl[20]" "Soul_RigRN.phl[21]";
-connectAttr "pairBlend8.otx" "Soul_RigRN.phl[22]";
-connectAttr "pairBlend8.oty" "Soul_RigRN.phl[23]";
-connectAttr "pairBlend8.otz" "Soul_RigRN.phl[24]";
-connectAttr "pairBlend18.orx" "Soul_RigRN.phl[25]";
-connectAttr "pairBlend18.ory" "Soul_RigRN.phl[26]";
-connectAttr "pairBlend18.orz" "Soul_RigRN.phl[27]";
-connectAttr "Soul_RigRN.phl[28]" "Soul_RigRN.phl[29]";
-connectAttr "Soul_RigRN.phl[30]" "Soul_RigRN.phl[31]";
-connectAttr "Soul_RigRN.phl[32]" "Soul_RigRN.phl[33]";
-connectAttr "pairBlend18.otx" "Soul_RigRN.phl[34]";
-connectAttr "pairBlend18.oty" "Soul_RigRN.phl[35]";
-connectAttr "pairBlend18.otz" "Soul_RigRN.phl[36]";
-connectAttr "pairBlend19.orx" "Soul_RigRN.phl[37]";
-connectAttr "pairBlend19.ory" "Soul_RigRN.phl[38]";
-connectAttr "pairBlend19.orz" "Soul_RigRN.phl[39]";
-connectAttr "Soul_RigRN.phl[40]" "Soul_RigRN.phl[41]";
-connectAttr "Soul_RigRN.phl[42]" "Soul_RigRN.phl[43]";
-connectAttr "Soul_RigRN.phl[44]" "Soul_RigRN.phl[45]";
-connectAttr "pairBlend19.otx" "Soul_RigRN.phl[46]";
-connectAttr "pairBlend19.oty" "Soul_RigRN.phl[47]";
-connectAttr "pairBlend19.otz" "Soul_RigRN.phl[48]";
-connectAttr "pairBlend17.orx" "Soul_RigRN.phl[49]";
-connectAttr "pairBlend17.ory" "Soul_RigRN.phl[50]";
-connectAttr "pairBlend17.orz" "Soul_RigRN.phl[51]";
-connectAttr "Soul_RigRN.phl[52]" "Soul_RigRN.phl[53]";
-connectAttr "Soul_RigRN.phl[54]" "Soul_RigRN.phl[55]";
-connectAttr "Soul_RigRN.phl[56]" "Soul_RigRN.phl[57]";
-connectAttr "pairBlend17.otx" "Soul_RigRN.phl[58]";
-connectAttr "pairBlend17.oty" "Soul_RigRN.phl[59]";
-connectAttr "pairBlend17.otz" "Soul_RigRN.phl[60]";
-connectAttr "pairBlend15.orx" "Soul_RigRN.phl[61]";
-connectAttr "pairBlend15.ory" "Soul_RigRN.phl[62]";
-connectAttr "pairBlend15.orz" "Soul_RigRN.phl[63]";
-connectAttr "Soul_RigRN.phl[64]" "Soul_RigRN.phl[65]";
-connectAttr "Soul_RigRN.phl[66]" "Soul_RigRN.phl[67]";
-connectAttr "Soul_RigRN.phl[68]" "Soul_RigRN.phl[69]";
-connectAttr "pairBlend15.otx" "Soul_RigRN.phl[70]";
-connectAttr "pairBlend15.oty" "Soul_RigRN.phl[71]";
-connectAttr "pairBlend15.otz" "Soul_RigRN.phl[72]";
-connectAttr "Soul_RigRN.phl[73]" "Soul_RigRN.phl[74]";
-connectAttr "Soul_RigRN.phl[75]" "Soul_RigRN.phl[76]";
-connectAttr "Soul_RigRN.phl[77]" "Soul_RigRN.phl[78]";
-connectAttr "Soul_RigRN.phl[79]" "Soul_RigRN.phl[80]";
-connectAttr "Soul_RigRN.phl[81]" "Soul_RigRN.phl[82]";
-connectAttr "Soul_RigRN.phl[83]" "Soul_RigRN.phl[84]";
-connectAttr "Soul_RigRN.phl[85]" "Soul_RigRN.phl[86]";
-connectAttr "Soul_RigRN.phl[87]" "Soul_RigRN.phl[88]";
-connectAttr "Soul_RigRN.phl[89]" "Soul_RigRN.phl[90]";
-connectAttr "pairBlend9.orx" "Soul_RigRN.phl[91]";
-connectAttr "pairBlend9.ory" "Soul_RigRN.phl[92]";
-connectAttr "pairBlend9.orz" "Soul_RigRN.phl[93]";
-connectAttr "Soul_RigRN.phl[94]" "Soul_RigRN.phl[95]";
-connectAttr "Soul_RigRN.phl[96]" "Soul_RigRN.phl[97]";
-connectAttr "Soul_RigRN.phl[98]" "Soul_RigRN.phl[99]";
-connectAttr "pairBlend9.otx" "Soul_RigRN.phl[100]";
-connectAttr "pairBlend9.oty" "Soul_RigRN.phl[101]";
-connectAttr "pairBlend9.otz" "Soul_RigRN.phl[102]";
-connectAttr "pairBlend10.orx" "Soul_RigRN.phl[103]";
-connectAttr "pairBlend10.ory" "Soul_RigRN.phl[104]";
-connectAttr "pairBlend10.orz" "Soul_RigRN.phl[105]";
-connectAttr "Soul_RigRN.phl[106]" "Soul_RigRN.phl[107]";
-connectAttr "Soul_RigRN.phl[108]" "Soul_RigRN.phl[109]";
-connectAttr "Soul_RigRN.phl[110]" "Soul_RigRN.phl[111]";
-connectAttr "pairBlend10.otx" "Soul_RigRN.phl[112]";
-connectAttr "pairBlend10.oty" "Soul_RigRN.phl[113]";
-connectAttr "pairBlend10.otz" "Soul_RigRN.phl[114]";
-connectAttr "pairBlend11.orx" "Soul_RigRN.phl[115]";
-connectAttr "pairBlend11.ory" "Soul_RigRN.phl[116]";
-connectAttr "pairBlend11.orz" "Soul_RigRN.phl[117]";
-connectAttr "Soul_RigRN.phl[118]" "Soul_RigRN.phl[119]";
-connectAttr "Soul_RigRN.phl[120]" "Soul_RigRN.phl[121]";
-connectAttr "Soul_RigRN.phl[122]" "Soul_RigRN.phl[123]";
-connectAttr "pairBlend11.otx" "Soul_RigRN.phl[124]";
-connectAttr "pairBlend11.oty" "Soul_RigRN.phl[125]";
-connectAttr "pairBlend11.otz" "Soul_RigRN.phl[126]";
-connectAttr "pairBlend20.orx" "Soul_RigRN.phl[127]";
-connectAttr "pairBlend20.ory" "Soul_RigRN.phl[128]";
-connectAttr "pairBlend20.orz" "Soul_RigRN.phl[129]";
-connectAttr "Soul_RigRN.phl[130]" "Soul_RigRN.phl[131]";
-connectAttr "Soul_RigRN.phl[132]" "Soul_RigRN.phl[133]";
-connectAttr "Soul_RigRN.phl[134]" "Soul_RigRN.phl[135]";
-connectAttr "pairBlend20.otx" "Soul_RigRN.phl[136]";
-connectAttr "pairBlend20.oty" "Soul_RigRN.phl[137]";
-connectAttr "pairBlend20.otz" "Soul_RigRN.phl[138]";
-connectAttr "pairBlend21.orx" "Soul_RigRN.phl[139]";
-connectAttr "pairBlend21.ory" "Soul_RigRN.phl[140]";
-connectAttr "pairBlend21.orz" "Soul_RigRN.phl[141]";
-connectAttr "Soul_RigRN.phl[142]" "Soul_RigRN.phl[143]";
-connectAttr "Soul_RigRN.phl[144]" "Soul_RigRN.phl[145]";
-connectAttr "Soul_RigRN.phl[146]" "Soul_RigRN.phl[147]";
-connectAttr "pairBlend21.otx" "Soul_RigRN.phl[148]";
-connectAttr "pairBlend21.oty" "Soul_RigRN.phl[149]";
-connectAttr "pairBlend21.otz" "Soul_RigRN.phl[150]";
-connectAttr "pairBlend22.orx" "Soul_RigRN.phl[151]";
-connectAttr "pairBlend22.ory" "Soul_RigRN.phl[152]";
-connectAttr "pairBlend22.orz" "Soul_RigRN.phl[153]";
-connectAttr "pairBlend22.otx" "Soul_RigRN.phl[154]";
-connectAttr "pairBlend22.oty" "Soul_RigRN.phl[155]";
-connectAttr "pairBlend22.otz" "Soul_RigRN.phl[156]";
-connectAttr "Soul_RigRN.phl[157]" "Soul_RigRN.phl[158]";
-connectAttr "Soul_RigRN.phl[159]" "Soul_RigRN.phl[160]";
-connectAttr "Soul_RigRN.phl[161]" "Soul_RigRN.phl[162]";
-connectAttr "Soul_RigRN.phl[163]" "Soul_RigRN.phl[164]";
-connectAttr "Soul_RigRN.phl[165]" "Soul_RigRN.phl[166]";
-connectAttr "Soul_RigRN.phl[167]" "Soul_RigRN.phl[168]";
-connectAttr "Soul_RigRN.phl[169]" "Soul_RigRN.phl[170]";
-connectAttr "Soul_RigRN.phl[171]" "Soul_RigRN.phl[172]";
-connectAttr "Soul_RigRN.phl[173]" "Soul_RigRN.phl[174]";
-connectAttr "Soul_RigRN.phl[175]" "Soul_RigRN.phl[176]";
-connectAttr "Soul_RigRN.phl[177]" "Soul_RigRN.phl[178]";
-connectAttr "Soul_RigRN.phl[179]" "Soul_RigRN.phl[180]";
-connectAttr "Soul_RigRN.phl[181]" "Soul_RigRN.phl[182]";
-connectAttr "Soul_RigRN.phl[183]" "Soul_RigRN.phl[184]";
-connectAttr "Soul_RigRN.phl[185]" "Soul_RigRN.phl[186]";
-connectAttr "Soul_RigRN.phl[187]" "Soul_RigRN.phl[188]";
-connectAttr "Soul_RigRN.phl[189]" "Soul_RigRN.phl[190]";
-connectAttr "Soul_RigRN.phl[191]" "Soul_RigRN.phl[192]";
-connectAttr "Soul_RigRN.phl[193]" "Soul_RigRN.phl[194]";
-connectAttr "Soul_RigRN.phl[195]" "Soul_RigRN.phl[196]";
-connectAttr "Soul_RigRN.phl[197]" "Soul_RigRN.phl[198]";
-connectAttr "Soul_RigRN.phl[199]" "Soul_RigRN.phl[200]";
-connectAttr "Soul_RigRN.phl[201]" "Soul_RigRN.phl[202]";
-connectAttr "Soul_RigRN.phl[203]" "Soul_RigRN.phl[204]";
-connectAttr "Soul_RigRN.phl[205]" "Soul_RigRN.phl[206]";
-connectAttr "Soul_RigRN.phl[207]" "Soul_RigRN.phl[208]";
-connectAttr "Soul_RigRN.phl[209]" "Soul_RigRN.phl[210]";
-connectAttr "Soul_RigRN.phl[211]" "Soul_RigRN.phl[212]";
-connectAttr "Soul_RigRN.phl[213]" "Soul_RigRN.phl[214]";
-connectAttr "Soul_RigRN.phl[215]" "Soul_RigRN.phl[216]";
-connectAttr "Soul_RigRN.phl[217]" "Soul_RigRN.phl[218]";
-connectAttr "Soul_RigRN.phl[219]" "Soul_RigRN.phl[220]";
-connectAttr "Soul_RigRN.phl[221]" "Soul_RigRN.phl[222]";
-connectAttr "Soul_RigRN.phl[223]" "Soul_RigRN.phl[224]";
-connectAttr "Soul_RigRN.phl[225]" "Soul_RigRN.phl[226]";
-connectAttr "Soul_RigRN.phl[227]" "Soul_RigRN.phl[228]";
-connectAttr "Soul_RigRN.phl[229]" "Soul_RigRN.phl[230]";
-connectAttr "Soul_RigRN.phl[231]" "Soul_RigRN.phl[232]";
-connectAttr "Soul_RigRN.phl[233]" "Soul_RigRN.phl[234]";
-connectAttr "Soul_RigRN.phl[235]" "Soul_RigRN.phl[236]";
-connectAttr "Soul_RigRN.phl[237]" "Soul_RigRN.phl[238]";
-connectAttr "Soul_RigRN.phl[239]" "Soul_RigRN.phl[240]";
-connectAttr "Soul_RigRN.phl[241]" "Soul_RigRN.phl[242]";
-connectAttr "Soul_RigRN.phl[243]" "Soul_RigRN.phl[244]";
-connectAttr "Soul_RigRN.phl[245]" "Soul_RigRN.phl[246]";
-connectAttr "Soul_RigRN.phl[247]" "Soul_RigRN.phl[248]";
-connectAttr "Soul_RigRN.phl[249]" "Soul_RigRN.phl[250]";
-connectAttr "Soul_RigRN.phl[251]" "Soul_RigRN.phl[252]";
-connectAttr "Soul_RigRN.phl[253]" "Soul_RigRN.phl[254]";
-connectAttr "Soul_RigRN.phl[255]" "Soul_RigRN.phl[256]";
-connectAttr "Soul_RigRN.phl[257]" "Soul_RigRN.phl[258]";
-connectAttr "Soul_RigRN.phl[259]" "Soul_RigRN.phl[260]";
-connectAttr "Soul_RigRN.phl[261]" "Soul_RigRN.phl[262]";
-connectAttr "Soul_RigRN.phl[263]" "Soul_RigRN.phl[264]";
-connectAttr "Soul_RigRN.phl[265]" "Soul_RigRN.phl[266]";
-connectAttr "Soul_RigRN.phl[267]" "Soul_RigRN.phl[268]";
-connectAttr "Soul_RigRN.phl[269]" "Soul_RigRN.phl[270]";
-connectAttr "Soul_RigRN.phl[271]" "Soul_RigRN.phl[272]";
-connectAttr "Soul_RigRN.phl[273]" "Soul_RigRN.phl[274]";
-connectAttr "Soul_RigRN.phl[275]" "Soul_RigRN.phl[276]";
-connectAttr "Soul_RigRN.phl[277]" "Soul_RigRN.phl[278]";
-connectAttr "Soul_RigRN.phl[279]" "Soul_RigRN.phl[280]";
-connectAttr "Soul_RigRN.phl[281]" "Soul_RigRN.phl[282]";
-connectAttr "Soul_RigRN.phl[283]" "Soul_RigRN.phl[284]";
-connectAttr "Soul_RigRN.phl[285]" "Soul_RigRN.phl[286]";
-connectAttr "Soul_RigRN.phl[287]" "Soul_RigRN.phl[288]";
-connectAttr "Soul_RigRN.phl[289]" "Soul_RigRN.phl[290]";
-connectAttr "Soul_RigRN.phl[291]" "Soul_RigRN.phl[292]";
-connectAttr "Soul_RigRN.phl[293]" "Soul_RigRN.phl[294]";
-connectAttr "Soul_RigRN.phl[295]" "Soul_RigRN.phl[296]";
-connectAttr "Soul_RigRN.phl[297]" "Soul_RigRN.phl[298]";
-connectAttr "Soul_RigRN.phl[299]" "Soul_RigRN.phl[300]";
-connectAttr "Soul_RigRN.phl[301]" "Soul_RigRN.phl[302]";
-connectAttr "Soul_RigRN.phl[303]" "Soul_RigRN.phl[304]";
-connectAttr "Soul_RigRN.phl[305]" "Soul_RigRN.phl[306]";
-connectAttr "Prop_Bow_Rigged_01_scaleX.o" "Soul_RigRN.phl[307]";
-connectAttr "Prop_Bow_Rigged_01_scaleY.o" "Soul_RigRN.phl[308]";
-connectAttr "Prop_Bow_Rigged_01_scaleZ.o" "Soul_RigRN.phl[309]";
-connectAttr "Prop_Bow_Rigged_01_lockInfluenceWeights.o" "Soul_RigRN.phl[310]";
-connectAttr "Prop_Bow_Rigged_01_visibility.o" "Soul_RigRN.phl[311]";
-connectAttr "Prop_Bow_Rigged_01_translateX.o" "Soul_RigRN.phl[312]";
-connectAttr "Prop_Bow_Rigged_01_translateY.o" "Soul_RigRN.phl[313]";
-connectAttr "Prop_Bow_Rigged_01_translateZ.o" "Soul_RigRN.phl[314]";
-connectAttr "Prop_Bow_Rigged_01_rotateX.o" "Soul_RigRN.phl[315]";
-connectAttr "Prop_Bow_Rigged_01_rotateY.o" "Soul_RigRN.phl[316]";
-connectAttr "Prop_Bow_Rigged_01_rotateZ.o" "Soul_RigRN.phl[317]";
-connectAttr "Prop_Bow_01_lockInfluenceWeights.o" "Soul_RigRN.phl[318]";
-connectAttr "Prop_Bow_01_translateX.o" "Soul_RigRN.phl[319]";
-connectAttr "Prop_Bow_01_translateY.o" "Soul_RigRN.phl[320]";
-connectAttr "Prop_Bow_01_translateZ.o" "Soul_RigRN.phl[321]";
-connectAttr "Prop_Bow_01_scaleX.o" "Soul_RigRN.phl[322]";
-connectAttr "Prop_Bow_01_scaleY.o" "Soul_RigRN.phl[323]";
-connectAttr "Prop_Bow_01_scaleZ.o" "Soul_RigRN.phl[324]";
-connectAttr "Prop_Bow_01_visibility.o" "Soul_RigRN.phl[325]";
-connectAttr "Prop_Bow_01_rotateX.o" "Soul_RigRN.phl[326]";
-connectAttr "Prop_Bow_01_rotateY.o" "Soul_RigRN.phl[327]";
-connectAttr "Prop_Bow_01_rotateZ.o" "Soul_RigRN.phl[328]";
-connectAttr "Soul_RigRN.phl[329]" "Soul_RigRN.phl[330]";
-connectAttr "Soul_RigRN.phl[331]" "Soul_RigRN.phl[332]";
-connectAttr "Soul_RigRN.phl[333]" "Soul_RigRN.phl[334]";
-connectAttr "Soul_RigRN.phl[335]" "Soul_RigRN.phl[336]";
-connectAttr "Soul_RigRN.phl[337]" "Soul_RigRN.phl[338]";
-connectAttr "Soul_RigRN.phl[339]" "Soul_RigRN.phl[340]";
-connectAttr "Soul_RigRN.phl[341]" "Soul_RigRN.phl[342]";
-connectAttr "Soul_RigRN.phl[343]" "Soul_RigRN.phl[344]";
-connectAttr "Soul_RigRN.phl[345]" "Soul_RigRN.phl[346]";
-connectAttr "pairBlend12.orx" "Soul_RigRN.phl[347]";
-connectAttr "pairBlend12.ory" "Soul_RigRN.phl[348]";
-connectAttr "pairBlend12.orz" "Soul_RigRN.phl[349]";
-connectAttr "Soul_RigRN.phl[350]" "Soul_RigRN.phl[351]";
-connectAttr "Soul_RigRN.phl[352]" "Soul_RigRN.phl[353]";
-connectAttr "Soul_RigRN.phl[354]" "Soul_RigRN.phl[355]";
-connectAttr "pairBlend12.otx" "Soul_RigRN.phl[356]";
-connectAttr "pairBlend12.oty" "Soul_RigRN.phl[357]";
-connectAttr "pairBlend12.otz" "Soul_RigRN.phl[358]";
-connectAttr "pairBlend13.orx" "Soul_RigRN.phl[359]";
-connectAttr "pairBlend13.ory" "Soul_RigRN.phl[360]";
-connectAttr "pairBlend13.orz" "Soul_RigRN.phl[361]";
-connectAttr "Soul_RigRN.phl[362]" "Soul_RigRN.phl[363]";
-connectAttr "Soul_RigRN.phl[364]" "Soul_RigRN.phl[365]";
-connectAttr "Soul_RigRN.phl[366]" "Soul_RigRN.phl[367]";
-connectAttr "pairBlend13.otx" "Soul_RigRN.phl[368]";
-connectAttr "pairBlend13.oty" "Soul_RigRN.phl[369]";
-connectAttr "pairBlend13.otz" "Soul_RigRN.phl[370]";
-connectAttr "pairBlend14.orx" "Soul_RigRN.phl[371]";
-connectAttr "pairBlend14.ory" "Soul_RigRN.phl[372]";
-connectAttr "pairBlend14.orz" "Soul_RigRN.phl[373]";
-connectAttr "Soul_RigRN.phl[374]" "Soul_RigRN.phl[375]";
-connectAttr "Soul_RigRN.phl[376]" "Soul_RigRN.phl[377]";
-connectAttr "Soul_RigRN.phl[378]" "Soul_RigRN.phl[379]";
-connectAttr "pairBlend14.otx" "Soul_RigRN.phl[380]";
-connectAttr "pairBlend14.oty" "Soul_RigRN.phl[381]";
-connectAttr "pairBlend14.otz" "Soul_RigRN.phl[382]";
-connectAttr "pairBlend23.orx" "Soul_RigRN.phl[383]";
-connectAttr "pairBlend23.ory" "Soul_RigRN.phl[384]";
-connectAttr "pairBlend23.orz" "Soul_RigRN.phl[385]";
-connectAttr "Soul_RigRN.phl[386]" "Soul_RigRN.phl[387]";
-connectAttr "Soul_RigRN.phl[388]" "Soul_RigRN.phl[389]";
-connectAttr "Soul_RigRN.phl[390]" "Soul_RigRN.phl[391]";
-connectAttr "pairBlend23.otx" "Soul_RigRN.phl[392]";
-connectAttr "pairBlend23.oty" "Soul_RigRN.phl[393]";
-connectAttr "pairBlend23.otz" "Soul_RigRN.phl[394]";
-connectAttr "pairBlend24.orx" "Soul_RigRN.phl[395]";
-connectAttr "pairBlend24.ory" "Soul_RigRN.phl[396]";
-connectAttr "pairBlend24.orz" "Soul_RigRN.phl[397]";
-connectAttr "Soul_RigRN.phl[398]" "Soul_RigRN.phl[399]";
-connectAttr "Soul_RigRN.phl[400]" "Soul_RigRN.phl[401]";
-connectAttr "Soul_RigRN.phl[402]" "Soul_RigRN.phl[403]";
-connectAttr "pairBlend24.otx" "Soul_RigRN.phl[404]";
-connectAttr "pairBlend24.oty" "Soul_RigRN.phl[405]";
-connectAttr "pairBlend24.otz" "Soul_RigRN.phl[406]";
-connectAttr "pairBlend25.orx" "Soul_RigRN.phl[407]";
-connectAttr "pairBlend25.ory" "Soul_RigRN.phl[408]";
-connectAttr "pairBlend25.orz" "Soul_RigRN.phl[409]";
-connectAttr "pairBlend25.otx" "Soul_RigRN.phl[410]";
-connectAttr "pairBlend25.oty" "Soul_RigRN.phl[411]";
-connectAttr "pairBlend25.otz" "Soul_RigRN.phl[412]";
-connectAttr "Soul_RigRN.phl[413]" "Soul_RigRN.phl[414]";
-connectAttr "Soul_RigRN.phl[415]" "Soul_RigRN.phl[416]";
-connectAttr "Soul_RigRN.phl[417]" "Soul_RigRN.phl[418]";
-connectAttr "pairBlend26.orx" "Soul_RigRN.phl[419]";
-connectAttr "pairBlend26.ory" "Soul_RigRN.phl[420]";
-connectAttr "pairBlend26.orz" "Soul_RigRN.phl[421]";
-connectAttr "Soul_RigRN.phl[422]" "Soul_RigRN.phl[423]";
-connectAttr "Soul_RigRN.phl[424]" "Soul_RigRN.phl[425]";
-connectAttr "Soul_RigRN.phl[426]" "Soul_RigRN.phl[427]";
-connectAttr "pairBlend26.otx" "Soul_RigRN.phl[428]";
-connectAttr "pairBlend26.oty" "Soul_RigRN.phl[429]";
-connectAttr "pairBlend26.otz" "Soul_RigRN.phl[430]";
-connectAttr "pairBlend27.orx" "Soul_RigRN.phl[431]";
-connectAttr "pairBlend27.ory" "Soul_RigRN.phl[432]";
-connectAttr "pairBlend27.orz" "Soul_RigRN.phl[433]";
-connectAttr "Soul_RigRN.phl[434]" "Soul_RigRN.phl[435]";
-connectAttr "Soul_RigRN.phl[436]" "Soul_RigRN.phl[437]";
-connectAttr "Soul_RigRN.phl[438]" "Soul_RigRN.phl[439]";
-connectAttr "pairBlend27.otx" "Soul_RigRN.phl[440]";
-connectAttr "pairBlend27.oty" "Soul_RigRN.phl[441]";
-connectAttr "pairBlend27.otz" "Soul_RigRN.phl[442]";
-connectAttr "pairBlend28.orx" "Soul_RigRN.phl[443]";
-connectAttr "pairBlend28.ory" "Soul_RigRN.phl[444]";
-connectAttr "pairBlend28.orz" "Soul_RigRN.phl[445]";
-connectAttr "Soul_RigRN.phl[446]" "Soul_RigRN.phl[447]";
-connectAttr "Soul_RigRN.phl[448]" "Soul_RigRN.phl[449]";
-connectAttr "Soul_RigRN.phl[450]" "Soul_RigRN.phl[451]";
-connectAttr "pairBlend28.otx" "Soul_RigRN.phl[452]";
-connectAttr "pairBlend28.oty" "Soul_RigRN.phl[453]";
-connectAttr "pairBlend28.otz" "Soul_RigRN.phl[454]";
-connectAttr "pairBlend29.orx" "Soul_RigRN.phl[455]";
-connectAttr "pairBlend29.ory" "Soul_RigRN.phl[456]";
-connectAttr "pairBlend29.orz" "Soul_RigRN.phl[457]";
-connectAttr "pairBlend29.otx" "Soul_RigRN.phl[458]";
-connectAttr "pairBlend29.oty" "Soul_RigRN.phl[459]";
-connectAttr "pairBlend29.otz" "Soul_RigRN.phl[460]";
-connectAttr "Soul_RigRN.phl[461]" "Soul_RigRN.phl[462]";
-connectAttr "Soul_RigRN.phl[463]" "Soul_RigRN.phl[464]";
-connectAttr "Soul_RigRN.phl[465]" "Soul_RigRN.phl[466]";
-connectAttr "pairBlend30.orx" "Soul_RigRN.phl[467]";
-connectAttr "pairBlend30.ory" "Soul_RigRN.phl[468]";
-connectAttr "pairBlend30.orz" "Soul_RigRN.phl[469]";
-connectAttr "Soul_RigRN.phl[470]" "Soul_RigRN.phl[471]";
-connectAttr "Soul_RigRN.phl[472]" "Soul_RigRN.phl[473]";
-connectAttr "Soul_RigRN.phl[474]" "Soul_RigRN.phl[475]";
-connectAttr "pairBlend30.otx" "Soul_RigRN.phl[476]";
-connectAttr "pairBlend30.oty" "Soul_RigRN.phl[477]";
-connectAttr "pairBlend30.otz" "Soul_RigRN.phl[478]";
-connectAttr "pairBlend31.orx" "Soul_RigRN.phl[479]";
-connectAttr "pairBlend31.ory" "Soul_RigRN.phl[480]";
-connectAttr "pairBlend31.orz" "Soul_RigRN.phl[481]";
-connectAttr "Soul_RigRN.phl[482]" "Soul_RigRN.phl[483]";
-connectAttr "Soul_RigRN.phl[484]" "Soul_RigRN.phl[485]";
-connectAttr "Soul_RigRN.phl[486]" "Soul_RigRN.phl[487]";
-connectAttr "pairBlend31.otx" "Soul_RigRN.phl[488]";
-connectAttr "pairBlend31.oty" "Soul_RigRN.phl[489]";
-connectAttr "pairBlend31.otz" "Soul_RigRN.phl[490]";
-connectAttr "pairBlend32.orx" "Soul_RigRN.phl[491]";
-connectAttr "pairBlend32.ory" "Soul_RigRN.phl[492]";
-connectAttr "pairBlend32.orz" "Soul_RigRN.phl[493]";
-connectAttr "Soul_RigRN.phl[494]" "Soul_RigRN.phl[495]";
-connectAttr "Soul_RigRN.phl[496]" "Soul_RigRN.phl[497]";
-connectAttr "Soul_RigRN.phl[498]" "Soul_RigRN.phl[499]";
-connectAttr "pairBlend32.otx" "Soul_RigRN.phl[500]";
-connectAttr "pairBlend32.oty" "Soul_RigRN.phl[501]";
-connectAttr "pairBlend32.otz" "Soul_RigRN.phl[502]";
-connectAttr "pairBlend33.orx" "Soul_RigRN.phl[503]";
-connectAttr "pairBlend33.ory" "Soul_RigRN.phl[504]";
-connectAttr "pairBlend33.orz" "Soul_RigRN.phl[505]";
-connectAttr "pairBlend33.otx" "Soul_RigRN.phl[506]";
-connectAttr "pairBlend33.oty" "Soul_RigRN.phl[507]";
-connectAttr "pairBlend33.otz" "Soul_RigRN.phl[508]";
-connectAttr "Soul_RigRN.phl[509]" "Soul_RigRN.phl[510]";
-connectAttr "Soul_RigRN.phl[511]" "Soul_RigRN.phl[512]";
-connectAttr "Soul_RigRN.phl[513]" "Soul_RigRN.phl[514]";
-connectAttr "pairBlend5.orx" "Soul_RigRN.phl[515]";
-connectAttr "pairBlend5.ory" "Soul_RigRN.phl[516]";
-connectAttr "pairBlend5.orz" "Soul_RigRN.phl[517]";
-connectAttr "Soul_RigRN.phl[518]" "Soul_RigRN.phl[519]";
-connectAttr "Soul_RigRN.phl[520]" "Soul_RigRN.phl[521]";
-connectAttr "Soul_RigRN.phl[522]" "Soul_RigRN.phl[523]";
-connectAttr "pairBlend5.otx" "Soul_RigRN.phl[524]";
-connectAttr "pairBlend5.oty" "Soul_RigRN.phl[525]";
-connectAttr "pairBlend5.otz" "Soul_RigRN.phl[526]";
-connectAttr "pairBlend6.orx" "Soul_RigRN.phl[527]";
-connectAttr "pairBlend6.ory" "Soul_RigRN.phl[528]";
-connectAttr "pairBlend6.orz" "Soul_RigRN.phl[529]";
-connectAttr "Soul_RigRN.phl[530]" "Soul_RigRN.phl[531]";
-connectAttr "Soul_RigRN.phl[532]" "Soul_RigRN.phl[533]";
-connectAttr "Soul_RigRN.phl[534]" "Soul_RigRN.phl[535]";
-connectAttr "pairBlend6.otx" "Soul_RigRN.phl[536]";
-connectAttr "pairBlend6.oty" "Soul_RigRN.phl[537]";
-connectAttr "pairBlend6.otz" "Soul_RigRN.phl[538]";
-connectAttr "pairBlend7.orx" "Soul_RigRN.phl[539]";
-connectAttr "pairBlend7.ory" "Soul_RigRN.phl[540]";
-connectAttr "pairBlend7.orz" "Soul_RigRN.phl[541]";
-connectAttr "Soul_RigRN.phl[542]" "Soul_RigRN.phl[543]";
-connectAttr "Soul_RigRN.phl[544]" "Soul_RigRN.phl[545]";
-connectAttr "Soul_RigRN.phl[546]" "Soul_RigRN.phl[547]";
-connectAttr "pairBlend7.otx" "Soul_RigRN.phl[548]";
-connectAttr "pairBlend7.oty" "Soul_RigRN.phl[549]";
-connectAttr "pairBlend7.otz" "Soul_RigRN.phl[550]";
-connectAttr "pairBlend16.orx" "Soul_RigRN.phl[551]";
-connectAttr "pairBlend16.ory" "Soul_RigRN.phl[552]";
-connectAttr "pairBlend16.orz" "Soul_RigRN.phl[553]";
-connectAttr "Soul_RigRN.phl[554]" "Soul_RigRN.phl[555]";
-connectAttr "Soul_RigRN.phl[556]" "Soul_RigRN.phl[557]";
-connectAttr "Soul_RigRN.phl[558]" "Soul_RigRN.phl[559]";
-connectAttr "pairBlend16.otx" "Soul_RigRN.phl[560]";
-connectAttr "pairBlend16.oty" "Soul_RigRN.phl[561]";
-connectAttr "pairBlend16.otz" "Soul_RigRN.phl[562]";
-connectAttr "pairBlend2.orx" "Soul_RigRN.phl[563]";
-connectAttr "pairBlend2.ory" "Soul_RigRN.phl[564]";
-connectAttr "pairBlend2.orz" "Soul_RigRN.phl[565]";
-connectAttr "Soul_RigRN.phl[566]" "Soul_RigRN.phl[567]";
-connectAttr "Soul_RigRN.phl[568]" "Soul_RigRN.phl[569]";
-connectAttr "Soul_RigRN.phl[570]" "Soul_RigRN.phl[571]";
-connectAttr "pairBlend2.otx" "Soul_RigRN.phl[572]";
-connectAttr "pairBlend2.oty" "Soul_RigRN.phl[573]";
-connectAttr "pairBlend2.otz" "Soul_RigRN.phl[574]";
-connectAttr "pairBlend3.orx" "Soul_RigRN.phl[575]";
-connectAttr "pairBlend3.ory" "Soul_RigRN.phl[576]";
-connectAttr "pairBlend3.orz" "Soul_RigRN.phl[577]";
-connectAttr "Soul_RigRN.phl[578]" "Soul_RigRN.phl[579]";
-connectAttr "Soul_RigRN.phl[580]" "Soul_RigRN.phl[581]";
-connectAttr "Soul_RigRN.phl[582]" "Soul_RigRN.phl[583]";
-connectAttr "pairBlend3.otx" "Soul_RigRN.phl[584]";
-connectAttr "pairBlend3.oty" "Soul_RigRN.phl[585]";
-connectAttr "pairBlend3.otz" "Soul_RigRN.phl[586]";
-connectAttr "pairBlend4.orx" "Soul_RigRN.phl[587]";
-connectAttr "pairBlend4.ory" "Soul_RigRN.phl[588]";
-connectAttr "pairBlend4.orz" "Soul_RigRN.phl[589]";
-connectAttr "Soul_RigRN.phl[590]" "Soul_RigRN.phl[591]";
-connectAttr "Soul_RigRN.phl[592]" "Soul_RigRN.phl[593]";
-connectAttr "Soul_RigRN.phl[594]" "Soul_RigRN.phl[595]";
-connectAttr "pairBlend4.otx" "Soul_RigRN.phl[596]";
-connectAttr "pairBlend4.oty" "Soul_RigRN.phl[597]";
-connectAttr "pairBlend4.otz" "Soul_RigRN.phl[598]";
-connectAttr "Soul_RigRN.phl[599]" "Soul_Rig:QuickRigCharacter_ControlRig.HIC";
-connectAttr "Soul_RigRN.phl[600]" "HIKFK2State1.InputCharacterDefinition";
-connectAttr "Soul_RigRN.phl[601]" "HIKState2FK1.InputCharacterDefinition";
-connectAttr "Soul_RigRN.phl[602]" "HIKState2FK2.InputCharacterDefinition";
-connectAttr "Soul_RigRN.phl[603]" "HIKEffectorFromCharacter1.InputCharacterDefinition"
+connectAttr "Soul_RigRN.phl[807]" "Soul_RigRN.phl[808]";
+connectAttr "Soul_RigRN.phl[809]" "Soul_RigRN.phl[810]";
+connectAttr "Soul_RigRN.phl[811]" "Soul_RigRN.phl[812]";
+connectAttr "pairBlend1.otx" "Soul_RigRN.phl[813]";
+connectAttr "pairBlend1.oty" "Soul_RigRN.phl[814]";
+connectAttr "pairBlend1.otz" "Soul_RigRN.phl[815]";
+connectAttr "pairBlend1.orx" "Soul_RigRN.phl[816]";
+connectAttr "pairBlend1.ory" "Soul_RigRN.phl[817]";
+connectAttr "pairBlend1.orz" "Soul_RigRN.phl[818]";
+connectAttr "Soul_RigRN.phl[819]" "Soul_RigRN.phl[820]";
+connectAttr "Soul_RigRN.phl[821]" "Soul_RigRN.phl[822]";
+connectAttr "Soul_RigRN.phl[823]" "Soul_RigRN.phl[824]";
+connectAttr "pairBlend8.orx" "Soul_RigRN.phl[825]";
+connectAttr "pairBlend8.ory" "Soul_RigRN.phl[826]";
+connectAttr "pairBlend8.orz" "Soul_RigRN.phl[827]";
+connectAttr "pairBlend8.otx" "Soul_RigRN.phl[828]";
+connectAttr "pairBlend8.oty" "Soul_RigRN.phl[829]";
+connectAttr "pairBlend8.otz" "Soul_RigRN.phl[830]";
+connectAttr "Soul_RigRN.phl[831]" "Soul_RigRN.phl[832]";
+connectAttr "Soul_RigRN.phl[833]" "Soul_RigRN.phl[834]";
+connectAttr "Soul_RigRN.phl[835]" "Soul_RigRN.phl[836]";
+connectAttr "pairBlend18.orx" "Soul_RigRN.phl[837]";
+connectAttr "pairBlend18.ory" "Soul_RigRN.phl[838]";
+connectAttr "pairBlend18.orz" "Soul_RigRN.phl[839]";
+connectAttr "pairBlend18.otx" "Soul_RigRN.phl[840]";
+connectAttr "pairBlend18.oty" "Soul_RigRN.phl[841]";
+connectAttr "pairBlend18.otz" "Soul_RigRN.phl[842]";
+connectAttr "Soul_RigRN.phl[843]" "Soul_RigRN.phl[844]";
+connectAttr "Soul_RigRN.phl[845]" "Soul_RigRN.phl[846]";
+connectAttr "Soul_RigRN.phl[847]" "Soul_RigRN.phl[848]";
+connectAttr "pairBlend19.orx" "Soul_RigRN.phl[849]";
+connectAttr "pairBlend19.ory" "Soul_RigRN.phl[850]";
+connectAttr "pairBlend19.orz" "Soul_RigRN.phl[851]";
+connectAttr "pairBlend19.otx" "Soul_RigRN.phl[852]";
+connectAttr "pairBlend19.oty" "Soul_RigRN.phl[853]";
+connectAttr "pairBlend19.otz" "Soul_RigRN.phl[854]";
+connectAttr "Soul_RigRN.phl[855]" "Soul_RigRN.phl[856]";
+connectAttr "Soul_RigRN.phl[857]" "Soul_RigRN.phl[858]";
+connectAttr "Soul_RigRN.phl[859]" "Soul_RigRN.phl[860]";
+connectAttr "pairBlend17.orx" "Soul_RigRN.phl[861]";
+connectAttr "pairBlend17.ory" "Soul_RigRN.phl[862]";
+connectAttr "pairBlend17.orz" "Soul_RigRN.phl[863]";
+connectAttr "pairBlend17.otx" "Soul_RigRN.phl[864]";
+connectAttr "pairBlend17.oty" "Soul_RigRN.phl[865]";
+connectAttr "pairBlend17.otz" "Soul_RigRN.phl[866]";
+connectAttr "Soul_RigRN.phl[867]" "Soul_RigRN.phl[868]";
+connectAttr "Soul_RigRN.phl[869]" "Soul_RigRN.phl[870]";
+connectAttr "Soul_RigRN.phl[871]" "Soul_RigRN.phl[872]";
+connectAttr "pairBlend15.orx" "Soul_RigRN.phl[873]";
+connectAttr "pairBlend15.ory" "Soul_RigRN.phl[874]";
+connectAttr "pairBlend15.orz" "Soul_RigRN.phl[875]";
+connectAttr "pairBlend15.otx" "Soul_RigRN.phl[876]";
+connectAttr "pairBlend15.oty" "Soul_RigRN.phl[877]";
+connectAttr "pairBlend15.otz" "Soul_RigRN.phl[878]";
+connectAttr "Soul_RigRN.phl[879]" "Soul_RigRN.phl[880]";
+connectAttr "Soul_RigRN.phl[881]" "Soul_RigRN.phl[882]";
+connectAttr "Soul_RigRN.phl[883]" "Soul_RigRN.phl[884]";
+connectAttr "Soul_RigRN.phl[885]" "Soul_RigRN.phl[886]";
+connectAttr "Soul_RigRN.phl[887]" "Soul_RigRN.phl[888]";
+connectAttr "Soul_RigRN.phl[889]" "Soul_RigRN.phl[890]";
+connectAttr "Soul_RigRN.phl[891]" "Soul_RigRN.phl[892]";
+connectAttr "Soul_RigRN.phl[893]" "Soul_RigRN.phl[894]";
+connectAttr "Soul_RigRN.phl[895]" "Soul_RigRN.phl[896]";
+connectAttr "Soul_RigRN.phl[897]" "Soul_RigRN.phl[898]";
+connectAttr "Soul_RigRN.phl[899]" "Soul_RigRN.phl[900]";
+connectAttr "Soul_RigRN.phl[901]" "Soul_RigRN.phl[902]";
+connectAttr "pairBlend9.orx" "Soul_RigRN.phl[903]";
+connectAttr "pairBlend9.ory" "Soul_RigRN.phl[904]";
+connectAttr "pairBlend9.orz" "Soul_RigRN.phl[905]";
+connectAttr "pairBlend9.otx" "Soul_RigRN.phl[906]";
+connectAttr "pairBlend9.oty" "Soul_RigRN.phl[907]";
+connectAttr "pairBlend9.otz" "Soul_RigRN.phl[908]";
+connectAttr "Soul_RigRN.phl[909]" "Soul_RigRN.phl[910]";
+connectAttr "Soul_RigRN.phl[911]" "Soul_RigRN.phl[912]";
+connectAttr "Soul_RigRN.phl[913]" "Soul_RigRN.phl[914]";
+connectAttr "pairBlend10.orx" "Soul_RigRN.phl[915]";
+connectAttr "pairBlend10.ory" "Soul_RigRN.phl[916]";
+connectAttr "pairBlend10.orz" "Soul_RigRN.phl[917]";
+connectAttr "pairBlend10.otx" "Soul_RigRN.phl[918]";
+connectAttr "pairBlend10.oty" "Soul_RigRN.phl[919]";
+connectAttr "pairBlend10.otz" "Soul_RigRN.phl[920]";
+connectAttr "Soul_RigRN.phl[921]" "Soul_RigRN.phl[922]";
+connectAttr "Soul_RigRN.phl[923]" "Soul_RigRN.phl[924]";
+connectAttr "Soul_RigRN.phl[925]" "Soul_RigRN.phl[926]";
+connectAttr "pairBlend11.orx" "Soul_RigRN.phl[927]";
+connectAttr "pairBlend11.ory" "Soul_RigRN.phl[928]";
+connectAttr "pairBlend11.orz" "Soul_RigRN.phl[929]";
+connectAttr "pairBlend11.otx" "Soul_RigRN.phl[930]";
+connectAttr "pairBlend11.oty" "Soul_RigRN.phl[931]";
+connectAttr "pairBlend11.otz" "Soul_RigRN.phl[932]";
+connectAttr "Soul_RigRN.phl[933]" "Soul_RigRN.phl[934]";
+connectAttr "Soul_RigRN.phl[935]" "Soul_RigRN.phl[936]";
+connectAttr "Soul_RigRN.phl[937]" "Soul_RigRN.phl[938]";
+connectAttr "pairBlend20.orx" "Soul_RigRN.phl[939]";
+connectAttr "pairBlend20.ory" "Soul_RigRN.phl[940]";
+connectAttr "pairBlend20.orz" "Soul_RigRN.phl[941]";
+connectAttr "pairBlend20.otx" "Soul_RigRN.phl[942]";
+connectAttr "pairBlend20.oty" "Soul_RigRN.phl[943]";
+connectAttr "pairBlend20.otz" "Soul_RigRN.phl[944]";
+connectAttr "Soul_RigRN.phl[945]" "Soul_RigRN.phl[946]";
+connectAttr "Soul_RigRN.phl[947]" "Soul_RigRN.phl[948]";
+connectAttr "Soul_RigRN.phl[949]" "Soul_RigRN.phl[950]";
+connectAttr "pairBlend21.orx" "Soul_RigRN.phl[951]";
+connectAttr "pairBlend21.ory" "Soul_RigRN.phl[952]";
+connectAttr "pairBlend21.orz" "Soul_RigRN.phl[953]";
+connectAttr "pairBlend21.otx" "Soul_RigRN.phl[954]";
+connectAttr "pairBlend21.oty" "Soul_RigRN.phl[955]";
+connectAttr "pairBlend21.otz" "Soul_RigRN.phl[956]";
+connectAttr "pairBlend22.orx" "Soul_RigRN.phl[957]";
+connectAttr "pairBlend22.ory" "Soul_RigRN.phl[958]";
+connectAttr "pairBlend22.orz" "Soul_RigRN.phl[959]";
+connectAttr "pairBlend22.otx" "Soul_RigRN.phl[960]";
+connectAttr "pairBlend22.oty" "Soul_RigRN.phl[961]";
+connectAttr "pairBlend22.otz" "Soul_RigRN.phl[962]";
+connectAttr "Soul_RigRN.phl[963]" "Soul_RigRN.phl[964]";
+connectAttr "Soul_RigRN.phl[965]" "Soul_RigRN.phl[966]";
+connectAttr "Soul_RigRN.phl[967]" "Soul_RigRN.phl[968]";
+connectAttr "Soul_RigRN.phl[969]" "Soul_RigRN.phl[970]";
+connectAttr "Soul_RigRN.phl[971]" "Soul_RigRN.phl[972]";
+connectAttr "Soul_RigRN.phl[973]" "Soul_RigRN.phl[974]";
+connectAttr "Soul_RigRN.phl[975]" "Soul_RigRN.phl[976]";
+connectAttr "Soul_RigRN.phl[977]" "Soul_RigRN.phl[978]";
+connectAttr "Soul_RigRN.phl[979]" "Soul_RigRN.phl[980]";
+connectAttr "Soul_RigRN.phl[981]" "Soul_RigRN.phl[982]";
+connectAttr "Soul_RigRN.phl[983]" "Soul_RigRN.phl[984]";
+connectAttr "Soul_RigRN.phl[985]" "Soul_RigRN.phl[986]";
+connectAttr "Soul_RigRN.phl[987]" "Soul_RigRN.phl[988]";
+connectAttr "Soul_RigRN.phl[989]" "Soul_RigRN.phl[990]";
+connectAttr "Soul_RigRN.phl[991]" "Soul_RigRN.phl[992]";
+connectAttr "Soul_RigRN.phl[993]" "Soul_RigRN.phl[994]";
+connectAttr "Soul_RigRN.phl[995]" "Soul_RigRN.phl[996]";
+connectAttr "Soul_RigRN.phl[997]" "Soul_RigRN.phl[998]";
+connectAttr "Soul_RigRN.phl[999]" "Soul_RigRN.phl[1000]";
+connectAttr "Soul_RigRN.phl[1001]" "Soul_RigRN.phl[1002]";
+connectAttr "Soul_RigRN.phl[1003]" "Soul_RigRN.phl[1004]";
+connectAttr "Soul_RigRN.phl[1005]" "Soul_RigRN.phl[1006]";
+connectAttr "Soul_RigRN.phl[1007]" "Soul_RigRN.phl[1008]";
+connectAttr "Soul_RigRN.phl[1009]" "Soul_RigRN.phl[1010]";
+connectAttr "Soul_RigRN.phl[1011]" "Soul_RigRN.phl[1012]";
+connectAttr "Soul_RigRN.phl[1013]" "Soul_RigRN.phl[1014]";
+connectAttr "Soul_RigRN.phl[1015]" "Soul_RigRN.phl[1016]";
+connectAttr "Soul_RigRN.phl[1017]" "Soul_RigRN.phl[1018]";
+connectAttr "Soul_RigRN.phl[1019]" "Soul_RigRN.phl[1020]";
+connectAttr "Soul_RigRN.phl[1021]" "Soul_RigRN.phl[1022]";
+connectAttr "Soul_RigRN.phl[1023]" "Soul_RigRN.phl[1024]";
+connectAttr "Soul_RigRN.phl[1025]" "Soul_RigRN.phl[1026]";
+connectAttr "Soul_RigRN.phl[1027]" "Soul_RigRN.phl[1028]";
+connectAttr "Soul_RigRN.phl[1029]" "Soul_RigRN.phl[1030]";
+connectAttr "Soul_RigRN.phl[1031]" "Soul_RigRN.phl[1032]";
+connectAttr "Soul_RigRN.phl[1033]" "Soul_RigRN.phl[1034]";
+connectAttr "Soul_RigRN.phl[1035]" "Soul_RigRN.phl[1036]";
+connectAttr "Soul_RigRN.phl[1037]" "Soul_RigRN.phl[1038]";
+connectAttr "Soul_RigRN.phl[1039]" "Soul_RigRN.phl[1040]";
+connectAttr "Soul_RigRN.phl[1041]" "Soul_RigRN.phl[1042]";
+connectAttr "Soul_RigRN.phl[1043]" "Soul_RigRN.phl[1044]";
+connectAttr "Soul_RigRN.phl[1045]" "Soul_RigRN.phl[1046]";
+connectAttr "Soul_RigRN.phl[1047]" "Soul_RigRN.phl[1048]";
+connectAttr "Soul_RigRN.phl[1049]" "Soul_RigRN.phl[1050]";
+connectAttr "Soul_RigRN.phl[1051]" "Soul_RigRN.phl[1052]";
+connectAttr "Soul_RigRN.phl[1053]" "Soul_RigRN.phl[1054]";
+connectAttr "Soul_RigRN.phl[1055]" "Soul_RigRN.phl[1056]";
+connectAttr "Soul_RigRN.phl[1057]" "Soul_RigRN.phl[1058]";
+connectAttr "Soul_RigRN.phl[1059]" "Soul_RigRN.phl[1060]";
+connectAttr "Soul_RigRN.phl[1061]" "Soul_RigRN.phl[1062]";
+connectAttr "Soul_RigRN.phl[1063]" "Soul_RigRN.phl[1064]";
+connectAttr "Soul_RigRN.phl[1065]" "Soul_RigRN.phl[1066]";
+connectAttr "Soul_RigRN.phl[1067]" "Soul_RigRN.phl[1068]";
+connectAttr "Soul_RigRN.phl[1069]" "Soul_RigRN.phl[1070]";
+connectAttr "Soul_RigRN.phl[1071]" "Soul_RigRN.phl[1072]";
+connectAttr "Soul_RigRN.phl[1073]" "Soul_RigRN.phl[1074]";
+connectAttr "Soul_RigRN.phl[1075]" "Soul_RigRN.phl[1076]";
+connectAttr "Soul_RigRN.phl[1077]" "Soul_RigRN.phl[1078]";
+connectAttr "Soul_RigRN.phl[1079]" "Soul_RigRN.phl[1080]";
+connectAttr "Soul_RigRN.phl[1081]" "Soul_RigRN.phl[1082]";
+connectAttr "Soul_RigRN.phl[1083]" "Soul_RigRN.phl[1084]";
+connectAttr "Soul_RigRN.phl[1085]" "Soul_RigRN.phl[1086]";
+connectAttr "Soul_RigRN.phl[1087]" "Soul_RigRN.phl[1088]";
+connectAttr "Soul_RigRN.phl[1089]" "Soul_RigRN.phl[1090]";
+connectAttr "Soul_RigRN.phl[1091]" "Soul_RigRN.phl[1092]";
+connectAttr "Soul_RigRN.phl[1093]" "Soul_RigRN.phl[1094]";
+connectAttr "Soul_RigRN.phl[1095]" "Soul_RigRN.phl[1096]";
+connectAttr "Soul_RigRN.phl[1097]" "Soul_RigRN.phl[1098]";
+connectAttr "Soul_RigRN.phl[1099]" "Soul_RigRN.phl[1100]";
+connectAttr "Soul_RigRN.phl[1101]" "Soul_RigRN.phl[1102]";
+connectAttr "Soul_RigRN.phl[1103]" "Soul_RigRN.phl[1104]";
+connectAttr "Soul_RigRN.phl[1105]" "Soul_RigRN.phl[1106]";
+connectAttr "Soul_RigRN.phl[1107]" "Soul_RigRN.phl[1108]";
+connectAttr "Soul_RigRN.phl[1109]" "Soul_RigRN.phl[1110]";
+connectAttr "Soul_RigRN.phl[1111]" "Soul_RigRN.phl[1112]";
+connectAttr "Prop_Bow_Rigged_01_scaleX.o" "Soul_RigRN.phl[1113]";
+connectAttr "Prop_Bow_Rigged_01_scaleY.o" "Soul_RigRN.phl[1114]";
+connectAttr "Prop_Bow_Rigged_01_scaleZ.o" "Soul_RigRN.phl[1115]";
+connectAttr "Prop_Bow_Rigged_01_lockInfluenceWeights.o" "Soul_RigRN.phl[1116]";
+connectAttr "Prop_Bow_Rigged_01_visibility.o" "Soul_RigRN.phl[1117]";
+connectAttr "Prop_Bow_Rigged_01_translateX.o" "Soul_RigRN.phl[1118]";
+connectAttr "Prop_Bow_Rigged_01_translateY.o" "Soul_RigRN.phl[1119]";
+connectAttr "Prop_Bow_Rigged_01_translateZ.o" "Soul_RigRN.phl[1120]";
+connectAttr "Prop_Bow_Rigged_01_rotateX.o" "Soul_RigRN.phl[1121]";
+connectAttr "Prop_Bow_Rigged_01_rotateY.o" "Soul_RigRN.phl[1122]";
+connectAttr "Prop_Bow_Rigged_01_rotateZ.o" "Soul_RigRN.phl[1123]";
+connectAttr "Prop_Bow_01_lockInfluenceWeights.o" "Soul_RigRN.phl[1124]";
+connectAttr "Prop_Bow_01_visibility.o" "Soul_RigRN.phl[1125]";
+connectAttr "Prop_Bow_01_translateX.o" "Soul_RigRN.phl[1126]";
+connectAttr "Prop_Bow_01_translateY.o" "Soul_RigRN.phl[1127]";
+connectAttr "Prop_Bow_01_translateZ.o" "Soul_RigRN.phl[1128]";
+connectAttr "Prop_Bow_01_rotateX.o" "Soul_RigRN.phl[1129]";
+connectAttr "Prop_Bow_01_rotateY.o" "Soul_RigRN.phl[1130]";
+connectAttr "Prop_Bow_01_rotateZ.o" "Soul_RigRN.phl[1131]";
+connectAttr "Prop_Bow_01_scaleX.o" "Soul_RigRN.phl[1132]";
+connectAttr "Prop_Bow_01_scaleY.o" "Soul_RigRN.phl[1133]";
+connectAttr "Prop_Bow_01_scaleZ.o" "Soul_RigRN.phl[1134]";
+connectAttr "Soul_RigRN.phl[1135]" "Soul_RigRN.phl[1136]";
+connectAttr "Soul_RigRN.phl[1137]" "Soul_RigRN.phl[1138]";
+connectAttr "Soul_RigRN.phl[1139]" "Soul_RigRN.phl[1140]";
+connectAttr "Soul_RigRN.phl[1141]" "Soul_RigRN.phl[1142]";
+connectAttr "Soul_RigRN.phl[1143]" "Soul_RigRN.phl[1144]";
+connectAttr "Soul_RigRN.phl[1145]" "Soul_RigRN.phl[1146]";
+connectAttr "Soul_RigRN.phl[1147]" "Soul_RigRN.phl[1148]";
+connectAttr "Soul_RigRN.phl[1149]" "Soul_RigRN.phl[1150]";
+connectAttr "Soul_RigRN.phl[1151]" "Soul_RigRN.phl[1152]";
+connectAttr "Soul_RigRN.phl[1153]" "Soul_RigRN.phl[1154]";
+connectAttr "Soul_RigRN.phl[1155]" "Soul_RigRN.phl[1156]";
+connectAttr "Soul_RigRN.phl[1157]" "Soul_RigRN.phl[1158]";
+connectAttr "pairBlend12.orx" "Soul_RigRN.phl[1159]";
+connectAttr "pairBlend12.ory" "Soul_RigRN.phl[1160]";
+connectAttr "pairBlend12.orz" "Soul_RigRN.phl[1161]";
+connectAttr "pairBlend12.otx" "Soul_RigRN.phl[1162]";
+connectAttr "pairBlend12.oty" "Soul_RigRN.phl[1163]";
+connectAttr "pairBlend12.otz" "Soul_RigRN.phl[1164]";
+connectAttr "Soul_RigRN.phl[1165]" "Soul_RigRN.phl[1166]";
+connectAttr "Soul_RigRN.phl[1167]" "Soul_RigRN.phl[1168]";
+connectAttr "Soul_RigRN.phl[1169]" "Soul_RigRN.phl[1170]";
+connectAttr "pairBlend13.orx" "Soul_RigRN.phl[1171]";
+connectAttr "pairBlend13.ory" "Soul_RigRN.phl[1172]";
+connectAttr "pairBlend13.orz" "Soul_RigRN.phl[1173]";
+connectAttr "pairBlend13.otx" "Soul_RigRN.phl[1174]";
+connectAttr "pairBlend13.oty" "Soul_RigRN.phl[1175]";
+connectAttr "pairBlend13.otz" "Soul_RigRN.phl[1176]";
+connectAttr "Soul_RigRN.phl[1177]" "Soul_RigRN.phl[1178]";
+connectAttr "Soul_RigRN.phl[1179]" "Soul_RigRN.phl[1180]";
+connectAttr "Soul_RigRN.phl[1181]" "Soul_RigRN.phl[1182]";
+connectAttr "pairBlend14.orx" "Soul_RigRN.phl[1183]";
+connectAttr "pairBlend14.ory" "Soul_RigRN.phl[1184]";
+connectAttr "pairBlend14.orz" "Soul_RigRN.phl[1185]";
+connectAttr "pairBlend14.otx" "Soul_RigRN.phl[1186]";
+connectAttr "pairBlend14.oty" "Soul_RigRN.phl[1187]";
+connectAttr "pairBlend14.otz" "Soul_RigRN.phl[1188]";
+connectAttr "Soul_RigRN.phl[1189]" "Soul_RigRN.phl[1190]";
+connectAttr "Soul_RigRN.phl[1191]" "Soul_RigRN.phl[1192]";
+connectAttr "Soul_RigRN.phl[1193]" "Soul_RigRN.phl[1194]";
+connectAttr "pairBlend23.orx" "Soul_RigRN.phl[1195]";
+connectAttr "pairBlend23.ory" "Soul_RigRN.phl[1196]";
+connectAttr "pairBlend23.orz" "Soul_RigRN.phl[1197]";
+connectAttr "pairBlend23.otx" "Soul_RigRN.phl[1198]";
+connectAttr "pairBlend23.oty" "Soul_RigRN.phl[1199]";
+connectAttr "pairBlend23.otz" "Soul_RigRN.phl[1200]";
+connectAttr "Soul_RigRN.phl[1201]" "Soul_RigRN.phl[1202]";
+connectAttr "Soul_RigRN.phl[1203]" "Soul_RigRN.phl[1204]";
+connectAttr "Soul_RigRN.phl[1205]" "Soul_RigRN.phl[1206]";
+connectAttr "pairBlend24.orx" "Soul_RigRN.phl[1207]";
+connectAttr "pairBlend24.ory" "Soul_RigRN.phl[1208]";
+connectAttr "pairBlend24.orz" "Soul_RigRN.phl[1209]";
+connectAttr "pairBlend24.otx" "Soul_RigRN.phl[1210]";
+connectAttr "pairBlend24.oty" "Soul_RigRN.phl[1211]";
+connectAttr "pairBlend24.otz" "Soul_RigRN.phl[1212]";
+connectAttr "pairBlend25.orx" "Soul_RigRN.phl[1213]";
+connectAttr "pairBlend25.ory" "Soul_RigRN.phl[1214]";
+connectAttr "pairBlend25.orz" "Soul_RigRN.phl[1215]";
+connectAttr "pairBlend25.otx" "Soul_RigRN.phl[1216]";
+connectAttr "pairBlend25.oty" "Soul_RigRN.phl[1217]";
+connectAttr "pairBlend25.otz" "Soul_RigRN.phl[1218]";
+connectAttr "Soul_RigRN.phl[1219]" "Soul_RigRN.phl[1220]";
+connectAttr "Soul_RigRN.phl[1221]" "Soul_RigRN.phl[1222]";
+connectAttr "Soul_RigRN.phl[1223]" "Soul_RigRN.phl[1224]";
+connectAttr "Soul_RigRN.phl[1225]" "Soul_RigRN.phl[1226]";
+connectAttr "Soul_RigRN.phl[1227]" "Soul_RigRN.phl[1228]";
+connectAttr "Soul_RigRN.phl[1229]" "Soul_RigRN.phl[1230]";
+connectAttr "pairBlend26.orx" "Soul_RigRN.phl[1231]";
+connectAttr "pairBlend26.ory" "Soul_RigRN.phl[1232]";
+connectAttr "pairBlend26.orz" "Soul_RigRN.phl[1233]";
+connectAttr "pairBlend26.otx" "Soul_RigRN.phl[1234]";
+connectAttr "pairBlend26.oty" "Soul_RigRN.phl[1235]";
+connectAttr "pairBlend26.otz" "Soul_RigRN.phl[1236]";
+connectAttr "Soul_RigRN.phl[1237]" "Soul_RigRN.phl[1238]";
+connectAttr "Soul_RigRN.phl[1239]" "Soul_RigRN.phl[1240]";
+connectAttr "Soul_RigRN.phl[1241]" "Soul_RigRN.phl[1242]";
+connectAttr "pairBlend27.orx" "Soul_RigRN.phl[1243]";
+connectAttr "pairBlend27.ory" "Soul_RigRN.phl[1244]";
+connectAttr "pairBlend27.orz" "Soul_RigRN.phl[1245]";
+connectAttr "pairBlend27.otx" "Soul_RigRN.phl[1246]";
+connectAttr "pairBlend27.oty" "Soul_RigRN.phl[1247]";
+connectAttr "pairBlend27.otz" "Soul_RigRN.phl[1248]";
+connectAttr "Soul_RigRN.phl[1249]" "Soul_RigRN.phl[1250]";
+connectAttr "Soul_RigRN.phl[1251]" "Soul_RigRN.phl[1252]";
+connectAttr "Soul_RigRN.phl[1253]" "Soul_RigRN.phl[1254]";
+connectAttr "pairBlend28.orx" "Soul_RigRN.phl[1255]";
+connectAttr "pairBlend28.ory" "Soul_RigRN.phl[1256]";
+connectAttr "pairBlend28.orz" "Soul_RigRN.phl[1257]";
+connectAttr "pairBlend28.otx" "Soul_RigRN.phl[1258]";
+connectAttr "pairBlend28.oty" "Soul_RigRN.phl[1259]";
+connectAttr "pairBlend28.otz" "Soul_RigRN.phl[1260]";
+connectAttr "pairBlend29.orx" "Soul_RigRN.phl[1261]";
+connectAttr "pairBlend29.ory" "Soul_RigRN.phl[1262]";
+connectAttr "pairBlend29.orz" "Soul_RigRN.phl[1263]";
+connectAttr "pairBlend29.otx" "Soul_RigRN.phl[1264]";
+connectAttr "pairBlend29.oty" "Soul_RigRN.phl[1265]";
+connectAttr "pairBlend29.otz" "Soul_RigRN.phl[1266]";
+connectAttr "Soul_RigRN.phl[1267]" "Soul_RigRN.phl[1268]";
+connectAttr "Soul_RigRN.phl[1269]" "Soul_RigRN.phl[1270]";
+connectAttr "Soul_RigRN.phl[1271]" "Soul_RigRN.phl[1272]";
+connectAttr "Soul_RigRN.phl[1273]" "Soul_RigRN.phl[1274]";
+connectAttr "Soul_RigRN.phl[1275]" "Soul_RigRN.phl[1276]";
+connectAttr "Soul_RigRN.phl[1277]" "Soul_RigRN.phl[1278]";
+connectAttr "pairBlend30.orx" "Soul_RigRN.phl[1279]";
+connectAttr "pairBlend30.ory" "Soul_RigRN.phl[1280]";
+connectAttr "pairBlend30.orz" "Soul_RigRN.phl[1281]";
+connectAttr "pairBlend30.otx" "Soul_RigRN.phl[1282]";
+connectAttr "pairBlend30.oty" "Soul_RigRN.phl[1283]";
+connectAttr "pairBlend30.otz" "Soul_RigRN.phl[1284]";
+connectAttr "Soul_RigRN.phl[1285]" "Soul_RigRN.phl[1286]";
+connectAttr "Soul_RigRN.phl[1287]" "Soul_RigRN.phl[1288]";
+connectAttr "Soul_RigRN.phl[1289]" "Soul_RigRN.phl[1290]";
+connectAttr "pairBlend31.orx" "Soul_RigRN.phl[1291]";
+connectAttr "pairBlend31.ory" "Soul_RigRN.phl[1292]";
+connectAttr "pairBlend31.orz" "Soul_RigRN.phl[1293]";
+connectAttr "pairBlend31.otx" "Soul_RigRN.phl[1294]";
+connectAttr "pairBlend31.oty" "Soul_RigRN.phl[1295]";
+connectAttr "pairBlend31.otz" "Soul_RigRN.phl[1296]";
+connectAttr "Soul_RigRN.phl[1297]" "Soul_RigRN.phl[1298]";
+connectAttr "Soul_RigRN.phl[1299]" "Soul_RigRN.phl[1300]";
+connectAttr "Soul_RigRN.phl[1301]" "Soul_RigRN.phl[1302]";
+connectAttr "pairBlend32.orx" "Soul_RigRN.phl[1303]";
+connectAttr "pairBlend32.ory" "Soul_RigRN.phl[1304]";
+connectAttr "pairBlend32.orz" "Soul_RigRN.phl[1305]";
+connectAttr "pairBlend32.otx" "Soul_RigRN.phl[1306]";
+connectAttr "pairBlend32.oty" "Soul_RigRN.phl[1307]";
+connectAttr "pairBlend32.otz" "Soul_RigRN.phl[1308]";
+connectAttr "pairBlend33.orx" "Soul_RigRN.phl[1309]";
+connectAttr "pairBlend33.ory" "Soul_RigRN.phl[1310]";
+connectAttr "pairBlend33.orz" "Soul_RigRN.phl[1311]";
+connectAttr "pairBlend33.otx" "Soul_RigRN.phl[1312]";
+connectAttr "pairBlend33.oty" "Soul_RigRN.phl[1313]";
+connectAttr "pairBlend33.otz" "Soul_RigRN.phl[1314]";
+connectAttr "Soul_RigRN.phl[1315]" "Soul_RigRN.phl[1316]";
+connectAttr "Soul_RigRN.phl[1317]" "Soul_RigRN.phl[1318]";
+connectAttr "Soul_RigRN.phl[1319]" "Soul_RigRN.phl[1320]";
+connectAttr "Soul_RigRN.phl[1321]" "Soul_RigRN.phl[1322]";
+connectAttr "Soul_RigRN.phl[1323]" "Soul_RigRN.phl[1324]";
+connectAttr "Soul_RigRN.phl[1325]" "Soul_RigRN.phl[1326]";
+connectAttr "pairBlend5.orx" "Soul_RigRN.phl[1327]";
+connectAttr "pairBlend5.ory" "Soul_RigRN.phl[1328]";
+connectAttr "pairBlend5.orz" "Soul_RigRN.phl[1329]";
+connectAttr "pairBlend5.otx" "Soul_RigRN.phl[1330]";
+connectAttr "pairBlend5.oty" "Soul_RigRN.phl[1331]";
+connectAttr "pairBlend5.otz" "Soul_RigRN.phl[1332]";
+connectAttr "Soul_RigRN.phl[1333]" "Soul_RigRN.phl[1334]";
+connectAttr "Soul_RigRN.phl[1335]" "Soul_RigRN.phl[1336]";
+connectAttr "Soul_RigRN.phl[1337]" "Soul_RigRN.phl[1338]";
+connectAttr "pairBlend6.orx" "Soul_RigRN.phl[1339]";
+connectAttr "pairBlend6.ory" "Soul_RigRN.phl[1340]";
+connectAttr "pairBlend6.orz" "Soul_RigRN.phl[1341]";
+connectAttr "pairBlend6.otx" "Soul_RigRN.phl[1342]";
+connectAttr "pairBlend6.oty" "Soul_RigRN.phl[1343]";
+connectAttr "pairBlend6.otz" "Soul_RigRN.phl[1344]";
+connectAttr "Soul_RigRN.phl[1345]" "Soul_RigRN.phl[1346]";
+connectAttr "Soul_RigRN.phl[1347]" "Soul_RigRN.phl[1348]";
+connectAttr "Soul_RigRN.phl[1349]" "Soul_RigRN.phl[1350]";
+connectAttr "pairBlend7.orx" "Soul_RigRN.phl[1351]";
+connectAttr "pairBlend7.ory" "Soul_RigRN.phl[1352]";
+connectAttr "pairBlend7.orz" "Soul_RigRN.phl[1353]";
+connectAttr "pairBlend7.otx" "Soul_RigRN.phl[1354]";
+connectAttr "pairBlend7.oty" "Soul_RigRN.phl[1355]";
+connectAttr "pairBlend7.otz" "Soul_RigRN.phl[1356]";
+connectAttr "Soul_RigRN.phl[1357]" "Soul_RigRN.phl[1358]";
+connectAttr "Soul_RigRN.phl[1359]" "Soul_RigRN.phl[1360]";
+connectAttr "Soul_RigRN.phl[1361]" "Soul_RigRN.phl[1362]";
+connectAttr "pairBlend16.orx" "Soul_RigRN.phl[1363]";
+connectAttr "pairBlend16.ory" "Soul_RigRN.phl[1364]";
+connectAttr "pairBlend16.orz" "Soul_RigRN.phl[1365]";
+connectAttr "pairBlend16.otx" "Soul_RigRN.phl[1366]";
+connectAttr "pairBlend16.oty" "Soul_RigRN.phl[1367]";
+connectAttr "pairBlend16.otz" "Soul_RigRN.phl[1368]";
+connectAttr "Soul_RigRN.phl[1369]" "Soul_RigRN.phl[1370]";
+connectAttr "Soul_RigRN.phl[1371]" "Soul_RigRN.phl[1372]";
+connectAttr "Soul_RigRN.phl[1373]" "Soul_RigRN.phl[1374]";
+connectAttr "pairBlend2.orx" "Soul_RigRN.phl[1375]";
+connectAttr "pairBlend2.ory" "Soul_RigRN.phl[1376]";
+connectAttr "pairBlend2.orz" "Soul_RigRN.phl[1377]";
+connectAttr "pairBlend2.otx" "Soul_RigRN.phl[1378]";
+connectAttr "pairBlend2.oty" "Soul_RigRN.phl[1379]";
+connectAttr "pairBlend2.otz" "Soul_RigRN.phl[1380]";
+connectAttr "Soul_RigRN.phl[1381]" "Soul_RigRN.phl[1382]";
+connectAttr "Soul_RigRN.phl[1383]" "Soul_RigRN.phl[1384]";
+connectAttr "Soul_RigRN.phl[1385]" "Soul_RigRN.phl[1386]";
+connectAttr "pairBlend3.orx" "Soul_RigRN.phl[1387]";
+connectAttr "pairBlend3.ory" "Soul_RigRN.phl[1388]";
+connectAttr "pairBlend3.orz" "Soul_RigRN.phl[1389]";
+connectAttr "pairBlend3.otx" "Soul_RigRN.phl[1390]";
+connectAttr "pairBlend3.oty" "Soul_RigRN.phl[1391]";
+connectAttr "pairBlend3.otz" "Soul_RigRN.phl[1392]";
+connectAttr "Soul_RigRN.phl[1393]" "Soul_RigRN.phl[1394]";
+connectAttr "Soul_RigRN.phl[1395]" "Soul_RigRN.phl[1396]";
+connectAttr "Soul_RigRN.phl[1397]" "Soul_RigRN.phl[1398]";
+connectAttr "pairBlend4.orx" "Soul_RigRN.phl[1399]";
+connectAttr "pairBlend4.ory" "Soul_RigRN.phl[1400]";
+connectAttr "pairBlend4.orz" "Soul_RigRN.phl[1401]";
+connectAttr "pairBlend4.otx" "Soul_RigRN.phl[1402]";
+connectAttr "pairBlend4.oty" "Soul_RigRN.phl[1403]";
+connectAttr "pairBlend4.otz" "Soul_RigRN.phl[1404]";
+connectAttr "Soul_RigRN.phl[1405]" "Soul_Rig:QuickRigCharacter_ControlRig.HIC";
+connectAttr "Soul_RigRN.phl[1406]" "HIKFK2State1.InputCharacterDefinition";
+connectAttr "Soul_RigRN.phl[1407]" "HIKState2FK1.InputCharacterDefinition";
+connectAttr "Soul_RigRN.phl[1408]" "HIKState2FK2.InputCharacterDefinition";
+connectAttr "Soul_RigRN.phl[1409]" "HIKEffectorFromCharacter1.InputCharacterDefinition"
 		;
-connectAttr "Soul_RigRN.phl[604]" "HIKEffectorFromCharacter2.InputCharacterDefinition"
+connectAttr "Soul_RigRN.phl[1410]" "HIKEffectorFromCharacter2.InputCharacterDefinition"
 		;
-connectAttr "Soul_RigRN.phl[605]" "HIKEffectorFromCharacter1.InputPropertySetState"
+connectAttr "Soul_RigRN.phl[1411]" "HIKEffectorFromCharacter1.InputPropertySetState"
 		;
-connectAttr "Soul_RigRN.phl[606]" "HIKEffectorFromCharacter2.InputPropertySetState"
+connectAttr "Soul_RigRN.phl[1412]" "HIKEffectorFromCharacter2.InputPropertySetState"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_HipsEffector.pull" "Soul_RigRN.phl[607]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_HipsEffector.pull" "Soul_RigRN.phl[1413]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_HipsEffector.stiffness" "Soul_RigRN.phl[608]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_HipsEffector.stiffness" "Soul_RigRN.phl[1414]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftAnkleEffector.pull" "Soul_RigRN.phl[609]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftAnkleEffector.pull" "Soul_RigRN.phl[1415]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightAnkleEffector.pull" "Soul_RigRN.phl[610]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightAnkleEffector.pull" "Soul_RigRN.phl[1416]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftWristEffector.pull" "Soul_RigRN.phl[611]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftWristEffector.pull" "Soul_RigRN.phl[1417]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightWristEffector.pull" "Soul_RigRN.phl[612]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightWristEffector.pull" "Soul_RigRN.phl[1418]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftKneeEffector.pull" "Soul_RigRN.phl[613]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftKneeEffector.pull" "Soul_RigRN.phl[1419]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftKneeEffector.stiffness" "Soul_RigRN.phl[614]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftKneeEffector.stiffness" "Soul_RigRN.phl[1420]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightKneeEffector.pull" "Soul_RigRN.phl[615]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightKneeEffector.pull" "Soul_RigRN.phl[1421]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightKneeEffector.stiffness" "Soul_RigRN.phl[616]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightKneeEffector.stiffness" "Soul_RigRN.phl[1422]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftElbowEffector.pull" "Soul_RigRN.phl[617]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftElbowEffector.pull" "Soul_RigRN.phl[1423]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftElbowEffector.stiffness" "Soul_RigRN.phl[618]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftElbowEffector.stiffness" "Soul_RigRN.phl[1424]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightElbowEffector.pull" "Soul_RigRN.phl[619]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightElbowEffector.pull" "Soul_RigRN.phl[1425]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightElbowEffector.stiffness" "Soul_RigRN.phl[620]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightElbowEffector.stiffness" "Soul_RigRN.phl[1426]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_ChestOriginEffector.stiffness" "Soul_RigRN.phl[621]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_ChestOriginEffector.stiffness" "Soul_RigRN.phl[1427]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_ChestEndEffector.pull" "Soul_RigRN.phl[622]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_ChestEndEffector.pull" "Soul_RigRN.phl[1428]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_ChestEndEffector.stiffness" "Soul_RigRN.phl[623]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_ChestEndEffector.stiffness" "Soul_RigRN.phl[1429]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightFootEffector.pull" "Soul_RigRN.phl[624]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightFootEffector.pull" "Soul_RigRN.phl[1430]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftShoulderEffector.stiffness" "Soul_RigRN.phl[625]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_LeftShoulderEffector.stiffness" "Soul_RigRN.phl[1431]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulderEffector.stiffness" "Soul_RigRN.phl[626]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulderEffector.stiffness" "Soul_RigRN.phl[1432]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_HeadEffector.pull" "Soul_RigRN.phl[627]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_HeadEffector.pull" "Soul_RigRN.phl[1433]"
 		;
-connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_HeadEffector.stiffness" "Soul_RigRN.phl[628]"
+connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_HeadEffector.stiffness" "Soul_RigRN.phl[1434]"
 		;
-connectAttr "Soul_RigRN.phl[629]" "Soul_Rig:QuickRigCharacter_ControlRig.ra";
-connectAttr "Soul_RigRN.phl[630]" "HIKEffectorFromCharacter1.InputCharacterState"
+connectAttr "Soul_RigRN.phl[1435]" "Soul_Rig:QuickRigCharacter_ControlRig.ra";
+connectAttr "Soul_RigRN.phl[1436]" "HIKState2FK1.InputCharacterState";
+connectAttr "Soul_RigRN.phl[1437]" "HIKEffectorFromCharacter1.InputCharacterState"
 		;
-connectAttr "Soul_RigRN.phl[631]" "HIKState2FK1.InputCharacterState";
-connectAttr "Soul_RigRN.phl[632]" "HIKState2FK2.InputCharacterState";
-connectAttr "Soul_RigRN.phl[633]" "HIKEffectorFromCharacter2.InputCharacterState"
+connectAttr "Soul_RigRN.phl[1438]" "HIKEffectorFromCharacter2.InputCharacterState"
 		;
-connectAttr "HIKFK2State1.OutputCharacterState" "Soul_RigRN.phl[634]";
-connectAttr "HIKPinning2State1.OutputEffectorState" "Soul_RigRN.phl[635]";
-connectAttr "HIKPinning2State1.OutputEffectorStateNoAux" "Soul_RigRN.phl[636]";
-connectAttr "Soul_RigRN.phl[637]" "Soul_RigRN.phl[638]";
-connectAttr "Soul_RigRN.phl[639]" "pairBlend1.it2";
-connectAttr "Soul_RigRN.phl[640]" "pairBlend1.ir2";
-connectAttr "Soul_RigRN.phl[641]" "pairBlend2.it2";
-connectAttr "Soul_RigRN.phl[642]" "pairBlend2.ir2";
-connectAttr "Soul_RigRN.phl[643]" "pairBlend3.it2";
-connectAttr "Soul_RigRN.phl[644]" "pairBlend3.ir2";
-connectAttr "Soul_RigRN.phl[645]" "pairBlend4.it2";
-connectAttr "Soul_RigRN.phl[646]" "pairBlend4.ir2";
-connectAttr "Soul_RigRN.phl[647]" "pairBlend5.it2";
-connectAttr "Soul_RigRN.phl[648]" "pairBlend5.ir2";
-connectAttr "Soul_RigRN.phl[649]" "pairBlend6.it2";
-connectAttr "Soul_RigRN.phl[650]" "pairBlend6.ir2";
-connectAttr "Soul_RigRN.phl[651]" "pairBlend7.it2";
-connectAttr "Soul_RigRN.phl[652]" "pairBlend7.ir2";
-connectAttr "Soul_RigRN.phl[653]" "pairBlend8.it2";
-connectAttr "Soul_RigRN.phl[654]" "pairBlend8.ir2";
-connectAttr "Soul_RigRN.phl[655]" "pairBlend9.it2";
-connectAttr "Soul_RigRN.phl[656]" "pairBlend9.ir2";
-connectAttr "Soul_RigRN.phl[657]" "pairBlend10.it2";
-connectAttr "Soul_RigRN.phl[658]" "pairBlend10.ir2";
-connectAttr "Soul_RigRN.phl[659]" "pairBlend11.it2";
-connectAttr "Soul_RigRN.phl[660]" "pairBlend11.ir2";
-connectAttr "Soul_RigRN.phl[661]" "pairBlend12.it2";
-connectAttr "Soul_RigRN.phl[662]" "pairBlend12.ir2";
-connectAttr "Soul_RigRN.phl[663]" "pairBlend13.it2";
-connectAttr "Soul_RigRN.phl[664]" "pairBlend13.ir2";
-connectAttr "Soul_RigRN.phl[665]" "pairBlend14.it2";
-connectAttr "Soul_RigRN.phl[666]" "pairBlend14.ir2";
-connectAttr "Soul_RigRN.phl[667]" "pairBlend15.it2";
-connectAttr "Soul_RigRN.phl[668]" "pairBlend15.ir2";
-connectAttr "Soul_RigRN.phl[669]" "pairBlend16.it2";
-connectAttr "Soul_RigRN.phl[670]" "pairBlend16.ir2";
-connectAttr "Soul_RigRN.phl[671]" "pairBlend17.it2";
-connectAttr "Soul_RigRN.phl[672]" "pairBlend17.ir2";
-connectAttr "Soul_RigRN.phl[673]" "pairBlend18.it2";
-connectAttr "Soul_RigRN.phl[674]" "pairBlend18.ir2";
-connectAttr "Soul_RigRN.phl[675]" "pairBlend19.it2";
-connectAttr "Soul_RigRN.phl[676]" "pairBlend19.ir2";
-connectAttr "Soul_RigRN.phl[677]" "pairBlend20.it2";
-connectAttr "Soul_RigRN.phl[678]" "pairBlend20.ir2";
-connectAttr "Soul_RigRN.phl[679]" "pairBlend21.it2";
-connectAttr "Soul_RigRN.phl[680]" "pairBlend21.ir2";
-connectAttr "Soul_RigRN.phl[681]" "pairBlend22.it2";
-connectAttr "Soul_RigRN.phl[682]" "pairBlend22.ir2";
-connectAttr "Soul_RigRN.phl[683]" "pairBlend23.it2";
-connectAttr "Soul_RigRN.phl[684]" "pairBlend23.ir2";
-connectAttr "Soul_RigRN.phl[685]" "pairBlend24.it2";
-connectAttr "Soul_RigRN.phl[686]" "pairBlend24.ir2";
-connectAttr "Soul_RigRN.phl[687]" "pairBlend25.it2";
-connectAttr "Soul_RigRN.phl[688]" "pairBlend25.ir2";
-connectAttr "Soul_RigRN.phl[689]" "pairBlend26.it2";
-connectAttr "Soul_RigRN.phl[690]" "pairBlend26.ir2";
-connectAttr "Soul_RigRN.phl[691]" "pairBlend27.it2";
-connectAttr "Soul_RigRN.phl[692]" "pairBlend27.ir2";
-connectAttr "Soul_RigRN.phl[693]" "pairBlend28.it2";
-connectAttr "Soul_RigRN.phl[694]" "pairBlend28.ir2";
-connectAttr "Soul_RigRN.phl[695]" "pairBlend29.it2";
-connectAttr "Soul_RigRN.phl[696]" "pairBlend29.ir2";
-connectAttr "Soul_RigRN.phl[697]" "pairBlend30.it2";
-connectAttr "Soul_RigRN.phl[698]" "pairBlend30.ir2";
-connectAttr "Soul_RigRN.phl[699]" "pairBlend31.it2";
-connectAttr "Soul_RigRN.phl[700]" "pairBlend31.ir2";
-connectAttr "Soul_RigRN.phl[701]" "pairBlend32.it2";
-connectAttr "Soul_RigRN.phl[702]" "pairBlend32.ir2";
-connectAttr "Soul_RigRN.phl[703]" "pairBlend33.it2";
-connectAttr "Soul_RigRN.phl[704]" "pairBlend33.ir2";
-connectAttr "Soul_RigRN.phl[705]" "pairBlend1.irx1";
-connectAttr "Soul_RigRN.phl[706]" "pairBlend1.iry1";
-connectAttr "Soul_RigRN.phl[707]" "pairBlend1.irz1";
-connectAttr "Soul_RigRN.phl[708]" "pairBlend1.itx1";
-connectAttr "Soul_RigRN.phl[709]" "pairBlend1.ity1";
-connectAttr "Soul_RigRN.phl[710]" "pairBlend1.itz1";
-connectAttr "Soul_RigRN.phl[711]" "pairBlend2.irx1";
-connectAttr "Soul_RigRN.phl[712]" "pairBlend2.iry1";
-connectAttr "Soul_RigRN.phl[713]" "pairBlend2.irz1";
-connectAttr "Soul_RigRN.phl[714]" "pairBlend3.irx1";
-connectAttr "Soul_RigRN.phl[715]" "pairBlend3.iry1";
-connectAttr "Soul_RigRN.phl[716]" "pairBlend3.irz1";
-connectAttr "Soul_RigRN.phl[717]" "pairBlend4.irx1";
-connectAttr "Soul_RigRN.phl[718]" "pairBlend4.iry1";
-connectAttr "Soul_RigRN.phl[719]" "pairBlend4.irz1";
-connectAttr "Soul_RigRN.phl[720]" "pairBlend5.irx1";
-connectAttr "Soul_RigRN.phl[721]" "pairBlend5.iry1";
-connectAttr "Soul_RigRN.phl[722]" "pairBlend5.irz1";
-connectAttr "Soul_RigRN.phl[723]" "pairBlend6.irx1";
-connectAttr "Soul_RigRN.phl[724]" "pairBlend6.iry1";
-connectAttr "Soul_RigRN.phl[725]" "pairBlend6.irz1";
-connectAttr "Soul_RigRN.phl[726]" "pairBlend7.irx1";
-connectAttr "Soul_RigRN.phl[727]" "pairBlend7.iry1";
-connectAttr "Soul_RigRN.phl[728]" "pairBlend7.irz1";
-connectAttr "Soul_RigRN.phl[729]" "pairBlend8.irx1";
-connectAttr "Soul_RigRN.phl[730]" "pairBlend8.iry1";
-connectAttr "Soul_RigRN.phl[731]" "pairBlend8.irz1";
-connectAttr "Soul_RigRN.phl[732]" "pairBlend9.irx1";
-connectAttr "Soul_RigRN.phl[733]" "pairBlend9.iry1";
-connectAttr "Soul_RigRN.phl[734]" "pairBlend9.irz1";
-connectAttr "Soul_RigRN.phl[735]" "pairBlend10.irx1";
-connectAttr "Soul_RigRN.phl[736]" "pairBlend10.iry1";
-connectAttr "Soul_RigRN.phl[737]" "pairBlend10.irz1";
-connectAttr "Soul_RigRN.phl[738]" "pairBlend11.irx1";
-connectAttr "Soul_RigRN.phl[739]" "pairBlend11.iry1";
-connectAttr "Soul_RigRN.phl[740]" "pairBlend11.irz1";
-connectAttr "Soul_RigRN.phl[741]" "pairBlend12.irx1";
-connectAttr "Soul_RigRN.phl[742]" "pairBlend12.iry1";
-connectAttr "Soul_RigRN.phl[743]" "pairBlend12.irz1";
-connectAttr "Soul_RigRN.phl[744]" "pairBlend13.irx1";
-connectAttr "Soul_RigRN.phl[745]" "pairBlend13.iry1";
-connectAttr "Soul_RigRN.phl[746]" "pairBlend13.irz1";
-connectAttr "Soul_RigRN.phl[747]" "pairBlend14.irx1";
-connectAttr "Soul_RigRN.phl[748]" "pairBlend14.iry1";
-connectAttr "Soul_RigRN.phl[749]" "pairBlend14.irz1";
-connectAttr "Soul_RigRN.phl[750]" "pairBlend15.irx1";
-connectAttr "Soul_RigRN.phl[751]" "pairBlend15.iry1";
-connectAttr "Soul_RigRN.phl[752]" "pairBlend15.irz1";
-connectAttr "Soul_RigRN.phl[753]" "pairBlend16.irx1";
-connectAttr "Soul_RigRN.phl[754]" "pairBlend16.iry1";
-connectAttr "Soul_RigRN.phl[755]" "pairBlend16.irz1";
-connectAttr "Soul_RigRN.phl[756]" "pairBlend17.irx1";
-connectAttr "Soul_RigRN.phl[757]" "pairBlend17.iry1";
-connectAttr "Soul_RigRN.phl[758]" "pairBlend17.irz1";
-connectAttr "Soul_RigRN.phl[759]" "pairBlend18.irx1";
-connectAttr "Soul_RigRN.phl[760]" "pairBlend18.iry1";
-connectAttr "Soul_RigRN.phl[761]" "pairBlend18.irz1";
-connectAttr "Soul_RigRN.phl[762]" "pairBlend19.irx1";
-connectAttr "Soul_RigRN.phl[763]" "pairBlend19.iry1";
-connectAttr "Soul_RigRN.phl[764]" "pairBlend19.irz1";
-connectAttr "Soul_RigRN.phl[765]" "pairBlend20.irx1";
-connectAttr "Soul_RigRN.phl[766]" "pairBlend20.iry1";
-connectAttr "Soul_RigRN.phl[767]" "pairBlend20.irz1";
-connectAttr "Soul_RigRN.phl[768]" "pairBlend21.irx1";
-connectAttr "Soul_RigRN.phl[769]" "pairBlend21.iry1";
-connectAttr "Soul_RigRN.phl[770]" "pairBlend21.irz1";
-connectAttr "Soul_RigRN.phl[771]" "pairBlend22.irx1";
-connectAttr "Soul_RigRN.phl[772]" "pairBlend22.iry1";
-connectAttr "Soul_RigRN.phl[773]" "pairBlend22.irz1";
-connectAttr "Soul_RigRN.phl[774]" "pairBlend23.irx1";
-connectAttr "Soul_RigRN.phl[775]" "pairBlend23.iry1";
-connectAttr "Soul_RigRN.phl[776]" "pairBlend23.irz1";
-connectAttr "Soul_RigRN.phl[777]" "pairBlend24.irx1";
-connectAttr "Soul_RigRN.phl[778]" "pairBlend24.iry1";
-connectAttr "Soul_RigRN.phl[779]" "pairBlend24.irz1";
-connectAttr "Soul_RigRN.phl[780]" "pairBlend25.irx1";
-connectAttr "Soul_RigRN.phl[781]" "pairBlend25.iry1";
-connectAttr "Soul_RigRN.phl[782]" "pairBlend25.irz1";
-connectAttr "Soul_RigRN.phl[783]" "pairBlend26.irx1";
-connectAttr "Soul_RigRN.phl[784]" "pairBlend26.iry1";
-connectAttr "Soul_RigRN.phl[785]" "pairBlend26.irz1";
-connectAttr "Soul_RigRN.phl[786]" "pairBlend27.irx1";
-connectAttr "Soul_RigRN.phl[787]" "pairBlend27.iry1";
-connectAttr "Soul_RigRN.phl[788]" "pairBlend27.irz1";
-connectAttr "Soul_RigRN.phl[789]" "pairBlend28.irx1";
-connectAttr "Soul_RigRN.phl[790]" "pairBlend28.iry1";
-connectAttr "Soul_RigRN.phl[791]" "pairBlend28.irz1";
-connectAttr "Soul_RigRN.phl[792]" "pairBlend29.irx1";
-connectAttr "Soul_RigRN.phl[793]" "pairBlend29.iry1";
-connectAttr "Soul_RigRN.phl[794]" "pairBlend29.irz1";
-connectAttr "Soul_RigRN.phl[795]" "pairBlend30.irx1";
-connectAttr "Soul_RigRN.phl[796]" "pairBlend30.iry1";
-connectAttr "Soul_RigRN.phl[797]" "pairBlend30.irz1";
-connectAttr "Soul_RigRN.phl[798]" "pairBlend31.irx1";
-connectAttr "Soul_RigRN.phl[799]" "pairBlend31.iry1";
-connectAttr "Soul_RigRN.phl[800]" "pairBlend31.irz1";
-connectAttr "Soul_RigRN.phl[801]" "pairBlend32.irx1";
-connectAttr "Soul_RigRN.phl[802]" "pairBlend32.iry1";
-connectAttr "Soul_RigRN.phl[803]" "pairBlend32.irz1";
-connectAttr "Soul_RigRN.phl[804]" "pairBlend33.irx1";
-connectAttr "Soul_RigRN.phl[805]" "pairBlend33.iry1";
-connectAttr "Soul_RigRN.phl[806]" "pairBlend33.irz1";
+connectAttr "Soul_RigRN.phl[1439]" "HIKState2FK2.InputCharacterState";
+connectAttr "HIKFK2State1.OutputCharacterState" "Soul_RigRN.phl[1440]";
+connectAttr "HIKPinning2State1.OutputEffectorState" "Soul_RigRN.phl[1441]";
+connectAttr "HIKPinning2State1.OutputEffectorStateNoAux" "Soul_RigRN.phl[1442]";
+connectAttr "Soul_RigRN.phl[1443]" "Soul_RigRN.phl[1444]";
+connectAttr "Soul_RigRN.phl[1445]" "pairBlend1.it2";
+connectAttr "Soul_RigRN.phl[1446]" "pairBlend1.ir2";
+connectAttr "Soul_RigRN.phl[1447]" "pairBlend2.it2";
+connectAttr "Soul_RigRN.phl[1448]" "pairBlend2.ir2";
+connectAttr "Soul_RigRN.phl[1449]" "pairBlend3.it2";
+connectAttr "Soul_RigRN.phl[1450]" "pairBlend3.ir2";
+connectAttr "Soul_RigRN.phl[1451]" "pairBlend4.it2";
+connectAttr "Soul_RigRN.phl[1452]" "pairBlend4.ir2";
+connectAttr "Soul_RigRN.phl[1453]" "pairBlend5.it2";
+connectAttr "Soul_RigRN.phl[1454]" "pairBlend5.ir2";
+connectAttr "Soul_RigRN.phl[1455]" "pairBlend6.it2";
+connectAttr "Soul_RigRN.phl[1456]" "pairBlend6.ir2";
+connectAttr "Soul_RigRN.phl[1457]" "pairBlend7.it2";
+connectAttr "Soul_RigRN.phl[1458]" "pairBlend7.ir2";
+connectAttr "Soul_RigRN.phl[1459]" "pairBlend8.it2";
+connectAttr "Soul_RigRN.phl[1460]" "pairBlend8.ir2";
+connectAttr "Soul_RigRN.phl[1461]" "pairBlend9.it2";
+connectAttr "Soul_RigRN.phl[1462]" "pairBlend9.ir2";
+connectAttr "Soul_RigRN.phl[1463]" "pairBlend10.it2";
+connectAttr "Soul_RigRN.phl[1464]" "pairBlend10.ir2";
+connectAttr "Soul_RigRN.phl[1465]" "pairBlend11.it2";
+connectAttr "Soul_RigRN.phl[1466]" "pairBlend11.ir2";
+connectAttr "Soul_RigRN.phl[1467]" "pairBlend12.it2";
+connectAttr "Soul_RigRN.phl[1468]" "pairBlend12.ir2";
+connectAttr "Soul_RigRN.phl[1469]" "pairBlend13.it2";
+connectAttr "Soul_RigRN.phl[1470]" "pairBlend13.ir2";
+connectAttr "Soul_RigRN.phl[1471]" "pairBlend14.it2";
+connectAttr "Soul_RigRN.phl[1472]" "pairBlend14.ir2";
+connectAttr "Soul_RigRN.phl[1473]" "pairBlend15.it2";
+connectAttr "Soul_RigRN.phl[1474]" "pairBlend15.ir2";
+connectAttr "Soul_RigRN.phl[1475]" "pairBlend16.it2";
+connectAttr "Soul_RigRN.phl[1476]" "pairBlend16.ir2";
+connectAttr "Soul_RigRN.phl[1477]" "pairBlend17.it2";
+connectAttr "Soul_RigRN.phl[1478]" "pairBlend17.ir2";
+connectAttr "Soul_RigRN.phl[1479]" "pairBlend18.it2";
+connectAttr "Soul_RigRN.phl[1480]" "pairBlend18.ir2";
+connectAttr "Soul_RigRN.phl[1481]" "pairBlend19.it2";
+connectAttr "Soul_RigRN.phl[1482]" "pairBlend19.ir2";
+connectAttr "Soul_RigRN.phl[1483]" "pairBlend20.it2";
+connectAttr "Soul_RigRN.phl[1484]" "pairBlend20.ir2";
+connectAttr "Soul_RigRN.phl[1485]" "pairBlend21.it2";
+connectAttr "Soul_RigRN.phl[1486]" "pairBlend21.ir2";
+connectAttr "Soul_RigRN.phl[1487]" "pairBlend22.it2";
+connectAttr "Soul_RigRN.phl[1488]" "pairBlend22.ir2";
+connectAttr "Soul_RigRN.phl[1489]" "pairBlend23.it2";
+connectAttr "Soul_RigRN.phl[1490]" "pairBlend23.ir2";
+connectAttr "Soul_RigRN.phl[1491]" "pairBlend24.it2";
+connectAttr "Soul_RigRN.phl[1492]" "pairBlend24.ir2";
+connectAttr "Soul_RigRN.phl[1493]" "pairBlend25.it2";
+connectAttr "Soul_RigRN.phl[1494]" "pairBlend25.ir2";
+connectAttr "Soul_RigRN.phl[1495]" "pairBlend26.it2";
+connectAttr "Soul_RigRN.phl[1496]" "pairBlend26.ir2";
+connectAttr "Soul_RigRN.phl[1497]" "pairBlend27.it2";
+connectAttr "Soul_RigRN.phl[1498]" "pairBlend27.ir2";
+connectAttr "Soul_RigRN.phl[1499]" "pairBlend28.it2";
+connectAttr "Soul_RigRN.phl[1500]" "pairBlend28.ir2";
+connectAttr "Soul_RigRN.phl[1501]" "pairBlend29.it2";
+connectAttr "Soul_RigRN.phl[1502]" "pairBlend29.ir2";
+connectAttr "Soul_RigRN.phl[1503]" "pairBlend30.it2";
+connectAttr "Soul_RigRN.phl[1504]" "pairBlend30.ir2";
+connectAttr "Soul_RigRN.phl[1505]" "pairBlend31.it2";
+connectAttr "Soul_RigRN.phl[1506]" "pairBlend31.ir2";
+connectAttr "Soul_RigRN.phl[1507]" "pairBlend32.it2";
+connectAttr "Soul_RigRN.phl[1508]" "pairBlend32.ir2";
+connectAttr "Soul_RigRN.phl[1509]" "pairBlend33.it2";
+connectAttr "Soul_RigRN.phl[1510]" "pairBlend33.ir2";
 connectAttr "Soul_Rig:QuickRigCharacter_ControlRig.rao" "Soul_Rig:QuickRigCharacter_Ctrl_HipsEffector.uagx"
 		;
 connectAttr "QuickRigCharacter_Ctrl_HipsEffector_rotate_Merged_Layer_inputBZ.o" "Soul_Rig:QuickRigCharacter_Ctrl_HipsEffector.rz"
@@ -7075,6 +8274,18 @@ connectAttr "HIKState2Effector1.RightWristEffectorGXM[0]" "Soul_Rig:QuickRigChar
 		;
 connectAttr "HIKState2Effector2.RightWristEffectorGXM[0]" "Soul_Rig:QuickRigCharacter_Ctrl_RightWristEffector.atx"
 		;
+connectAttr "QuickRigCharacter_Ctrl_RightWristEffector_rotateZ.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightWristEffector.rz"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightWristEffector_rotateY.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightWristEffector.ry"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightWristEffector_rotateX.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightWristEffector.rx"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightWristEffector_translateZ.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightWristEffector.tz"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightWristEffector_translateY.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightWristEffector.ty"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightWristEffector_translateX.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightWristEffector.tx"
+		;
 connectAttr "Soul_Rig:QuickRigCharacter_ControlRig.rao" "Soul_Rig:QuickRigCharacter_Ctrl_LeftKneeEffector.uagx"
 		;
 connectAttr "QuickRigCharacter_Ctrl_LeftKneeEffector_rotate_Merged_Layer_inputBZ.o" "Soul_Rig:QuickRigCharacter_Ctrl_LeftKneeEffector.rz"
@@ -7134,6 +8345,18 @@ connectAttr "Soul_Rig:QuickRigCharacter_ControlRig.rao" "Soul_Rig:QuickRigCharac
 connectAttr "HIKState2Effector1.RightElbowEffectorGXM[0]" "Soul_Rig:QuickRigCharacter_Ctrl_RightElbowEffector.agx"
 		;
 connectAttr "HIKState2Effector2.RightElbowEffectorGXM[0]" "Soul_Rig:QuickRigCharacter_Ctrl_RightElbowEffector.atx"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightElbowEffector_rotateZ.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightElbowEffector.rz"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightElbowEffector_rotateY.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightElbowEffector.ry"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightElbowEffector_rotateX.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightElbowEffector.rx"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightElbowEffector_translateZ.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightElbowEffector.tz"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightElbowEffector_translateY.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightElbowEffector.ty"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightElbowEffector_translateX.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightElbowEffector.tx"
 		;
 connectAttr "Soul_Rig:QuickRigCharacter_ControlRig.rao" "Soul_Rig:QuickRigCharacter_Ctrl_ChestOriginEffector.uagx"
 		;
@@ -7212,6 +8435,18 @@ connectAttr "Soul_Rig:QuickRigCharacter_ControlRig.rao" "Soul_Rig:QuickRigCharac
 connectAttr "HIKState2Effector1.RightShoulderEffectorGXM[0]" "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulderEffector.agx"
 		;
 connectAttr "HIKState2Effector2.RightShoulderEffectorGXM[0]" "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulderEffector.atx"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightShoulderEffector_rotateZ.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulderEffector.rz"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightShoulderEffector_rotateY.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulderEffector.ry"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightShoulderEffector_rotateX.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulderEffector.rx"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightShoulderEffector_translateZ.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulderEffector.tz"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightShoulderEffector_translateY.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulderEffector.ty"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightShoulderEffector_translateX.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulderEffector.tx"
 		;
 connectAttr "Soul_Rig:QuickRigCharacter_ControlRig.rao" "Soul_Rig:QuickRigCharacter_Ctrl_HeadEffector.uagx"
 		;
@@ -7747,6 +8982,12 @@ connectAttr "HIKState2FK1.RightShoulderGX" "Soul_Rig:QuickRigCharacter_Ctrl_Righ
 		;
 connectAttr "HIKState2FK2.RightShoulderGX" "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulder.atx"
 		;
+connectAttr "QuickRigCharacter_Ctrl_RightShoulder_rotateZ.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulder.rz"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightShoulder_rotateY.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulder.ry"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightShoulder_rotateX.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulder.rx"
+		;
 connectAttr "Soul_Rig:QuickRigCharacter_ControlRig.rao" "Soul_Rig:QuickRigCharacter_Ctrl_RightArm.uagx"
 		;
 connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulder.s" "Soul_Rig:QuickRigCharacter_Ctrl_RightArm.is"
@@ -7754,6 +8995,12 @@ connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightShoulder.s" "Soul_Rig:QuickRig
 connectAttr "HIKState2FK1.RightArmGX" "Soul_Rig:QuickRigCharacter_Ctrl_RightArm.agx"
 		;
 connectAttr "HIKState2FK2.RightArmGX" "Soul_Rig:QuickRigCharacter_Ctrl_RightArm.atx"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightArm_rotateZ.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightArm.rz"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightArm_rotateY.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightArm.ry"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightArm_rotateX.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightArm.rx"
 		;
 connectAttr "Soul_Rig:QuickRigCharacter_ControlRig.rao" "Soul_Rig:QuickRigCharacter_Ctrl_RightForeArm.uagx"
 		;
@@ -7763,6 +9010,12 @@ connectAttr "HIKState2FK1.RightForeArmGX" "Soul_Rig:QuickRigCharacter_Ctrl_Right
 		;
 connectAttr "HIKState2FK2.RightForeArmGX" "Soul_Rig:QuickRigCharacter_Ctrl_RightForeArm.atx"
 		;
+connectAttr "QuickRigCharacter_Ctrl_RightForeArm_rotateZ.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightForeArm.rz"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightForeArm_rotateY.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightForeArm.ry"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightForeArm_rotateX.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightForeArm.rx"
+		;
 connectAttr "Soul_Rig:QuickRigCharacter_ControlRig.rao" "Soul_Rig:QuickRigCharacter_Ctrl_RightHand.uagx"
 		;
 connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightForeArm.s" "Soul_Rig:QuickRigCharacter_Ctrl_RightHand.is"
@@ -7770,6 +9023,12 @@ connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightForeArm.s" "Soul_Rig:QuickRigC
 connectAttr "HIKState2FK1.RightHandGX" "Soul_Rig:QuickRigCharacter_Ctrl_RightHand.agx"
 		;
 connectAttr "HIKState2FK2.RightHandGX" "Soul_Rig:QuickRigCharacter_Ctrl_RightHand.atx"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightHand_rotateZ.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightHand.rz"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightHand_rotateY.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightHand.ry"
+		;
+connectAttr "QuickRigCharacter_Ctrl_RightHand_rotateX.o" "Soul_Rig:QuickRigCharacter_Ctrl_RightHand.rx"
 		;
 connectAttr "Soul_Rig:QuickRigCharacter_ControlRig.rao" "Soul_Rig:QuickRigCharacter_Ctrl_RightHandThumb1.uagx"
 		;
@@ -9466,6 +10725,108 @@ connectAttr "Soul_Rig:QuickRigCharacter_Ctrl_RightHandMiddleEffector.po" "HIKSta
 		;
 connectAttr "HIKEffectorFromCharacter2.OutputEffectorState" "HIKState2Effector2.InputEffectorState"
 		;
+connectAttr "Soul_RigRN.phl[705]" "pairBlend1.irx1";
+connectAttr "Soul_RigRN.phl[706]" "pairBlend1.iry1";
+connectAttr "Soul_RigRN.phl[707]" "pairBlend1.irz1";
+connectAttr "Soul_RigRN.phl[708]" "pairBlend1.itx1";
+connectAttr "Soul_RigRN.phl[709]" "pairBlend1.ity1";
+connectAttr "Soul_RigRN.phl[710]" "pairBlend1.itz1";
+connectAttr "Soul_RigRN.phl[711]" "pairBlend2.irx1";
+connectAttr "Soul_RigRN.phl[712]" "pairBlend2.iry1";
+connectAttr "Soul_RigRN.phl[713]" "pairBlend2.irz1";
+connectAttr "Soul_RigRN.phl[714]" "pairBlend3.irx1";
+connectAttr "Soul_RigRN.phl[715]" "pairBlend3.iry1";
+connectAttr "Soul_RigRN.phl[716]" "pairBlend3.irz1";
+connectAttr "Soul_RigRN.phl[717]" "pairBlend4.irx1";
+connectAttr "Soul_RigRN.phl[718]" "pairBlend4.iry1";
+connectAttr "Soul_RigRN.phl[719]" "pairBlend4.irz1";
+connectAttr "Soul_RigRN.phl[720]" "pairBlend5.irx1";
+connectAttr "Soul_RigRN.phl[721]" "pairBlend5.iry1";
+connectAttr "Soul_RigRN.phl[722]" "pairBlend5.irz1";
+connectAttr "Soul_RigRN.phl[723]" "pairBlend6.irx1";
+connectAttr "Soul_RigRN.phl[724]" "pairBlend6.iry1";
+connectAttr "Soul_RigRN.phl[725]" "pairBlend6.irz1";
+connectAttr "Soul_RigRN.phl[726]" "pairBlend7.irx1";
+connectAttr "Soul_RigRN.phl[727]" "pairBlend7.iry1";
+connectAttr "Soul_RigRN.phl[728]" "pairBlend7.irz1";
+connectAttr "Soul_RigRN.phl[729]" "pairBlend8.irx1";
+connectAttr "Soul_RigRN.phl[730]" "pairBlend8.iry1";
+connectAttr "Soul_RigRN.phl[731]" "pairBlend8.irz1";
+connectAttr "Soul_RigRN.phl[732]" "pairBlend9.irx1";
+connectAttr "Soul_RigRN.phl[733]" "pairBlend9.iry1";
+connectAttr "Soul_RigRN.phl[734]" "pairBlend9.irz1";
+connectAttr "Soul_RigRN.phl[735]" "pairBlend10.irx1";
+connectAttr "Soul_RigRN.phl[736]" "pairBlend10.iry1";
+connectAttr "Soul_RigRN.phl[737]" "pairBlend10.irz1";
+connectAttr "Soul_RigRN.phl[738]" "pairBlend11.irx1";
+connectAttr "Soul_RigRN.phl[739]" "pairBlend11.iry1";
+connectAttr "Soul_RigRN.phl[740]" "pairBlend11.irz1";
+connectAttr "Soul_RigRN.phl[741]" "pairBlend12.irx1";
+connectAttr "Soul_RigRN.phl[742]" "pairBlend12.iry1";
+connectAttr "Soul_RigRN.phl[743]" "pairBlend12.irz1";
+connectAttr "Soul_RigRN.phl[744]" "pairBlend13.irx1";
+connectAttr "Soul_RigRN.phl[745]" "pairBlend13.iry1";
+connectAttr "Soul_RigRN.phl[746]" "pairBlend13.irz1";
+connectAttr "Soul_RigRN.phl[747]" "pairBlend14.irx1";
+connectAttr "Soul_RigRN.phl[748]" "pairBlend14.iry1";
+connectAttr "Soul_RigRN.phl[749]" "pairBlend14.irz1";
+connectAttr "Soul_RigRN.phl[750]" "pairBlend15.irx1";
+connectAttr "Soul_RigRN.phl[751]" "pairBlend15.iry1";
+connectAttr "Soul_RigRN.phl[752]" "pairBlend15.irz1";
+connectAttr "Soul_RigRN.phl[753]" "pairBlend16.irx1";
+connectAttr "Soul_RigRN.phl[754]" "pairBlend16.iry1";
+connectAttr "Soul_RigRN.phl[755]" "pairBlend16.irz1";
+connectAttr "Soul_RigRN.phl[756]" "pairBlend17.irx1";
+connectAttr "Soul_RigRN.phl[757]" "pairBlend17.iry1";
+connectAttr "Soul_RigRN.phl[758]" "pairBlend17.irz1";
+connectAttr "Soul_RigRN.phl[759]" "pairBlend18.irx1";
+connectAttr "Soul_RigRN.phl[760]" "pairBlend18.iry1";
+connectAttr "Soul_RigRN.phl[761]" "pairBlend18.irz1";
+connectAttr "Soul_RigRN.phl[762]" "pairBlend19.irx1";
+connectAttr "Soul_RigRN.phl[763]" "pairBlend19.iry1";
+connectAttr "Soul_RigRN.phl[764]" "pairBlend19.irz1";
+connectAttr "Soul_RigRN.phl[765]" "pairBlend20.irx1";
+connectAttr "Soul_RigRN.phl[766]" "pairBlend20.iry1";
+connectAttr "Soul_RigRN.phl[767]" "pairBlend20.irz1";
+connectAttr "Soul_RigRN.phl[768]" "pairBlend21.irx1";
+connectAttr "Soul_RigRN.phl[769]" "pairBlend21.iry1";
+connectAttr "Soul_RigRN.phl[770]" "pairBlend21.irz1";
+connectAttr "Soul_RigRN.phl[771]" "pairBlend22.irx1";
+connectAttr "Soul_RigRN.phl[772]" "pairBlend22.iry1";
+connectAttr "Soul_RigRN.phl[773]" "pairBlend22.irz1";
+connectAttr "Soul_RigRN.phl[774]" "pairBlend23.irx1";
+connectAttr "Soul_RigRN.phl[775]" "pairBlend23.iry1";
+connectAttr "Soul_RigRN.phl[776]" "pairBlend23.irz1";
+connectAttr "Soul_RigRN.phl[777]" "pairBlend24.irx1";
+connectAttr "Soul_RigRN.phl[778]" "pairBlend24.iry1";
+connectAttr "Soul_RigRN.phl[779]" "pairBlend24.irz1";
+connectAttr "Soul_RigRN.phl[780]" "pairBlend25.irx1";
+connectAttr "Soul_RigRN.phl[781]" "pairBlend25.iry1";
+connectAttr "Soul_RigRN.phl[782]" "pairBlend25.irz1";
+connectAttr "Soul_RigRN.phl[783]" "pairBlend26.irx1";
+connectAttr "Soul_RigRN.phl[784]" "pairBlend26.iry1";
+connectAttr "Soul_RigRN.phl[785]" "pairBlend26.irz1";
+connectAttr "Soul_RigRN.phl[786]" "pairBlend27.irx1";
+connectAttr "Soul_RigRN.phl[787]" "pairBlend27.iry1";
+connectAttr "Soul_RigRN.phl[788]" "pairBlend27.irz1";
+connectAttr "Soul_RigRN.phl[789]" "pairBlend28.irx1";
+connectAttr "Soul_RigRN.phl[790]" "pairBlend28.iry1";
+connectAttr "Soul_RigRN.phl[791]" "pairBlend28.irz1";
+connectAttr "Soul_RigRN.phl[792]" "pairBlend29.irx1";
+connectAttr "Soul_RigRN.phl[793]" "pairBlend29.iry1";
+connectAttr "Soul_RigRN.phl[794]" "pairBlend29.irz1";
+connectAttr "Soul_RigRN.phl[795]" "pairBlend30.irx1";
+connectAttr "Soul_RigRN.phl[796]" "pairBlend30.iry1";
+connectAttr "Soul_RigRN.phl[797]" "pairBlend30.irz1";
+connectAttr "Soul_RigRN.phl[798]" "pairBlend31.irx1";
+connectAttr "Soul_RigRN.phl[799]" "pairBlend31.iry1";
+connectAttr "Soul_RigRN.phl[800]" "pairBlend31.irz1";
+connectAttr "Soul_RigRN.phl[801]" "pairBlend32.irx1";
+connectAttr "Soul_RigRN.phl[802]" "pairBlend32.iry1";
+connectAttr "Soul_RigRN.phl[803]" "pairBlend32.irz1";
+connectAttr "Soul_RigRN.phl[804]" "pairBlend33.irx1";
+connectAttr "Soul_RigRN.phl[805]" "pairBlend33.iry1";
+connectAttr "Soul_RigRN.phl[806]" "pairBlend33.irz1";
 connectAttr "EnvSamplerTex.oc" "Mat_PolygonFantasyKingdom_Mat_01_A.c";
 connectAttr "bump2d1.o" "Mat_PolygonFantasyKingdom_Mat_01_A.n";
 connectAttr "Mat_PolygonFantasyKingdom_Mat_01_A.oc" "SK_Prop_Bow_Rigged_01SG.ss"
@@ -9553,4 +10914,4 @@ connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "EnvSamplerTex.msg" ":defaultTextureList1.tx" -na;
 connectAttr "EnvSamplerTex_ncl1_1.msg" ":defaultTextureList1.tx" -na;
-// End of Soul_Idle.ma
+// End of Soul_Dash.ma
